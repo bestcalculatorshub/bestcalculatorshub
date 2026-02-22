@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Log Weight Calculator - 20+ Wood Species | Free Tool | CalcHub</title>
+    <meta name="description" content="Free log weight calculator estimates weight by species, dimensions, and moisture content. Supports 20+ wood types including oak, pine, maple. Calculate green, air-dried, and kiln-dried weights instantly.">
+    <meta name="keywords" content="log weight calculator, timber weight, wood weight calculator, green log weight, dry log weight, log calculator, cord of wood weight, firewood weight">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/log-weight-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/log-weight-calculator">
+    <meta property="og:title" content="Log Weight Calculator - 20+ Wood Species">
+    <meta property="og:description" content="Calculate log weight by species, size, and moisture content. Free, accurate, professional.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Log Weight Calculator",
+        "description": "Calculate weight of logs based on wood species, dimensions, and moisture content. Supports 20+ wood types.",
+        "url": "https://calchub.com/construction/log-weight-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   LOG WEIGHT CALCULATOR - CALCHUB
+   Professional log and timber weight estimation
+   FEATURES: 20+ Wood Species + Moisture Content + Cost
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --brown: #92400e;
+    --brown-pale: #fef3c7;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; min-height:44px; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; min-height:44px; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; line-height:1.4; }
+
+/* Colored Sections */
+.log-section { background:var(--brown-pale); border:2px solid var(--brown); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.log-section-title { font-weight:600; color:var(--brown); margin-bottom:12px; font-size:0.95em; }
+.wood-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.wood-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.moisture-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.moisture-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+/* Buttons */
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; min-height:48px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; min-height:44px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; min-height:48px; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; -webkit-overflow-scrolling:touch; border-radius:var(--radius); }
+.calc-table { width:100%; border-collapse:collapse; min-width:600px; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); white-space:nowrap; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); position:sticky; top:0; z-index:1; }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:10000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; min-height:44px; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; min-height:48px; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+    .calc-table { font-size:0.85em; }
+    .calc-table th, .calc-table td { padding:8px 6px; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .hero-desc { font-size:0.9em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+    .input-section h2, .result-section h2 { font-size:1.2em; }
+    .input-label { font-size:0.9em; }
+    .input-field, .select-field { padding:10px 12px; font-size:0.95em; }
+    .input-hint { font-size:0.8em; }
+    .calculate-btn, .reset-btn { font-size:0.95em; padding:12px 20px; }
+    .result-value { font-size:1.6em; }
+    .result-item-value { font-size:1.1em; }
+    .cost-value { font-size:1.3em; }
+    .formula-content { font-size:0.85em; }
+    .content-text { font-size:0.9em; }
+    .calc-table { font-size:0.8em; }
+    .calc-table th, .calc-table td { padding:6px 4px; }
+}
+
+@media (max-width:900px) and (orientation:landscape) {
+    .hero { padding:24px 20px; }
+    .hero h1 { font-size:1.8em; }
+    .calculator-container { padding:24px 16px; }
+    .calculator-grid { gap:20px; }
+}
+
+@media (max-width:768px) {
+    .table-responsive { position:relative; }
+    .table-responsive::after { 
+        content:'← Scroll →'; 
+        position:absolute; 
+        bottom:8px; 
+        right:8px; 
+        background:rgba(15,23,42,0.8); 
+        color:#fff; 
+        padding:4px 8px; 
+        border-radius:4px; 
+        font-size:0.75em; 
+        pointer-events:none;
+    }
+    .calc-table { min-width:500px; }
+}
+
+@media (max-width:320px) {
+    .hero h1 { font-size:1.2em; }
+    .calculator-container { padding:12px 8px; }
+    .input-section h2, .result-section h2 { font-size:1.1em; }
+    .input-group { margin-bottom:16px; }
+    .result-grid { gap:8px; }
+    .formula-box { padding:16px; }
+    .calc-table { min-width:400px; font-size:0.75em; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+    .table-responsive::after { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Log Weight Calculator</span>
+        </nav>
+
+        <h1>Log Weight Calculator</h1>
+        <p class="hero-desc">Calculate log weight by wood species, dimensions, and moisture content. <strong>Supports 20+ wood types including oak, pine, maple, cedar, and exotic hardwoods.</strong> Perfect for logging, firewood, milling, and timber sales.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Enter Log Details</h2>
+                
+                <!-- LOG DIMENSIONS -->
+                <div class="log-section">
+                    <div class="log-section-title">🪵 Log Dimensions</div>
+                    <div class="input-group">
+                        <label class="input-label" for="logDiameter">Diameter (at small end)</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="logDiameter" placeholder="Enter diameter" min="1" step="1" value="12">
+                            <select class="select-field unit-select" id="logDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Measure at the smallest end for accuracy</div>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="logLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="logLength" placeholder="Enter length" min="1" step="1" value="8">
+                            <select class="select-field unit-select" id="logLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Standard log length: 8 feet</div>
+                    </div>
+                </div>
+
+                <!-- WOOD SPECIES -->
+                <div class="wood-section">
+                    <div class="wood-section-title">🌳 Wood Species</div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="woodSpecies">Select Wood Type</label>
+                        <select class="select-field" id="woodSpecies">
+                            <optgroup label="Softwoods">
+                                <option value="pine" selected>Pine (Southern Yellow) - 35 lb/ft³</option>
+                                <option value="white-pine">White Pine - 25 lb/ft³</option>
+                                <option value="spruce">Spruce - 28 lb/ft³</option>
+                                <option value="douglas-fir">Douglas Fir - 34 lb/ft³</option>
+                                <option value="hemlock">Hemlock - 29 lb/ft³</option>
+                                <option value="cedar">Cedar (Red) - 23 lb/ft³</option>
+                                <option value="cypress">Cypress - 32 lb/ft³</option>
+                            </optgroup>
+                            <optgroup label="Hardwoods - Light">
+                                <option value="poplar">Poplar - 28 lb/ft³</option>
+                                <option value="aspen">Aspen - 26 lb/ft³</option>
+                                <option value="basswood">Basswood - 26 lb/ft³</option>
+                                <option value="cottonwood">Cottonwood - 28 lb/ft³</option>
+                            </optgroup>
+                            <optgroup label="Hardwoods - Medium">
+                                <option value="ash">Ash (White) - 42 lb/ft³</option>
+                                <option value="cherry">Cherry (Black) - 35 lb/ft³</option>
+                                <option value="walnut">Walnut (Black) - 38 lb/ft³</option>
+                                <option value="maple">Maple (Sugar) - 44 lb/ft³</option>
+                                <option value="birch">Birch (Yellow) - 43 lb/ft³</option>
+                            </optgroup>
+                            <optgroup label="Hardwoods - Heavy">
+                                <option value="oak-red">Oak (Red) - 44 lb/ft³</option>
+                                <option value="oak-white">Oak (White) - 47 lb/ft³</option>
+                                <option value="hickory">Hickory - 51 lb/ft³</option>
+                                <option value="beech">Beech - 45 lb/ft³</option>
+                            </optgroup>
+                        </select>
+                        <div class="input-hint">Density shown is for kiln-dried (12% MC)</div>
+                    </div>
+                </div>
+
+                <!-- MOISTURE CONTENT -->
+                <div class="moisture-section">
+                    <div class="moisture-section-title">💧 Moisture Content</div>
+                    <div class="input-group">
+                        <label class="input-label" for="moistureCondition">Wood Condition</label>
+                        <select class="select-field" id="moistureCondition" onchange="updateMoistureContent()">
+                            <option value="green" selected>Green (Freshly Cut) - ~60% MC</option>
+                            <option value="air-dried">Air-Dried (Seasoned) - ~20% MC</option>
+                            <option value="kiln-dried">Kiln-Dried (Lumber) - ~12% MC</option>
+                            <option value="custom">Custom Moisture Content</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="customMoistureGroup" style="display:none; margin-bottom:0;">
+                        <label class="input-label" for="moistureContent">Moisture Content (%)</label>
+                        <input type="number" class="input-field" id="moistureContent" placeholder="Enter MC %" min="0" max="200" step="1" value="60">
+                        <div class="input-hint">Green wood: 40-80%, Air-dried: 15-25%, Kiln-dried: 6-15%</div>
+                    </div>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="input-group">
+                    <label class="input-label" for="logQuantity">Number of Logs</label>
+                    <input type="number" class="input-field" id="logQuantity" placeholder="How many logs" min="1" step="1" value="1">
+                    <div class="input-hint">Enter total quantity</div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        💰 Price Calculator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerBoardFoot">Price per Board Foot (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerBoardFoot" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Average: $2-$8 per BF depending on species</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateLogWeight()">Calculate Weight & Value</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Total Weight</div>
+                        <div class="result-value"><span id="totalWeight">0</span> <span class="result-unit">lbs</span></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (kg)</div>
+                            <div class="result-item-value"><span id="weightKg">0</span> kg</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (tons)</div>
+                            <div class="result-item-value"><span id="weightTons">0</span> tons</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Per Log</div>
+                            <div class="result-item-value"><span id="perLog">0</span> lbs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Board Feet</div>
+                            <div class="result-item-value"><span id="boardFeet">0</span> BF</div>
+                        </div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Estimated Value</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">📊 Calculation Details</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Complete Log Weight Calculator Guide</h2>
+        <div class="content-text">
+            <p>Need to calculate log weight for logging, timber sales, firewood, or milling? Our comprehensive log weight calculator helps you accurately estimate weight based on wood species, dimensions, and moisture content. Whether you're dealing with green logs, air-dried timber, or kiln-dried lumber, get precise weight calculations in seconds.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Basic Log Weight Formula</div>
+                <p><strong>Weight = Volume × Density × (1 + Moisture Content Factor)</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Volume = π × (Diameter/2)² × Length</p>
+            </div>
+
+            <p>Our calculator supports <strong>20+ wood species</strong>, accounts for moisture content from green to kiln-dried, calculates board feet for timber value, and provides complete cost estimates - the most comprehensive free log weight calculator available!</p>
+
+            <div class="content-more" id="contentMore">
+                <h3>Wood Density by Species (Kiln-Dried at 12% MC)</h3>
+                <p>Understanding wood density is essential for accurate weight calculations:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Wood Species</th>
+                                <th>Density (lb/ft³)</th>
+                                <th>Density (kg/m³)</th>
+                                <th>Category</th>
+                                <th>Common Uses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cedar (Red)</strong></td>
+                                <td>23</td>
+                                <td>369</td>
+                                <td>Softwood - Light</td>
+                                <td>Decking, fencing, shingles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>White Pine</strong></td>
+                                <td>25</td>
+                                <td>400</td>
+                                <td>Softwood - Light</td>
+                                <td>Furniture, trim, paneling</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aspen</strong></td>
+                                <td>26</td>
+                                <td>417</td>
+                                <td>Hardwood - Light</td>
+                                <td>Pulp, pallets, crating</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Basswood</strong></td>
+                                <td>26</td>
+                                <td>417</td>
+                                <td>Hardwood - Light</td>
+                                <td>Carving, musical instruments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Spruce</strong></td>
+                                <td>28</td>
+                                <td>449</td>
+                                <td>Softwood - Medium</td>
+                                <td>Construction, pulp, instruments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Poplar</strong></td>
+                                <td>28</td>
+                                <td>449</td>
+                                <td>Hardwood - Light</td>
+                                <td>Cabinets, furniture, pallets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hemlock</strong></td>
+                                <td>29</td>
+                                <td>465</td>
+                                <td>Softwood - Medium</td>
+                                <td>Framing, sheathing, pulp</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cypress</strong></td>
+                                <td>32</td>
+                                <td>513</td>
+                                <td>Softwood - Medium</td>
+                                <td>Outdoor construction, boats</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Douglas Fir</strong></td>
+                                <td>34</td>
+                                <td>545</td>
+                                <td>Softwood - Heavy</td>
+                                <td>Framing, beams, flooring</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pine (Southern Yellow)</strong></td>
+                                <td>35</td>
+                                <td>561</td>
+                                <td>Softwood - Heavy</td>
+                                <td>Framing, flooring, furniture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cherry (Black)</strong></td>
+                                <td>35</td>
+                                <td>561</td>
+                                <td>Hardwood - Medium</td>
+                                <td>Fine furniture, cabinets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Walnut (Black)</strong></td>
+                                <td>38</td>
+                                <td>609</td>
+                                <td>Hardwood - Medium</td>
+                                <td>Furniture, gunstocks, veneer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ash (White)</strong></td>
+                                <td>42</td>
+                                <td>673</td>
+                                <td>Hardwood - Medium</td>
+                                <td>Tool handles, baseball bats</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Birch (Yellow)</strong></td>
+                                <td>43</td>
+                                <td>689</td>
+                                <td>Hardwood - Heavy</td>
+                                <td>Flooring, furniture, plywood</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maple (Sugar)</strong></td>
+                                <td>44</td>
+                                <td>705</td>
+                                <td>Hardwood - Heavy</td>
+                                <td>Flooring, furniture, butcher blocks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oak (Red)</strong></td>
+                                <td>44</td>
+                                <td>705</td>
+                                <td>Hardwood - Heavy</td>
+                                <td>Flooring, furniture, cabinets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beech</strong></td>
+                                <td>45</td>
+                                <td>721</td>
+                                <td>Hardwood - Heavy</td>
+                                <td>Furniture, flooring, tool handles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oak (White)</strong></td>
+                                <td>47</td>
+                                <td>753</td>
+                                <td>Hardwood - Heavy</td>
+                                <td>Flooring, barrels, boats</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hickory</strong></td>
+                                <td>51</td>
+                                <td>817</td>
+                                <td>Hardwood - Very Heavy</td>
+                                <td>Tool handles, flooring, smoking</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Moisture Content Impact on Weight</h3>
+                <p>Moisture content dramatically affects log weight - often doubling or tripling the weight of green wood compared to kiln-dried:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Wood Condition</th>
+                                <th>Moisture Content</th>
+                                <th>Weight Multiplier</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Green (Freshly Cut)</strong></td>
+                                <td>40-80% MC</td>
+                                <td>1.6 - 2.2×</td>
+                                <td>Just felled, very heavy, water seeping</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Partially Seasoned</strong></td>
+                                <td>30-40% MC</td>
+                                <td>1.4 - 1.6×</td>
+                                <td>Drying for 2-4 months</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Air-Dried (Seasoned)</strong></td>
+                                <td>15-25% MC</td>
+                                <td>1.2 - 1.3×</td>
+                                <td>Dried 6-12 months outdoors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kiln-Dried (Standard)</strong></td>
+                                <td>10-14% MC</td>
+                                <td>1.1 - 1.15×</td>
+                                <td>Commercial lumber, furniture-ready</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kiln-Dried (Furniture)</strong></td>
+                                <td>6-10% MC</td>
+                                <td>1.05 - 1.1×</td>
+                                <td>High-end furniture, cabinetry</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oven-Dry (Reference)</strong></td>
+                                <td>0% MC</td>
+                                <td>1.0×</td>
+                                <td>Laboratory standard, theoretical</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><strong>Key Insight:</strong> A green oak log can weigh 80-100 lbs/ft³, while kiln-dried oak is only 47 lbs/ft³!</p>
+
+                <h3>Detailed Calculation Examples</h3>
+                
+                <p><strong>Example 1: Green Oak Log for Milling</strong></p>
+                <div class="info-box">
+                    <p><strong>Log:</strong> Red Oak, 16" diameter × 8 ft long, green (60% MC)</p>
+                    <p><strong>Step 1:</strong> Volume = π × (16/24)² × 8 = 11.17 ft³</p>
+                    <p><strong>Step 2:</strong> Dry weight = 11.17 × 44 lb/ft³ = 491 lbs</p>
+                    <p><strong>Step 3:</strong> Moisture multiplier = 1 + 0.60 = 1.60</p>
+                    <p><strong>Step 4:</strong> Green weight = 491 × 1.60 = <strong>786 lbs</strong></p>
+                    <p><strong>Board Feet:</strong> (16² × 8) ÷ 16 = 128 BF</p>
+                </div>
+
+                <p><strong>Example 2: Seasoned Firewood</strong></p>
+                <div class="info-box">
+                    <p><strong>Wood:</strong> Hickory, 12" diameter × 16" length, air-dried (20% MC)</p>
+                    <p><strong>Step 1:</strong> Volume = π × (12/24)² × (16/12) = 1.05 ft³</p>
+                    <p><strong>Step 2:</strong> Dry weight = 1.05 × 51 lb/ft³ = 53.6 lbs</p>
+                    <p><strong>Step 3:</strong> Moisture multiplier = 1.20</p>
+                    <p><strong>Step 4:</strong> Seasoned weight = 53.6 × 1.20 = <strong>64 lbs</strong></p>
+                    <p><strong>Note:</strong> One of the heaviest firewoods!</p>
+                </div>
+
+                <p><strong>Example 3: Cedar Fence Posts</strong></p>
+                <div class="info-box">
+                    <p><strong>Posts:</strong> Red Cedar, 6" diameter × 8 ft long, 25 posts, 15% MC</p>
+                    <p><strong>Step 1:</strong> Volume = π × (6/24)² × 8 = 1.57 ft³</p>
+                    <p><strong>Step 2:</strong> Weight per post = 1.57 × 23 × 1.15 = 41.5 lbs</p>
+                    <p><strong>Step 3:</strong> Total weight = 41.5 × 25 = <strong>1,038 lbs</strong></p>
+                    <p><strong>Practical:</strong> Easily handled, ~520 lbs per truckload of 12-13 posts</p>
+                </div>
+
+                <h3>Board Feet Calculation</h3>
+                <p>Board feet (BF) measure usable lumber volume - critical for timber value:</p>
+
+                <p><strong>Doyle Log Rule (Most Common):</strong></p>
+                <div class="info-box">
+                    <p><strong>Formula:</strong> BF = ((D - 4)² × L) ÷ 16</p>
+                    <p>D = Diameter in inches (small end)</p>
+                    <p>L = Length in feet</p>
+                    <p><strong>Example:</strong> 16" × 8 ft log = ((16-4)² × 8) ÷ 16 = 72 BF</p>
+                </div>
+
+                <p><strong>International 1/4" Log Rule (More Accurate):</strong></p>
+                <ul>
+                    <li>Accounts for saw kerf (blade thickness)</li>
+                    <li>More accurate for larger logs</li>
+                    <li>Used by professional sawmills</li>
+                    <li>Typically yields 20-30% more BF than Doyle</li>
+                </ul>
+
+                <p><strong>Scribner Log Rule (Eastern US):</strong></p>
+                <ul>
+                    <li>Diagram-based measurement</li>
+                    <li>Conservative estimates</li>
+                    <li>Common in timber sales</li>
+                </ul>
+
+                <h3>Weight by Log Size - Quick Reference</h3>
+                <p>Approximate weights for common log sizes (air-dried oak, 20% MC):</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Diameter</th>
+                                <th>8 ft Log</th>
+                                <th>10 ft Log</th>
+                                <th>12 ft Log</th>
+                                <th>16 ft Log</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>6 inches</strong></td>
+                                <td>66 lbs</td>
+                                <td>83 lbs</td>
+                                <td>99 lbs</td>
+                                <td>132 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>8 inches</strong></td>
+                                <td>118 lbs</td>
+                                <td>147 lbs</td>
+                                <td>177 lbs</td>
+                                <td>235 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10 inches</strong></td>
+                                <td>184 lbs</td>
+                                <td>230 lbs</td>
+                                <td>276 lbs</td>
+                                <td>368 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>12 inches</strong></td>
+                                <td>265 lbs</td>
+                                <td>331 lbs</td>
+                                <td>397 lbs</td>
+                                <td>530 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>16 inches</strong></td>
+                                <td>471 lbs</td>
+                                <td>589 lbs</td>
+                                <td>706 lbs</td>
+                                <td>942 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20 inches</strong></td>
+                                <td>736 lbs</td>
+                                <td>920 lbs</td>
+                                <td>1,104 lbs</td>
+                                <td>1,472 lbs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>24 inches</strong></td>
+                                <td>1,060 lbs</td>
+                                <td>1,325 lbs</td>
+                                <td>1,590 lbs</td>
+                                <td>2,120 lbs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><strong>Note:</strong> Green logs weigh 40-80% more than values shown above.</p>
+
+                <h3>Timber Value Estimation</h3>
+                <p>Understanding timber value helps with logging decisions and sales:</p>
+
+                <p><strong>Typical Prices per Board Foot (2024):</strong></p>
+                <ul>
+                    <li><strong>Low-Grade Logs (pulp, pallets):</strong> $0.50 - $2.00/BF</li>
+                    <li><strong>Construction Grade:</strong> $2.00 - $4.00/BF</li>
+                    <li><strong>Select Grade Hardwoods:</strong> $4.00 - $8.00/BF</li>
+                    <li><strong>Premium Hardwoods (Walnut, Cherry):</strong> $6.00 - $15.00/BF</li>
+                    <li><strong>Exotic/Specialty Woods:</strong> $10.00 - $30.00+/BF</li>
+                </ul>
+
+                <p><strong>Value Factors:</strong></p>
+                <ul>
+                    <li><strong>Species:</strong> Oak, cherry, walnut command premium prices</li>
+                    <li><strong>Grade:</strong> Clear, straight logs worth 2-5× more</li>
+                    <li><strong>Size:</strong> Larger diameter logs yield more value</li>
+                    <li><strong>Defects:</strong> Knots, rot, splits drastically reduce value</li>
+                    <li><strong>Market:</strong> Local demand varies significantly</li>
+                    <li><strong>Access:</strong> Road access affects logging costs</li>
+                </ul>
+
+                <h3>Firewood Calculations</h3>
+                <p>Converting logs to firewood requires different calculations:</p>
+
+                <p><strong>Standard Cord of Firewood:</strong></p>
+                <ul>
+                    <li><strong>Volume:</strong> 128 cubic feet (4' × 4' × 8')</li>
+                    <li><strong>Actual wood:</strong> ~85 ft³ (rest is air space)</li>
+                    <li><strong>Weight range:</strong> 2,000 - 5,000 lbs depending on species & MC</li>
+                </ul>
+
+                <p><strong>Firewood Weight by Species (Cord, air-dried 20% MC):</strong></p>
+                <ul>
+                    <li><strong>Hickory:</strong> 4,300 - 4,800 lbs (heaviest)</li>
+                    <li><strong>Oak:</strong> 3,800 - 4,200 lbs</li>
+                    <li><strong>Maple:</strong> 3,600 - 4,000 lbs</li>
+                    <li><strong>Ash:</strong> 3,400 - 3,800 lbs</li>
+                    <li><strong>Birch:</strong> 3,300 - 3,700 lbs</li>
+                    <li><strong>Pine:</strong> 2,500 - 3,000 lbs</li>
+                    <li><strong>Poplar:</strong> 2,200 - 2,600 lbs (lightest common)</li>
+                </ul>
+
+                <p><strong>Logs to Firewood Conversion:</strong></p>
+                <div class="info-box">
+                    <p><strong>Example:</strong> How many 12" × 8 ft oak logs = 1 cord?</p>
+                    <p>Volume per log = π × (0.5)² × 8 = 6.28 ft³</p>
+                    <p>Usable wood per cord = 85 ft³</p>
+                    <p>Logs needed = 85 ÷ 6.28 = <strong>~14 logs</strong></p>
+                </div>
+
+                <h3>Drying Time Estimates</h3>
+                <p>Moisture content affects weight and usability:</p>
+
+                <p><strong>Air-Drying Time (Split Firewood):</strong></p>
+                <ul>
+                    <li><strong>Softwoods (Pine, Spruce):</strong> 3-6 months</li>
+                    <li><strong>Medium Hardwoods (Cherry, Ash):</strong> 6-12 months</li>
+                    <li><strong>Dense Hardwoods (Oak, Hickory):</strong> 12-24 months</li>
+                    <li><strong>Very Dense (Osage Orange):</strong> 24-36 months</li>
+                </ul>
+
+                <p><strong>Drying Rate Factors:</strong></p>
+                <ul>
+                    <li><strong>Wood size:</strong> Split wood dries 3-4× faster than rounds</li>
+                    <li><strong>Bark removal:</strong> Speeds drying by 30-50%</li>
+                    <li><strong>Air circulation:</strong> Stacked with space = faster drying</li>
+                    <li><strong>Weather:</strong> Hot, dry, windy = faster drying</li>
+                    <li><strong>Species:</strong> Dense woods take much longer</li>
+                </ul>
+
+                <p><strong>Kiln-Drying (Commercial Lumber):</strong></p>
+                <ul>
+                    <li><strong>Typical time:</strong> 2-8 weeks depending on species & thickness</li>
+                    <li><strong>Temperature:</strong> 120-180°F with humidity control</li>
+                    <li><strong>Cost:</strong> $0.30 - $1.00 per board foot</li>
+                    <li><strong>Benefit:</strong> Precise MC control, kills insects/mold</li>
+                </ul>
+
+                <h3>Handling & Transportation</h3>
+                <p>Log weight affects equipment and safety requirements:</p>
+
+                <p><strong>Manual Handling:</strong></p>
+                <ul>
+                    <li><strong>Under 50 lbs:</strong> One person can carry (up to 10" diameter)</li>
+                    <li><strong>50-100 lbs:</strong> Two people or hand truck</li>
+                    <li><strong>100-300 lbs:</strong> Tractor, ATV with winch, or cant hook</li>
+                    <li><strong>300+ lbs:</strong> Heavy equipment required</li>
+                </ul>
+
+                <p><strong>Vehicle Capacity:</strong></p>
+                <ul>
+                    <li><strong>Pickup truck (1/2 ton):</strong> ~1,500 lbs safely (3-5 large logs)</li>
+                    <li><strong>Pickup truck (3/4 ton):</strong> ~2,500 lbs (5-8 large logs)</li>
+                    <li><strong>Pickup truck (1 ton):</strong> ~3,500 lbs (8-12 large logs)</li>
+                    <li><strong>Log trailer (tandem):</strong> 10,000 - 14,000 lbs (full load)</li>
+                    <li><strong>Semi log truck:</strong> 40,000 - 80,000 lbs (20-40 tons)</li>
+                </ul>
+
+                <p><strong>Safety Considerations:</strong></p>
+                <ul>
+                    <li>Secure loads with chains or straps (minimum 2 points)</li>
+                    <li>Distribute weight evenly in truck bed</li>
+                    <li>Check tire pressure and axle ratings</li>
+                    <li>Use proper lifting techniques (bend knees, not back)</li>
+                    <li>Never stand downhill of unsecured logs</li>
+                    <li>Use wedges to prevent rolling</li>
+                </ul>
+
+                <h3>Common Measurement Mistakes</h3>
+                <p>Avoid these errors for accurate weight estimation:</p>
+
+                <ul>
+                    <li><strong>Measuring large end:</strong> Always measure small end diameter</li>
+                    <li><strong>Ignoring moisture:</strong> Green vs dry can double the weight</li>
+                    <li><strong>Wrong species:</strong> Hickory weighs 2× more than cedar</li>
+                    <li><strong>Including bark:</strong> Bark adds 10-15% weight (minimal volume)</li>
+                    <li><strong>Forgetting taper:</strong> Logs aren't perfect cylinders</li>
+                    <li><strong>Unit confusion:</strong> Cubic feet vs board feet are different</li>
+                </ul>
+
+                <h3>Log Grading System</h3>
+                <p>Timber value varies dramatically by log grade:</p>
+
+                <p><strong>Hardwood Log Grades (Factory Lumber Logs):</strong></p>
+                <ul>
+                    <li><strong>F1 (Prime):</strong> 16"+ diameter, straight, clear, 50%+ clear faces</li>
+                    <li><strong>F2 (Select):</strong> 13"+ diameter, mostly clear, 33%+ clear</li>
+                    <li><strong>F3 (Standard):</strong> 11"+ diameter, some defects acceptable</li>
+                    <li><strong>Below Grade:</strong> Pallet, pulp, firewood, chip-n-saw</li>
+                </ul>
+
+                <p><strong>Value Difference:</strong></p>
+                <ul>
+                    <li>F1 logs can sell for 3-5× more than F3</li>
+                    <li>One F1 walnut log can be worth $1,000-$3,000</li>
+                    <li>Same size F3 might be worth $200-$500</li>
+                </ul>
+
+                <h3>Specialty Uses & Pricing</h3>
+                
+                <p><strong>Veneer Logs (Highest Value):</strong></p>
+                <ul>
+                    <li>Must be near-perfect quality</li>
+                    <li>18"+ diameter for hardwoods</li>
+                    <li>Straight, no knots, unique grain patterns</li>
+                    <li>Can command $10-$50+ per board foot</li>
+                    <li>Species: Walnut, cherry, figured maple, curly oak</li>
+                </ul>
+
+                <p><strong>Specialty Markets:</strong></p>
+                <ul>
+                    <li><strong>Woodturning blanks:</strong> $5-$50 each depending on size/species</li>
+                    <li><strong>Live-edge slabs:</strong> $10-$50/BF for premium pieces</li>
+                    <li><strong>Burl wood:</strong> $5-$100+ per pound (exceptional grain)</li>
+                    <li><strong>Spalted wood:</strong> Fungal patterns, premium pricing</li>
+                    <li><strong>Instrument wood:</strong> Specific needs, high prices</li>
+                </ul>
+
+                <h3>Environmental Considerations</h3>
+                <ul>
+                    <li><strong>Carbon storage:</strong> Wood sequesters ~1 ton CO₂ per ton of dry wood</li>
+                    <li><strong>Sustainable harvesting:</strong> Selective cutting maintains forests</li>
+                    <li><strong>Bark mulch:</strong> Valuable byproduct (10-15% of log weight)</li>
+                    <li><strong>Sawdust/chips:</strong> Used for pellets, animal bedding, composite boards</li>
+                    <li><strong>Efficiency:</strong> Modern mills recover 50-65% of log as lumber</li>
+                </ul>
+
+                <h3>Tools for Log Work</h3>
+                <p>Essential equipment for handling logs:</p>
+
+                <ul>
+                    <li><strong>Cant hook/peavey:</strong> Rolling and positioning logs ($40-$100)</li>
+                    <li><strong>Log tongs:</strong> Lifting with equipment ($50-$200)</li>
+                    <li><strong>Chainsaw:</strong> Cutting to length ($200-$800)</li>
+                    <li><strong>Log arch:</strong> Skidding logs with ATV ($300-$1,500)</li>
+                    <li><strong>Moisture meter:</strong> Measuring MC ($30-$300)</li>
+                    <li><strong>Diameter tape:</strong> Quick circumference to diameter ($10-$30)</li>
+                    <li><strong>Log scales:</strong> Professional measurement tools ($500-$2,000)</li>
+                </ul>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Construction Tools?</h2>
+        <p>Explore our complete collection of construction calculators for accurate project planning and material estimation.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Log Weight Calculator - Professional Edition
+// 20+ wood species, moisture content, accurate formulas
+
+// Wood density database (lb/ft³ at 12% MC)
+const woodDensities = {
+    'pine': 35,
+    'white-pine': 25,
+    'spruce': 28,
+    'douglas-fir': 34,
+    'hemlock': 29,
+    'cedar': 23,
+    'cypress': 32,
+    'poplar': 28,
+    'aspen': 26,
+    'basswood': 26,
+    'cottonwood': 28,
+    'ash': 42,
+    'cherry': 35,
+    'walnut': 38,
+    'maple': 44,
+    'birch': 43,
+    'oak-red': 44,
+    'oak-white': 47,
+    'hickory': 51,
+    'beech': 45
+};
+
+// Moisture content presets
+const moisturePresets = {
+    'green': 60,
+    'air-dried': 20,
+    'kiln-dried': 12
+};
+
+function toFeet(value, unit) {
+    const conversions = { 'ft': 1, 'in': 1/12, 'm': 3.28084, 'cm': 0.0328084 };
+    return value * (conversions[unit] || 1);
+}
+
+function toInches(value, unit) {
+    const conversions = { 'in': 1, 'ft': 12, 'cm': 0.393701 };
+    return value * (conversions[unit] || 1);
+}
+
+function updateMoistureContent() {
+    const condition = document.getElementById('moistureCondition').value;
+    const customGroup = document.getElementById('customMoistureGroup');
+    const mcField = document.getElementById('moistureContent');
+    
+    if (condition === 'custom') {
+        customGroup.style.display = 'block';
+    } else {
+        customGroup.style.display = 'none';
+        mcField.value = moisturePresets[condition] || 60;
+    }
+}
+
+function calculateLogWeight() {
+    try {
+        // Get log dimensions
+        const diameter = toInches(parseFloat(document.getElementById('logDiameter').value), 
+                                  document.getElementById('logDiameterUnit').value);
+        const length = toFeet(parseFloat(document.getElementById('logLength').value), 
+                             document.getElementById('logLengthUnit').value);
+        
+        if (!diameter || !length || diameter <= 0 || length <= 0) {
+            alert('Please enter valid log dimensions');
+            return;
+        }
+        
+        // Get wood species density
+        const species = document.getElementById('woodSpecies').value;
+        const speciesName = document.getElementById('woodSpecies').options[document.getElementById('woodSpecies').selectedIndex].text;
+        const density = woodDensities[species] || 35; // lb/ft³ at 12% MC
+        
+        // Get moisture content
+        const condition = document.getElementById('moistureCondition').value;
+        const moistureContent = condition === 'custom' ? 
+            parseFloat(document.getElementById('moistureContent').value) : 
+            moisturePresets[condition];
+        
+        // Calculate volume (cubic feet)
+        const radiusFt = (diameter / 12) / 2;
+        const volume = Math.PI * Math.pow(radiusFt, 2) * length;
+        
+        // Calculate dry weight
+        const dryWeight = volume * density;
+        
+        // Adjust for moisture content
+        // Weight = DryWeight × (1 + MC/100)
+        const moistureMultiplier = 1 + (moistureContent / 100);
+        const wetWeight = dryWeight * moistureMultiplier;
+        
+        // Get quantity
+        const quantity = parseInt(document.getElementById('logQuantity').value) || 1;
+        const totalWeight = wetWeight * quantity;
+        
+        // Calculate board feet (Doyle Log Rule)
+        // BF = ((D - 4)² × L) / 16
+        const boardFeetPerLog = Math.max(0, Math.pow(diameter - 4, 2) * length / 16);
+        const totalBoardFeet = boardFeetPerLog * quantity;
+        
+        // Get pricing
+        const pricePerBF = parseFloat(document.getElementById('pricePerBoardFoot').value) || 0;
+        const totalValue = totalBoardFeet * pricePerBF;
+        
+        // Convert units
+        const weightKg = totalWeight * 0.453592;
+        const weightTons = totalWeight / 2000;
+        
+        // Display results
+        document.getElementById('totalWeight').textContent = totalWeight.toFixed(0);
+        document.getElementById('weightKg').textContent = weightKg.toFixed(0);
+        document.getElementById('weightTons').textContent = weightTons.toFixed(2);
+        document.getElementById('perLog').textContent = wetWeight.toFixed(0);
+        document.getElementById('boardFeet').textContent = Math.round(totalBoardFeet);
+        
+        // Display cost if price entered
+        const costSection = document.getElementById('costSection');
+        if (pricePerBF > 0) {
+            document.getElementById('totalCost').textContent = totalValue.toFixed(2);
+            
+            const costBreakdown = `
+                <strong>Value Breakdown:</strong><br>
+                ${Math.round(totalBoardFeet)} board feet × $${pricePerBF.toFixed(2)}/BF = $${totalValue.toFixed(2)}<br>
+                <em>Per log: ${Math.round(boardFeetPerLog)} BF = $${(boardFeetPerLog * pricePerBF).toFixed(2)}</em>
+            `;
+            
+            document.getElementById('costBreakdown').innerHTML = costBreakdown;
+            costSection.classList.add('active');
+        } else {
+            costSection.classList.remove('active');
+        }
+        
+        // Formula explanation
+        const conditionText = condition === 'custom' ? 
+            `Custom (${moistureContent}% MC)` : 
+            document.getElementById('moistureCondition').options[document.getElementById('moistureCondition').selectedIndex].text;
+        
+        let formulaExplanation = `
+            <div class="formula-step"><strong>Wood Species:</strong> ${speciesName}</div>
+            <div class="formula-step"><strong>Base Density:</strong> ${density} lb/ft³ (at 12% MC)</div>
+            <div class="formula-step"><strong>Moisture Content:</strong> ${conditionText}</div>
+            <div class="formula-step"><strong>Dimensions:</strong> ${diameter.toFixed(1)}" diameter × ${length.toFixed(1)}' long</div>
+            <div class="formula-step"><strong>Quantity:</strong> ${quantity} log${quantity > 1 ? 's' : ''}</div>
+            <div class="formula-step" style="margin-top:12px;"><strong>Calculation:</strong></div>
+            <div class="formula-step">Volume = π × (${(diameter/12).toFixed(2)}/2)² × ${length.toFixed(1)} = ${volume.toFixed(2)} ft³</div>
+            <div class="formula-step">Dry weight = ${volume.toFixed(2)} × ${density} = ${dryWeight.toFixed(1)} lbs</div>
+            <div class="formula-step">Moisture multiplier = 1 + ${moistureContent}% = ${moistureMultiplier.toFixed(2)}×</div>
+            <div class="formula-step">Actual weight per log = ${dryWeight.toFixed(1)} × ${moistureMultiplier.toFixed(2)} = ${wetWeight.toFixed(0)} lbs</div>
+            <div class="formula-step"><strong>Total weight = ${totalWeight.toFixed(0)} lbs</strong></div>
+            <div class="formula-step" style="margin-top:12px;"><strong>Board Feet (Doyle):</strong></div>
+            <div class="formula-step">BF = ((${diameter.toFixed(0)}-4)² × ${length.toFixed(0)}) ÷ 16 = ${boardFeetPerLog.toFixed(0)} per log</div>
+            <div class="formula-step">Total = ${Math.round(totalBoardFeet)} board feet</div>
+        `;
+        
+        document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+        
+        // Show results
+        document.getElementById('resultEmpty').style.display = 'none';
+        document.getElementById('resultDisplay').classList.add('active');
+        document.getElementById('ctaResult').classList.add('active');
+        
+        // Scroll to results on mobile
+        if (window.innerWidth <= 768) {
+            document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+    } catch (error) {
+        alert('Error calculating log weight. Please check your inputs.');
+        console.error(error);
+    }
+}
+
+function resetCalculator() {
+    document.getElementById('logDiameter').value = '12';
+    document.getElementById('logLength').value = '8';
+    document.getElementById('woodSpecies').value = 'pine';
+    document.getElementById('moistureCondition').value = 'green';
+    document.getElementById('logQuantity').value = '1';
+    document.getElementById('pricePerBoardFoot').value = '';
+    
+    updateMoistureContent();
+    
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateLogWeight();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

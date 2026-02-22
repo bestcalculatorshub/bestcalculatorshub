@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Limestone Calculator - Coverage, Weight & Volume | Free Gravel Calculator | CalcHub</title>
+    <meta name="description" content="Free limestone calculator for driveways, landscaping, and construction. Calculate coverage, weight, volume, and cost. Includes 8 limestone types and project estimator.">
+    <meta name="keywords" content="limestone calculator, gravel calculator, limestone coverage, crushed limestone, limestone weight, driveway calculator, landscaping calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/limestone-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/limestone-calculator">
+    <meta property="og:title" content="Limestone Calculator - Coverage, Weight & Volume">
+    <meta property="og:description" content="Calculate limestone instantly. Free, accurate, easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Limestone Calculator",
+        "description": "Calculate limestone coverage, weight, volume, and cost for driveways, landscaping, and construction projects. Supports 8 limestone types.",
+        "url": "https://calchub.com/construction/limestone-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   LIMESTONE CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   FEATURES: 8 Limestone Types + Project Calculator + Cost Estimator
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --brown: #92400e;
+    --brown-pale: #fef3c7;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+.limestone-section { background:var(--brown-pale); border:2px solid var(--brown); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.limestone-section-title { font-weight:600; color:var(--brown); margin-bottom:12px; font-size:0.95em; }
+
+.project-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.project-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.project-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.project-btn { background:var(--white); border:2px solid var(--border); padding:10px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; }
+.project-btn:hover { border-color:var(--purple); background:rgba(139, 92, 246, 0.05); }
+.project-btn.active { border-color:var(--purple); background:var(--purple); color:var(--white); }
+.project-icon { font-size:1.2em; margin-bottom:2px; }
+
+.depth-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.depth-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.depth-presets { display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; margin-bottom:12px; }
+.depth-btn { background:var(--white); border:2px solid var(--border); padding:8px 4px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.8em; }
+.depth-btn:hover { border-color:var(--blue); background:rgba(59, 130, 246, 0.05); }
+.depth-btn.active { border-color:var(--blue); background:var(--blue); color:var(--white); }
+
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-icon { font-size:3em; margin-bottom:12px; opacity:0.5; }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+
+.info-card { background:var(--blue-pale); border-left:4px solid var(--blue); padding:16px; border-radius:var(--radius); margin-bottom:20px; }
+.info-card-title { font-weight:600; color:var(--blue); margin-bottom:8px; font-size:0.9em; }
+.info-card-text { font-size:0.85em; color:var(--slate); line-height:1.6; }
+
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:15000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .project-grid { grid-template-columns:1fr; gap:6px; }
+    .project-btn { padding:8px; font-size:0.8em; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+    .depth-presets { grid-template-columns:repeat(2, 1fr); }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; line-height:1.3; }
+    .hero-desc { font-size:0.88em; }
+    .calculator-container { padding:16px 12px; border-radius:8px; }
+    .result-section { padding:16px; }
+    .input-section h2, .result-section h2 { font-size:1.2em; }
+    .input-field, .select-field { padding:10px 12px; font-size:0.95em; }
+    .project-btn { padding:6px 4px; font-size:0.75em; }
+    .project-icon { font-size:1em; }
+    .depth-btn { padding:6px 4px; font-size:0.75em; }
+    .result-value { font-size:1.6em; }
+    .cost-value { font-size:1.3em; }
+    .result-item-value { font-size:1.1em; }
+    .content-section { padding:20px 12px; }
+    .cta-section { padding:24px 12px; }
+    .nav-brand { font-size:1.1em; }
+}
+
+@media (max-height:600px) and (orientation:landscape) {
+    .hero { padding:24px 16px; }
+    .hero h1 { font-size:1.5em; }
+    .calculator-container { padding:20px 16px; }
+    .result-section { padding:16px; }
+    .input-group { margin-bottom:12px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Limestone Calculator</span>
+        </nav>
+
+        <h1>Limestone Calculator</h1>
+        <p class="hero-desc">Calculate limestone coverage, weight, and volume for driveways, landscaping, and construction. <strong>Supports 8 limestone types with project-specific recommendations</strong>. Get accurate estimates for tons, cubic yards, and cost.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Project Details</h2>
+                
+                <!-- LIMESTONE TYPE SELECTOR -->
+                <div class="limestone-section">
+                    <div class="limestone-section-title">Limestone Type / Size</div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="limestoneType">Select Type</label>
+                        <select class="select-field" id="limestoneType">
+                            <option value="2700" selected>Crushed Limestone (#57) - 2700 lb/yd³</option>
+                            <option value="2500">Limestone Screenings - 2500 lb/yd³</option>
+                            <option value="2600">Limestone Base (#21A) - 2600 lb/yd³</option>
+                            <option value="2800">Limestone Rip Rap - 2800 lb/yd³</option>
+                            <option value="2550">Pea Gravel Limestone - 2550 lb/yd³</option>
+                            <option value="2650">Crushed Limestone (#8) - 2650 lb/yd³</option>
+                            <option value="2750">Limestone Ballast - 2750 lb/yd³</option>
+                            <option value="2400">Limestone Dust - 2400 lb/yd³</option>
+                        </select>
+                        <div class="input-hint">Different sizes have different densities and coverage</div>
+                    </div>
+                </div>
+
+                <!-- PROJECT TYPE -->
+                <div class="project-section">
+                    <div class="project-section-title">Quick Project Type (Optional)</div>
+                    <div class="project-grid">
+                        <button class="project-btn" onclick="selectProject('driveway')" id="btnDriveway">
+                            <div class="project-icon">🚗</div>
+                            <div>Driveway</div>
+                        </button>
+                        <button class="project-btn" onclick="selectProject('walkway')" id="btnWalkway">
+                            <div class="project-icon">🚶</div>
+                            <div>Walkway</div>
+                        </button>
+                        <button class="project-btn" onclick="selectProject('patio')" id="btnPatio">
+                            <div class="project-icon">🪑</div>
+                            <div>Patio</div>
+                        </button>
+                        <button class="project-btn" onclick="selectProject('landscaping')" id="btnLandscaping">
+                            <div class="project-icon">🌳</div>
+                            <div>Landscaping</div>
+                        </button>
+                    </div>
+                    <div class="input-hint">Helps suggest appropriate depth and type</div>
+                </div>
+
+                <!-- DEPTH PRESETS -->
+                <div class="depth-section">
+                    <div class="depth-section-title">Common Depth (Quick Select)</div>
+                    <div class="depth-presets">
+                        <button class="depth-btn" onclick="setDepth(2, 'in')">2"</button>
+                        <button class="depth-btn" onclick="setDepth(3, 'in')">3"</button>
+                        <button class="depth-btn" onclick="setDepth(4, 'in')">4"</button>
+                        <button class="depth-btn" onclick="setDepth(6, 'in')">6"</button>
+                        <button class="depth-btn" onclick="setDepth(8, 'in')">8"</button>
+                        <button class="depth-btn" onclick="setDepth(12, 'in')">12"</button>
+                    </div>
+                </div>
+
+                <!-- AREA DIMENSIONS -->
+                <div class="input-group">
+                    <label class="input-label" for="areaLength">Length</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="areaLength" placeholder="Enter length" min="0.1" step="0.1" value="50">
+                        <select class="select-field unit-select" id="areaLengthUnit">
+                            <option value="ft" selected>feet</option>
+                            <option value="in">inches</option>
+                            <option value="yd">yards</option>
+                            <option value="m">meters</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="areaWidth">Width</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="areaWidth" placeholder="Enter width" min="0.1" step="0.1" value="12">
+                        <select class="select-field unit-select" id="areaWidthUnit">
+                            <option value="ft" selected>feet</option>
+                            <option value="in">inches</option>
+                            <option value="yd">yards</option>
+                            <option value="m">meters</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="areaDepth">Depth / Thickness</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="areaDepth" placeholder="Enter depth" min="0.1" step="0.5" value="4">
+                        <select class="select-field unit-select" id="areaDepthUnit">
+                            <option value="in" selected>inches</option>
+                            <option value="ft">feet</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Typical: 2-4" for walkways, 4-6" for driveways, 6-8" for heavy use</div>
+                </div>
+
+                <!-- WASTE FACTOR -->
+                <div class="input-group">
+                    <label class="input-label" for="wasteFactor">Waste Factor / Extra (%)</label>
+                    <input type="number" class="input-field" id="wasteFactor" placeholder="Waste percentage" min="0" max="50" step="1" value="10">
+                    <div class="input-hint">Recommended: 5-15% for compaction and waste</div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerTon">Price per Ton (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerTon" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter limestone price for total cost estimate</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateLimestone()">Calculate Limestone</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">🪨</div>
+                    <div class="result-empty-text">Enter project details to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Limestone Needed</div>
+                        <div class="result-value"><span id="totalTons">0</span> <span class="result-unit">tons</span></div>
+                    </div>
+
+                    <!-- INFO CARD -->
+                    <div class="info-card">
+                        <div class="info-card-title">💡 Pro Tip</div>
+                        <div class="info-card-text" id="proTip">Standard coverage for your project type</div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Cubic Yards</div>
+                            <div class="result-item-value"><span id="cubicYards">0</span> yd³</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Cubic Feet</div>
+                            <div class="result-item-value"><span id="cubicFeet">0</span> ft³</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Total Pounds</div>
+                            <div class="result-item-value"><span id="totalPounds">0</span> lbs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Coverage Area</div>
+                            <div class="result-item-value"><span id="coverageArea">0</span> ft²</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Number of Bags</div>
+                            <div class="result-item-value"><span id="numBags">0</span> bags</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Truckloads</div>
+                            <div class="result-item-value"><span id="truckLoads">0</span> loads</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Limestone Calculator Guide</h2>
+        <div class="content-text">
+            <p>Calculating limestone needs is essential for driveways, walkways, landscaping, and construction projects. This comprehensive guide helps you determine exactly how much limestone to order, saving money and ensuring your project success.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Basic Limestone Formula</div>
+                <p><strong>Volume (yd³) = Length × Width × Depth ÷ 27</strong></p>
+                <p><strong>Weight (tons) = Volume × Density ÷ 2000</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Standard crushed limestone density ≈ 2700 lb/yd³ (1.35 tons/yd³)</p>
+            </div>
+
+            <p>Our calculator supports <strong>8 different limestone types</strong> with project-specific recommendations and waste factor calculations!</p>
+
+            <div class="content-more" id="contentMore">
+                <h3>Limestone Types and Densities</h3>
+                <p>Different limestone sizes and types have different densities and uses:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Type / Size</th>
+                                <th>Density (lb/yd³)</th>
+                                <th>Coverage</th>
+                                <th>Best Uses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Crushed Limestone #57</strong></td>
+                                <td>2700</td>
+                                <td>~100 ft²/ton @ 2"</td>
+                                <td>Driveways, drainage, decorative</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Screenings</strong></td>
+                                <td>2500</td>
+                                <td>~110 ft²/ton @ 2"</td>
+                                <td>Base material, walkways, compaction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Base #21A</strong></td>
+                                <td>2600</td>
+                                <td>~105 ft²/ton @ 2"</td>
+                                <td>Road base, foundations, parking lots</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Rip Rap</strong></td>
+                                <td>2800</td>
+                                <td>~95 ft²/ton @ 2"</td>
+                                <td>Erosion control, retaining walls</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pea Gravel Limestone</strong></td>
+                                <td>2550</td>
+                                <td>~108 ft²/ton @ 2"</td>
+                                <td>Landscaping, decorative pathways</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Crushed Limestone #8</strong></td>
+                                <td>2650</td>
+                                <td>~103 ft²/ton @ 2"</td>
+                                <td>Medium drainage, landscaping</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Ballast</strong></td>
+                                <td>2750</td>
+                                <td>~98 ft²/ton @ 2"</td>
+                                <td>Railroad beds, heavy drainage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Dust</strong></td>
+                                <td>2400</td>
+                                <td>~115 ft²/ton @ 2"</td>
+                                <td>Filler, top dressing, stables</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Recommended Depth by Project Type</h3>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Project Type</th>
+                                <th>Recommended Depth</th>
+                                <th>Limestone Type</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Residential Driveway</strong></td>
+                                <td>4-6 inches</td>
+                                <td>#57, #21A Base</td>
+                                <td>Add 2" base layer for best results</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heavy Use Driveway</strong></td>
+                                <td>6-8 inches</td>
+                                <td>#21A Base + #57 top</td>
+                                <td>Commercial or frequent heavy vehicles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Walkway / Path</strong></td>
+                                <td>2-3 inches</td>
+                                <td>Screenings, Pea Gravel</td>
+                                <td>Light foot traffic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Patio Base</strong></td>
+                                <td>4-6 inches</td>
+                                <td>Screenings, #21A</td>
+                                <td>Under pavers or flagstone</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Garden Bed</strong></td>
+                                <td>2-3 inches</td>
+                                <td>Pea Gravel, #57</td>
+                                <td>Decorative and weed suppression</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drainage Layer</strong></td>
+                                <td>6-12 inches</td>
+                                <td>#57, #8</td>
+                                <td>French drains, foundation drainage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shed Base</strong></td>
+                                <td>4-6 inches</td>
+                                <td>#21A, Screenings</td>
+                                <td>Compact well, use landscape fabric</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Practical Calculation Examples</h3>
+                
+                <p><strong>Example 1: Standard Driveway</strong></p>
+                <div class="info-box">
+                    <p>Calculate limestone for a 50' × 12' driveway, 4" deep:</p>
+                    <p><strong>Step 1:</strong> Convert depth to feet: 4" ÷ 12 = 0.333 ft</p>
+                    <p><strong>Step 2:</strong> Volume = 50 ft × 12 ft × 0.333 ft = 200 ft³</p>
+                    <p><strong>Step 3:</strong> Convert to cubic yards: 200 ÷ 27 = 7.41 yd³</p>
+                    <p><strong>Step 4:</strong> Weight = 7.41 yd³ × 2700 lb/yd³ = 20,000 lbs</p>
+                    <p><strong>Step 5:</strong> Tons = 20,000 ÷ 2000 = <strong>10 tons</strong></p>
+                    <p><strong>With 10% waste:</strong> 10 × 1.10 = <strong>11 tons needed</strong></p>
+                </div>
+
+                <p><strong>Example 2: Garden Path</strong></p>
+                <div class="info-box">
+                    <p>Pea gravel limestone path, 30' × 3', 2" deep:</p>
+                    <p><strong>Area:</strong> 30 ft × 3 ft = 90 ft²</p>
+                    <p><strong>Depth:</strong> 2" = 0.167 ft</p>
+                    <p><strong>Volume:</strong> 90 ft² × 0.167 ft = 15 ft³ = 0.56 yd³</p>
+                    <p><strong>Weight:</strong> 0.56 yd³ × 2550 lb/yd³ = 1,428 lbs = <strong>0.71 tons</strong></p>
+                    <p><strong>Alternative:</strong> 90 ft² ÷ 108 ft²/ton = <strong>0.83 tons</strong> (with waste)</p>
+                </div>
+
+                <p><strong>Example 3: Large Parking Area</strong></p>
+                <div class="info-box">
+                    <p>100' × 40' parking lot, 6" #21A base:</p>
+                    <p><strong>Volume:</strong> 100 × 40 × 0.5 = 2,000 ft³ = 74.07 yd³</p>
+                    <p><strong>Weight:</strong> 74.07 yd³ × 2600 lb/yd³ = 192,592 lbs</p>
+                    <p><strong>Tons:</strong> 192,592 ÷ 2000 = <strong>96.3 tons</strong></p>
+                    <p><strong>With 10% waste:</strong> 96.3 × 1.10 = <strong>106 tons</strong></p>
+                    <p><strong>Truckloads:</strong> 106 tons ÷ 10 tons/truck = <strong>~11 loads</strong></p>
+                </div>
+
+                <h3>Coverage Charts by Depth</h3>
+                
+                <p><strong>Crushed Limestone #57 (2700 lb/yd³) Coverage:</strong></p>
+                <ul>
+                    <li><strong>1 inch deep:</strong> 1 ton covers ~200 ft²</li>
+                    <li><strong>2 inches deep:</strong> 1 ton covers ~100 ft²</li>
+                    <li><strong>3 inches deep:</strong> 1 ton covers ~65 ft²</li>
+                    <li><strong>4 inches deep:</strong> 1 ton covers ~50 ft²</li>
+                    <li><strong>6 inches deep:</strong> 1 ton covers ~33 ft²</li>
+                    <li><strong>8 inches deep:</strong> 1 ton covers ~25 ft²</li>
+                </ul>
+
+                <p><strong>Quick Reference - Tons per 100 Square Feet:</strong></p>
+                <ul>
+                    <li>2" deep: 0.5 tons</li>
+                    <li>3" deep: 0.75 tons</li>
+                    <li>4" deep: 1.0 tons</li>
+                    <li>6" deep: 1.5 tons</li>
+                    <li>8" deep: 2.0 tons</li>
+                </ul>
+
+                <h3>Waste Factor Guidelines</h3>
+                <p>Always add extra material for these reasons:</p>
+                <ul>
+                    <li><strong>Compaction Loss:</strong> Material settles 10-15% when compacted</li>
+                    <li><strong>Irregular Areas:</strong> Non-rectangular areas waste 5-10%</li>
+                    <li><strong>Uneven Ground:</strong> Dips and hills require 5-15% extra</li>
+                    <li><strong>Spillage:</strong> Delivery and spreading loses 2-5%</li>
+                    <li><strong>Future Repairs:</strong> Keep 5-10% for maintenance</li>
+                    <li><strong>Recommended Total:</strong> 10-20% for most projects</li>
+                </ul>
+
+                <h3>Limestone Size Guide</h3>
+                
+                <p><strong>Common Sizes Explained:</strong></p>
+                <ul>
+                    <li><strong>#57 Stone:</strong> 3/4" to 1" - Most popular for driveways</li>
+                    <li><strong>#8 Stone:</strong> 3/8" to 1/2" - Good for walkways and drainage</li>
+                    <li><strong>#10 Screenings:</strong> Dust to 1/4" - Excellent base, compacts well</li>
+                    <li><strong>#21A:</strong> Mixed sizes 0-1" - Road base material</li>
+                    <li><strong>Pea Gravel:</strong> 1/4" to 3/8" - Smooth, decorative</li>
+                    <li><strong>Rip Rap:</strong> 4" to 24" - Large, erosion control</li>
+                </ul>
+
+                <h3>Cost Estimating Guide (2024 Averages)</h3>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Price Range (per ton)</th>
+                                <th>Delivery Cost</th>
+                                <th>Total Estimate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Crushed Limestone #57</strong></td>
+                                <td>$15 - $30</td>
+                                <td>$50 - $150</td>
+                                <td>Varies by region</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Screenings</strong></td>
+                                <td>$18 - $35</td>
+                                <td>$50 - $150</td>
+                                <td>Base material</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone Base #21A</strong></td>
+                                <td>$20 - $40</td>
+                                <td>$50 - $150</td>
+                                <td>Road grade quality</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pea Gravel Limestone</strong></td>
+                                <td>$25 - $50</td>
+                                <td>$50 - $150</td>
+                                <td>Decorative premium</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rip Rap</strong></td>
+                                <td>$30 - $60</td>
+                                <td>$75 - $200</td>
+                                <td>Specialty material</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Bagged vs. Bulk Limestone</h3>
+                
+                <p><strong>Bagged Limestone (50 lb bags):</strong></p>
+                <ul>
+                    <li>Cost: $3-6 per bag (50 lbs = 0.025 tons)</li>
+                    <li>Coverage: ~0.5 ft² @ 4" deep per bag</li>
+                    <li>40 bags = 1 ton = $120-240</li>
+                    <li>Best for: Small projects under 1 ton</li>
+                    <li>Advantage: No delivery fee, buy as needed</li>
+                    <li>Disadvantage: 3-5× more expensive than bulk</li>
+                </ul>
+
+                <p><strong>Bulk Limestone (by the ton):</strong></p>
+                <ul>
+                    <li>Cost: $15-40 per ton delivered</li>
+                    <li>Minimum order: Usually 5-10 tons</li>
+                    <li>Best for: Projects over 1 ton</li>
+                    <li>Advantage: Much cheaper per ton</li>
+                    <li>Disadvantage: Delivery fee, minimum orders</li>
+                </ul>
+
+                <h3>Truck Load Sizes</h3>
+                <ul>
+                    <li><strong>Small Dump Truck:</strong> 5 tons (6-7 yd³)</li>
+                    <li><strong>Standard Dump Truck:</strong> 10 tons (12-14 yd³)</li>
+                    <li><strong>Large Dump Truck:</strong> 15-20 tons (18-24 yd³)</li>
+                    <li><strong>Tri-Axle:</strong> 20-25 tons (25-30 yd³)</li>
+                    <li><strong>Semi Trailer:</strong> 25-30 tons (30-35 yd³)</li>
+                </ul>
+
+                <h3>Installation Tips</h3>
+                
+                <p><strong>Site Preparation:</strong></p>
+                <ul>
+                    <li>Remove grass, weeds, and organic material</li>
+                    <li>Excavate to proper depth (limestone depth + base)</li>
+                    <li>Grade for proper drainage (2% slope minimum)</li>
+                    <li>Install landscape fabric to prevent weed growth</li>
+                    <li>Ensure stable soil - add base if soft or clay</li>
+                </ul>
+
+                <p><strong>Installation Steps:</strong></p>
+                <ol>
+                    <li>Excavate area 2" deeper than final grade</li>
+                    <li>Compact subgrade thoroughly</li>
+                    <li>Lay landscape fabric (optional but recommended)</li>
+                    <li>Spread limestone in 2-3" layers</li>
+                    <li>Compact each layer with plate compactor</li>
+                    <li>Water lightly to help compaction</li>
+                    <li>Add final layer and compact again</li>
+                    <li>Rake smooth and roll final surface</li>
+                </ol>
+
+                <p><strong>Compaction Equipment:</strong></p>
+                <ul>
+                    <li><strong>Hand Tamper:</strong> Small areas under 50 ft²</li>
+                    <li><strong>Plate Compactor:</strong> Driveways and paths (rent $50-80/day)</li>
+                    <li><strong>Roller Compactor:</strong> Large areas, parking lots</li>
+                    <li><strong>Water Truck:</strong> Helps bind and compact screenings</li>
+                </ul>
+
+                <h3>Maintenance Schedule</h3>
+                <ul>
+                    <li><strong>Monthly:</strong> Rake to redistribute material</li>
+                    <li><strong>Seasonally:</strong> Add 1/2-1" fresh limestone to high-traffic areas</li>
+                    <li><strong>Annually:</strong> Grade and roll entire surface</li>
+                    <li><strong>Every 2-3 years:</strong> Add 1-2" new layer and compact</li>
+                    <li><strong>As needed:</strong> Fill ruts, potholes, and low spots</li>
+                </ul>
+
+                <h3>Common Problems and Solutions</h3>
+                
+                <p><strong>Rutting and Potholes:</strong></p>
+                <ul>
+                    <li>Cause: Insufficient base, poor compaction, drainage issues</li>
+                    <li>Fix: Fill with fresh limestone, compact thoroughly</li>
+                    <li>Prevention: Proper base depth, good drainage, regular maintenance</li>
+                </ul>
+
+                <p><strong>Limestone Migrating/Spreading:</strong></p>
+                <ul>
+                    <li>Cause: No edge restraint, too much traffic on edges</li>
+                    <li>Fix: Install edge restraints (timbers, pavers, edging)</li>
+                    <li>Prevention: Border material, proper grading</li>
+                </ul>
+
+                <p><strong>Washout from Rain:</strong></p>
+                <ul>
+                    <li>Cause: Poor drainage, wrong limestone type</li>
+                    <li>Fix: Improve drainage, use screenings as base</li>
+                    <li>Prevention: Crown driveway, install drainage ditches</li>
+                </ul>
+
+                <p><strong>Weeds Growing Through:</strong></p>
+                <ul>
+                    <li>Cause: No landscape fabric, insufficient depth</li>
+                    <li>Fix: Hand pull, use vinegar or weed killer</li>
+                    <li>Prevention: Landscape fabric, 4"+ depth, regular maintenance</li>
+                </ul>
+
+                <h3>Comparison with Other Driveway Materials</h3>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Cost (per ft²)</th>
+                                <th>Lifespan</th>
+                                <th>Maintenance</th>
+                                <th>Pros & Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Crushed Limestone</strong></td>
+                                <td>$1 - $3</td>
+                                <td>5-10 years</td>
+                                <td>Moderate</td>
+                                <td>✓ Cheap ✓ Easy DIY ✗ Needs topping</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gravel</strong></td>
+                                <td>$1 - $3</td>
+                                <td>5-10 years</td>
+                                <td>Moderate</td>
+                                <td>✓ Cheap ✓ Drainage ✗ Migrates</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Asphalt</strong></td>
+                                <td>$3 - $7</td>
+                                <td>15-20 years</td>
+                                <td>Low-Moderate</td>
+                                <td>✓ Smooth ✓ Durable ✗ Cracks ✗ Sealing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concrete</strong></td>
+                                <td>$4 - $10</td>
+                                <td>25-40 years</td>
+                                <td>Very Low</td>
+                                <td>✓ Permanent ✓ Clean ✗ Expensive ✗ Cracks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pavers</strong></td>
+                                <td>$10 - $25</td>
+                                <td>25-50 years</td>
+                                <td>Low</td>
+                                <td>✓ Beautiful ✓ Repairable ✗ Very expensive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Environmental Considerations</h3>
+                <ul>
+                    <li><strong>Permeable Surface:</strong> Limestone allows rainwater infiltration</li>
+                    <li><strong>Natural Material:</strong> No petroleum products like asphalt</li>
+                    <li><strong>Local Sourcing:</strong> Usually quarried locally, low transport emissions</li>
+                    <li><strong>Heat Island Effect:</strong> Light colored, reflects heat vs. dark asphalt</li>
+                    <li><strong>Wildlife Friendly:</strong> Permeable surface better for soil and insects</li>
+                    <li><strong>Alkaline pH:</strong> Can affect soil pH nearby (good for some plants)</li>
+                </ul>
+
+                <h3>When to Call a Professional</h3>
+                <p>Consider hiring contractors for:</p>
+                <ul>
+                    <li>Projects over 500 ft² or 10 tons</li>
+                    <li>Slopes over 10% grade</li>
+                    <li>Areas with poor drainage or soft soil</li>
+                    <li>Commercial or heavy vehicle use</li>
+                    <li>When you lack proper compaction equipment</li>
+                    <li>Complex grading or drainage issues</li>
+                </ul>
+
+                <h3>Frequently Asked Questions</h3>
+                
+                <p><strong>Q: How long does limestone last?</strong></p>
+                <p>A: With proper installation and maintenance, 5-10 years. Top dressing every 2-3 years extends life significantly.</p>
+
+                <p><strong>Q: Can I drive on limestone immediately?</strong></p>
+                <p>A: After proper compaction, yes. However, avoid heavy vehicles for first few days. Full settling takes 1-2 weeks.</p>
+
+                <p><strong>Q: What's the difference between #57 and screenings?</strong></p>
+                <p>A: #57 is 3/4" stone for top layer and drainage. Screenings are fine dust/powder for base that compacts hard.</p>
+
+                <p><strong>Q: Do I need landscape fabric?</strong></p>
+                <p>A: Recommended but not required. Fabric prevents weeds and keeps limestone from mixing with soil below.</p>
+
+                <p><strong>Q: How do I prevent dust?</strong></p>
+                <p>A: Use screenings as base (compacts hard), or spray with water/dust control additives. Some dust is normal.</p>
+
+                <p><strong>Q: Can I install limestone over grass?</strong></p>
+                <p>A: No. Always remove all organic material and excavate to proper depth. Grass will decompose and create soft spots.</p>
+
+                <p><strong>Q: What's the best depth for a driveway?</strong></p>
+                <p>A: Minimum 4 inches for light use, 6 inches for regular use, 8 inches for heavy vehicles. Add 2" screenings base for best results.</p>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction and landscaping calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Limestone Calculator - 99% Accurate
+// Supports 8 limestone types with project recommendations
+
+let selectedProject = null;
+
+function toFeet(value, unit) {
+    const conversions = {
+        'in': 1/12,
+        'ft': 1,
+        'yd': 3,
+        'm': 3.28084,
+        'cm': 0.0328084
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function selectProject(project) {
+    selectedProject = project;
+    
+    // Update button states
+    const projects = ['Driveway', 'Walkway', 'Patio', 'Landscaping'];
+    projects.forEach(p => {
+        const btn = document.getElementById('btn' + p);
+        if (btn) btn.classList.remove('active');
+    });
+    
+    const selectedBtn = document.getElementById('btn' + project.charAt(0).toUpperCase() + project.slice(1));
+    if (selectedBtn) selectedBtn.classList.add('active');
+    
+    // Set recommended depth and limestone type based on project
+    const recommendations = {
+        'driveway': { depth: 4, type: '2700', depthBtn: 3 },
+        'walkway': { depth: 2, type: '2550', depthBtn: 0 },
+        'patio': { depth: 4, type: '2500', depthBtn: 3 },
+        'landscaping': { depth: 3, type: '2550', depthBtn: 1 }
+    };
+    
+    const rec = recommendations[project];
+    if (rec) {
+        document.getElementById('areaDepth').value = rec.depth;
+        document.getElementById('limestoneType').value = rec.type;
+        
+        // Highlight recommended depth button
+        const depthBtns = document.querySelectorAll('.depth-btn');
+        depthBtns.forEach(btn => btn.classList.remove('active'));
+        if (depthBtns[rec.depthBtn]) {
+            depthBtns[rec.depthBtn].classList.add('active');
+        }
+    }
+}
+
+function setDepth(value, unit) {
+    document.getElementById('areaDepth').value = value;
+    document.getElementById('areaDepthUnit').value = unit;
+    
+    // Remove active state from all depth buttons
+    document.querySelectorAll('.depth-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Add active state to clicked button
+    event.target.classList.add('active');
+}
+
+function calculateLimestone() {
+    // Get density
+    const densityLbYd3 = parseFloat(document.getElementById('limestoneType').value);
+    
+    // Get dimensions in feet
+    const length = toFeet(parseFloat(document.getElementById('areaLength').value), document.getElementById('areaLengthUnit').value);
+    const width = toFeet(parseFloat(document.getElementById('areaWidth').value), document.getElementById('areaWidthUnit').value);
+    const depth = toFeet(parseFloat(document.getElementById('areaDepth').value), document.getElementById('areaDepthUnit').value);
+    
+    // Get waste factor
+    const wasteFactor = (parseFloat(document.getElementById('wasteFactor').value) || 0) / 100;
+    
+    // Get price per ton
+    const pricePerTon = parseFloat(document.getElementById('pricePerTon').value) || 0;
+    
+    if (length <= 0 || width <= 0 || depth <= 0 || isNaN(length) || isNaN(width) || isNaN(depth)) {
+        alert('Please enter valid dimensions');
+        return;
+    }
+    
+    // Calculate volume
+    const volumeFt3 = length * width * depth;
+    const volumeYd3 = volumeFt3 / 27;
+    
+    // Calculate weight
+    const weightLbs = volumeYd3 * densityLbYd3;
+    const weightTons = weightLbs / 2000;
+    
+    // Add waste factor
+    const weightTonsWithWaste = weightTons * (1 + wasteFactor);
+    const weightLbsWithWaste = weightTonsWithWaste * 2000;
+    
+    // Calculate coverage area
+    const coverageAreaFt2 = length * width;
+    
+    // Calculate number of 50lb bags needed
+    const numBags = Math.ceil(weightLbsWithWaste / 50);
+    
+    // Calculate number of truck loads (assuming 10 ton trucks)
+    const truckLoads = (weightTonsWithWaste / 10).toFixed(1);
+    
+    // Calculate cost
+    const totalCost = weightTonsWithWaste * pricePerTon;
+    
+    // Display results
+    document.getElementById('totalTons').textContent = weightTonsWithWaste.toFixed(2);
+    document.getElementById('cubicYards').textContent = volumeYd3.toFixed(2);
+    document.getElementById('cubicFeet').textContent = volumeFt3.toFixed(2);
+    document.getElementById('totalPounds').textContent = Math.round(weightLbsWithWaste).toLocaleString();
+    document.getElementById('coverageArea').textContent = coverageAreaFt2.toFixed(0);
+    document.getElementById('numBags').textContent = numBags;
+    document.getElementById('truckLoads').textContent = truckLoads;
+    
+    // Pro tip based on project
+    let proTip = `This will cover ${coverageAreaFt2.toFixed(0)} ft² at ${(depth * 12).toFixed(1)}" depth.`;
+    
+    if (selectedProject === 'driveway') {
+        proTip += ' Compact in 2-3 inch layers for best results. Consider adding landscape fabric underneath.';
+    } else if (selectedProject === 'walkway') {
+        proTip += ' Perfect for foot traffic. Add edge restraints to prevent spreading.';
+    } else if (selectedProject === 'patio') {
+        proTip += ' Compact well and top with screenings for a firm surface under pavers.';
+    } else if (selectedProject === 'landscaping') {
+        proTip += ' Great for decorative beds. Use landscape fabric to prevent weeds.';
+    } else {
+        if (weightTonsWithWaste > 20) {
+            proTip += ' Large project - consider professional delivery and installation.';
+        } else if (weightTonsWithWaste < 2) {
+            proTip += ' Small project - you might consider buying bagged material from a local store.';
+        }
+    }
+    
+    document.getElementById('proTip').textContent = proTip;
+    
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerTon > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costPerYd3 = totalCost / volumeYd3;
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${weightTonsWithWaste.toFixed(2)} tons × $${pricePerTon.toFixed(2)}/ton = $${totalCost.toFixed(2)}<br>
+            <em>Cost per cubic yard: $${costPerYd3.toFixed(2)}</em><br>
+            <em>Cost per square foot: $${(totalCost / coverageAreaFt2).toFixed(2)}</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+    
+    // Get limestone type name
+    const limestoneTypeSelect = document.getElementById('limestoneType');
+    const limestoneTypeName = limestoneTypeSelect.options[limestoneTypeSelect.selectedIndex].text.split(' - ')[0];
+    
+    // Formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Limestone Type:</strong> ${limestoneTypeName}</div>
+        <div class="formula-step"><strong>Density:</strong> ${densityLbYd3} lb/yd³ (${(densityLbYd3/2000).toFixed(2)} tons/yd³)</div>
+        <div class="formula-step"><strong>Area:</strong> ${length.toFixed(1)} ft × ${width.toFixed(1)} ft = ${coverageAreaFt2.toFixed(0)} ft²</div>
+        <div class="formula-step"><strong>Depth:</strong> ${(depth * 12).toFixed(2)} inches (${depth.toFixed(3)} feet)</div>
+        <div class="formula-step" style="margin-top:12px;"><strong>Volume Calculation:</strong></div>
+        <div class="formula-step">Volume = Length × Width × Depth</div>
+        <div class="formula-step">Volume = ${length.toFixed(1)} × ${width.toFixed(1)} × ${depth.toFixed(3)} = ${volumeFt3.toFixed(2)} ft³</div>
+        <div class="formula-step">Volume = ${volumeFt3.toFixed(2)} ft³ ÷ 27 = ${volumeYd3.toFixed(2)} yd³</div>
+        <div class="formula-step" style="margin-top:12px;"><strong>Weight Calculation:</strong></div>
+        <div class="formula-step">Weight = ${volumeYd3.toFixed(2)} yd³ × ${densityLbYd3} lb/yd³ = ${weightLbs.toFixed(0)} lbs</div>
+        <div class="formula-step">Weight = ${weightLbs.toFixed(0)} lbs ÷ 2000 = ${weightTons.toFixed(2)} tons</div>
+    `;
+    
+    if (wasteFactor > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>With ${(wasteFactor * 100).toFixed(0)}% Waste Factor:</strong></div>
+            <div class="formula-step">${weightTons.toFixed(2)} tons × ${(1 + wasteFactor).toFixed(2)} = <strong>${weightTonsWithWaste.toFixed(2)} tons</strong></div>
+        `;
+    } else {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Needed: ${weightTonsWithWaste.toFixed(2)} tons</strong></div>
+        `;
+    }
+    
+    if (pricePerTon > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${weightTonsWithWaste.toFixed(2)} tons × $${pricePerTon.toFixed(2)}/ton = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+    
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+    
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    // Reset project selection
+    selectedProject = null;
+    const projects = ['Driveway', 'Walkway', 'Patio', 'Landscaping'];
+    projects.forEach(p => {
+        const btn = document.getElementById('btn' + p);
+        if (btn) btn.classList.remove('active');
+    });
+    
+    // Reset limestone type
+    document.getElementById('limestoneType').value = '2700';
+    
+    // Reset dimensions
+    document.getElementById('areaLength').value = '50';
+    document.getElementById('areaWidth').value = '12';
+    document.getElementById('areaDepth').value = '4';
+    
+    // Reset waste factor and price
+    document.getElementById('wasteFactor').value = '10';
+    document.getElementById('pricePerTon').value = '';
+    
+    // Remove active state from depth buttons
+    document.querySelectorAll('.depth-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+    
+    // Reset result values
+    document.getElementById('totalTons').textContent = '0';
+    document.getElementById('cubicYards').textContent = '0';
+    document.getElementById('cubicFeet').textContent = '0';
+    document.getElementById('totalPounds').textContent = '0';
+    document.getElementById('coverageArea').textContent = '0';
+    document.getElementById('numBags').textContent = '0';
+    document.getElementById('truckLoads').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateLimestone();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

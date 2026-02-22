@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Square Feet to Cubic Yards Calculator - Free Area to Volume Converter | CalcHub</title>
+    <meta name="description" content="Free square feet to cubic yards calculator. Convert area to volume instantly by adding depth. Calculate concrete, gravel, mulch, and soil quantities. Perfect for landscaping and construction projects.">
+    <meta name="keywords" content="square feet to cubic yards, ft2 to yd3, area to volume calculator, concrete calculator, gravel calculator, mulch calculator, soil calculator, landscaping calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/square-feet-to-cubic-yards-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/square-feet-to-cubic-yards-calculator">
+    <meta property="og:title" content="Square Feet to Cubic Yards Calculator - Convert Area to Volume">
+    <meta property="og:description" content="Calculate volume in cubic yards from area and depth. Free, accurate, easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Square Feet to Cubic Yards Calculator",
+        "description": "Convert area in square feet to volume in cubic yards by adding depth. Calculate material quantities for construction and landscaping projects.",
+        "url": "https://calchub.com/construction/square-feet-to-cubic-yards-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   SQUARE FEET TO CUBIC YARDS CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+.material-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-top:24px; }
+.material-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--blue); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:16px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.material-result { background:linear-gradient(135deg, var(--blue-pale) 0%, #e0f2fe 100%); border:2px solid var(--blue); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.material-result.active { display:block; }
+.material-result-title { font-size:0.9em; color:var(--blue); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; text-align:center; }
+.material-result-content { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:5000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE - OPTIMIZED FOR ALL DEVICES ═══ */
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Square Feet to Cubic Yards</span>
+        </nav>
+
+        <h1>Square Feet to Cubic Yards Calculator</h1>
+        <p class="hero-desc">Convert area (square feet) to volume (cubic yards) by adding depth. Perfect for calculating concrete, gravel, mulch, soil, and other materials for construction and landscaping projects.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Enter Area and Depth</h2>
+                
+                <div class="input-group">
+                    <label class="input-label" for="area">Area</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="area" placeholder="Enter area" min="0.1" step="0.1" value="100">
+                        <select class="select-field unit-select" id="areaUnit">
+                            <option value="sqft" selected>sq ft</option>
+                            <option value="sqm">sq m</option>
+                            <option value="sqyd">sq yd</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Total area to cover</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="depth">Depth / Thickness</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="depth" placeholder="Enter depth" min="0.1" step="0.5" value="4">
+                        <select class="select-field unit-select" id="depthUnit">
+                            <option value="inches" selected>inches</option>
+                            <option value="feet">feet</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Thickness of material layer</div>
+                </div>
+
+                <!-- MATERIAL TYPE -->
+                <div class="material-section">
+                    <div class="material-section-title">
+                        Material Type <span class="bonus-badge">OPTIONAL</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="materialType">Select Material (for reference)</label>
+                        <select class="select-field" id="materialType">
+                            <option value="">-- Select Material --</option>
+                            <option value="concrete">Concrete</option>
+                            <option value="gravel">Gravel / Stone</option>
+                            <option value="sand">Sand</option>
+                            <option value="topsoil">Topsoil</option>
+                            <option value="mulch">Mulch</option>
+                            <option value="asphalt">Asphalt</option>
+                        </select>
+                        <div class="input-hint">Provides typical coverage info</div>
+                    </div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerYard">Price per Cubic Yard (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerYard" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter material price for total cost</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateVolume()">Calculate Cubic Yards</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter area and depth to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Volume Needed</div>
+                        <div class="result-value"><span id="totalCubicYards">0</span> <span class="result-unit">yd³</span></div>
+                    </div>
+
+                    <!-- MATERIAL INFO -->
+                    <div class="material-result" id="materialResult">
+                        <div class="material-result-title">Material Information</div>
+                        <div class="material-result-content" id="materialInfo"></div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Cubic Feet</div>
+                            <div class="result-item-value"><span id="cubicFeet">0</span> ft³</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Coverage at 1"</div>
+                            <div class="result-item-value"><span id="coverageOne">0</span> ft²</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Understanding Square Feet to Cubic Yards Conversion</h2>
+        <div class="content-text">
+            <p>Converting square feet to cubic yards is essential for construction and landscaping projects. While square feet measures area (length × width), cubic yards measures volume (length × width × depth). This calculator helps you bridge that gap by adding the depth dimension to your area measurement.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Quick Conversion Formula</div>
+                <p><strong>Cubic Yards = (Area in sq ft × Depth in inches) ÷ 324</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Or: Cubic Yards = (Area in sq ft × Depth in feet) ÷ 27</p>
+            </div>
+
+            <p>This conversion is crucial when ordering materials like concrete, gravel, topsoil, or mulch. Suppliers typically sell these materials by the cubic yard, but you measure your project area in square feet. Our calculator handles all the conversions automatically, including different unit combinations.</p>
+
+            <div class="content-more" id="contentMore">
+                <h3>Why Convert Square Feet to Cubic Yards?</h3>
+                <p>In construction and landscaping, you typically:</p>
+                <ul>
+                    <li><strong>Measure your project area</strong> in square feet (length × width)</li>
+                    <li><strong>Determine the depth</strong> you need (usually in inches)</li>
+                    <li><strong>Order materials</strong> in cubic yards from suppliers</li>
+                </ul>
+
+                <p>Without proper conversion, you risk ordering too little (requiring additional deliveries) or too much (wasting money and creating disposal issues).</p>
+
+                <h3>Common Applications</h3>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Typical Depth</th>
+                                <th>Coverage (1 cubic yard)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Concrete (slab)</strong></td>
+                                <td>4 inches</td>
+                                <td>81 sq ft</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gravel / Stone</strong></td>
+                                <td>2-4 inches</td>
+                                <td>108-162 sq ft</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mulch</strong></td>
+                                <td>2-3 inches</td>
+                                <td>108-162 sq ft</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Topsoil</strong></td>
+                                <td>6 inches</td>
+                                <td>54 sq ft</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sand (base)</strong></td>
+                                <td>2 inches</td>
+                                <td>162 sq ft</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Step-by-Step Calculation Example</h3>
+                <p>Let's calculate how much concrete is needed for a 10ft × 20ft patio that's 4 inches thick:</p>
+                
+                <div class="info-box">
+                    <p><strong>Step 1:</strong> Calculate area = 10 ft × 20 ft = 200 sq ft</p>
+                    <p><strong>Step 2:</strong> Convert depth to feet = 4 inches ÷ 12 = 0.333 feet</p>
+                    <p><strong>Step 3:</strong> Calculate volume = 200 sq ft × 0.333 ft = 66.67 cubic feet</p>
+                    <p><strong>Step 4:</strong> Convert to cubic yards = 66.67 ÷ 27 = <strong>2.47 cubic yards</strong></p>
+                    <p><strong>Result:</strong> Order 2.5 cubic yards of concrete</p>
+                </div>
+
+                <h3>Important Conversion Facts</h3>
+                <ul>
+                    <li><strong>1 cubic yard = 27 cubic feet</strong> (3ft × 3ft × 3ft)</li>
+                    <li><strong>1 cubic yard at 1 inch depth</strong> covers 324 square feet</li>
+                    <li><strong>1 cubic yard at 2 inches depth</strong> covers 162 square feet</li>
+                    <li><strong>1 cubic yard at 3 inches depth</strong> covers 108 square feet</li>
+                    <li><strong>1 cubic yard at 4 inches depth</strong> covers 81 square feet</li>
+                    <li><strong>1 cubic yard at 6 inches depth</strong> covers 54 square feet</li>
+                </ul>
+
+                <h3>Pro Tips for Accurate Material Ordering</h3>
+                <ul>
+                    <li><strong>Add 5-10% extra</strong> for waste, spillage, and irregular surfaces</li>
+                    <li><strong>Round up to the nearest half yard</strong> when ordering from suppliers</li>
+                    <li><strong>Confirm your measurements</strong> before ordering - returns are difficult</li>
+                    <li><strong>Check delivery minimums</strong> - some suppliers require minimum orders</li>
+                    <li><strong>Consider compaction</strong> - loose materials settle over time</li>
+                    <li><strong>Account for irregular shapes</strong> - break complex areas into rectangles</li>
+                </ul>
+
+                <h3>Material-Specific Considerations</h3>
+                
+                <p><strong>Concrete:</strong> Most concrete slabs are 4 inches thick. Driveways may need 6 inches. Always order slightly more than calculated.</p>
+                
+                <p><strong>Gravel:</strong> Depth depends on use - walkways need 2-3 inches, driveways need 4-6 inches. Consider the base layer separately.</p>
+                
+                <p><strong>Mulch:</strong> Typically 2-3 inches for flower beds. Refresh annually as mulch decomposes.</p>
+                
+                <p><strong>Topsoil:</strong> New lawns need 6 inches. Garden beds may need 8-12 inches for proper root depth.</p>
+
+                <h3>Cost Estimation Tips</h3>
+                <p>Material prices vary by region and season:</p>
+                <ul>
+                    <li><strong>Concrete:</strong> $100-$150 per cubic yard (delivered and mixed)</li>
+                    <li><strong>Gravel:</strong> $15-$75 per cubic yard (varies by type and size)</li>
+                    <li><strong>Mulch:</strong> $25-$50 per cubic yard</li>
+                    <li><strong>Topsoil:</strong> $20-$40 per cubic yard</li>
+                    <li><strong>Sand:</strong> $15-$40 per cubic yard</li>
+                </ul>
+                <p><strong>Note:</strong> Prices typically include delivery for orders over 3-5 cubic yards. Always get quotes from multiple suppliers.</p>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction and landscaping calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Square Feet to Cubic Yards Calculator - 99% Accurate
+
+// Material information database
+const MATERIALS = {
+    concrete: {
+        name: 'Concrete',
+        typicalDepth: '4 inches',
+        coverage1Yard: '81 sq ft at 4"',
+        weight: '4,000 lbs per cubic yard',
+        notes: 'Standard slab depth is 4 inches. Driveways may require 6 inches.'
+    },
+    gravel: {
+        name: 'Gravel / Stone',
+        typicalDepth: '2-4 inches',
+        coverage1Yard: '108-162 sq ft',
+        weight: '2,700 lbs per cubic yard',
+        notes: 'Walkways need 2-3 inches, driveways need 4-6 inches of compacted gravel.'
+    },
+    sand: {
+        name: 'Sand',
+        typicalDepth: '2 inches',
+        coverage1Yard: '162 sq ft at 2"',
+        weight: '2,600 lbs per cubic yard',
+        notes: 'Used as base layer. Compacts significantly - order 20% extra.'
+    },
+    topsoil: {
+        name: 'Topsoil',
+        typicalDepth: '6 inches',
+        coverage1Yard: '54 sq ft at 6"',
+        weight: '2,200 lbs per cubic yard',
+        notes: 'New lawns need 6 inches. Garden beds may need 8-12 inches.'
+    },
+    mulch: {
+        name: 'Mulch',
+        typicalDepth: '2-3 inches',
+        coverage1Yard: '108-162 sq ft',
+        weight: '600-800 lbs per cubic yard',
+        notes: 'Apply 2-3 inches for flower beds. Refresh annually as it decomposes.'
+    },
+    asphalt: {
+        name: 'Asphalt',
+        typicalDepth: '2-4 inches',
+        coverage1Yard: '108 sq ft at 3"',
+        weight: '4,050 lbs per cubic yard',
+        notes: 'Residential driveways typically use 2-3 inches over compacted base.'
+    }
+};
+
+// Unit conversion constants
+const CONVERSIONS = {
+    sqmToSqft: 10.7639,
+    sqydToSqft: 9,
+    inchesToFeet: 0.0833333,
+    cmToInches: 0.393701,
+    cubicFeetToYards: 0.037037
+};
+
+function convertAreaToSqFt(value, unit) {
+    if (unit === 'sqm') return value * CONVERSIONS.sqmToSqft;
+    if (unit === 'sqyd') return value * CONVERSIONS.sqydToSqft;
+    return value; // already in sqft
+}
+
+function convertDepthToFeet(value, unit) {
+    if (unit === 'inches') return value * CONVERSIONS.inchesToFeet;
+    if (unit === 'cm') return (value * CONVERSIONS.cmToInches) * CONVERSIONS.inchesToFeet;
+    return value; // already in feet
+}
+
+function calculateVolume() {
+    // Get inputs
+    const areaValue = parseFloat(document.getElementById('area').value);
+    const areaUnit = document.getElementById('areaUnit').value;
+    const depthValue = parseFloat(document.getElementById('depth').value);
+    const depthUnit = document.getElementById('depthUnit').value;
+    const materialType = document.getElementById('materialType').value;
+    const pricePerYard = parseFloat(document.getElementById('pricePerYard').value) || 0;
+
+    // Validation
+    if (!areaValue || areaValue <= 0) {
+        alert('Please enter a valid area');
+        return;
+    }
+    if (!depthValue || depthValue <= 0) {
+        alert('Please enter a valid depth');
+        return;
+    }
+
+    // Convert to standard units
+    const areaSqFt = convertAreaToSqFt(areaValue, areaUnit);
+    const depthFeet = convertDepthToFeet(depthValue, depthUnit);
+    const depthInches = depthFeet * 12;
+
+    // Calculate volume
+    const cubicFeet = areaSqFt * depthFeet;
+    const cubicYards = cubicFeet / 27;
+
+    // Calculate coverage for 1 inch depth
+    const coverageOneInch = cubicYards * 324; // 1 cubic yard covers 324 sq ft at 1 inch
+
+    // Calculate cost
+    const totalCost = cubicYards * pricePerYard;
+
+    // Display results
+    document.getElementById('totalCubicYards').textContent = cubicYards.toFixed(2);
+    document.getElementById('cubicFeet').textContent = cubicFeet.toFixed(2);
+    document.getElementById('coverageOne').textContent = coverageOneInch.toFixed(0);
+
+    // Display material info if selected
+    const materialResult = document.getElementById('materialResult');
+    if (materialType && MATERIALS[materialType]) {
+        const material = MATERIALS[materialType];
+        const materialInfo = `
+            <strong>${material.name} Information:</strong><br>
+            <strong>Typical Depth:</strong> ${material.typicalDepth}<br>
+            <strong>Coverage:</strong> ${material.coverage1Yard}<br>
+            <strong>Weight:</strong> ${material.weight}<br>
+            <strong>Notes:</strong> ${material.notes}
+        `;
+        document.getElementById('materialInfo').innerHTML = materialInfo;
+        materialResult.classList.add('active');
+    } else {
+        materialResult.classList.remove('active');
+    }
+
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerYard > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${cubicYards.toFixed(2)} cubic yards × $${pricePerYard.toFixed(2)}/yd³ = $${totalCost.toFixed(2)}<br>
+            <em>Tip: Order ${Math.ceil(cubicYards * 1.1 * 2) / 2} yards (with 10% waste allowance)</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+
+    // Create formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Formula:</strong> Cubic Yards = (Area × Depth) ÷ 27</div>
+        <div class="formula-step"><strong>Your Inputs (converted to standard units):</strong></div>
+        <div class="formula-step">• Area: ${areaSqFt.toFixed(2)} sq ft</div>
+        <div class="formula-step">• Depth: ${depthInches.toFixed(2)} inches (${depthFeet.toFixed(4)} feet)</div>
+    `;
+    
+    if (pricePerYard > 0) {
+        formulaExplanation += `<div class="formula-step">• Price: $${pricePerYard.toFixed(2)}/yd³</div>`;
+    }
+    
+    formulaExplanation += `
+        <div class="formula-step" style="margin-top:12px;"><strong>Step 1 - Calculate Volume in Cubic Feet:</strong></div>
+        <div class="formula-step">${areaSqFt.toFixed(2)} sq ft × ${depthFeet.toFixed(4)} ft = ${cubicFeet.toFixed(2)} cubic feet</div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Step 2 - Convert to Cubic Yards:</strong></div>
+        <div class="formula-step">${cubicFeet.toFixed(2)} cu ft ÷ 27 = <strong>${cubicYards.toFixed(2)} cubic yards</strong></div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Coverage Check:</strong></div>
+        <div class="formula-step">At 1 inch depth: ${coverageOneInch.toFixed(0)} sq ft covered</div>
+    `;
+    
+    if (pricePerYard > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${cubicYards.toFixed(2)} yd³ × $${pricePerYard.toFixed(2)}/yd³ = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    // Reset inputs
+    document.getElementById('area').value = '100';
+    document.getElementById('areaUnit').value = 'sqft';
+    document.getElementById('depth').value = '4';
+    document.getElementById('depthUnit').value = 'inches';
+    document.getElementById('materialType').value = '';
+    document.getElementById('pricePerYard').value = '';
+
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('materialResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+
+    // Reset values
+    document.getElementById('totalCubicYards').textContent = '0';
+    document.getElementById('cubicFeet').textContent = '0';
+    document.getElementById('coverageOne').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('materialInfo').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateVolume();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

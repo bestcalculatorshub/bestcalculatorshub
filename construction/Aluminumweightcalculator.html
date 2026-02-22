@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Aluminum Weight Calculator — 14 Alloys, 11 Shapes | Free &amp; Accurate | CalcHub</title>
+    <meta name="description" content="Free aluminum weight calculator supporting 14 alloys and 11 shapes. Get instant results in lbs, kg, and oz. Includes alloy density chart, shape formulas, and cost estimator.">
+    <meta name="keywords" content="aluminum weight calculator, aluminium weight calculator, aluminum density, aluminum alloy density chart, aluminum sheet weight, aluminum tube weight calculator, how to calculate aluminum weight, metal weight calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/aluminum-weight-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/aluminum-weight-calculator">
+    <meta property="og:title" content="Aluminum Weight Calculator — 14 Alloys, 11 Shapes | CalcHub">
+    <meta property="og:description" content="Free aluminum weight calculator. Instant results in lbs, kg, and oz. Alloy density chart, shape formulas, and cost estimator included.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Aluminum Weight Calculator",
+        "description": "Calculate weight of aluminum pieces based on alloy type and shape. Supports 14 alloy types and 11 different shapes.",
+        "url": "https://calchub.com/construction/aluminum-weight-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the weight of aluminum per cubic inch?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aluminum weighs 0.0975 pounds per cubic inch (2.7 g/cm³), based on the average density of 2700 kg/m³. Individual alloys range from 0.0939 lb/in³ (melted aluminum) to 0.1347 lb/in³ (Aluminum 3103)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a 4x8 sheet of aluminum weigh?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A 4×8 foot aluminum sheet weighs approximately 42 lbs at 1/8 inch thickness, 84 lbs at 1/4 inch, and 168 lbs at 1/2 inch, using the average aluminum density of 2700 kg/m³."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the density of aluminum 6061?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aluminum 6061 has a density of 2700 kg/m³ (2.70 g/cm³ or 0.0975 lb/in³). It is one of the most widely used structural aluminum alloys, found in aircraft frames, bicycle components, and scuba tanks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does aluminum weigh compared to steel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aluminum weighs about one-third of steel. Steel has a density of approximately 7.85 g/cm³ versus aluminum's 2.70 g/cm³, making aluminum roughly 65% lighter for the same volume."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate aluminum weight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To calculate aluminum weight: 1) Calculate the volume of your piece using the correct formula for its shape. 2) Multiply volume by the density of your specific alloy (average: 2700 kg/m³ or 0.0975 lb/in³). 3) Multiply by quantity if needed. Formula: Weight = Volume × Density × Quantity."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   ALUMINUM WEIGHT CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   FEATURES: 14 Alloys + 11 Shapes
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+.alloy-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.alloy-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.shape-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.shape-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.shape-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; }
+.shape-btn { background:var(--white); border:2px solid var(--border); padding:10px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; }
+.shape-btn:hover { border-color:var(--blue); background:rgba(59, 130, 246, 0.05); }
+.shape-btn.active { border-color:var(--blue); background:var(--blue); color:var(--white); }
+.shape-icon { font-size:1.3em; margin-bottom:2px; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+.shape-inputs { display:none; }
+.shape-inputs.active { display:block; }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:9000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .shape-grid { grid-template-columns:1fr 1fr; gap:6px; }
+    .shape-btn { padding:8px; font-size:0.8em; }
+    .shape-icon { font-size:1.1em; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Aluminum Weight Calculator</span>
+        </nav>
+
+        <h1>Aluminum Weight Calculator</h1>
+        <p class="hero-desc">Calculate aluminum weight from dimensions. <strong>Supports 14 aluminum alloys and 11 different shapes</strong> including sheets, tubes, spheres, wires, and more. Perfect for construction, manufacturing, and engineering projects.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Select Alloy and Shape</h2>
+                
+                <!-- ALLOY SELECTOR -->
+                <div class="alloy-section">
+                    <div class="alloy-section-title">Aluminum Alloy Type</div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="alloyType">Select Alloy</label>
+                        <select class="select-field" id="alloyType">
+                            <option value="2700" selected>Aluminum (average) - 2700 kg/m³</option>
+                            <option value="2600">Melted aluminum - 2600 kg/m³</option>
+                            <option value="2710">Aluminum 1050 - 2710 kg/m³</option>
+                            <option value="2720">Aluminum 1100 - 2720 kg/m³</option>
+                            <option value="3730">Aluminum 3103 - 3730 kg/m³</option>
+                            <option value="2700-5005">Aluminum 5005 - 2700 kg/m³</option>
+                            <option value="2650">Aluminum 5083 - 2650 kg/m³</option>
+                            <option value="2690-5251">Aluminum 5251 - 2690 kg/m³</option>
+                            <option value="2690-5454">Aluminum 5454 - 2690 kg/m³</option>
+                            <option value="2660">Aluminum 5754 - 2660 kg/m³</option>
+                            <option value="2700-6005">Aluminum 6005 - 2700 kg/m³</option>
+                            <option value="2700-6063">Aluminum 6063 - 2700 kg/m³</option>
+                            <option value="2700-6082">Aluminum 6082 - 2700 kg/m³</option>
+                            <option value="2800">Aluminum 7075 - 2800 kg/m³</option>
+                        </select>
+                        <div class="input-hint">Different alloys have different densities</div>
+                    </div>
+                </div>
+
+                <!-- SHAPE SELECTOR -->
+                <div class="shape-section">
+                    <div class="shape-section-title">Select Shape</div>
+                    <div class="shape-grid">
+                        <button class="shape-btn active" onclick="selectShape('rectangle')" id="btnRectangle">
+                            <div class="shape-icon">▭</div>
+                            <div>Rectangle</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('cylinder')" id="btnCylinder">
+                            <div class="shape-icon">⬤</div>
+                            <div>Cylinder</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('hexagon')" id="btnHexagon">
+                            <div class="shape-icon">⬡</div>
+                            <div>Hexagon</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('octagon')" id="btnOctagon">
+                            <div class="shape-icon">⬢</div>
+                            <div>Octagon</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('ring-prism')" id="btnRingPrism">
+                            <div class="shape-icon">◯</div>
+                            <div>Ring Prism</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('wire')" id="btnWire">
+                            <div class="shape-icon">─</div>
+                            <div>Wire</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('tube')" id="btnTube">
+                            <div class="shape-icon">◎</div>
+                            <div>Tube</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('sphere')" id="btnSphere">
+                            <div class="shape-icon">●</div>
+                            <div>Sphere</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('ring')" id="btnRing">
+                            <div class="shape-icon">⊚</div>
+                            <div>Ring/Torus</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('can')" id="btnCan">
+                            <div class="shape-icon">▯</div>
+                            <div>Can</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('other')" id="btnOther">
+                            <div class="shape-icon">?</div>
+                            <div>Other</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RECTANGLE INPUTS -->
+                <div class="shape-inputs active" id="rectangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="recLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recLength" placeholder="Enter length" min="0.01" step="0.1" value="10">
+                            <select class="select-field unit-select" id="recLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="recWidth">Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recWidth" placeholder="Enter width" min="0.01" step="0.1" value="6">
+                            <select class="select-field unit-select" id="recWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="recThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="recThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CYLINDER INPUTS -->
+                <div class="shape-inputs" id="cylinderInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="cylDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cylDiameter" placeholder="Enter diameter" min="0.01" step="0.1" value="4">
+                            <select class="select-field unit-select" id="cylDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="cylHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cylHeight" placeholder="Enter height" min="0.01" step="0.1" value="10">
+                            <select class="select-field unit-select" id="cylHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HEXAGON INPUTS -->
+                <div class="shape-inputs" id="hexagonInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="hexSide">Side Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hexSide" placeholder="Enter side length" min="0.01" step="0.1" value="2">
+                            <select class="select-field unit-select" id="hexSideUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hexLength">Length/Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hexLength" placeholder="Enter length" min="0.01" step="0.1" value="10">
+                            <select class="select-field unit-select" id="hexLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OCTAGON INPUTS -->
+                <div class="shape-inputs" id="octagonInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="octSide">Side Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="octSide" placeholder="Enter side length" min="0.01" step="0.1" value="2">
+                            <select class="select-field unit-select" id="octSideUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="octLength">Length/Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="octLength" placeholder="Enter length" min="0.01" step="0.1" value="10">
+                            <select class="select-field unit-select" id="octLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RING PRISM INPUTS -->
+                <div class="shape-inputs" id="ringPrismInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="rpOuterDia">Outer Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rpOuterDia" placeholder="Outer diameter" min="0.01" step="0.1" value="6">
+                            <select class="select-field unit-select" id="rpOuterDiaUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="rpInnerDia">Inner Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rpInnerDia" placeholder="Inner diameter" min="0.01" step="0.1" value="4">
+                            <select class="select-field unit-select" id="rpInnerDiaUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="rpHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rpHeight" placeholder="Height" min="0.01" step="0.1" value="8">
+                            <select class="select-field unit-select" id="rpHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WIRE INPUTS -->
+                <div class="shape-inputs" id="wireInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="wireDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="wireDiameter" placeholder="Wire diameter" min="0.001" step="0.01" value="0.125">
+                            <select class="select-field unit-select" id="wireDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="wireLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="wireLength" placeholder="Wire length" min="0.01" step="1" value="100">
+                            <select class="select-field unit-select" id="wireLengthUnit">
+                                <option value="in">inches</option>
+                                <option value="ft" selected>feet</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TUBE INPUTS -->
+                <div class="shape-inputs" id="tubeInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="tubeOuterDia">Outer Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="tubeOuterDia" placeholder="Outer diameter" min="0.01" step="0.1" value="2">
+                            <select class="select-field unit-select" id="tubeOuterDiaUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="tubeWallThickness">Wall Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="tubeWallThickness" placeholder="Wall thickness" min="0.001" step="0.01" value="0.125">
+                            <select class="select-field unit-select" id="tubeWallThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="tubeLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="tubeLength" placeholder="Tube length" min="0.01" step="1" value="10">
+                            <select class="select-field unit-select" id="tubeLengthUnit">
+                                <option value="in">inches</option>
+                                <option value="ft" selected>feet</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPHERE INPUTS -->
+                <div class="shape-inputs" id="sphereInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="sphereDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="sphereDiameter" placeholder="Sphere diameter" min="0.01" step="0.1" value="4">
+                            <select class="select-field unit-select" id="sphereDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RING/TORUS INPUTS -->
+                <div class="shape-inputs" id="ringInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="ringMajorDia">Major Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="ringMajorDia" placeholder="Major diameter" min="0.01" step="0.1" value="6">
+                            <select class="select-field unit-select" id="ringMajorDiaUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="ringMinorDia">Minor Diameter (tube thickness)</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="ringMinorDia" placeholder="Minor diameter" min="0.01" step="0.1" value="1">
+                            <select class="select-field unit-select" id="ringMinorDiaUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAN INPUTS -->
+                <div class="shape-inputs" id="canInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="canDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="canDiameter" placeholder="Can diameter" min="0.01" step="0.1" value="2.6">
+                            <select class="select-field unit-select" id="canDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="canHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="canHeight" placeholder="Can height" min="0.01" step="0.1" value="4.8">
+                            <select class="select-field unit-select" id="canHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="canThickness">Wall Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="canThickness" placeholder="Wall thickness" min="0.001" step="0.001" value="0.0043">
+                            <select class="select-field unit-select" id="canThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER (VOLUME) INPUTS -->
+                <div class="shape-inputs" id="otherInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="otherVolume">Volume</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="otherVolume" placeholder="Enter volume" min="0.001" step="0.1" value="1">
+                            <select class="select-field unit-select" id="otherVolumeUnit">
+                                <option value="in3" selected>in³</option>
+                                <option value="ft3">ft³</option>
+                                <option value="cm3">cm³</option>
+                                <option value="m3">m³</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Enter the volume directly if shape not listed</div>
+                    </div>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="input-group">
+                    <label class="input-label" for="quantity">Number of Pieces</label>
+                    <input type="number" class="input-field" id="quantity" placeholder="Number of pieces" min="1" step="1" value="1">
+                    <div class="input-hint">How many identical pieces</div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerPound">Price per Pound (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerPound" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter aluminum price for total cost estimate</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateWeight()">Calculate Weight</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Total Weight</div>
+                        <div class="result-value"><span id="totalWeight">0</span> <span class="result-unit">lbs</span></div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (kg)</div>
+                            <div class="result-item-value"><span id="weightKg">0</span> kg</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (ounces)</div>
+                            <div class="result-item-value"><span id="weightOz">0</span> oz</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Per Piece</div>
+                            <div class="result-item-value"><span id="perPiece">0</span> lbs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Volume</div>
+                            <div class="result-item-value"><span id="volume">0</span> in³</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══ CONTENT SECTION ═══ -->
+    <div class="content-section">
+        <h2>Aluminum Weight Calculator Guide</h2>
+        <div class="content-text">
+
+            <p>Whether you're a contractor planning material orders, a fabricator quoting a job, or an engineer running load calculations, knowing the exact weight of aluminum pieces is non-negotiable. Get it wrong and you're looking at overpaying for freight, failing a structural load spec, or under-ordering material for your project. Our aluminum weight calculator takes the guesswork out completely — pick your alloy, select your shape, enter dimensions, and you have your answer in seconds.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">The Core Aluminum Weight Formula</div>
+                <p><strong>Weight = Volume × Density × Quantity</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Average aluminum density: <strong>2700 kg/m³ &nbsp;|&nbsp; 2.70 g/cm³ &nbsp;|&nbsp; 0.0975 lb/in³</strong></p>
+                <p style="margin-top:6px; font-size:0.9em;">Alloy density range: 2600 kg/m³ (melted) to 3730 kg/m³ (Alloy 3103)</p>
+            </div>
+
+            <h3>How to Calculate Aluminum Weight in 3 Simple Steps</h3>
+
+            <p>Calculating aluminum weight manually is straightforward once you understand the process. Here's the method every engineer and fabricator uses:</p>
+
+            <p><strong>Step 1 — Find the Volume.</strong> Measure the three key dimensions of your aluminum piece — length, width, and thickness for flat stock; diameter and length for rods and tubes. Use the correct volume formula for your shape. A flat plate uses Length × Width × Thickness, while a solid cylinder uses π × (Diameter/2)² × Height.</p>
+
+            <p><strong>Step 2 — Choose the Right Density.</strong> Aluminum is a family of alloys, each with a slightly different density. The average density of aluminum is 2.7 g/cm³ (2700 kg/m³, or 0.0975 lb/in³), but individual alloys range from 2.60 g/cm³ for melted aluminum up to 3.73 g/cm³ for aluminum 3103. Always use the density for your specific alloy, not just the average.</p>
+
+            <p><strong>Step 3 — Multiply Volume × Density × Quantity.</strong> This gives you total weight. Our calculator handles all unit conversions between inches, feet, millimeters, centimeters, and meters — so you never need to fumble with conversion factors mid-calculation.</p>
+
+            <h3>The Aluminum Weight Formula Explained</h3>
+
+            <p>At its core, every aluminum weight calculation is built on one equation: <strong>Weight = Volume × Density.</strong> The density value is the key variable that changes your result for a given shape and size.</p>
+
+            <p>For practical calculations in imperial units, the working formula for a flat rectangular plate is:</p>
+
+            <div class="info-box">
+                <p><strong>Imperial:</strong> Weight (lbs) = Length (in) × Width (in) × Thickness (in) × 0.0975 lb/in³</p>
+                <p style="margin-top:8px;"><strong>Metric:</strong> Weight (kg) = Length (m) × Width (m) × Thickness (m) × 2700 kg/m³</p>
+            </div>
+
+            <p>One important note: the results from any weight calculator — including ours — are <em>theoretical weights</em> based on nominal dimensions and standard alloy densities. In practice, actual weight can vary slightly due to manufacturing tolerances and minor compositional variations. For critical structural applications, always confirm against certified material reports from your supplier.</p>
+
+            <!-- READ MORE SECTION STARTS HERE -->
+            <div class="content-more" id="contentMore">
+
+                <h3>Aluminum Alloy Density Chart — All 14 Alloys</h3>
+
+                <p>Different aluminum alloys have meaningfully different densities, which translates directly into different weights for pieces of identical dimensions. The table below covers all 14 alloys supported in our calculator:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Alloy</th>
+                                <th>Density (kg/m³)</th>
+                                <th>Density (g/cm³)</th>
+                                <th>Density (lb/in³)</th>
+                                <th>Common Uses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Aluminum (average)</strong></td>
+                                <td>2700</td>
+                                <td>2.70</td>
+                                <td>0.0975</td>
+                                <td>General estimation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Melted aluminum</strong></td>
+                                <td>2600</td>
+                                <td>2.60</td>
+                                <td>0.0939</td>
+                                <td>Die casting, foundry work</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 1050</strong></td>
+                                <td>2710</td>
+                                <td>2.71</td>
+                                <td>0.0979</td>
+                                <td>Chemical equipment, heat exchangers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 1100</strong></td>
+                                <td>2720</td>
+                                <td>2.72</td>
+                                <td>0.0982</td>
+                                <td>Sheet metal, cooking utensils, food packaging</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 3103</strong></td>
+                                <td>3730</td>
+                                <td>3.73</td>
+                                <td>0.1347</td>
+                                <td>Highest density alloy in this calculator</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 5005</strong></td>
+                                <td>2700</td>
+                                <td>2.70</td>
+                                <td>0.0975</td>
+                                <td>Architectural trim, anodized panels</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 5083</strong></td>
+                                <td>2650</td>
+                                <td>2.65</td>
+                                <td>0.0957</td>
+                                <td>Marine hulls, pressure vessels, cryogenic tanks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 5251</strong></td>
+                                <td>2690</td>
+                                <td>2.69</td>
+                                <td>0.0972</td>
+                                <td>Automotive, marine applications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 5454</strong></td>
+                                <td>2690</td>
+                                <td>2.69</td>
+                                <td>0.0972</td>
+                                <td>Road tankers, dump truck bodies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 5754</strong></td>
+                                <td>2660</td>
+                                <td>2.66</td>
+                                <td>0.0961</td>
+                                <td>Automotive body panels, flooring</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 6005</strong></td>
+                                <td>2700</td>
+                                <td>2.70</td>
+                                <td>0.0975</td>
+                                <td>Structural extrusions, ladders</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 6063</strong></td>
+                                <td>2700</td>
+                                <td>2.70</td>
+                                <td>0.0975</td>
+                                <td>Window frames, door frames, irrigation tubing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 6082</strong></td>
+                                <td>2700</td>
+                                <td>2.70</td>
+                                <td>0.0975</td>
+                                <td>High-strength structural members</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum 7075</strong></td>
+                                <td>2800</td>
+                                <td>2.80</td>
+                                <td>0.1011</td>
+                                <td>Aircraft structures, bicycle frames, firearms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>The practical takeaway: for most structural and architectural work, 2700 kg/m³ works as a reliable default. Where it really matters is at the extremes — alloy 3103 is nearly 40% denser than alloy 5083, meaning two identically sized pieces can have a 40% weight difference from alloy choice alone. If your application is weight-sensitive — aerospace, automotive lightweighting, or marine — always confirm the density for your exact alloy.</p>
+
+                <h3>Aluminum Weight by Shape — Formulas and Real Examples</h3>
+
+                <p>Our calculator supports 11 different shapes. Here's the volume formula behind each one, along with the most common real-world applications:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Shape</th>
+                                <th>Volume Formula</th>
+                                <th>Common Applications</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Rectangle (Plate/Sheet)</strong></td>
+                                <td>L × W × T</td>
+                                <td>Sheets, plates, panels, siding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cylinder (Rod/Bar)</strong></td>
+                                <td>π × (D/2)² × H</td>
+                                <td>Solid rods, bars, columns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hexagon Prism</strong></td>
+                                <td>(3√3/2) × s² × L</td>
+                                <td>Hex bar stock, bolt blanks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Octagon Prism</strong></td>
+                                <td>2(1+√2) × s² × L</td>
+                                <td>Octagonal structural bars</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ring Prism (Hollow Cyl.)</strong></td>
+                                <td>π × (R² − r²) × H</td>
+                                <td>Hollow cylinders, pipe sleeves, spacers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wire</strong></td>
+                                <td>π × (D/2)² × L</td>
+                                <td>Electrical wire, welding wire, fencing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tube</strong></td>
+                                <td>π × (R_outer² − R_inner²) × L</td>
+                                <td>Structural tubing, handrails, bicycle frames</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sphere</strong></td>
+                                <td>(4/3) × π × (D/2)³</td>
+                                <td>Decorative balls, valve components</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ring / Torus</strong></td>
+                                <td>2π² × R_major × r_minor²</td>
+                                <td>Gaskets, O-rings, seals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Can</strong></td>
+                                <td>Cylinder wall + 2 circular ends</td>
+                                <td>Beverage cans, containers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Other (Custom)</strong></td>
+                                <td>Enter volume directly</td>
+                                <td>Irregular castings, complex profiles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><strong>Real Example — Aluminum Tube:</strong> A 2" outer diameter tube with 0.125" wall thickness and a 10-foot length in alloy 6063 (density 2700 kg/m³) — inner diameter = 1.75", volume = π × (1² − 0.875²) × 120" = 69.12 in³, weight = 69.12 × 0.0975 = <strong>6.74 lbs per tube.</strong></p>
+
+                <p><strong>Real Example — Aluminum Can:</strong> A standard 12 oz beverage can (2.6" diameter, 4.8" height, 0.0043" wall) weighs approximately <strong>0.5 oz (0.03 lbs)</strong>. That means roughly 33 empty aluminum cans add up to one pound.</p>
+
+                <h3>How Much Does a 4×8 Sheet of Aluminum Weigh?</h3>
+
+                <p>This is one of the most searched aluminum weight questions online. The answer changes based on thickness — here are the standard weights for a 4' × 8' (48" × 96") sheet using the average aluminum density of 2700 kg/m³:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Thickness</th>
+                                <th>Gauge Equivalent</th>
+                                <th>Sheet Weight (lbs)</th>
+                                <th>Sheet Weight (kg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0.032"</td><td>20 gauge</td><td>~11 lbs</td><td>~5 kg</td></tr>
+                            <tr><td>0.040"</td><td>18 gauge</td><td>~14 lbs</td><td>~6.3 kg</td></tr>
+                            <tr><td>0.063"</td><td>16 gauge</td><td>~21 lbs</td><td>~9.7 kg</td></tr>
+                            <tr><td>0.080"</td><td>—</td><td>~27 lbs</td><td>~12.3 kg</td></tr>
+                            <tr><td>0.125" (1/8")</td><td>—</td><td>~42 lbs</td><td>~19 kg</td></tr>
+                            <tr><td>0.190"</td><td>—</td><td>~64 lbs</td><td>~29 kg</td></tr>
+                            <tr><td>0.250" (1/4")</td><td>—</td><td>~84 lbs</td><td>~38 kg</td></tr>
+                            <tr><td>0.375" (3/8")</td><td>—</td><td>~126 lbs</td><td>~57 kg</td></tr>
+                            <tr><td>0.500" (1/2")</td><td>—</td><td>~168 lbs</td><td>~76 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>For alloy 7075 (density 2800 kg/m³), add approximately 3.7% to these figures. For lighter alloys like 5083 (2650 kg/m³), subtract about 1.9%. For any non-standard size or thickness, use the calculator above for an exact result.</p>
+
+                <h3>Aluminum vs Steel: Weight Comparison</h3>
+
+                <p>The biggest reason aluminum gets specified over steel in transportation, aerospace, and portable structures is weight. Here's a direct density comparison across common structural metals:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Metal</th>
+                                <th>Density (g/cm³)</th>
+                                <th>Density (kg/m³)</th>
+                                <th>Weight vs Aluminum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Aluminum (average)</strong></td><td>2.70</td><td>2700</td><td>— baseline —</td></tr>
+                            <tr><td>Titanium</td><td>4.50</td><td>4500</td><td>~1.7× heavier</td></tr>
+                            <tr><td>Steel (carbon)</td><td>7.85</td><td>7850</td><td>~2.9× heavier</td></tr>
+                            <tr><td>Copper</td><td>8.96</td><td>8960</td><td>~3.3× heavier</td></tr>
+                            <tr><td>Brass</td><td>8.50</td><td>8500</td><td>~3.1× heavier</td></tr>
+                            <tr><td>Lead</td><td>11.35</td><td>11350</td><td>~4.2× heavier</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>In practice, an aluminum structural member is roughly one-third the weight of an equivalent steel piece. That's a freight saving, a handling safety improvement, and often a structural load advantage when the supporting structure also benefits from carrying less total weight. Where steel still wins: raw tensile strength and cost per pound. But when you factor in aluminum's superior strength-to-weight ratio — particularly alloy 7075-T6 with tensile strength up to 83,000 psi — aluminum becomes the preferred choice for any weight-sensitive application.</p>
+
+                <h3>Aluminum Weight for Shipping and Handling</h3>
+
+                <p>Getting the weight right matters the moment you need to move your material. Here are the standard handling thresholds used across the industry:</p>
+
+                <ul>
+                    <li><strong>Under 50 lbs</strong> — Single-person lift. Ships as standard parcel or ground freight with no special requirements. Most aluminum sheet thicknesses up to 1/8" in smaller sizes fall here.</li>
+                    <li><strong>50–150 lbs</strong> — Two-person lift recommended. Standard 4×8 sheets at 1/4" and above. May require a lift gate for residential or non-dock deliveries.</li>
+                    <li><strong>150–500 lbs</strong> — Forklift required for safe handling. Bundles of aluminum tubes, large plate orders, or multiple heavy sheets. Ships as LTL freight, not parcel.</li>
+                    <li><strong>Over 500 lbs</strong> — Heavy-equipment rigging needed. Full pallets of sheet stock, large structural extrusions. Requires a freight carrier with flatbed or specialized equipment.</li>
+                </ul>
+
+                <p><strong>Dimensional Weight vs Actual Weight:</strong> Shipping carriers charge based on whichever is greater — actual scale weight or dimensional weight (package volume ÷ carrier's dimensional factor). Large, lightweight aluminum pieces such as thin sheets and hollow tubing frequently get billed on dimensional weight rather than scale weight. Always confirm with your carrier using both the actual weight from this calculator and the package dimensions before finalizing a freight quote.</p>
+
+                <p>For material cost estimates, enter your aluminum price per pound in the <strong>Cost Estimator</strong> section of the calculator above. It automatically multiplies your calculated weight by the unit price to give a total material cost — useful for quoting customers or budgeting projects before you place an order.</p>
+
+                <h3>Frequently Asked Questions About Aluminum Weight</h3>
+
+                <p><strong>What is the weight of aluminum per cubic inch?</strong><br>
+                The weight of aluminum per cubic inch is <strong>0.0975 pounds</strong> (2.7 grams), based on the average density of 2700 kg/m³. Individual alloys vary — aluminum 7075 weighs 0.1011 lb/in³, while aluminum 5083 weighs 0.0957 lb/in³.</p>
+
+                <p><strong>What is the density of aluminum 6061?</strong><br>
+                Aluminum 6061 has a density of <strong>2700 kg/m³</strong> (2.70 g/cm³ or 0.0975 lb/in³). It's one of the most widely used structural aluminum alloys, found in aircraft frames, bicycle components, yacht hulls, automotive parts, and scuba tanks.</p>
+
+                <p><strong>How much does aluminum weigh compared to steel?</strong><br>
+                Aluminum weighs roughly <strong>one-third of steel</strong>. Steel has a density of about 7.85 g/cm³ versus aluminum's 2.70 g/cm³, making aluminum approximately 65% lighter for the same volume.</p>
+
+                <p><strong>Why does alloy choice affect weight so much?</strong><br>
+                Aluminum alloys are created by adding elements — magnesium, silicon, copper, zinc, manganese — each with its own atomic weight. Alloys with heavier elements (like zinc in 7075) produce denser material. Alloys with significant magnesium content (5083, 5754) tend to be slightly lighter. The total alloying content rarely exceeds 3–5%, which is why most aluminum alloys stay close to 2700 kg/m³ — with alloy 3103 being a notable exception at 3730 kg/m³.</p>
+
+                <p><strong>Are the calculator results exact?</strong><br>
+                Our calculator produces <strong>theoretical weights</strong> based on nominal dimensions and published alloy densities. In practice, actual weight can vary 0.5–2% due to manufacturing tolerances in wall thickness, gauge variation in sheet, and minor compositional variance within the alloy specification. For precision applications, request a certified weight from your material supplier.</p>
+
+                <p><strong>What unit is aluminum typically sold in?</strong><br>
+                In North America, aluminum is sold and priced by the <strong>pound</strong>. In Europe and most of the world, it's sold by the <strong>kilogram</strong>. Our calculator displays results in both pounds and kilograms simultaneously, along with ounces and total cubic volume.</p>
+
+                <h3>Tips for Accurate Aluminum Weight Calculations</h3>
+
+                <ul>
+                    <li><strong>Verify actual dimensions, not just nominal.</strong> Tube labeled "2-inch" may have a true outer diameter of 2.000" or slightly less depending on the manufacturing standard. Whenever possible, measure the actual piece rather than relying solely on the labeled size.</li>
+                    <li><strong>Use the correct alloy density.</strong> If you don't know the exact alloy but know the series (6xxx for extrusions, 5xxx for marine plate), the average 2700 kg/m³ gives results within 2–3% for most common alloys.</li>
+                    <li><strong>Keep unit systems consistent.</strong> Mixing inches and millimeters in the same calculation is the single most common source of errors. Our calculator accepts each dimension in its own unit, so you can enter measurements exactly as they appear on your drawing.</li>
+                    <li><strong>Add 5–10% for material scrap.</strong> When using weight to estimate material purchases, cutting and machining generate waste. A conservative 10% overage on your weight-based order ensures you won't run short mid-project.</li>
+                    <li><strong>Use the quantity field for batch orders.</strong> Enter the number of identical pieces in the Quantity field to get the total batch weight — useful for freight quotes and cost calculations without having to multiply manually.</li>
+                    <li><strong>Confirm with your supplier for critical applications.</strong> For structural engineering, aerospace, or any safety-critical use, treat calculator output as an estimate and verify against the certified mill report from your material supplier.</li>
+                </ul>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>All weights are theoretical estimates based on nominal dimensions and standard alloy densities per published engineering references. Actual weights may vary due to manufacturing tolerances. Use results for planning and estimation; verify against certified mill reports for critical structural applications.</em></p>
+
+            </div><!-- end content-more -->
+
+        </div><!-- end content-text -->
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div><!-- end content-section -->
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction and metal calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div><!-- end main -->
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Aluminum Weight Calculator - 99% Accurate
+// Supports 14 alloys and 11 shapes
+
+let currentShape = 'rectangle';
+
+// Unit conversion functions
+function toMeters(value, unit) {
+    const conversions = {
+        'in': 0.0254,
+        'ft': 0.3048,
+        'mm': 0.001,
+        'cm': 0.01,
+        'm': 1
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function toCubicMeters(value, unit) {
+    const conversions = {
+        'in3': 0.000016387,
+        'ft3': 0.0283168,
+        'cm3': 0.000001,
+        'm3': 1
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function selectShape(shape) {
+    currentShape = shape;
+    
+    // Update button states
+    const shapes = ['Rectangle', 'Cylinder', 'Hexagon', 'Octagon', 'RingPrism', 'Wire', 'Tube', 'Sphere', 'Ring', 'Can', 'Other'];
+    shapes.forEach(s => {
+        const btn = document.getElementById('btn' + s);
+        if (btn) btn.classList.remove('active');
+    });
+    
+    const selectedBtn = document.getElementById('btn' + shape.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(''));
+    if (selectedBtn) selectedBtn.classList.add('active');
+    
+    // Hide all input sections
+    const inputSections = ['rectangleInputs', 'cylinderInputs', 'hexagonInputs', 'octagonInputs', 'ringPrismInputs', 'wireInputs', 'tubeInputs', 'sphereInputs', 'ringInputs', 'canInputs', 'otherInputs'];
+    inputSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+    });
+    
+    // Show selected input section
+    const shapeToInputMap = {
+        'rectangle': 'rectangleInputs',
+        'cylinder': 'cylinderInputs',
+        'hexagon': 'hexagonInputs',
+        'octagon': 'octagonInputs',
+        'ring-prism': 'ringPrismInputs',
+        'wire': 'wireInputs',
+        'tube': 'tubeInputs',
+        'sphere': 'sphereInputs',
+        'ring': 'ringInputs',
+        'can': 'canInputs',
+        'other': 'otherInputs'
+    };
+    
+    const inputId = shapeToInputMap[shape];
+    if (inputId) {
+        document.getElementById(inputId).classList.add('active');
+    }
+}
+
+function calculateWeight() {
+    // Get density
+    const densityKgM3 = parseFloat(document.getElementById('alloyType').value.split('-')[0]);
+    const densityLbIn3 = densityKgM3 * 0.0000361273; // kg/m³ to lb/in³
+    
+    // Get quantity
+    const quantity = parseInt(document.getElementById('quantity').value) || 1;
+    
+    // Get price
+    const pricePerPound = parseFloat(document.getElementById('pricePerPound').value) || 0;
+    
+    let volumeM3 = 0;
+    let volumeIn3 = 0;
+    let shapeDescription = '';
+    
+    // Calculate volume based on shape
+    try {
+        if (currentShape === 'rectangle') {
+            const L = toMeters(parseFloat(document.getElementById('recLength').value), document.getElementById('recLengthUnit').value);
+            const W = toMeters(parseFloat(document.getElementById('recWidth').value), document.getElementById('recWidthUnit').value);
+            const T = toMeters(parseFloat(document.getElementById('recThickness').value), document.getElementById('recThicknessUnit').value);
+            volumeM3 = L * W * T;
+            shapeDescription = 'Rectangular Plate/Sheet';
+            
+        } else if (currentShape === 'cylinder') {
+            const D = toMeters(parseFloat(document.getElementById('cylDiameter').value), document.getElementById('cylDiameterUnit').value);
+            const H = toMeters(parseFloat(document.getElementById('cylHeight').value), document.getElementById('cylHeightUnit').value);
+            volumeM3 = Math.PI * Math.pow(D / 2, 2) * H;
+            shapeDescription = 'Solid Cylinder';
+            
+        } else if (currentShape === 'hexagon') {
+            const s = toMeters(parseFloat(document.getElementById('hexSide').value), document.getElementById('hexSideUnit').value);
+            const L = toMeters(parseFloat(document.getElementById('hexLength').value), document.getElementById('hexLengthUnit').value);
+            volumeM3 = ((3 * Math.sqrt(3)) / 2) * Math.pow(s, 2) * L;
+            shapeDescription = 'Hexagonal Prism';
+            
+        } else if (currentShape === 'octagon') {
+            const s = toMeters(parseFloat(document.getElementById('octSide').value), document.getElementById('octSideUnit').value);
+            const L = toMeters(parseFloat(document.getElementById('octLength').value), document.getElementById('octLengthUnit').value);
+            volumeM3 = 2 * (1 + Math.sqrt(2)) * Math.pow(s, 2) * L;
+            shapeDescription = 'Octagonal Prism';
+            
+        } else if (currentShape === 'ring-prism') {
+            const OD = toMeters(parseFloat(document.getElementById('rpOuterDia').value), document.getElementById('rpOuterDiaUnit').value);
+            const ID = toMeters(parseFloat(document.getElementById('rpInnerDia').value), document.getElementById('rpInnerDiaUnit').value);
+            const H = toMeters(parseFloat(document.getElementById('rpHeight').value), document.getElementById('rpHeightUnit').value);
+            volumeM3 = Math.PI * (Math.pow(OD / 2, 2) - Math.pow(ID / 2, 2)) * H;
+            shapeDescription = 'Ring Prism (Hollow Cylinder)';
+            
+        } else if (currentShape === 'wire') {
+            const D = toMeters(parseFloat(document.getElementById('wireDiameter').value), document.getElementById('wireDiameterUnit').value);
+            const L = toMeters(parseFloat(document.getElementById('wireLength').value), document.getElementById('wireLengthUnit').value);
+            volumeM3 = Math.PI * Math.pow(D / 2, 2) * L;
+            shapeDescription = 'Wire/Cable';
+            
+        } else if (currentShape === 'tube') {
+            const OD = toMeters(parseFloat(document.getElementById('tubeOuterDia').value), document.getElementById('tubeOuterDiaUnit').value);
+            const wall = toMeters(parseFloat(document.getElementById('tubeWallThickness').value), document.getElementById('tubeWallThicknessUnit').value);
+            const L = toMeters(parseFloat(document.getElementById('tubeLength').value), document.getElementById('tubeLengthUnit').value);
+            const ID = OD - (2 * wall);
+            volumeM3 = Math.PI * (Math.pow(OD / 2, 2) - Math.pow(ID / 2, 2)) * L;
+            shapeDescription = 'Tube/Pipe';
+            
+        } else if (currentShape === 'sphere') {
+            const D = toMeters(parseFloat(document.getElementById('sphereDiameter').value), document.getElementById('sphereDiameterUnit').value);
+            volumeM3 = (4 / 3) * Math.PI * Math.pow(D / 2, 3);
+            shapeDescription = 'Sphere';
+            
+        } else if (currentShape === 'ring') {
+            const majorD = toMeters(parseFloat(document.getElementById('ringMajorDia').value), document.getElementById('ringMajorDiaUnit').value);
+            const minorD = toMeters(parseFloat(document.getElementById('ringMinorDia').value), document.getElementById('ringMinorDiaUnit').value);
+            volumeM3 = 2 * Math.pow(Math.PI, 2) * (majorD / 2) * Math.pow(minorD / 2, 2);
+            shapeDescription = 'Ring (Torus)';
+            
+        } else if (currentShape === 'can') {
+            const D = toMeters(parseFloat(document.getElementById('canDiameter').value), document.getElementById('canDiameterUnit').value);
+            const H = toMeters(parseFloat(document.getElementById('canHeight').value), document.getElementById('canHeightUnit').value);
+            const t = toMeters(parseFloat(document.getElementById('canThickness').value), document.getElementById('canThicknessUnit').value);
+            const wallVol = Math.PI * D * H * t;
+            const endVol = 2 * Math.PI * Math.pow(D / 2, 2) * t;
+            volumeM3 = wallVol + endVol;
+            shapeDescription = 'Can/Container';
+            
+        } else if (currentShape === 'other') {
+            volumeM3 = toCubicMeters(parseFloat(document.getElementById('otherVolume').value), document.getElementById('otherVolumeUnit').value);
+            shapeDescription = 'Custom Shape';
+        }
+    } catch (error) {
+        alert('Please enter valid dimensions');
+        return;
+    }
+    
+    if (volumeM3 <= 0 || isNaN(volumeM3)) {
+        alert('Please enter valid dimensions');
+        return;
+    }
+    
+    // Convert volume to cubic inches for display
+    volumeIn3 = volumeM3 / 0.000016387;
+    
+    // Calculate weights
+    const weightKg = volumeM3 * densityKgM3 * quantity;
+    const weightLbs = weightKg * 2.20462;
+    const weightOz = weightLbs * 16;
+    const weightPerPiece = weightLbs / quantity;
+    
+    // Calculate cost
+    const totalCost = weightLbs * pricePerPound;
+    
+    // Display results
+    document.getElementById('totalWeight').textContent = weightLbs.toFixed(2);
+    document.getElementById('weightKg').textContent = weightKg.toFixed(2);
+    document.getElementById('weightOz').textContent = weightOz.toFixed(2);
+    document.getElementById('perPiece').textContent = weightPerPiece.toFixed(2);
+    document.getElementById('volume').textContent = volumeIn3.toFixed(2);
+    
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerPound > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${weightLbs.toFixed(2)} lbs × $${pricePerPound.toFixed(2)}/lb = $${totalCost.toFixed(2)}<br>
+            <em>Cost per piece: $${(totalCost / quantity).toFixed(2)}</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+    
+    // Formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Shape:</strong> ${shapeDescription}</div>
+        <div class="formula-step"><strong>Alloy Density:</strong> ${densityKgM3} kg/m³ (${densityLbIn3.toFixed(6)} lb/in³)</div>
+        <div class="formula-step"><strong>Quantity:</strong> ${quantity} piece${quantity > 1 ? 's' : ''}</div>
+        <div class="formula-step" style="margin-top:12px;"><strong>Calculation:</strong></div>
+        <div class="formula-step">Volume per piece = ${volumeIn3.toFixed(2)} in³ (${volumeM3.toFixed(6)} m³)</div>
+        <div class="formula-step">Weight = Volume × Density × Quantity</div>
+        <div class="formula-step">Weight = ${weightPerPiece.toFixed(2)} lbs/piece × ${quantity} = <strong>${weightLbs.toFixed(2)} lbs</strong></div>
+    `;
+    
+    if (pricePerPound > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${weightLbs.toFixed(2)} lbs × $${pricePerPound.toFixed(2)}/lb = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+    
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+    
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    selectShape('rectangle');
+    document.getElementById('alloyType').value = '2700';
+    document.getElementById('quantity').value = '1';
+    document.getElementById('pricePerPound').value = '';
+    document.getElementById('recLength').value = '10';
+    document.getElementById('recWidth').value = '6';
+    document.getElementById('recThickness').value = '0.25';
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+    document.getElementById('totalWeight').textContent = '0';
+    document.getElementById('weightKg').textContent = '0';
+    document.getElementById('weightOz').textContent = '0';
+    document.getElementById('perPiece').textContent = '0';
+    document.getElementById('volume').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More toggle
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateWeight();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Fire Glass Calculator — How Much Fire Glass Do I Need? | CalcHub</title>
+    <meta name="description" content="Free fire glass calculator. Find out exactly how many pounds of fire glass you need for your fire pit or fireplace. Supports round, square, and rectangle shapes with 6 material types. Includes cost estimator and buying guide.">
+    <meta name="keywords" content="fire glass calculator, how much fire glass do i need, fire pit glass calculator, fire glass pounds calculator, how many pounds of fire glass, fire glass cost calculator, lava rock calculator, fire pit calculator, fire glass weight calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/fire-glass-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/fire-glass-calculator">
+    <meta property="og:title" content="Fire Glass Calculator — How Much Do You Need?">
+    <meta property="og:description" content="Calculate fire glass weight for your fire pit instantly. Free, accurate, includes cost estimator.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fire Glass Calculator",
+        "description": "Calculate the amount of fire glass needed for fire pits and fireplaces. Supports multiple shapes, glass types, and includes cost estimation.",
+        "url": "https://calchub.com/construction/fire-glass-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": { "@type": "Organization", "name": "CalcHub" }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much fire glass do I need for a fire pit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the formula: Pounds = (Area × Depth ÷ 1728) × Density. For a round 36-inch diameter fire pit with 3 inches of tempered fire glass (85 lb/ft³): radius = 18 inches, area = π × 18² = 1,017 sq in, volume = 1,017 × 3 ÷ 1,728 = 1.77 cu ft, weight = 1.77 × 85 = about 150 pounds. That's approximately 15 bags of 10-lb fire glass."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many pounds of fire glass per square foot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For reflective fire glass (90 lb/ft³) at 3-inch depth: (144 sq in × 3) ÷ 1,728 = 0.25 cu ft per sq ft, multiplied by 90 lb/ft³ = about 22.5 lbs per square foot. At 2-inch depth that drops to about 15 lbs per sq ft. Lava rock at 55 lb/ft³ uses significantly less weight per square foot."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What depth should I fill my fire pit with fire glass?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The standard fill depth is 2 to 3 inches. At 2 inches, the glass covers the burner and provides a clean look. At 3 inches you get a fuller, more luxurious appearance. Never exceed 4 inches — too much glass restricts gas flow and can reduce flame height. A common money-saving technique is to use 1-2 inches of lava rock as a base layer and top with 1-2 inches of fire glass."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is reflective or tempered fire glass better?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Reflective fire glass has a mirror-like coating that creates dramatically more sparkle and visual depth. It's the premium option at $3–$4.50 per pound. Tempered fire glass (without the reflective coating) still looks beautiful at $2–$3 per pound and is the most popular choice. Both are rated for the same high temperatures. Choose reflective for a luxury statement; choose tempered for excellent value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use regular glass or rocks in a fire pit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Regular glass, decorative glass marbles, and most natural rocks will crack, pop, or even explode when exposed to high heat. Only use fire-rated glass specifically designed for fire pits, which is rated to at least 1,200°F. The same applies to rocks — only use lava rock or fire-rated ceramic media in gas fire pits. River rocks can contain trapped moisture that turns to steam and shatters them."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+:root {
+    --navy: #0f172a; --slate: #1e293b; --slate-light: #334155; --muted: #64748b;
+    --muted-light: #94a3b8; --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
+    --teal: #0d9488; --teal-light: #14b8a6; --teal-pale: #ccfbf1;
+    --green: #10b981; --orange: #f97316; --orange-pale: #ffedd5;
+    --purple: #8b5cf6; --purple-pale: #ede9fe;
+    --blue: #3b82f6; --blue-pale: #dbeafe;
+    --red: #ef4444; --red-pale: #fee2e2;
+    --yellow: #eab308; --yellow-pale: #fef9c3;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px; --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+@media (max-width:768px) { input, select, button { font-size:16px; } }
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+.shape-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.shape-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.shape-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+.shape-btn { background:var(--white); border:2px solid var(--border); padding:12px 8px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; min-height:44px; }
+.shape-btn:hover { border-color:var(--blue); }
+.shape-btn.active { border-color:var(--blue); background:var(--blue); color:var(--white); }
+.shape-icon { font-size:1.5em; margin-bottom:4px; }
+
+.glass-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.glass-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.glass-type-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+.glass-type-btn { background:var(--white); border:2px solid var(--border); padding:10px 12px; border-radius:var(--radius); cursor:pointer; text-align:left; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; display:flex; justify-content:space-between; align-items:center; min-height:44px; }
+.glass-type-btn:hover { border-color:var(--purple); }
+.glass-type-btn.active { border-color:var(--purple); background:var(--purple); color:var(--white); }
+.glass-density { font-size:0.8em; opacity:0.9; }
+
+.depth-section { background:var(--yellow-pale); border:2px solid var(--yellow); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.depth-section-title { font-weight:600; color:#ca8a04; margin-bottom:12px; font-size:0.95em; }
+.depth-presets { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:12px; }
+.depth-preset-btn { background:var(--white); border:2px solid var(--border); padding:8px 4px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.8em; min-height:44px; }
+.depth-preset-btn:hover { border-color:var(--yellow); }
+.depth-preset-btn.active { border-color:var(--yellow); background:rgba(234,179,8,0.1); }
+
+.cost-section { background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%); border:2px solid var(--green); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.cost-section-title { font-weight:600; color:#047857; margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.price-input-row { display:flex; gap:8px; align-items:center; }
+.dollar-sign { font-size:1.1em; color:var(--slate); padding:0 4px; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); }
+
+.shape-inputs { display:none; }
+.shape-inputs.active { display:block; }
+
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-icon { font-size:3em; margin-bottom:12px; opacity:0.5; }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.details-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.detail-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; border:1px solid var(--border); }
+.detail-icon { font-size:1.8em; margin-bottom:8px; }
+.detail-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.detail-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.detail-unit { font-size:0.7em; color:var(--muted); margin-left:2px; }
+.cost-result { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-result.active { display:block; }
+.cost-result-main { text-align:center; margin-bottom:16px; }
+.cost-result-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-result-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); }
+
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul, .content-text ol { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.warning-box { background:var(--orange-pale); border-left:4px solid var(--orange); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.warning-box-title { font-weight:600; color:var(--orange); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; min-width:480px; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:10000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); }
+
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; } .hero { padding:40px 20px; } .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; } .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .details-grid { grid-template-columns:1fr; } .result-value { font-size:2em; }
+    .content-section { padding:32px 24px; } .cta-section { padding:32px 24px; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .shape-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; } .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; } .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; } .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; } .result-section { padding:20px; }
+    .content-section { padding:24px 16px; } .cta-section { padding:28px 16px; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; } .footer-inner { padding:40px 16px 20px; }
+    .depth-presets { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; } .result-value { font-size:1.8em; }
+    .input-row { flex-direction:column; } .unit-select { width:100%; }
+    .shape-grid { grid-template-columns:1fr; } .price-input-row { flex-direction:column; align-items:stretch; }
+}
+@media (max-width:400px) { .hero h1 { font-size:1.3em; } .calculator-container { padding:16px 12px; } .result-section { padding:16px 12px; } }
+@media print { .header, .footer, .cta-section, .read-more-btn { display:none; } .content-more { max-height:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Fire Glass Calculator</span>
+        </nav>
+        <h1>Fire Glass Calculator</h1>
+        <p class="hero-desc">Find out exactly how many pounds of fire glass you need for your fire pit or fireplace. <strong>Supports round, square, and rectangular shapes with 6 material types — reflective glass, tempered glass, lava rock, and more.</strong> Includes cost estimator and fill depth guide.</p>
+    </div>
+</section>
+
+<div class="main">
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-section">
+                <h2>Fire Pit Details</h2>
+                
+                <div class="shape-section">
+                    <div class="shape-section-title">🔥 Fire Pit Shape</div>
+                    <div class="shape-grid">
+                        <button class="shape-btn active" onclick="selectShape('round')" id="btnRound"><div class="shape-icon">⭕</div><div>Round</div></button>
+                        <button class="shape-btn" onclick="selectShape('square')" id="btnSquare"><div class="shape-icon">⬜</div><div>Square</div></button>
+                        <button class="shape-btn" onclick="selectShape('rectangle')" id="btnRectangle"><div class="shape-icon">▭</div><div>Rectangle</div></button>
+                    </div>
+                </div>
+
+                <div class="shape-inputs active" id="roundInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="roundDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="roundDiameter" placeholder="Enter diameter" min="1" step="0.5" value="36">
+                            <select class="select-field unit-select" id="roundDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Interior diameter of fire pit</div>
+                    </div>
+                </div>
+
+                <div class="shape-inputs" id="squareInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="squareSide">Side Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="squareSide" placeholder="Enter side length" min="1" step="0.5" value="30">
+                            <select class="select-field unit-select" id="squareSideUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Interior side length of fire pit</div>
+                    </div>
+                </div>
+
+                <div class="shape-inputs" id="rectangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="rectLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rectLength" placeholder="Enter length" min="1" step="0.5" value="48">
+                            <select class="select-field unit-select" id="rectLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="rectWidth">Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rectWidth" placeholder="Enter width" min="1" step="0.5" value="24">
+                            <select class="select-field unit-select" id="rectWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Interior dimensions of fire pit</div>
+                    </div>
+                </div>
+
+                <div class="depth-section">
+                    <div class="depth-section-title">📏 Fill Depth</div>
+                    <div class="depth-presets">
+                        <button class="depth-preset-btn" onclick="selectDepth(2)" id="depth2">2"<br><span style="font-size:0.75em;">Thin</span></button>
+                        <button class="depth-preset-btn active" onclick="selectDepth(3)" id="depth3">3"<br><span style="font-size:0.75em;">Standard</span></button>
+                        <button class="depth-preset-btn" onclick="selectDepth(4)" id="depth4">4"<br><span style="font-size:0.75em;">Full</span></button>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0; margin-top:12px;">
+                        <label class="input-label" for="depthCustom">Custom Depth</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="depthCustom" placeholder="3" min="0.5" max="12" step="0.5" value="3">
+                            <select class="select-field unit-select" id="depthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Standard: 2–4 inches. 3" is most common.</div>
+                    </div>
+                </div>
+
+                <div class="glass-section">
+                    <div class="glass-section-title">💎 Material Type</div>
+                    <div class="glass-type-grid">
+                        <button class="glass-type-btn active" onclick="selectGlassType('reflective')" id="btnReflective"><span>Reflective Fire Glass</span><span class="glass-density">90 lb/ft³</span></button>
+                        <button class="glass-type-btn" onclick="selectGlassType('tempered')" id="btnTempered"><span>Tempered Fire Glass</span><span class="glass-density">85 lb/ft³</span></button>
+                        <button class="glass-type-btn" onclick="selectGlassType('crushed')" id="btnCrushed"><span>Crushed Fire Glass</span><span class="glass-density">80 lb/ft³</span></button>
+                        <button class="glass-type-btn" onclick="selectGlassType('lava')" id="btnLava"><span>Lava Rock</span><span class="glass-density">55 lb/ft³</span></button>
+                        <button class="glass-type-btn" onclick="selectGlassType('ceramic')" id="btnCeramic"><span>Ceramic Balls</span><span class="glass-density">60 lb/ft³</span></button>
+                        <button class="glass-type-btn" onclick="selectGlassType('river')" id="btnRiver"><span>River Rock (fire-rated)</span><span class="glass-density">95 lb/ft³</span></button>
+                    </div>
+                </div>
+
+                <div class="cost-section">
+                    <div class="cost-section-title">💰 Cost Estimator <span class="bonus-badge">BONUS</span></div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerPound">Price per Pound</label>
+                        <div class="price-input-row">
+                            <span class="dollar-sign">$</span>
+                            <input type="number" class="input-field" id="pricePerPound" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Typical: $1.50–$4.50/lb depending on type and quality</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateFireGlass()">Calculate Fire Glass</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset Calculator</button>
+            </div>
+
+            <div class="result-section">
+                <h2>Materials Needed</h2>
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">🔥</div>
+                    <div class="result-empty-text">Enter fire pit dimensions to see results</div>
+                </div>
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Fire Glass Needed</div>
+                        <div class="result-value"><span id="totalPounds">0</span> <span class="result-unit">lbs</span></div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item"><div class="detail-icon">⚖️</div><div class="detail-label">Weight (kg)</div><div class="detail-value"><span id="weightKg">0</span> <span class="detail-unit">kg</span></div></div>
+                        <div class="detail-item"><div class="detail-icon">📦</div><div class="detail-label">Volume</div><div class="detail-value"><span id="volumeCuFt">0</span> <span class="detail-unit">cu ft</span></div></div>
+                        <div class="detail-item"><div class="detail-icon">📐</div><div class="detail-label">Coverage Area</div><div class="detail-value"><span id="coverageArea">0</span> <span class="detail-unit">sq in</span></div></div>
+                        <div class="detail-item"><div class="detail-icon">🛍️</div><div class="detail-label">10-lb Bags</div><div class="detail-value"><span id="bagsNeeded">0</span> <span class="detail-unit">bags</span></div></div>
+                    </div>
+                    <div class="cost-result" id="costResult">
+                        <div class="cost-result-main">
+                            <div class="cost-result-label">Total Material Cost</div>
+                            <div class="cost-result-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdownDiv"></div>
+                    </div>
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>How Much Fire Glass Do I Need?</h2>
+        <div class="content-text">
+
+            <p>The answer depends on your fire pit's shape and size, how deep you want to fill it, and the type of glass or media you're using. Different materials have different densities — reflective glass weighs about 90 lbs per cubic foot while lava rock is only 55 lbs per cubic foot, so the same volume looks very different on a scale at the store.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Fire Glass Weight Formula</div>
+                <p><strong>Pounds = (Area in sq inches × Depth in inches ÷ 1,728) × Density (lb/ft³)</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Divide by 1,728 to convert cubic inches to cubic feet. Densities: reflective glass 90, tempered 85, lava rock 55.</p>
+            </div>
+
+            <p>For a 36-inch round fire pit with 3 inches of tempered fire glass: area = π × 18² = 1,017 sq in. Volume = 1,017 × 3 ÷ 1,728 = 1.77 cu ft. Weight = 1.77 × 85 = <strong>~150 lbs</strong>. That's approximately 15 bags. Our calculator handles all three shapes and six material types automatically.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>Fire Glass Pounds by Fire Pit Size — Quick Reference</h3>
+
+                <p>The table below assumes 3-inch fill depth with tempered fire glass (85 lb/ft³). Adjust proportionally for other depths or materials.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Fire Pit Size</th><th>Shape</th><th>Approx. Pounds (3" depth)</th><th>10-lb Bags</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>24" diameter</strong></td><td>Round</td><td>~65–75 lbs</td><td>7–8 bags</td></tr>
+                            <tr><td><strong>36" diameter</strong></td><td>Round</td><td>~145–160 lbs</td><td>15–16 bags</td></tr>
+                            <tr><td><strong>48" diameter</strong></td><td>Round</td><td>~255–280 lbs</td><td>26–28 bags</td></tr>
+                            <tr><td><strong>30" × 30"</strong></td><td>Square</td><td>~125–140 lbs</td><td>13–14 bags</td></tr>
+                            <tr><td><strong>48" × 24"</strong></td><td>Rectangle</td><td>~145–160 lbs</td><td>15–16 bags</td></tr>
+                            <tr><td><strong>60" × 8"</strong></td><td>Linear burner</td><td>~60–70 lbs</td><td>6–7 bags</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Fire Glass Types Compared</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Material</th><th>Density (lb/ft³)</th><th>Price/lb</th><th>Appearance</th><th>Best For</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Reflective Fire Glass</strong></td><td>90</td><td>$3.00–$4.50</td><td>Mirror-like sparkle</td><td>Maximum visual impact</td></tr>
+                            <tr><td><strong>Tempered Fire Glass</strong></td><td>85</td><td>$2.00–$3.00</td><td>Clear to colored glow</td><td>Best value, most popular</td></tr>
+                            <tr><td><strong>Crushed Fire Glass</strong></td><td>80</td><td>$1.50–$2.50</td><td>Textured, varied sizes</td><td>Budget-friendly coverage</td></tr>
+                            <tr><td><strong>Lava Rock</strong></td><td>55</td><td>$1.00–$2.00</td><td>Natural, rustic</td><td>Base layer, low cost</td></tr>
+                            <tr><td><strong>Ceramic Balls</strong></td><td>60</td><td>$2.50–$3.50</td><td>Modern, round</td><td>Contemporary look</td></tr>
+                            <tr><td><strong>River Rock (fire-rated)</strong></td><td>95</td><td>$1.50–$2.50</td><td>Natural stone</td><td>Rustic/natural aesthetic</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Fill Depth: How Much Is Right?</h3>
+
+                <p>The depth of your fill affects appearance, cost, and burner performance. The sweet spot for most residential fire pits is 2 to 3 inches. At 2 inches the glass fully covers the burner and looks clean; at 3 inches you get a more lush, premium appearance. Beyond 4 inches you're spending more money without meaningful visual improvement, and you risk restricting gas flow.</p>
+
+                <ul>
+                    <li><strong>1–2 inches:</strong> Accent layer over lava rock base — cost-effective strategy</li>
+                    <li><strong>2–3 inches:</strong> Standard full fill — covers burner, looks full and complete</li>
+                    <li><strong>3–4 inches:</strong> Premium look — deeper color, more sparkle visible at night</li>
+                    <li><strong>4+ inches:</strong> Diminishing returns — can reduce flame height and gas efficiency</li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="warning-box-title">⚠️ Safety: Only Use Fire-Rated Glass</div>
+                    <p><strong>Never use regular glass, marbles, or decorative stones in a fire pit.</strong> Regular glass will shatter when heated. River rocks can contain trapped moisture that turns to steam and causes explosive cracking. Only use glass specifically rated for fire pits (1,200°F minimum) or ceramic/lava media designed for gas burners.</p>
+                </div>
+
+                <h3>The Money-Saving Layering Technique</h3>
+
+                <p>The most effective way to reduce fire glass cost is the layering strategy: fill the bottom 1–2 inches with lava rock (about $1/lb) and add 1–2 inches of fire glass on top. The lava rock is completely hidden and costs roughly one-third of reflective fire glass. For a 36-inch round pit this approach can save $100–$200 compared to filling entirely with premium glass, with no visible difference in the final look.</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">Layering Example — 36" Round Pit</div>
+                    <p><strong>Option 1: All reflective glass (3" depth)</strong><br>~160 lbs × $4/lb = $640</p>
+                    <p style="margin-top:8px;"><strong>Option 2: 1.5" lava rock + 1.5" reflective glass</strong><br>~80 lbs lava rock × $1.50/lb = $120<br>~80 lbs reflective glass × $4/lb = $320<br><strong>Total = $440 — saves $200</strong></p>
+                </div>
+
+                <h3>Worked Calculation Examples</h3>
+
+                <p><strong>Example 1: 36-inch round fire pit, 3" tempered glass</strong></p>
+                <ul>
+                    <li>Radius = 18 inches</li>
+                    <li>Area = π × 18² = 1,017 sq in</li>
+                    <li>Volume = 1,017 × 3 ÷ 1,728 = 1.77 cu ft</li>
+                    <li>Weight = 1.77 × 85 lb/ft³ = <strong>150 lbs / 15 bags</strong></li>
+                </ul>
+
+                <p><strong>Example 2: 48" × 24" rectangular fire table, 2" crushed glass</strong></p>
+                <ul>
+                    <li>Area = 48 × 24 = 1,152 sq in</li>
+                    <li>Volume = 1,152 × 2 ÷ 1,728 = 1.33 cu ft</li>
+                    <li>Weight = 1.33 × 80 lb/ft³ = <strong>107 lbs / 11 bags</strong></li>
+                </ul>
+
+                <h3>Buying Tips</h3>
+
+                <p>Fire glass is sold in 10-lb and 50-lb bags. The 50-lb option costs less per pound but commits you to one color and requires hauling a heavier bag. For most projects under 200 lbs, 10-lb bags give you flexibility to mix colors and stop when you have enough.</p>
+
+                <p>When comparing prices, check the price per pound rather than per bag. Online retailers often have better selection than home centers. American Fireglass and similar specialty suppliers sell at closer to wholesale pricing for larger quantities. Look for free shipping thresholds — fire glass is heavy and shipping can add $20–$50 to a small order.</p>
+
+                <h3>Installation Checklist</h3>
+
+                <ol>
+                    <li>Verify your burner is rated for fire glass media (most modern gas burners are)</li>
+                    <li>Clean the fire pit interior, remove any debris</li>
+                    <li>Add lava rock base layer if using the layering approach</li>
+                    <li>Pour fire glass evenly — use a kitchen strainer to remove dust first</li>
+                    <li>Spread level with a trowel or gloved hands</li>
+                    <li>Ensure burner ports are not buried — glass should sit ½" below burner top</li>
+                    <li>Test ignition and check flame height before finalizing fill depth</li>
+                    <li>Add or remove glass to adjust flame appearance as desired</li>
+                </ol>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>Density values are approximate averages and vary by manufacturer and specific product. Always verify with your supplier for exact specifications. Prices shown are general market ranges and fluctuate. Gas fire pit installation involving new gas lines should be performed by a licensed professional.</em></p>
+
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <div class="cta-section">
+        <h2>Need More Construction Calculators?</h2>
+        <p>Explore our complete collection of professional construction calculators for all your home improvement and outdoor living projects.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../navigation.js"></script>
+
+<script>
+let currentShape = 'round', selectedGlassType = 'reflective', selectedDepth = 3;
+const glassDensities = { 'reflective':90, 'tempered':85, 'crushed':80, 'lava':55, 'ceramic':60, 'river':95 };
+
+function toInches(value, unit) {
+    const c = { 'in':1, 'ft':12, 'cm':0.393701 };
+    return value * (c[unit] || 1);
+}
+
+function selectShape(shape) {
+    currentShape = shape;
+    ['Round','Square','Rectangle'].forEach(s => { const b = document.getElementById('btn'+s); if(b) b.classList.remove('active'); });
+    const b = document.getElementById('btn'+shape.charAt(0).toUpperCase()+shape.slice(1)); if(b) b.classList.add('active');
+    ['roundInputs','squareInputs','rectangleInputs'].forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('active'); });
+    const map = { 'round':'roundInputs', 'square':'squareInputs', 'rectangle':'rectangleInputs' };
+    document.getElementById(map[shape]).classList.add('active');
+}
+
+function selectGlassType(type) {
+    selectedGlassType = type;
+    ['Reflective','Tempered','Crushed','Lava','Ceramic','River'].forEach(t => { const b = document.getElementById('btn'+t); if(b) b.classList.remove('active'); });
+    const b = document.getElementById('btn'+type.charAt(0).toUpperCase()+type.slice(1)); if(b) b.classList.add('active');
+}
+
+function selectDepth(depth) {
+    selectedDepth = depth;
+    document.getElementById('depthCustom').value = depth;
+    [2,3,4].forEach(d => { const b = document.getElementById('depth'+d); if(b) b.classList.remove('active'); });
+    const b = document.getElementById('depth'+depth); if(b) b.classList.add('active');
+}
+
+function calculateFireGlass() {
+    const depthValue = parseFloat(document.getElementById('depthCustom').value) || 3;
+    const depthUnit = document.getElementById('depthUnit').value;
+    const depthInches = toInches(depthValue, depthUnit);
+    
+    let areaSquareInches = 0;
+    try {
+        if (currentShape === 'round') {
+            const diameter = toInches(parseFloat(document.getElementById('roundDiameter').value), document.getElementById('roundDiameterUnit').value);
+            areaSquareInches = Math.PI * Math.pow(diameter / 2, 2);
+        } else if (currentShape === 'square') {
+            const side = toInches(parseFloat(document.getElementById('squareSide').value), document.getElementById('squareSideUnit').value);
+            areaSquareInches = side * side;
+        } else if (currentShape === 'rectangle') {
+            const length = toInches(parseFloat(document.getElementById('rectLength').value), document.getElementById('rectLengthUnit').value);
+            const width = toInches(parseFloat(document.getElementById('rectWidth').value), document.getElementById('rectWidthUnit').value);
+            areaSquareInches = length * width;
+        }
+    } catch (e) { alert('Please enter valid dimensions'); return; }
+    
+    if (areaSquareInches <= 0 || isNaN(areaSquareInches)) { alert('Please enter valid dimensions'); return; }
+    
+    const volumeCubicFeet = (areaSquareInches * depthInches) / 1728;
+    const density = glassDensities[selectedGlassType];
+    const weightPounds = volumeCubicFeet * density;
+    const weightKg = weightPounds * 0.453592;
+    const bagsNeeded = Math.ceil(weightPounds / 10);
+    
+    const pricePerPound = parseFloat(document.getElementById('pricePerPound').value) || 0;
+    const totalCost = weightPounds * pricePerPound;
+    
+    document.getElementById('totalPounds').textContent = Math.round(weightPounds);
+    document.getElementById('weightKg').textContent = weightKg.toFixed(1);
+    document.getElementById('volumeCuFt').textContent = volumeCubicFeet.toFixed(2);
+    document.getElementById('coverageArea').textContent = Math.round(areaSquareInches);
+    document.getElementById('bagsNeeded').textContent = bagsNeeded;
+    
+    const costResult = document.getElementById('costResult');
+    if (pricePerPound > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        document.getElementById('costBreakdownDiv').innerHTML = `<strong>Cost Breakdown:</strong><br>${Math.round(weightPounds)} lbs × $${pricePerPound.toFixed(2)}/lb = $${totalCost.toFixed(2)}<br><em>Approximately ${bagsNeeded} bags × $${(totalCost/bagsNeeded).toFixed(2)} per bag</em>`;
+        costResult.classList.add('active');
+    } else { costResult.classList.remove('active'); }
+    
+    const glassNames = { 'reflective':'Reflective Fire Glass','tempered':'Tempered Fire Glass','crushed':'Crushed Fire Glass','lava':'Lava Rock','ceramic':'Ceramic Balls','river':'River Rock (fire-rated)' };
+    document.getElementById('formulaExplanation').innerHTML = `
+        <div class="formula-step"><strong>Shape:</strong> ${currentShape.charAt(0).toUpperCase()+currentShape.slice(1)}</div>
+        <div class="formula-step"><strong>Material:</strong> ${glassNames[selectedGlassType]} (${density} lb/ft³)</div>
+        <div class="formula-step"><strong>Fill Depth:</strong> ${depthInches}" inches</div>
+        <div class="formula-step" style="margin-top:12px;"><strong>Calculation:</strong></div>
+        <div class="formula-step">Area = ${Math.round(areaSquareInches)} sq in</div>
+        <div class="formula-step">Volume = ${Math.round(areaSquareInches)} × ${depthInches} ÷ 1,728 = ${volumeCubicFeet.toFixed(2)} cu ft</div>
+        <div class="formula-step">Weight = ${volumeCubicFeet.toFixed(2)} × ${density} = <strong>${Math.round(weightPounds)} lbs</strong></div>
+        <div class="formula-step">Bags (10 lb) = <strong>${bagsNeeded} bags</strong></div>
+        ${pricePerPound > 0 ? `<div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div><div class="formula-step">${Math.round(weightPounds)} lbs × $${pricePerPound.toFixed(2)}/lb = $${totalCost.toFixed(2)}</div>` : ''}`;
+    
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+    if (window.innerWidth <= 768) document.querySelector('.result-section').scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+function resetCalculator() {
+    selectShape('round'); selectGlassType('reflective'); selectDepth(3);
+    document.getElementById('roundDiameter').value = '36';
+    document.getElementById('squareSide').value = '30';
+    document.getElementById('rectLength').value = '48';
+    document.getElementById('rectWidth').value = '24';
+    document.getElementById('pricePerPound').value = '';
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costResult').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+}
+
+const readMoreBtn = document.getElementById('readMoreBtn'), contentMore = document.getElementById('contentMore');
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded'); readMoreBtn.textContent = 'Read More';
+            const cs = document.querySelector('.content-section');
+            if (cs) window.scrollTo({ top: cs.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth' });
+        } else { contentMore.classList.add('expanded'); readMoreBtn.textContent = 'Show Less'; }
+    });
+}
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) { if (e.key === 'Enter') calculateFireGlass(); });
+});
+</script>
+</body>
+</html>

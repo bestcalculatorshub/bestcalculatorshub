@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>French Drain Calculator — How Much Gravel Do I Need? Installation Guide | CalcHub</title>
+    <meta name="description" content="Free French drain calculator. Find out exactly how much gravel, pipe, and filter fabric you need plus total cost. Supports 4&quot;, 6&quot;, and 8&quot; pipe with slope calculations. Instant estimates for any trench size.">
+    <meta name="keywords" content="french drain calculator, how much gravel for french drain, french drain gravel calculator, how to install french drain, french drain cost, drain pipe gravel calculator, yard drainage calculator, how deep should a french drain be, french drain materials calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/french-drain-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/french-drain-calculator">
+    <meta property="og:title" content="French Drain Calculator — How Much Gravel Do I Need?">
+    <meta property="og:description" content="Calculate gravel, pipe, fabric, and total cost for any French drain. Supports slope calculation and all pipe sizes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "French Drain Calculator",
+        "description": "Calculate French drain materials including gravel volume, perforated pipe length, filter fabric area, and total installation costs for residential and commercial drainage systems.",
+        "url": "https://calchub.com/construction/french-drain-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": { "@type": "Organization", "name": "CalcHub" }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much gravel do I need for a French drain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Calculate gravel using: Volume (ft³) = Trench Length × Width × Depth, then subtract the pipe volume. Convert to cubic yards by dividing by 27. For a typical 50-foot French drain with a 12-inch wide by 18-inch deep trench and 4-inch pipe, you need approximately 2.6–3.0 cubic yards of gravel (about 3.7–4.2 tons). Add 10–15% for waste and settling."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How deep should a French drain be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For yard drainage and foundation protection, dig 18–24 inches deep. In cold climates, install below the frost line — typically 3–4 feet — to prevent the pipe from freezing and blocking drainage. For surface water only (redirecting runoff), 12–18 inches may be sufficient. Deeper drains capture more groundwater but require more excavation and materials."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What size pipe should I use for a French drain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use 4-inch perforated pipe for most residential applications: foundation drainage, yard drainage, and downspout diversion. It handles up to 120 GPM which is adequate for most homes. Use 6-inch pipe for large yards, properties with heavy rainfall, or when connecting multiple lateral drains to a main line. 8-inch and larger pipes are for commercial or high-flow applications."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the correct slope for a French drain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The minimum slope for a French drain is 1/8 inch per foot (0.125 in/ft), which is about a 1% grade. The ideal slope is 1/4 inch per foot (0.25 in/ft). Over a 50-foot run at minimum slope, the outlet end should be 6.25 inches lower than the inlet. More slope improves drainage but requires deeper excavation. Never install a French drain without slope — flat pipe will hold standing water and clog."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use gravel or pea gravel for a French drain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use 3/4-inch crushed stone (#57 or #67) for best results. Its angular shape creates large voids that allow fast water movement and resist compaction over time. Pea gravel (3/8-inch, #89) is too small — it compacts more easily, reduces drainage rate, and can migrate into pipe perforations. Never use sand, topsoil, or decomposed granite as they clog the system within a few years."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+:root {
+    --navy: #0f172a; --slate: #1e293b; --slate-light: #334155; --muted: #64748b;
+    --muted-light: #94a3b8; --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
+    --teal: #0d9488; --teal-light: #14b8a6; --teal-pale: #ccfbf1;
+    --green: #10b981; --orange: #f97316; --orange-pale: #ffedd5;
+    --purple: #8b5cf6; --purple-pale: #ede9fe;
+    --blue: #3b82f6; --blue-pale: #dbeafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px; --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+@media (max-width:768px) { input, select, button { font-size:16px; } }
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+.trench-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.trench-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.pipe-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.pipe-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.fabric-section { background:#fef3c7; border:2px solid #f59e0b; border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.fabric-section-title { font-weight:600; color:#f59e0b; margin-bottom:12px; font-size:0.95em; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.checkbox-group { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.checkbox-input { width:18px; height:18px; cursor:pointer; }
+.checkbox-label { font-weight:500; color:var(--slate); cursor:pointer; }
+.pipe-inputs { display:none; }
+.pipe-inputs.active { display:block; }
+.fabric-inputs { display:none; }
+.fabric-inputs.active { display:block; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); }
+
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.materials-breakdown { background:var(--white); border-radius:var(--radius); padding:20px; margin-bottom:20px; }
+.materials-breakdown h3 { font-size:1.1em; font-weight:600; color:var(--navy); margin-bottom:16px; }
+.material-item { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
+.material-item:last-child { border-bottom:none; }
+.material-name { font-weight:500; color:var(--slate); }
+.material-qty { font-weight:700; color:var(--teal); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.slope-info { background:#dbeafe; border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.slope-info-title { font-weight:600; color:var(--blue); margin-bottom:8px; font-size:0.95em; }
+.slope-info-content { font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); }
+
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul, .content-text ol { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.warning-box { background:var(--orange-pale); border-left:4px solid var(--orange); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.warning-box-title { font-weight:600; color:var(--orange); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; min-width:420px; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:12000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); }
+
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; } .hero { padding:40px 20px; } .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; } .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; } .result-value { font-size:2em; }
+    .content-section { padding:32px 24px; } .cta-section { padding:32px 24px; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; } .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; } .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; } .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; } .result-section { padding:20px; }
+    .content-section { padding:24px 16px; } .cta-section { padding:28px 16px; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; } .footer-inner { padding:40px 16px 20px; }
+}
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; } .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; } .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; } .unit-select { width:100%; }
+}
+@media print { .header, .footer, .cta-section, .read-more-btn { display:none; } .content-more { max-height:none !important; } }
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>French Drain Calculator</span>
+        </nav>
+        <h1>French Drain Calculator</h1>
+        <p class="hero-desc">Find out exactly how much gravel, pipe, and filter fabric you need for any French drain. <strong>Supports 4", 6", and 8" pipe with automatic slope and drop calculations</strong> — plus a full cost estimator. Enter your trench dimensions for an instant materials list.</p>
+    </div>
+</section>
+
+<div class="main">
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-section">
+                <h2>Drain Specifications</h2>
+                
+                <div class="trench-section">
+                    <div class="trench-section-title">Trench Dimensions</div>
+                    <div class="input-group">
+                        <label class="input-label" for="trenchLength">Trench Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trenchLength" placeholder="Enter trench length" min="1" step="0.5" value="50">
+                            <select class="select-field unit-select" id="trenchLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="trenchWidth">Trench Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trenchWidth" placeholder="Enter trench width" min="1" step="0.5" value="12">
+                            <select class="select-field unit-select" id="trenchWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Typical is 8–12 inches for residential</div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="trenchDepth">Trench Depth</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trenchDepth" placeholder="Enter trench depth" min="1" step="0.5" value="18">
+                            <select class="select-field unit-select" id="trenchDepthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Typical is 18–24 inches deep</div>
+                    </div>
+                </div>
+
+                <div class="pipe-section">
+                    <div class="pipe-section-title">Perforated Pipe Configuration</div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="checkbox-input" id="hasPipe" onchange="togglePipe()" checked>
+                        <label class="checkbox-label" for="hasPipe">Include perforated drain pipe</label>
+                    </div>
+                    <div class="pipe-inputs active" id="pipeInputs">
+                        <div class="input-group">
+                            <label class="input-label" for="pipeSize">Pipe Size</label>
+                            <select class="select-field" id="pipeSize">
+                                <option value="4" selected>4 inch (Standard residential)</option>
+                                <option value="6">6 inch (Heavy-duty)</option>
+                                <option value="8">8 inch (Commercial)</option>
+                                <option value="10">10 inch (Large drainage)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="pipeType">Pipe Type</label>
+                            <select class="select-field" id="pipeType">
+                                <option value="pvc40" selected>Schedule 40 PVC</option>
+                                <option value="sdr35">SDR35 Sewer Pipe</option>
+                                <option value="corrugated">Corrugated HDPE</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="pipeSlope">Desired Slope</label>
+                            <div class="input-row">
+                                <input type="number" class="input-field" id="pipeSlope" placeholder="0.125" min="0.0625" max="1" step="0.0625" value="0.125">
+                                <span style="font-size:0.9em;color:var(--slate);padding:0 8px;white-space:nowrap;">in/ft</span>
+                            </div>
+                            <div class="input-hint">Minimum 1/8" per foot (0.125)</div>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="pipeLength">Standard Pipe Length</label>
+                            <select class="select-field" id="pipeLength">
+                                <option value="10" selected>10 feet (3 m)</option>
+                                <option value="20">20 feet (6 m)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fabric-section">
+                    <div class="fabric-section-title">Filter Fabric / Geotextile</div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="checkbox-input" id="hasFabric" onchange="toggleFabric()" checked>
+                        <label class="checkbox-label" for="hasFabric">Include landscape fabric</label>
+                    </div>
+                    <div class="fabric-inputs active" id="fabricInputs">
+                        <div class="input-group">
+                            <label class="input-label" for="fabricOverlap">Fabric Overlap</label>
+                            <div class="input-row">
+                                <input type="number" class="input-field" id="fabricOverlap" placeholder="6" min="0" step="1" value="6">
+                                <select class="select-field unit-select" id="fabricOverlapUnit">
+                                    <option value="in" selected>inches</option>
+                                    <option value="ft">feet</option>
+                                </select>
+                            </div>
+                            <div class="input-hint">Typical overlap is 6–12 inches</div>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="fabricType">Fabric Type</label>
+                            <select class="select-field" id="fabricType">
+                                <option value="nonwoven" selected>Non-woven Geotextile (Standard)</option>
+                                <option value="woven">Woven Geotextile (Heavy-duty)</option>
+                                <option value="landscape">Landscape Fabric (Basic)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="gravelType">Gravel Type</label>
+                    <select class="select-field" id="gravelType">
+                        <option value="57" selected>3/4" Crushed Stone (#57)</option>
+                        <option value="67">3/4" River Rock (#67)</option>
+                        <option value="89">3/8" Pea Gravel (#89)</option>
+                        <option value="custom">Custom Gravel</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="wastage">Wastage / Extra Material</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="wastage" placeholder="10" min="0" max="50" step="5" value="10">
+                        <span style="font-size:1em;color:var(--slate);padding:0 8px;">%</span>
+                    </div>
+                    <div class="input-hint">Typical is 10–15% for waste and settling</div>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-section-title">Cost Estimator <span class="bonus-badge">BONUS</span></div>
+                    <div class="input-group">
+                        <label class="input-label" for="gravelPrice">Gravel Price</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em;color:var(--slate);padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="gravelPrice" placeholder="0.00" min="0" step="0.01" value="45.00">
+                            <select class="select-field unit-select" id="gravelPriceUnit">
+                                <option value="ton" selected>per ton</option>
+                                <option value="yd3">per yd³</option>
+                                <option value="ft3">per ft³</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="pipePrice">Pipe Price</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em;color:var(--slate);padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pipePrice" placeholder="0.00" min="0" step="0.01" value="15.00">
+                            <span style="font-size:0.9em;color:var(--slate);padding:0 8px;white-space:nowrap;">per 10ft</span>
+                        </div>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="fabricPrice">Fabric Price</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em;color:var(--slate);padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="fabricPrice" placeholder="0.00" min="0" step="0.01" value="0.50">
+                            <span style="font-size:0.9em;color:var(--slate);padding:0 8px;white-space:nowrap;">per ft²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateDrain()">Calculate Materials</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <div class="result-section">
+                <h2>Material Estimate</h2>
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter trench specs to see material estimate</div>
+                </div>
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Gravel Needed</div>
+                        <div class="result-value"><span id="gravelYards">0</span> <span class="result-unit">yd³</span></div>
+                    </div>
+                    <div class="materials-breakdown">
+                        <h3>Complete Materials List</h3>
+                        <div class="material-item"><span class="material-name">🪨 Gravel Volume</span><span class="material-qty"><span id="gravelVolume">0</span> yd³</span></div>
+                        <div class="material-item"><span class="material-name">⚖️ Gravel Weight</span><span class="material-qty"><span id="gravelWeight">0</span> tons</span></div>
+                        <div class="material-item" id="pipeItem"><span class="material-name">🔧 Pipe Needed</span><span class="material-qty"><span id="pipeNeeded">0</span> ft</span></div>
+                        <div class="material-item" id="pipePiecesItem"><span class="material-name">📦 Pipe Pieces</span><span class="material-qty"><span id="pipePieces">0</span> pcs</span></div>
+                        <div class="material-item" id="fabricItem"><span class="material-name">🧵 Filter Fabric</span><span class="material-qty"><span id="fabricArea">0</span> ft²</span></div>
+                        <div class="material-item"><span class="material-name">⛏️ Excavation Volume</span><span class="material-qty"><span id="excavation">0</span> yd³</span></div>
+                    </div>
+                    <div class="slope-info" id="slopeInfo">
+                        <div class="slope-info-title">📐 Slope & Drop Information</div>
+                        <div class="slope-info-content" id="slopeContent"></div>
+                    </div>
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Material Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-item"><div class="result-item-label">Cost per Foot</div><div class="result-item-value">$<span id="costPerFoot">0.00</span></div></div>
+                        <div class="result-item"><div class="result-item-label">Bags of Gravel</div><div class="result-item-value"><span id="gravelBags">0</span> bags</div></div>
+                    </div>
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>How Much Gravel Do I Need for a French Drain?</h2>
+        <div class="content-text">
+
+            <p>The gravel you need equals the trench volume minus the space taken by the pipe. For a typical residential French drain — 50 feet long, 12 inches wide, 18 inches deep — you'll need around 2.6–3.0 cubic yards of gravel (about 3.7–4.2 tons). Add 10–15% for waste and settling, and always round up when ordering.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Gravel Calculation Formula</div>
+                <p><strong>Gravel (ft³) = Trench Length × Width × Depth − Pipe Volume</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Divide by 27 to convert to cubic yards. Multiply by density (1.4 for #57 stone) to get tons.</p>
+            </div>
+
+            <p>Ordering in bulk by the ton is usually cheaper than buying bags — but for small projects under 1 cubic yard, bags may be more practical since most suppliers have minimum delivery quantities of 3–5 tons.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>How Much Gravel by Trench Size — Quick Reference</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Trench Length</th><th>Width × Depth</th><th>Gravel (yd³)</th><th>Gravel (tons)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>25 ft</td><td>12" × 18"</td><td>~1.3 yd³</td><td>~1.8 tons</td></tr>
+                            <tr><td>50 ft</td><td>12" × 18"</td><td>~2.6 yd³</td><td>~3.7 tons</td></tr>
+                            <tr><td>100 ft</td><td>12" × 18"</td><td>~5.3 yd³</td><td>~7.4 tons</td></tr>
+                            <tr><td>50 ft</td><td>12" × 24"</td><td>~3.5 yd³</td><td>~4.9 tons</td></tr>
+                            <tr><td>100 ft</td><td>12" × 24"</td><td>~7.0 yd³</td><td>~9.8 tons</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>These figures use #57 crushed stone (1.4 tons/yd³) with a 4-inch pipe and 10% waste factor. Actual amounts vary slightly with pipe size and exact dimensions.</p>
+
+                <h3>How Deep Should a French Drain Be?</h3>
+
+                <p>Depth depends on what problem you're solving. For yard drainage and redirecting surface runoff, 12–18 inches is often enough. For foundation protection or capturing groundwater, dig 18–24 inches. In cold climates, the pipe should sit below the frost line — typically 36–48 inches — to prevent freezing. Deeper installations require more material but capture more water.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Application</th><th>Recommended Depth</th><th>Width</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Surface runoff diversion</td><td>12–18 inches</td><td>8–10 inches</td></tr>
+                            <tr><td>Yard / lawn drainage</td><td>18–24 inches</td><td>10–12 inches</td></tr>
+                            <tr><td>Foundation perimeter</td><td>18–24 inches</td><td>10–12 inches</td></tr>
+                            <tr><td>Cold climate (below frost)</td><td>36–48+ inches</td><td>12+ inches</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>What Type of Gravel for a French Drain?</h3>
+
+                <p>Use 3/4-inch crushed stone — known as #57 or #67 — for the best balance of drainage speed and stability. Its angular shape creates large, consistent voids that let water flow freely while resisting compaction. River rock (#67) works similarly with a smoother finish. Avoid pea gravel (#89) as a primary fill — it compacts over time and slows drainage. Never use sand, topsoil, or any fine material that will migrate and clog the pipe perforations.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Gravel Type</th><th>Size</th><th>Density</th><th>Drainage Rate</th><th>Cost</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>#57 Crushed Stone</strong></td><td>3/4"</td><td>1.4 t/yd³</td><td>Excellent</td><td>$35–55/ton</td></tr>
+                            <tr><td><strong>#67 River Rock</strong></td><td>3/4"</td><td>1.4 t/yd³</td><td>Excellent</td><td>$40–60/ton</td></tr>
+                            <tr><td><strong>#4 Stone</strong></td><td>1–2"</td><td>1.3 t/yd³</td><td>Very fast</td><td>$30–50/ton</td></tr>
+                            <tr><td><strong>#89 Pea Gravel</strong></td><td>3/8"</td><td>1.5 t/yd³</td><td>Moderate</td><td>$45–70/ton</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>What Slope Does a French Drain Need?</h3>
+
+                <p>The minimum slope is 1/8 inch per foot (0.125 in/ft), which is roughly a 1% grade. At this slope, a 50-foot drain drops just over 6 inches from inlet to outlet. The ideal slope is 1/4 inch per foot — this doubles the flow velocity and significantly reduces clogging risk. More slope is always better as long as you have the depth to work with.</p>
+
+                <div class="warning-box">
+                    <div class="warning-box-title">⚠️ Never Install a Level or Reverse-Slope Drain</div>
+                    <p>A flat or back-sloped pipe holds standing water, which accelerates sediment buildup and creates conditions for mosquitoes and root intrusion. If the terrain won't allow proper slope, consider breaking the drain into multiple sections with intermediate outlets, or using a sump pump at a low point.</p>
+                </div>
+
+                <h3>Worked Example: 50-Foot Residential French Drain</h3>
+
+                <div class="info-box">
+                    <p><strong>Trench:</strong> 50 ft long × 12 in wide × 18 in deep</p>
+                    <p><strong>Pipe:</strong> 4" Schedule 40 PVC, slope 1/8" per foot</p>
+                    <p><strong>Step 1 — Excavation volume:</strong> 50 × 1.0 × 1.5 = 75 ft³ = 2.78 yd³</p>
+                    <p><strong>Step 2 — Pipe volume:</strong> π × (0.1875 ft)² × 50 = 5.52 ft³ = 0.20 yd³</p>
+                    <p><strong>Step 3 — Gravel:</strong> 2.78 − 0.20 = 2.58 yd³ × 1.10 (10% waste) = <strong>2.84 yd³</strong></p>
+                    <p><strong>Weight:</strong> 2.84 × 1.4 = <strong>3.98 tons of #57 stone</strong></p>
+                    <p><strong>Pipe:</strong> 50 ft + slight slope extension = 5 pieces of 10ft pipe</p>
+                    <p><strong>Fabric:</strong> (1.5 ft depth × 2 + 1 ft width + 1 ft overlap) × 50 ft = <strong>225 ft²</strong></p>
+                    <p><strong>Total drop:</strong> 0.125 in/ft × 50 ft = <strong>6.25 inches</strong> (outlet is 6.25" lower)</p>
+                    <p><strong>Material cost:</strong> ~$180 gravel + $75 pipe + $113 fabric = <strong>~$368 materials</strong></p>
+                </div>
+
+                <h3>How to Install a French Drain — Step by Step</h3>
+
+                <ol>
+                    <li><strong>Call 811 before you dig.</strong> Have underground utilities marked — gas, electric, water, and cable lines can be anywhere.</li>
+                    <li><strong>Plan your route and outlet.</strong> Water must exit somewhere: a daylight point at a lower elevation, a dry well, or a storm drain connection (check local codes first).</li>
+                    <li><strong>Excavate the trench.</strong> Dig to your target depth, maintaining consistent slope. Compact the trench bottom and remove roots and loose material.</li>
+                    <li><strong>Line with geotextile fabric.</strong> Lay non-woven fabric into the trench with 12 inches of excess up each side. This prevents soil from migrating into the gravel.</li>
+                    <li><strong>Add a gravel bed.</strong> Pour 2–3 inches of gravel on the fabric and check slope with a level or string line.</li>
+                    <li><strong>Lay the perforated pipe — holes down.</strong> This is the most common mistake: holes should face downward, not up. Water rises through the gravel and enters the pipe from beneath; if holes face up they collect sediment.</li>
+                    <li><strong>Fill with gravel.</strong> Cover the pipe with 6–8 inches of gravel, then continue filling to within 3–4 inches of the surface. Compact lightly in stages.</li>
+                    <li><strong>Wrap and backfill.</strong> Fold the excess fabric over the top of the gravel. Add topsoil and reseed or sod as desired.</li>
+                </ol>
+
+                <h3>Common French Drain Mistakes</h3>
+
+                <ul>
+                    <li><strong>Pipe holes facing up:</strong> Sediment accumulates in the perforations and blocks drainage within a few years</li>
+                    <li><strong>No slope:</strong> Standing water in the pipe causes silting, odors, and root intrusion</li>
+                    <li><strong>Skipping the fabric:</strong> Fine soil migrates into the gravel within 2–5 years, reducing drainage to near zero</li>
+                    <li><strong>Wrong gravel:</strong> Fine gravel and sand clog; use angular 3/4-inch stone</li>
+                    <li><strong>No outlet:</strong> A drain that has nowhere to go is just an underground cistern</li>
+                    <li><strong>Too shallow in cold climates:</strong> Frozen pipe = no drainage when you need it most (spring thaw)</li>
+                    <li><strong>Planting trees nearby:</strong> Roots will find the pipe within 5–10 years; maintain a 10-foot clearance</li>
+                </ul>
+
+                <h3>French Drain vs Alternatives</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Solution</th><th>Best For</th><th>Cost</th><th>Lifespan</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>French Drain</strong></td><td>Persistent groundwater, foundation drainage</td><td>$20–60/LF installed</td><td>30–40 years</td></tr>
+                            <tr><td><strong>Surface Channel Drain</strong></td><td>Hardscape runoff, patios, driveways</td><td>$15–40/LF installed</td><td>20–30 years</td></tr>
+                            <tr><td><strong>Dry Well</strong></td><td>Downspout diversion, small areas</td><td>$300–1,500 total</td><td>10–20 years</td></tr>
+                            <tr><td><strong>Regrading</strong></td><td>Slope directs water away from foundation</td><td>$500–3,000+</td><td>Permanent if maintained</td></tr>
+                            <tr><td><strong>Rain Garden</strong></td><td>Ecological solution for manageable runoff</td><td>$300–2,000</td><td>Indefinite</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Material Cost Reference (2024 National Averages)</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Material</th><th>Unit</th><th>Price Range</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>3/4" Crushed Stone (#57)</td><td>per ton (bulk)</td><td>$35–55</td></tr>
+                            <tr><td>3/4" Crushed Stone (bagged)</td><td>50 lb bag</td><td>$4–7</td></tr>
+                            <tr><td>4" Perforated PVC (Sch 40)</td><td>10 ft length</td><td>$12–20</td></tr>
+                            <tr><td>4" Corrugated Pipe (HDPE)</td><td>10 ft length</td><td>$8–15</td></tr>
+                            <tr><td>Non-woven Geotextile Fabric</td><td>per ft²</td><td>$0.30–0.80</td></tr>
+                            <tr><td>Professional Installation</td><td>per linear foot</td><td>$20–60</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>DIY installation typically saves 50–70% versus hiring a contractor. The main costs are gravel (usually the largest line item), pipe, and fabric. Excavation is labor but requires only a shovel or rented trencher — a walk-behind trencher rents for $150–250/day and makes the job much faster.</p>
+
+                <h3>Maintenance and Expected Lifespan</h3>
+
+                <p>A properly installed French drain with filter fabric and the correct gravel should last 30–40 years. Annual maintenance is minimal: check that the outlet pipe is clear and unobstructed, and watch for any surface depressions over the trench that indicate settling. Every 2–3 years, flush the pipe from the inlet end with a garden hose to clear sediment. Avoid planting anything with aggressive root systems within 10 feet of the drain — willows, maples, and silver birch are particularly problematic.</p>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>Material quantities and costs are estimates based on standard installation practices. Local conditions, soil type, access difficulty, and permit requirements may affect your project. Always call 811 before digging and verify local codes before connecting to storm or sanitary sewer systems.</em></p>
+
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <div class="cta-section">
+        <h2>Need More Construction Calculators?</h2>
+        <p>Explore our complete collection of construction calculators for accurate material estimates and project planning.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../navigation.js"></script>
+
+<script>
+function toFeet(value, unit) {
+    const c = { 'ft':1, 'in':1/12, 'm':3.28084, 'cm':0.0328084 };
+    return value * (c[unit] || 1);
+}
+function togglePipe() {
+    const el = document.getElementById('pipeInputs');
+    document.getElementById('hasPipe').checked ? el.classList.add('active') : el.classList.remove('active');
+}
+function toggleFabric() {
+    const el = document.getElementById('fabricInputs');
+    document.getElementById('hasFabric').checked ? el.classList.add('active') : el.classList.remove('active');
+}
+function calculateDrain() {
+    const trenchLengthFt = toFeet(parseFloat(document.getElementById('trenchLength').value), document.getElementById('trenchLengthUnit').value);
+    const trenchWidthFt = toFeet(parseFloat(document.getElementById('trenchWidth').value), document.getElementById('trenchWidthUnit').value);
+    const trenchDepthFt = toFeet(parseFloat(document.getElementById('trenchDepth').value), document.getElementById('trenchDepthUnit').value);
+    if (trenchLengthFt <= 0 || trenchWidthFt <= 0 || trenchDepthFt <= 0) { alert('Please enter valid trench dimensions'); return; }
+    const wastage = parseFloat(document.getElementById('wastage').value) || 0;
+    const wastageMultiplier = 1 + (wastage / 100);
+    const excavationCubicFt = trenchLengthFt * trenchWidthFt * trenchDepthFt;
+    const excavationCubicYards = excavationCubicFt / 27;
+    let pipeVolumeCubicFt = 0, actualPipeLengthFt = trenchLengthFt, pipePieces = 0, pipeSlope = 0, pipeDrop = 0;
+    const hasPipe = document.getElementById('hasPipe').checked;
+    if (hasPipe) {
+        const pipeSize = parseFloat(document.getElementById('pipeSize').value);
+        const pipeType = document.getElementById('pipeType').value;
+        pipeSlope = parseFloat(document.getElementById('pipeSlope').value);
+        const standardPipeLength = parseFloat(document.getElementById('pipeLength').value);
+        let pipeDiameterFt;
+        if (pipeSize === 4) pipeDiameterFt = pipeType === 'pvc40' ? 4.5/12 : 4.22/12;
+        else if (pipeSize === 6) pipeDiameterFt = pipeType === 'pvc40' ? 6.63/12 : 6.28/12;
+        else if (pipeSize === 8) pipeDiameterFt = pipeType === 'pvc40' ? 8.63/12 : 8.40/12;
+        else pipeDiameterFt = pipeType === 'pvc40' ? 10.75/12 : 10.50/12;
+        const slopeFt = (pipeSlope / 12) * trenchLengthFt;
+        actualPipeLengthFt = Math.sqrt(Math.pow(trenchLengthFt, 2) + Math.pow(slopeFt, 2));
+        pipeDrop = slopeFt;
+        pipeVolumeCubicFt = Math.PI * Math.pow(pipeDiameterFt / 2, 2) * actualPipeLengthFt;
+        pipePieces = Math.ceil(actualPipeLengthFt / standardPipeLength);
+    }
+    let gravelCubicFt = excavationCubicFt - pipeVolumeCubicFt;
+    let gravelCubicYards = (gravelCubicFt / 27) * wastageMultiplier;
+    const gravelType = document.getElementById('gravelType').value;
+    let gravelDensity = 1.4;
+    if (gravelType === '89') gravelDensity = 1.5;
+    if (gravelType === '4') gravelDensity = 1.3;
+    const gravelTons = gravelCubicYards * gravelDensity;
+    const gravelBags = Math.ceil((gravelCubicFt * wastageMultiplier) / 0.5);
+    let fabricAreaSqFt = 0;
+    const hasFabric = document.getElementById('hasFabric').checked;
+    if (hasFabric) {
+        const fabricOverlapFt = toFeet(parseFloat(document.getElementById('fabricOverlap').value), document.getElementById('fabricOverlapUnit').value);
+        fabricAreaSqFt = ((trenchDepthFt * 2) + trenchWidthFt + (fabricOverlapFt * 2)) * trenchLengthFt;
+    }
+    const gravelPrice = parseFloat(document.getElementById('gravelPrice').value) || 0;
+    const gravelPriceUnit = document.getElementById('gravelPriceUnit').value;
+    const pipePrice = parseFloat(document.getElementById('pipePrice').value) || 0;
+    const fabricPrice = parseFloat(document.getElementById('fabricPrice').value) || 0;
+    let gravelCost = 0;
+    if (gravelPrice > 0) {
+        if (gravelPriceUnit === 'ton') gravelCost = gravelTons * gravelPrice;
+        else if (gravelPriceUnit === 'yd3') gravelCost = gravelCubicYards * gravelPrice;
+        else gravelCost = (gravelCubicYards * 27) * gravelPrice;
+    }
+    const pipeCost = hasPipe ? pipePieces * pipePrice : 0;
+    const fabricCost = hasFabric ? fabricAreaSqFt * fabricPrice : 0;
+    const totalCost = gravelCost + pipeCost + fabricCost;
+    const costPerFoot = totalCost / trenchLengthFt;
+    document.getElementById('gravelYards').textContent = gravelCubicYards.toFixed(2);
+    document.getElementById('gravelVolume').textContent = gravelCubicYards.toFixed(2);
+    document.getElementById('gravelWeight').textContent = gravelTons.toFixed(2);
+    document.getElementById('excavation').textContent = excavationCubicYards.toFixed(2);
+    document.getElementById('gravelBags').textContent = gravelBags;
+    if (hasPipe) {
+        document.getElementById('pipeItem').style.display = 'flex';
+        document.getElementById('pipePiecesItem').style.display = 'flex';
+        document.getElementById('pipeNeeded').textContent = Math.ceil(actualPipeLengthFt);
+        document.getElementById('pipePieces').textContent = pipePieces;
+        document.getElementById('slopeInfo').style.display = 'block';
+        document.getElementById('slopeContent').innerHTML = `<strong>Slope:</strong> ${pipeSlope}" per foot (${(pipeSlope * 100 / 12).toFixed(2)}% grade)<br><strong>Total Drop:</strong> ${(pipeDrop * 12).toFixed(2)}" (${pipeDrop.toFixed(2)} ft) over ${trenchLengthFt.toFixed(1)} ft<br><strong>Actual Pipe Length:</strong> ${actualPipeLengthFt.toFixed(2)} ft`;
+    } else {
+        document.getElementById('pipeItem').style.display = 'none';
+        document.getElementById('pipePiecesItem').style.display = 'none';
+        document.getElementById('slopeInfo').style.display = 'none';
+    }
+    if (hasFabric) { document.getElementById('fabricItem').style.display = 'flex'; document.getElementById('fabricArea').textContent = Math.ceil(fabricAreaSqFt); }
+    else document.getElementById('fabricItem').style.display = 'none';
+    const cs = document.getElementById('costSection');
+    if (totalCost > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        document.getElementById('costPerFoot').textContent = costPerFoot.toFixed(2);
+        let cb = `<strong>Cost Breakdown:</strong><br>`;
+        if (gravelCost > 0) cb += `Gravel: ${gravelCubicYards.toFixed(2)} yd³ (${gravelTons.toFixed(2)} tons) = $${gravelCost.toFixed(2)}<br>`;
+        if (pipeCost > 0) cb += `Pipe: ${pipePieces} pieces = $${pipeCost.toFixed(2)}<br>`;
+        if (fabricCost > 0) cb += `Fabric: ${Math.ceil(fabricAreaSqFt)} ft² = $${fabricCost.toFixed(2)}<br>`;
+        cb += `<em>Includes ${wastage}% wastage</em>`;
+        document.getElementById('costBreakdown').innerHTML = cb;
+        cs.classList.add('active');
+    } else cs.classList.remove('active');
+    let fe = `<div class="formula-step"><strong>Trench:</strong> ${trenchLengthFt.toFixed(1)}' × ${(trenchWidthFt*12).toFixed(1)}" × ${(trenchDepthFt*12).toFixed(1)}"</div>
+<div class="formula-step">Excavation: ${trenchLengthFt.toFixed(1)} × ${trenchWidthFt.toFixed(2)} × ${trenchDepthFt.toFixed(2)} = ${excavationCubicFt.toFixed(2)} ft³ = ${excavationCubicYards.toFixed(2)} yd³</div>`;
+    if (hasPipe) fe += `<div class="formula-step">Pipe volume: ${pipeVolumeCubicFt.toFixed(2)} ft³ | Slope drop: ${(pipeDrop*12).toFixed(2)}"</div>`;
+    fe += `<div class="formula-step">Net gravel: ${((excavationCubicFt - pipeVolumeCubicFt)/27).toFixed(2)} yd³ × ${wastageMultiplier} = <strong>${gravelCubicYards.toFixed(2)} yd³</strong></div>
+<div class="formula-step">Weight: ${gravelCubicYards.toFixed(2)} × ${gravelDensity} = <strong>${gravelTons.toFixed(2)} tons</strong></div>`;
+    if (hasFabric) fe += `<div class="formula-step">Filter fabric: <strong>${Math.ceil(fabricAreaSqFt)} ft²</strong></div>`;
+    if (totalCost > 0) fe += `<div class="formula-step">Total cost: <strong>$${totalCost.toFixed(2)}</strong> ($${costPerFoot.toFixed(2)}/LF)</div>`;
+    document.getElementById('formulaExplanation').innerHTML = fe;
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+    if (window.innerWidth <= 768) document.querySelector('.result-section').scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+function resetCalculator() {
+    document.getElementById('trenchLength').value = '50'; document.getElementById('trenchLengthUnit').value = 'ft';
+    document.getElementById('trenchWidth').value = '12'; document.getElementById('trenchWidthUnit').value = 'in';
+    document.getElementById('trenchDepth').value = '18'; document.getElementById('trenchDepthUnit').value = 'in';
+    document.getElementById('hasPipe').checked = true; document.getElementById('pipeInputs').classList.add('active');
+    document.getElementById('pipeSize').value = '4'; document.getElementById('pipeType').value = 'pvc40';
+    document.getElementById('pipeSlope').value = '0.125'; document.getElementById('pipeLength').value = '10';
+    document.getElementById('hasFabric').checked = true; document.getElementById('fabricInputs').classList.add('active');
+    document.getElementById('fabricOverlap').value = '6'; document.getElementById('fabricOverlapUnit').value = 'in';
+    document.getElementById('fabricType').value = 'nonwoven'; document.getElementById('gravelType').value = '57';
+    document.getElementById('wastage').value = '10'; document.getElementById('gravelPrice').value = '45.00';
+    document.getElementById('gravelPriceUnit').value = 'ton'; document.getElementById('pipePrice').value = '15.00';
+    document.getElementById('fabricPrice').value = '0.50';
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+}
+const rmb = document.getElementById('readMoreBtn'), cm = document.getElementById('contentMore');
+if (rmb && cm) { rmb.addEventListener('click', function() { if (cm.classList.contains('expanded')) { cm.classList.remove('expanded'); rmb.textContent = 'Read More'; const cs = document.querySelector('.content-section'); if (cs) window.scrollTo({ top: cs.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' }); } else { cm.classList.add('expanded'); rmb.textContent = 'Show Less'; } }); }
+document.querySelectorAll('.input-field').forEach(i => i.addEventListener('keypress', e => { if (e.key === 'Enter') calculateDrain(); }));
+</script>
+</body>
+</html>

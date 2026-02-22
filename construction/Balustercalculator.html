@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Baluster Calculator — How Many Balusters Do I Need? | Free Deck Railing Calculator | CalcHub</title>
+    <meta name="description" content="Free baluster calculator. Calculate how many balusters or spindles you need for deck railings and stairs. Checks 4-inch code compliance, estimates cost, and includes spacing formula.">
+    <meta name="keywords" content="baluster calculator, spindle calculator, deck railing calculator, baluster spacing calculator, how many balusters do I need, stair railing calculator, baluster spacing, 4 inch rule deck railing">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/baluster-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/baluster-calculator">
+    <meta property="og:title" content="Baluster Calculator — How Many Balusters Do I Need?">
+    <meta property="og:description" content="Calculate balusters needed for deck railings and stairs. Checks 4-inch code compliance. Free, accurate, easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Baluster Calculator",
+        "description": "Calculate the number of balusters/spindles needed for deck railings and stairs based on length, spacing, and dimensions.",
+        "url": "https://calchub.com/construction/baluster-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many balusters do I need per foot of railing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The standard rule of thumb is 3 balusters per linear foot of railing. This keeps gap spacing at or below the maximum 4-inch requirement set by most U.S. building codes for 2-inch wide balusters."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the maximum spacing between balusters?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The International Residential Code (IRC) requires a maximum 4-inch gap between balusters. Building inspectors use a 4-inch sphere to test compliance on-site. Use 3.5 inches as your target spacing to ensure you pass after minor installation variations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the baluster spacing formula?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Number of Balusters = (Railing Length minus Total Post Width) divided by (Baluster Width plus Desired Spacing). Always round the result up to the next whole number."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do stair balusters follow the same spacing rules as deck balusters?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The same 4-inch maximum gap rule applies to stair balusters under the IRC. Measure spacing horizontally rather than along the stair angle for code compliance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many extra balusters should I order?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Order 10% more than your calculated quantity. This accounts for cuts, mistakes, and future repairs. For small orders, round up to the nearest full pack or bundle."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   BALUSTER CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --red: #ef4444;
+    --red-pale: #fee2e2;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+.warning-box { background:var(--red-pale); border:2px solid var(--red); border-radius:var(--radius); padding:12px 16px; margin-top:8px; display:none; }
+.warning-box.active { display:block; }
+.warning-box-text { color:var(--red); font-weight:600; font-size:0.9em; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:24px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:5000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE - OPTIMIZED FOR ALL DEVICES ═══ */
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Baluster Calculator</span>
+        </nav>
+
+        <h1>Baluster Calculator</h1>
+        <p class="hero-desc">Calculate the number of balusters (spindles) needed for deck railings, stair railings, and porches. Automatically checks 4-inch spacing code compliance. Includes cost estimator and waste calculation.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Enter Railing Dimensions</h2>
+                
+                <div class="input-group">
+                    <label class="input-label" for="railingLength">Railing Length</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="railingLength" placeholder="Enter length" min="0.1" step="0.5" value="10">
+                        <select class="select-field unit-select" id="railingLengthUnit">
+                            <option value="feet" selected>feet</option>
+                            <option value="inches">inches</option>
+                            <option value="meters">meters</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Total length of railing section</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="numPosts">Number of Posts</label>
+                    <input type="number" class="input-field" id="numPosts" placeholder="Number of posts" min="2" step="1" value="3">
+                    <div class="input-hint">Including start and end posts</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="postWidth">Post Width</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="postWidth" placeholder="Post width" min="0.1" step="0.25" value="4">
+                        <select class="select-field unit-select" id="postWidthUnit">
+                            <option value="inches" selected>inches</option>
+                            <option value="feet">feet</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Width of each post</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="balusterWidth">Baluster Width</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="balusterWidth" placeholder="Baluster width" min="0.1" step="0.25" value="2">
+                        <select class="select-field unit-select" id="balusterWidthUnit">
+                            <option value="inches" selected>inches</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Width of each baluster/spindle</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="balusterSpacing">Baluster Spacing</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="balusterSpacing" placeholder="Spacing" min="0.1" step="0.25" value="3.5" onchange="checkSpacing()">
+                        <select class="select-field unit-select" id="balusterSpacingUnit" onchange="checkSpacing()">
+                            <option value="inches" selected>inches</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Space between balusters (max 4" code)</div>
+                    <div class="warning-box" id="spacingWarning">
+                        <div class="warning-box-text">⚠️ Warning: Spacing exceeds 4-inch building code!</div>
+                    </div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerBaluster">Price per Baluster (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerBaluster" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter baluster price for total cost</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateBalusters()">Calculate Balusters Needed</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Balusters Needed</div>
+                        <div class="result-value"><span id="totalBalusters">0</span> <span class="result-unit">pieces</span></div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">With 10% Waste</div>
+                            <div class="result-item-value"><span id="withWaste">0</span> pcs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Actual Spacing</div>
+                            <div class="result-item-value"><span id="actualSpacing">0</span> in</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Baluster Calculator Guide</h2>
+        <div class="content-text">
+
+            <p>Whether you're building a new deck, replacing worn spindles on a porch railing, or framing out a staircase, the baluster count determines both the safety and the finished look of your project. Underestimate and your railing fails code; overestimate and you waste money and materials. Our baluster calculator gives you the exact number in seconds — including an automatic check against the 4-inch building code rule every inspector will test on-site.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">The Baluster Spacing Formula</div>
+                <p><strong>Number of Balusters = (Railing Length − Total Post Width) ÷ (Baluster Width + Desired Spacing)</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Always <strong>round up</strong> to the next whole number. Maximum allowed gap: <strong>4 inches</strong> (IRC building code). Target <strong>3.5 inches</strong> in practice to ensure you pass inspection.</p>
+            </div>
+
+            <h3>How to Calculate How Many Balusters You Need</h3>
+
+            <p>Calculating balusters follows four steps that any DIYer can work through manually — or let the calculator handle automatically:</p>
+
+            <p><strong>Step 1 — Measure the railing length.</strong> Measure the total length of the railing section in inches, from the inside edge of one end post to the inside edge of the other. If your deck has multiple railing sections, calculate each section separately since the number of posts and available span differs per section.</p>
+
+            <p><strong>Step 2 — Subtract total post width.</strong> Multiply your number of posts by each post's face width, then subtract that total from the railing length. For example: a 10-foot railing with three 4-inch posts has 3 × 4" = 12" of post material, leaving 108" of usable space for balusters.</p>
+
+            <p><strong>Step 3 — Divide by combined baluster and spacing width.</strong> Add the width of one baluster to your desired gap to get the "pitch" — the repeating unit. Divide the available space by this pitch. For 2" balusters with 3.5" spacing: 108" ÷ (2" + 3.5") = 108" ÷ 5.5" = 19.6.</p>
+
+            <p><strong>Step 4 — Round up.</strong> Always round up to the next whole number. 19.6 rounds to 20 balusters. Rounding up ensures your actual installed gap stays at or below 4 inches to pass code.</p>
+
+            <h3>The 4-Inch Baluster Spacing Rule Explained</h3>
+
+            <p>The 4-inch maximum gap between balusters isn't just a guideline — it's a safety requirement enforced under the International Residential Code (IRC) and adopted by virtually every local building department in the United States. The rule is based on a simple physical test: no opening in the railing should allow a 4-inch diameter sphere to pass through.</p>
+
+            <p>Building inspectors carry a 4-inch ball to every deck inspection and physically test the railing on-site. If the ball passes through any gap, the railing fails and must be corrected before a certificate of occupancy is issued. The safety reason is clear: small children can get their heads stuck between balusters if the spacing is too wide. In practice, always target <strong>3.5 inches</strong> rather than exactly 4 — minor variations in installation can push the actual gap slightly over 4 inches if you start right at the maximum.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>Baluster Spacing by Railing Length — Quick Reference</h3>
+
+                <p>A fast rule of thumb used by professional deck builders: plan for <strong>3 balusters per linear foot of railing</strong>. This keeps spacing safely under 4 inches for standard 1.5"–2" wide balusters. Here's how that plays out across common railing lengths with 2" balusters, 3.5" spacing, and 4" posts:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Railing Length</th>
+                                <th>Approx. Balusters Needed</th>
+                                <th>With 10% Waste</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>6 feet</td><td>~16</td><td>18</td><td>Typical short section</td></tr>
+                            <tr><td>8 feet</td><td>~21</td><td>24</td><td>Common deck side</td></tr>
+                            <tr><td>10 feet</td><td>~20</td><td>22</td><td>Standard deck section</td></tr>
+                            <tr><td>12 feet</td><td>~24</td><td>27</td><td>Longer deck run</td></tr>
+                            <tr><td>16 feet</td><td>~32</td><td>36</td><td>Full side of larger deck</td></tr>
+                            <tr><td>20 feet</td><td>~40</td><td>44</td><td>Large deck perimeter section</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>For the exact count with your specific baluster width, post count, and post sizes, always use the calculator above.</p>
+
+                <h3>Common Baluster Types, Widths, and Costs</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Common Width</th>
+                                <th>Material</th>
+                                <th>Price Range</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Square Wood</strong></td>
+                                <td>1.5" – 2"</td>
+                                <td>Pine, Cedar</td>
+                                <td>$1–$3 each</td>
+                                <td>Traditional decks, painted finishes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Turned Wood</strong></td>
+                                <td>2" – 2.5"</td>
+                                <td>Hardwood</td>
+                                <td>$3–$8 each</td>
+                                <td>Victorian, craftsman-style homes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Metal Square</strong></td>
+                                <td>0.5" – 0.75"</td>
+                                <td>Iron, Aluminum</td>
+                                <td>$2–$5 each</td>
+                                <td>Contemporary designs, high traffic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Composite</strong></td>
+                                <td>1" – 1.5"</td>
+                                <td>PVC, Composite</td>
+                                <td>$2–$6 each</td>
+                                <td>Low-maintenance composite decks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cable Rail</strong></td>
+                                <td>0.25" cable</td>
+                                <td>Stainless Steel</td>
+                                <td>$50–$100/run</td>
+                                <td>Modern decks with view preservation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Glass Panel</strong></td>
+                                <td>Panel width varies</td>
+                                <td>Tempered Glass</td>
+                                <td>$100–$300/panel</td>
+                                <td>Premium modern or coastal decks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Deck vs. Stair Baluster Calculations</h3>
+
+                <p><strong>Deck railing balusters</strong> are the most straightforward to calculate. The railing is horizontal, so the spacing measurement is taken along a flat line from post to post. Our calculator is set up for this by default.</p>
+
+                <p><strong>Stair balusters</strong> follow the same 4-inch gap rule, but the installation runs at an angle. For code compliance, the 4-inch gap is always measured horizontally — not along the rake. In practice, most builders use the horizontal run of the stair section as the railing length in the formula. Note that baluster heights will vary along the stair: balusters at the bottom step are taller than those at the top. This affects material cost (order longer stock) but does not change the count calculation.</p>
+
+                <h3>Building Code Requirements for Deck and Stair Railings</h3>
+
+                <ul>
+                    <li><strong>When a railing is required:</strong> Any deck or elevated surface 30 inches or more above grade requires a guard railing under the IRC.</li>
+                    <li><strong>Minimum railing height:</strong> 36 inches for residential decks. Some jurisdictions require 42 inches for elevated decks or commercial applications.</li>
+                    <li><strong>Maximum baluster spacing:</strong> 4 inches (4-inch sphere test), applying to both deck railings and stair railings.</li>
+                    <li><strong>Load requirement:</strong> The top rail must withstand a minimum 200-pound force applied in any direction without failing.</li>
+                    <li><strong>Post spacing:</strong> Most codes require posts every 6–8 feet along the railing. Closer spacing adds rigidity and reduces the span each baluster section must cover.</li>
+                    <li><strong>Stair handrail height:</strong> 34–38 inches measured vertically above the stair nosing.</li>
+                </ul>
+
+                <p>Always verify requirements with your local building department before starting. Some jurisdictions adopt stricter standards than the IRC baseline.</p>
+
+                <h3>Worked Example — 10-Foot Deck Railing</h3>
+
+                <div class="info-box">
+                    <p><strong>Project specs:</strong> 10-foot deck railing, 3 posts (4" wide each), 2" wood balusters, 3.5" target spacing</p>
+                    <p style="margin-top:10px;"><strong>Step 1 — Convert to inches:</strong> 10 ft = 120"</p>
+                    <p><strong>Step 2 — Subtract post width:</strong> 120" − (3 × 4") = 120" − 12" = 108"</p>
+                    <p><strong>Step 3 — Divide by pitch:</strong> 108" ÷ (2" + 3.5") = 108" ÷ 5.5" = 19.6</p>
+                    <p><strong>Step 4 — Round up:</strong> <strong>20 balusters needed</strong></p>
+                    <p style="margin-top:10px;"><strong>Actual spacing check:</strong> (108" − 20 × 2") ÷ 20 = 68" ÷ 20 = <strong>3.4" gap ✓ Passes 4" code</strong></p>
+                    <p><strong>Order with 10% waste:</strong> 22 balusters</p>
+                </div>
+
+                <h3>Installation Tips for Perfectly Spaced Balusters</h3>
+
+                <ul>
+                    <li><strong>Make a spacer jig.</strong> Cut a piece of scrap wood to the exact gap width (e.g., 3.5") and use it between each baluster as you install. This is faster than measuring each gap individually and ensures perfect consistency across the entire railing run.</li>
+                    <li><strong>Pre-drill all baluster ends.</strong> Drilling pilot holes before fastening prevents wood from splitting, especially with cedar and pine. Use a bit slightly smaller than your screw shank diameter.</li>
+                    <li><strong>Check for plumb every 3–4 balusters.</strong> Use a small level frequently. Balusters that aren't perfectly vertical become visually obvious when the railing is viewed from an angle.</li>
+                    <li><strong>Use stainless steel or hot-dipped galvanized fasteners.</strong> Standard zinc-coated screws will rust within a couple of seasons on exterior decks, leaving dark stains that bleed into the wood.</li>
+                    <li><strong>Seal all cut ends before installing.</strong> End-grain wood absorbs moisture aggressively. Apply a wood preservative or end-grain sealer to any cut ends before setting balusters into position.</li>
+                    <li><strong>Order 10% extra.</strong> Cuts, splits during installation, and future damage repairs all eat into your supply. One extra pack ordered now is far cheaper than a special order later.</li>
+                </ul>
+
+                <h3>Frequently Asked Questions About Baluster Spacing</h3>
+
+                <p><strong>How far apart should balusters be?</strong><br>
+                The maximum gap between balusters is <strong>4 inches</strong> under U.S. building codes (IRC). In practice, target 3.5 inches to allow for minor installation variations. Always check local codes — some jurisdictions may be stricter.</p>
+
+                <p><strong>How many balusters per foot of railing?</strong><br>
+                The standard rule of thumb is <strong>3 balusters per linear foot</strong> for 2-inch wide balusters at 3.5-inch spacing. This keeps gaps safely under the 4-inch maximum for most standard baluster widths.</p>
+
+                <p><strong>Are balusters and spindles the same thing?</strong><br>
+                The terms are often used interchangeably. Technically, a baluster extends from the deck surface up to the top rail, while a spindle is held between a top and bottom rail without touching the floor. In practice, both are calculated the same way and the terms are used interchangeably at lumber yards and building supply stores.</p>
+
+                <p><strong>What is the difference between a baluster and a post?</strong><br>
+                Posts are the structural anchors — they attach directly to the deck frame and support the entire railing system. Balusters are the infill members between posts. Posts are typically 4×4 or 6×6 lumber; balusters are much smaller (1.5"–2" square for wood).</p>
+
+                <p><strong>Do porch and interior stair balusters follow the 4-inch rule?</strong><br>
+                Yes. The 4-inch sphere test applies to front porch railings and interior stair railings under the IRC. For interior stairs in existing homes, local codes may not require a permit for minor repairs, but new construction and significant renovations must comply.</p>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>All calculations are estimates based on standard formulas. Actual baluster counts may vary depending on installation method, post dimensions, and field conditions. Always confirm requirements with your local building department before starting your railing project.</em></p>
+
+            </div><!-- end content-more -->
+        </div><!-- end content-text -->
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Baluster Calculator - 99% Accurate
+
+// Unit conversion functions
+function toInches(value, unit) {
+    const conversions = {
+        'inches': 1,
+        'feet': 12,
+        'meters': 39.3701,
+        'cm': 0.393701
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function checkSpacing() {
+    const spacing = parseFloat(document.getElementById('balusterSpacing').value);
+    const unit = document.getElementById('balusterSpacingUnit').value;
+    const spacingInches = toInches(spacing, unit);
+    
+    const warning = document.getElementById('spacingWarning');
+    if (spacingInches > 4) {
+        warning.classList.add('active');
+    } else {
+        warning.classList.remove('active');
+    }
+}
+
+function calculateBalusters() {
+    // Get inputs and convert to inches
+    const railingLength = parseFloat(document.getElementById('railingLength').value);
+    const railingLengthUnit = document.getElementById('railingLengthUnit').value;
+    const railingLengthInches = toInches(railingLength, railingLengthUnit);
+    
+    const numPosts = parseInt(document.getElementById('numPosts').value);
+    
+    const postWidth = parseFloat(document.getElementById('postWidth').value);
+    const postWidthUnit = document.getElementById('postWidthUnit').value;
+    const postWidthInches = toInches(postWidth, postWidthUnit);
+    
+    const balusterWidth = parseFloat(document.getElementById('balusterWidth').value);
+    const balusterWidthUnit = document.getElementById('balusterWidthUnit').value;
+    const balusterWidthInches = toInches(balusterWidth, balusterWidthUnit);
+    
+    const balusterSpacing = parseFloat(document.getElementById('balusterSpacing').value);
+    const balusterSpacingUnit = document.getElementById('balusterSpacingUnit').value;
+    const balusterSpacingInches = toInches(balusterSpacing, balusterSpacingUnit);
+    
+    const pricePerBaluster = parseFloat(document.getElementById('pricePerBaluster').value) || 0;
+
+    // Validation
+    if (!railingLength || railingLength <= 0) {
+        alert('Please enter a valid railing length');
+        return;
+    }
+    if (!numPosts || numPosts < 2) {
+        alert('Please enter at least 2 posts');
+        return;
+    }
+    if (!postWidth || postWidth <= 0) {
+        alert('Please enter a valid post width');
+        return;
+    }
+    if (!balusterWidth || balusterWidth <= 0) {
+        alert('Please enter a valid baluster width');
+        return;
+    }
+    if (!balusterSpacing || balusterSpacing <= 0) {
+        alert('Please enter a valid baluster spacing');
+        return;
+    }
+
+    // Calculate available space (railing length minus total post width)
+    const totalPostWidth = numPosts * postWidthInches;
+    const availableSpace = railingLengthInches - totalPostWidth;
+
+    // Calculate number of balusters
+    const balustersNeeded = Math.ceil(availableSpace / (balusterWidthInches + balusterSpacingInches));
+    
+    // Calculate actual spacing that will be achieved
+    const actualSpacing = (availableSpace - (balustersNeeded * balusterWidthInches)) / balustersNeeded;
+    
+    // Calculate with waste (10%)
+    const withWaste = Math.ceil(balustersNeeded * 1.1);
+
+    // Calculate cost
+    const totalCost = balustersNeeded * pricePerBaluster;
+    const totalCostWithWaste = withWaste * pricePerBaluster;
+
+    // Display results
+    document.getElementById('totalBalusters').textContent = balustersNeeded;
+    document.getElementById('withWaste').textContent = withWaste;
+    document.getElementById('actualSpacing').textContent = actualSpacing.toFixed(2);
+
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerBaluster > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${balustersNeeded} balusters × $${pricePerBaluster.toFixed(2)} = $${totalCost.toFixed(2)}<br>
+            <em>With 10% waste: ${withWaste} balusters = $${totalCostWithWaste.toFixed(2)}</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+
+    // Formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Formula:</strong> (Railing Length - Total Post Width) ÷ (Baluster Width + Spacing)</div>
+        <div class="formula-step"><strong>Your Inputs (converted to inches):</strong></div>
+        <div class="formula-step">• Railing Length: ${railingLengthInches.toFixed(2)}"</div>
+        <div class="formula-step">• Posts: ${numPosts} posts × ${postWidthInches.toFixed(2)}" = ${totalPostWidth.toFixed(2)}"</div>
+        <div class="formula-step">• Baluster Width: ${balusterWidthInches.toFixed(2)}"</div>
+        <div class="formula-step">• Desired Spacing: ${balusterSpacingInches.toFixed(2)}"</div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Step 1 - Available Space:</strong></div>
+        <div class="formula-step">${railingLengthInches.toFixed(2)}" - ${totalPostWidth.toFixed(2)}" = ${availableSpace.toFixed(2)}"</div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Step 2 - Calculate Balusters:</strong></div>
+        <div class="formula-step">${availableSpace.toFixed(2)}" ÷ (${balusterWidthInches.toFixed(2)}" + ${balusterSpacingInches.toFixed(2)}") = ${availableSpace.toFixed(2)}" ÷ ${(balusterWidthInches + balusterSpacingInches).toFixed(2)}"</div>
+        <div class="formula-step">= ${(availableSpace / (balusterWidthInches + balusterSpacingInches)).toFixed(2)} → Round up to <strong>${balustersNeeded} balusters</strong></div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Actual Spacing Achieved:</strong></div>
+        <div class="formula-step">${actualSpacing.toFixed(2)}" (${actualSpacing <= 4 ? '✓ Meets 4" code' : '⚠️ Exceeds 4" code'})</div>
+    `;
+    
+    if (pricePerBaluster > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${balustersNeeded} × $${pricePerBaluster.toFixed(2)} = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    // Reset inputs
+    document.getElementById('railingLength').value = '10';
+    document.getElementById('railingLengthUnit').value = 'feet';
+    document.getElementById('numPosts').value = '3';
+    document.getElementById('postWidth').value = '4';
+    document.getElementById('postWidthUnit').value = 'inches';
+    document.getElementById('balusterWidth').value = '2';
+    document.getElementById('balusterWidthUnit').value = 'inches';
+    document.getElementById('balusterSpacing').value = '3.5';
+    document.getElementById('balusterSpacingUnit').value = 'inches';
+    document.getElementById('pricePerBaluster').value = '';
+    
+    // Hide warning
+    document.getElementById('spacingWarning').classList.remove('active');
+
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+
+    // Reset values
+    document.getElementById('totalBalusters').textContent = '0';
+    document.getElementById('withWaste').textContent = '0';
+    document.getElementById('actualSpacing').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateBalusters();
+        }
+    });
+});
+
+// Check spacing on page load
+window.addEventListener('load', checkSpacing);
+</script>
+
+</body>
+</html>

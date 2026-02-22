@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Cubic Yard Calculator — Calculate Cubic Yards for Concrete, Gravel & Mulch | CalcHub</title>
+    <meta name="description" content="Free cubic yard calculator. Calculate volume in cubic yards for concrete, gravel, mulch, topsoil, and more. Supports 10 shapes including rectangle, cylinder, cone, and trapezoid. Includes material weight and cost estimator.">
+    <meta name="keywords" content="cubic yard calculator, how many cubic yards, calculate cubic yards, concrete cubic yards, gravel cubic yards, mulch calculator, topsoil calculator, cubic yards to tons, how to calculate cubic yards, volume calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/cubic-yard-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/cubic-yard-calculator">
+    <meta property="og:title" content="Cubic Yard Calculator — Volume for Concrete, Gravel & Mulch">
+    <meta property="og:description" content="Calculate cubic yards instantly from dimensions. 10 shapes, material weights, cost estimator. Free.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cubic Yard Calculator",
+        "description": "Calculate volume in cubic yards from dimensions. Supports 10 shapes. Perfect for concrete, gravel, mulch, and topsoil estimates.",
+        "url": "https://calchub.com/construction/cubic-yard-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": { "@type": "Organization", "name": "CalcHub" }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate cubic yards?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a rectangular area: Cubic Yards = (Length in feet × Width in feet × Depth in feet) ÷ 27. Always convert all dimensions to feet first. For example, a 10-foot by 10-foot area at 4 inches deep is (10 × 10 × 0.333) ÷ 27 = 1.23 cubic yards."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many cubic yards in a ton of gravel or concrete?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Concrete weighs about 4,000 lbs per cubic yard (2 tons per cubic yard). Gravel weighs about 2,700 lbs per cubic yard (1.35 tons). So 1 ton of concrete = 0.5 cubic yards, and 1 ton of gravel = about 0.74 cubic yards. Material weights vary by type and moisture content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many cubic yards do I need for a 4-inch concrete slab?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a 4-inch concrete slab: multiply length (ft) × width (ft) × 0.333 (which is 4 inches converted to feet), then divide by 27. A 10×10 slab at 4 inches = (10 × 10 × 0.333) ÷ 27 = 1.23 cubic yards. Always order 5–10% extra for waste."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many cubic yards of mulch do I need for a 4-inch layer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 4 inches of mulch over an area: multiply the square footage by 0.0123 (which is 4 inches ÷ 12 ÷ 27). For a 500 sq ft garden bed: 500 × 0.0123 = 6.15 cubic yards. One cubic yard of mulch covers about 81 square feet at 4 inches deep, or 162 square feet at 2 inches deep."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a cubic yard of concrete, gravel, or topsoil cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Typical prices: ready-mix concrete $100–$150 per cubic yard; gravel or crushed stone $15–$75 per cubic yard; topsoil $20–$40 per cubic yard; mulch $25–$50 per cubic yard; sand $15–$40 per cubic yard. Prices vary by region, quantity, and delivery distance."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+:root {
+    --navy: #0f172a; --slate: #1e293b; --slate-light: #334155; --muted: #64748b;
+    --muted-light: #94a3b8; --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
+    --teal: #0d9488; --teal-light: #14b8a6; --teal-pale: #ccfbf1;
+    --green: #10b981; --orange: #f97316; --orange-pale: #ffedd5;
+    --blue: #3b82f6; --blue-pale: #dbeafe; --purple: #8b5cf6; --purple-pale: #ede9fe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px; --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+.shape-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:24px; }
+.shape-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.shape-options { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.shape-btn { background:var(--white); border:2px solid var(--border); padding:10px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; }
+.shape-btn:hover { border-color:var(--purple); background:rgba(139,92,246,0.05); }
+.shape-btn.active { border-color:var(--purple); background:var(--purple); color:var(--white); }
+.shape-icon { font-size:1.3em; margin-bottom:2px; }
+.cylinder-inputs, .cube-inputs, .hollow-cuboid-inputs, .hollow-cylinder-inputs, .hemisphere-inputs, .cone-inputs, .pyramid-inputs, .triangle-inputs, .trapezoid-inputs { display:none; }
+.cylinder-inputs.active, .cube-inputs.active, .hollow-cuboid-inputs.active, .hollow-cylinder-inputs.active, .hemisphere-inputs.active, .cone-inputs.active, .pyramid-inputs.active, .triangle-inputs.active, .trapezoid-inputs.active { display:block; }
+.material-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-top:16px; }
+.material-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--blue); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:16px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.price-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); }
+
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.material-result { background:linear-gradient(135deg, var(--blue-pale) 0%, #e0f2fe 100%); border:2px solid var(--blue); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.material-result.active { display:block; }
+.material-result-title { font-size:0.9em; color:var(--blue); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; text-align:center; }
+.material-result-content { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); }
+
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:8000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); }
+
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; } .hero { padding:40px 20px; } .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; } .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; } .result-value { font-size:2em; }
+    .content-section { padding:32px 24px; } .cta-section { padding:32px 24px; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .shape-options { grid-template-columns:1fr 1fr; gap:6px; }
+    .shape-btn { padding:8px; font-size:0.8em; }
+}
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; } .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; } .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; } .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; } .result-section { padding:20px; }
+    .content-section { padding:24px 16px; } .cta-section { padding:28px 16px; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; } .footer-inner { padding:40px 16px 20px; }
+}
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; } .result-value { font-size:1.8em; }
+    .input-row { flex-direction:column; } .unit-select { width:100%; }
+    .bonus-badge, .price-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+@media (max-width:360px) { .hero h1 { font-size:1.3em; } .calculator-container { padding:16px 12px; } .result-section { padding:16px; } }
+@media print { .header, .footer, .cta-section, .read-more-btn { display:none; } .content-more { max-height:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Cubic Yard Calculator</span>
+        </nav>
+        <h1>Cubic Yard Calculator</h1>
+        <p class="hero-desc">Calculate volume in cubic yards from dimensions. <strong>Supports 10 different shapes</strong> including rectangles, cylinders, hollow shapes, pyramids, cones, and more. Perfect for estimating concrete, gravel, mulch, topsoil, and other materials.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-section">
+                <h2>Enter Dimensions</h2>
+                
+                <div class="shape-section">
+                    <div class="shape-section-title">Select Shape</div>
+                    <div class="shape-options">
+                        <button class="shape-btn active" onclick="selectShape('rectangle')" id="btnRectangle"><div class="shape-icon">▭</div><div>Rectangle</div></button>
+                        <button class="shape-btn" onclick="selectShape('cube')" id="btnCube"><div class="shape-icon">◻</div><div>Cube</div></button>
+                        <button class="shape-btn" onclick="selectShape('cylinder')" id="btnCylinder"><div class="shape-icon">⬤</div><div>Cylinder</div></button>
+                        <button class="shape-btn" onclick="selectShape('hollow-cuboid')" id="btnHollowCuboid"><div class="shape-icon">▢</div><div>Hollow Box</div></button>
+                        <button class="shape-btn" onclick="selectShape('hollow-cylinder')" id="btnHollowCylinder"><div class="shape-icon">◯</div><div>Hollow Tube</div></button>
+                        <button class="shape-btn" onclick="selectShape('hemisphere')" id="btnHemisphere"><div class="shape-icon">◐</div><div>Hemisphere</div></button>
+                        <button class="shape-btn" onclick="selectShape('cone')" id="btnCone"><div class="shape-icon">▲</div><div>Cone</div></button>
+                        <button class="shape-btn" onclick="selectShape('pyramid')" id="btnPyramid"><div class="shape-icon">△</div><div>Pyramid</div></button>
+                        <button class="shape-btn" onclick="selectShape('triangle')" id="btnTriangle"><div class="shape-icon">▷</div><div>Triangle Prism</div></button>
+                        <button class="shape-btn" onclick="selectShape('trapezoid')" id="btnTrapezoid"><div class="shape-icon">⬒</div><div>Trapezoid</div></button>
+                    </div>
+                </div>
+
+                <!-- RECTANGLE INPUTS -->
+                <div id="rectangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="length">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="length" placeholder="Enter length" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="lengthUnit">
+                                <option value="feet" selected>feet</option>
+                                <option value="inches">inches</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="width">Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="width" placeholder="Enter width" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="widthUnit">
+                                <option value="feet" selected>feet</option>
+                                <option value="inches">inches</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="height">Height / Depth</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="height" placeholder="Enter height" min="0.1" step="0.5" value="4">
+                            <select class="select-field unit-select" id="heightUnit">
+                                <option value="inches" selected>inches</option>
+                                <option value="feet">feet</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Depth or height of material</div>
+                    </div>
+                </div>
+
+                <!-- CYLINDER INPUTS -->
+                <div class="cylinder-inputs" id="cylinderInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="diameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="diameter" placeholder="Enter diameter" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="diameterUnit">
+                                <option value="feet" selected>feet</option>
+                                <option value="inches">inches</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="cylinderHeight">Height / Depth</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cylinderHeight" placeholder="Enter height" min="0.1" step="0.5" value="4">
+                            <select class="select-field unit-select" id="cylinderHeightUnit">
+                                <option value="inches" selected>inches</option>
+                                <option value="feet">feet</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUBE INPUTS -->
+                <div class="cube-inputs" id="cubeInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="cubeSide">Side Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cubeSide" placeholder="Enter side length" min="0.1" step="0.5" value="3">
+                            <select class="select-field unit-select" id="cubeSideUnit">
+                                <option value="feet" selected>feet</option>
+                                <option value="inches">inches</option>
+                                <option value="yards">yards</option>
+                                <option value="meters">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Length of each side (all sides equal)</div>
+                    </div>
+                </div>
+
+                <!-- HOLLOW CUBOID INPUTS -->
+                <div class="hollow-cuboid-inputs" id="hollowCuboidInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="hcOuterLength">Outer Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcOuterLength" placeholder="Outer length" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="hcOuterLengthUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hcOuterWidth">Outer Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcOuterWidth" placeholder="Outer width" min="0.1" step="0.5" value="8">
+                            <select class="select-field unit-select" id="hcOuterWidthUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hcOuterHeight">Outer Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcOuterHeight" placeholder="Outer height" min="0.1" step="0.5" value="6">
+                            <select class="select-field unit-select" id="hcOuterHeightUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hcWallThickness">Wall Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcWallThickness" placeholder="Wall thickness" min="0.1" step="0.25" value="6">
+                            <select class="select-field unit-select" id="hcWallThicknessUnit"><option value="inches" selected>inches</option><option value="feet">feet</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOLLOW CYLINDER INPUTS -->
+                <div class="hollow-cylinder-inputs" id="hollowCylinderInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="hcyOuterDiameter">Outer Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcyOuterDiameter" placeholder="Outer diameter" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="hcyOuterDiameterUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hcyInnerDiameter">Inner Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcyInnerDiameter" placeholder="Inner diameter" min="0.1" step="0.5" value="8">
+                            <select class="select-field unit-select" id="hcyInnerDiameterUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="hcyHeight">Height / Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hcyHeight" placeholder="Height" min="0.1" step="0.5" value="6">
+                            <select class="select-field unit-select" id="hcyHeightUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HEMISPHERE INPUTS -->
+                <div class="hemisphere-inputs" id="hemisphereInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="hemisphereRadius">Radius</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="hemisphereRadius" placeholder="Enter radius" min="0.1" step="0.5" value="5">
+                            <select class="select-field unit-select" id="hemisphereRadiusUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                        <div class="input-hint">Half of diameter</div>
+                    </div>
+                </div>
+
+                <!-- CONE INPUTS -->
+                <div class="cone-inputs" id="coneInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="coneRadius">Base Radius</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="coneRadius" placeholder="Enter radius" min="0.1" step="0.5" value="5">
+                            <select class="select-field unit-select" id="coneRadiusUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="coneHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="coneHeight" placeholder="Enter height" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="coneHeightUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PYRAMID INPUTS -->
+                <div class="pyramid-inputs" id="pyramidInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="pyramidBase">Base Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="pyramidBase" placeholder="Base length" min="0.1" step="0.5" value="4">
+                            <select class="select-field unit-select" id="pyramidBaseUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="pyramidHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="pyramidHeight" placeholder="Enter height" min="0.1" step="0.5" value="6">
+                            <select class="select-field unit-select" id="pyramidHeightUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRIANGLE PRISM INPUTS -->
+                <div class="triangle-inputs" id="triangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="triangleBase">Triangle Base</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triangleBase" placeholder="Enter base" min="0.1" step="0.5" value="6">
+                            <select class="select-field unit-select" id="triangleBaseUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="triangleHeight">Triangle Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triangleHeight" placeholder="Enter height" min="0.1" step="0.5" value="4">
+                            <select class="select-field unit-select" id="triangleHeightUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="triangleLength">Prism Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triangleLength" placeholder="Enter length" min="0.1" step="0.5" value="10">
+                            <select class="select-field unit-select" id="triangleLengthUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRAPEZOID INPUTS -->
+                <div class="trapezoid-inputs" id="trapezoidInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="trapezoidTop">Top Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trapezoidTop" placeholder="Top width" min="0.1" step="0.5" value="8">
+                            <select class="select-field unit-select" id="trapezoidTopUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="trapezoidBottom">Bottom Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trapezoidBottom" placeholder="Bottom width" min="0.1" step="0.5" value="12">
+                            <select class="select-field unit-select" id="trapezoidBottomUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="trapezoidHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trapezoidHeight" placeholder="Enter height" min="0.1" step="0.5" value="4">
+                            <select class="select-field unit-select" id="trapezoidHeightUnit"><option value="inches" selected>inches</option><option value="feet">feet</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="trapezoidLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="trapezoidLength" placeholder="Enter length" min="0.1" step="0.5" value="20">
+                            <select class="select-field unit-select" id="trapezoidLengthUnit"><option value="feet" selected>feet</option><option value="inches">inches</option><option value="yards">yards</option><option value="meters">meters</option><option value="cm">cm</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATERIAL TYPE -->
+                <div class="material-section">
+                    <div class="material-section-title">Material Type <span class="bonus-badge">OPTIONAL</span></div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="materialType">Select Material</label>
+                        <select class="select-field" id="materialType">
+                            <option value="">-- Select Material --</option>
+                            <option value="concrete">Concrete</option>
+                            <option value="gravel">Gravel / Stone</option>
+                            <option value="sand">Sand</option>
+                            <option value="topsoil">Topsoil</option>
+                            <option value="mulch">Mulch / Bark</option>
+                            <option value="asphalt">Asphalt</option>
+                            <option value="dirt">Fill Dirt</option>
+                        </select>
+                        <div class="input-hint">Get material weight and cost info</div>
+                    </div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">Cost Estimator <span class="price-badge">BONUS</span></div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerYard">Price per Cubic Yard (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerYard" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter price for total cost estimate</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateCubicYards()">Calculate Cubic Yards</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Volume Needed</div>
+                        <div class="result-value"><span id="totalCubicYards">0</span> <span class="result-unit">yd³</span></div>
+                    </div>
+                    <div class="material-result" id="materialResult">
+                        <div class="material-result-title">Material Information</div>
+                        <div class="material-result-content" id="materialInfo"></div>
+                    </div>
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Cubic Feet</div>
+                            <div class="result-item-value"><span id="cubicFeet">0</span> ft³</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Cubic Meters</div>
+                            <div class="result-item-value"><span id="cubicMeters">0</span> m³</div>
+                        </div>
+                        <div class="result-item" id="weightResult" style="display:none;">
+                            <div class="result-item-label">Est. Weight</div>
+                            <div class="result-item-value"><span id="totalWeight">0</span> lbs</div>
+                        </div>
+                        <div class="result-item" id="truckResult" style="display:none;">
+                            <div class="result-item-label">Truck Loads</div>
+                            <div class="result-item-value"><span id="truckLoads">0</span> loads</div>
+                        </div>
+                    </div>
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>How to Calculate Cubic Yards</h2>
+        <div class="content-text">
+
+            <p>Cubic yards are the standard unit for ordering bulk construction and landscaping materials in North America. When you call a concrete supplier, a gravel yard, or a mulch delivery service, they quote and sell by the cubic yard. Getting the number right before you order prevents two equally frustrating outcomes: running short mid-project or paying to haul away leftover material.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Basic Cubic Yard Formula</div>
+                <p><strong>Cubic Yards = (Length ft × Width ft × Depth ft) ÷ 27</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">All dimensions must be in <strong>feet</strong> before dividing. Divide by 27 because 1 cubic yard = 3' × 3' × 3' = 27 cubic feet.</p>
+            </div>
+
+            <p>The single most common mistake is entering depth in inches without converting. A 4-inch slab is <strong>0.333 feet</strong> deep — not 4 feet. Always convert depth to feet first. Our calculator handles this conversion automatically, no matter which unit you select.</p>
+
+            <h3>Step-by-Step Calculation Example — Concrete Driveway</h3>
+
+            <p>You're pouring a concrete driveway that's 20 feet long, 10 feet wide, and 4 inches thick. Here's the calculation: convert depth to feet (4 ÷ 12 = 0.333 ft), multiply the three dimensions (20 × 10 × 0.333 = 66.7 cubic feet), divide by 27 (66.7 ÷ 27 = 2.47 cubic yards). Add 10% for waste and you order <strong>2.75 cubic yards</strong> — round up to 3 yards for a comfortable margin.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>Cubic Yards Quick Reference — Common Depths</h3>
+
+                <p>The table below shows how many cubic yards you need per 100 square feet at common depths. Multiply by your area in hundreds of square feet to scale:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Depth</th><th>Per 100 SF</th><th>Per 500 SF</th><th>Per 1,000 SF</th><th>Common Use</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>1 inch</strong></td><td>0.31 yd³</td><td>1.54 yd³</td><td>3.09 yd³</td><td>Top-dressing lawn</td></tr>
+                            <tr><td><strong>2 inches</strong></td><td>0.62 yd³</td><td>3.09 yd³</td><td>6.17 yd³</td><td>Mulch refresh</td></tr>
+                            <tr><td><strong>3 inches</strong></td><td>0.93 yd³</td><td>4.63 yd³</td><td>9.26 yd³</td><td>Mulch, base gravel</td></tr>
+                            <tr><td><strong>4 inches</strong></td><td>1.23 yd³</td><td>6.17 yd³</td><td>12.35 yd³</td><td>Concrete slabs, deep mulch</td></tr>
+                            <tr><td><strong>6 inches</strong></td><td>1.85 yd³</td><td>9.26 yd³</td><td>18.52 yd³</td><td>Driveways, deep gravel</td></tr>
+                            <tr><td><strong>8 inches</strong></td><td>2.47 yd³</td><td>12.35 yd³</td><td>24.69 yd³</td><td>Structural concrete</td></tr>
+                            <tr><td><strong>12 inches</strong></td><td>3.70 yd³</td><td>18.52 yd³</td><td>37.04 yd³</td><td>Deep fill, foundations</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Material Weights and Coverage</h3>
+
+                <p>Knowing the weight per cubic yard helps you plan delivery logistics — most dump trucks hold 10–14 cubic yards but are weight-limited, which can reduce actual load size for heavy materials like concrete and wet sand.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Material</th><th>Weight / yd³</th><th>Tons / yd³</th><th>Typical Price / yd³</th><th>Compaction Note</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Concrete</strong></td><td>~4,000 lbs</td><td>2.0</td><td>$100–$150</td><td>No compaction</td></tr>
+                            <tr><td><strong>Gravel / Crushed Stone</strong></td><td>~2,700 lbs</td><td>1.35</td><td>$15–$75</td><td>Compacts 20–30%; order 25% extra</td></tr>
+                            <tr><td><strong>Sand</strong></td><td>~2,600 lbs</td><td>1.3</td><td>$15–$40</td><td>Compacts 15–25%; order 20% extra</td></tr>
+                            <tr><td><strong>Topsoil</strong></td><td>~2,200 lbs</td><td>1.1</td><td>$20–$40</td><td>Settles 10–15%</td></tr>
+                            <tr><td><strong>Mulch / Wood Chips</strong></td><td>~700 lbs</td><td>0.35</td><td>$25–$50</td><td>Settles 10–20%</td></tr>
+                            <tr><td><strong>Asphalt (hot mix)</strong></td><td>~4,050 lbs</td><td>2.03</td><td>$90–$150</td><td>Professional install required</td></tr>
+                            <tr><td><strong>Fill Dirt</strong></td><td>~2,000 lbs</td><td>1.0</td><td>$8–$15</td><td>Settles and compacts significantly</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>When to Use Each Shape</h3>
+
+                <p>Most projects are rectangular — length × width × depth covers driveways, patios, raised beds, and foundations. But some situations call for other shapes. Use <strong>Cylinder</strong> for round ponds, tree wells, circular patios, or footing holes. Use <strong>Hollow Tube</strong> for cylindrical concrete walls or round planters. Use <strong>Trapezoid</strong> for drainage ditches and berms with sloped sides. Use <strong>Triangle Prism</strong> for wedge-shaped ramps and embankment fills. Use <strong>Cone</strong> to estimate a material pile — useful when checking how much sand or gravel has been delivered.</p>
+
+                <p>For irregular spaces, the simplest approach is to divide the area into simple shapes, calculate each separately, then add the results together. A kidney-shaped pond, for instance, can be approximated as a rectangle plus a semicircle, calculated as a cylinder half.</p>
+
+                <h3>Waste and Compaction — How Much Extra to Order</h3>
+
+                <p>Never order exactly what you calculated. Waste allowances depend on the material and application:</p>
+
+                <ul>
+                    <li><strong>Concrete slabs:</strong> Add 5–10% for spillage, uneven subgrade, and edges</li>
+                    <li><strong>Gravel driveways:</strong> Add 25–30% — gravel compacts significantly after spreading and traffic</li>
+                    <li><strong>Sand base layers:</strong> Add 20% for compaction losses</li>
+                    <li><strong>Topsoil (new lawn):</strong> Add 15–20% for settling over the first growing season</li>
+                    <li><strong>Mulch:</strong> Add 15% for settling and decomposition in the first year</li>
+                    <li><strong>Fill dirt:</strong> Add 25–35% — loose fill compacts dramatically under its own weight</li>
+                </ul>
+
+                <h3>How Many Cubic Yards in a Ton?</h3>
+
+                <p>Material suppliers sometimes quote by the ton rather than the cubic yard. To convert, divide the total weight by 2,000 (pounds per ton). For concrete: 1 cubic yard = 4,000 lbs ÷ 2,000 = 2 tons. For gravel: 1 cubic yard = 2,700 lbs ÷ 2,000 = 1.35 tons. Conversely, if a supplier quotes gravel at a certain price per ton and you know you need 5 cubic yards, you need 5 × 1.35 = 6.75 tons.</p>
+
+                <h3>Truck Load Capacities</h3>
+
+                <p>Understanding delivery vehicle capacities helps you minimize trips and delivery fees. A standard pickup truck can carry 1–2 cubic yards of heavy material (like gravel) before reaching its payload limit. A single-axle dump truck holds 8–10 cubic yards, a tandem-axle dump truck 12–15 cubic yards, and a full-size ready-mix concrete truck typically delivers 8–10 cubic yards per load. For smaller projects, many suppliers offer mini-load services or allow customer pickup.</p>
+
+                <h3>Frequently Asked Questions</h3>
+
+                <p><strong>How many cubic yards does a standard pickup truck hold?</strong><br>
+                Most full-size pickup trucks (½-ton) can safely carry about 1 cubic yard of gravel or stone (roughly 2,700 lbs) before exceeding the payload rating. A ¾-ton or 1-ton pickup can carry up to 2 cubic yards of gravel. Mulch is much lighter — a ½-ton truck can haul 2–3 cubic yards without issue.</p>
+
+                <p><strong>How do I convert square feet to cubic yards?</strong><br>
+                You need a depth measurement to convert from square feet to cubic yards. Multiply your square footage by the depth in feet, then divide by 27. For example, 200 sq ft at 3 inches deep: 200 × 0.25 ft ÷ 27 = 1.85 cubic yards.</p>
+
+                <p><strong>Does concrete shrink after pouring?</strong><br>
+                Concrete doesn't compress or shrink significantly after it's poured. Unlike gravel or topsoil, what you pour is essentially what you get. However, you should still order 5–10% extra to account for spillage, waste during placement, and any uneven spots in the subgrade that consume more material than planned.</p>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>Material prices shown are approximate ranges and vary significantly by region, supplier, quantity, and market conditions. Weights are typical averages — actual weights depend on moisture content and material gradation. Always obtain current supplier quotes before ordering.</em></p>
+
+            </div><!-- end content-more -->
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Construction Calculators?</h2>
+        <p>Explore our complete collection of construction and landscaping calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+let currentShape = 'rectangle';
+
+const MATERIALS = {
+    concrete: { name:'Concrete', weightPerYard:4000, typicalCost:'$100-$150', notes:'Standard slabs: 4", driveways: 6". Order 5-10% extra.' },
+    gravel: { name:'Gravel / Stone', weightPerYard:2700, typicalCost:'$15-$75', notes:'Compacts 20-30%. Order 25% extra.' },
+    sand: { name:'Sand', weightPerYard:2600, typicalCost:'$15-$40', notes:'Compacts 15-25%. Order 20% extra.' },
+    topsoil: { name:'Topsoil', weightPerYard:2200, typicalCost:'$20-$40', notes:'Settles 10-15%. Mix with compost for best results.' },
+    mulch: { name:'Mulch / Bark', weightPerYard:700, typicalCost:'$25-$50', notes:'Settles 10-20%. Apply 2-3" depth. Replenish annually.' },
+    asphalt: { name:'Asphalt', weightPerYard:4050, typicalCost:'$90-$150', notes:'Hot mix asphalt. Requires professional installation.' },
+    dirt: { name:'Fill Dirt', weightPerYard:2000, typicalCost:'$8-$15', notes:'Compacts significantly. Order 25-35% extra.' }
+};
+
+const CONVERSIONS = { inchesToFeet:0.0833333, yardsToFeet:3, metersToFeet:3.28084, cmToFeet:0.0328084, cubicFeetToYards:0.037037, cubicFeetToMeters:0.0283168 };
+
+function selectShape(shape) {
+    currentShape = shape;
+    const buttons = ['Rectangle','Cube','Cylinder','HollowCuboid','HollowCylinder','Hemisphere','Cone','Pyramid','Triangle','Trapezoid'];
+    buttons.forEach(btn => { const el = document.getElementById('btn'+btn); if(el) el.classList.remove('active'); });
+    const key = shape.split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join('');
+    const sel = document.getElementById('btn'+key);
+    if(sel) sel.classList.add('active');
+    document.getElementById('rectangleInputs').style.display = 'none';
+    ['cylinder','cube','hollow-cuboid','hollow-cylinder','hemisphere','cone','pyramid','triangle','trapezoid'].forEach(s => {
+        const id = s.split('-').map((w,i)=>i===0?w:w.charAt(0).toUpperCase()+w.slice(1)).join('');
+        const el = document.getElementById(id+'Inputs');
+        if(el) el.classList.remove('active');
+    });
+    if(shape==='rectangle') document.getElementById('rectangleInputs').style.display='block';
+    else {
+        const id = shape.split('-').map((w,i)=>i===0?w:w.charAt(0).toUpperCase()+w.slice(1)).join('');
+        const el = document.getElementById(id+'Inputs');
+        if(el) el.classList.add('active');
+    }
+}
+
+function convertToFeet(value, unit) {
+    if(unit==='inches') return value*CONVERSIONS.inchesToFeet;
+    if(unit==='yards') return value*CONVERSIONS.yardsToFeet;
+    if(unit==='meters') return value*CONVERSIONS.metersToFeet;
+    if(unit==='cm') return value*CONVERSIONS.cmToFeet;
+    return value;
+}
+
+function g(id){return document.getElementById(id);}
+function gv(id){return parseFloat(g(id).value);}
+function gs(id){return g(id).value;}
+
+function calculateCubicYards() {
+    let cubicFeet, dimensionText='', shapeDescription='';
+    
+    if(currentShape==='rectangle') {
+        const l=convertToFeet(gv('length'),gs('lengthUnit')), w=convertToFeet(gv('width'),gs('widthUnit')), h=convertToFeet(gv('height'),gs('heightUnit'));
+        if(!l||l<=0||!w||w<=0||!h||h<=0){alert('Please enter valid dimensions');return;}
+        cubicFeet=l*w*h; dimensionText=`${l.toFixed(2)} × ${w.toFixed(2)} × ${h.toFixed(2)} ft`; shapeDescription='Rectangular Cuboid';
+    } else if(currentShape==='cube') {
+        const s=convertToFeet(gv('cubeSide'),gs('cubeSideUnit'));
+        if(!s||s<=0){alert('Please enter a valid side length');return;}
+        cubicFeet=Math.pow(s,3); dimensionText=`${s.toFixed(2)}³ ft`; shapeDescription='Cube';
+    } else if(currentShape==='cylinder') {
+        const d=convertToFeet(gv('diameter'),gs('diameterUnit')), h=convertToFeet(gv('cylinderHeight'),gs('cylinderHeightUnit'));
+        if(!d||d<=0||!h||h<=0){alert('Please enter valid dimensions');return;}
+        const r=d/2; cubicFeet=Math.PI*Math.pow(r,2)*h; dimensionText=`π × ${r.toFixed(2)}² × ${h.toFixed(2)} ft`; shapeDescription='Cylinder';
+    } else if(currentShape==='hollow-cuboid') {
+        const ol=convertToFeet(gv('hcOuterLength'),gs('hcOuterLengthUnit')), ow=convertToFeet(gv('hcOuterWidth'),gs('hcOuterWidthUnit'));
+        const oh=convertToFeet(gv('hcOuterHeight'),gs('hcOuterHeightUnit')), wt=convertToFeet(gv('hcWallThickness'),gs('hcWallThicknessUnit'));
+        if(!ol||!ow||!oh||!wt){alert('Please enter valid dimensions');return;}
+        cubicFeet=(ol*ow*oh)-Math.max(0,(ol-2*wt)*(ow-2*wt)*(oh-2*wt));
+        dimensionText=`Outer: ${ol.toFixed(2)}×${ow.toFixed(2)}×${oh.toFixed(2)} ft`; shapeDescription='Hollow Cuboid';
+    } else if(currentShape==='hollow-cylinder') {
+        const od=convertToFeet(gv('hcyOuterDiameter'),gs('hcyOuterDiameterUnit')), id=convertToFeet(gv('hcyInnerDiameter'),gs('hcyInnerDiameterUnit'));
+        const h=convertToFeet(gv('hcyHeight'),gs('hcyHeightUnit'));
+        if(!od||!id||!h){alert('Please enter valid dimensions');return;}
+        cubicFeet=Math.PI*(Math.pow(od/2,2)-Math.pow(id/2,2))*h; shapeDescription='Hollow Cylinder';
+        dimensionText=`π × (${(od/2).toFixed(2)}² - ${(id/2).toFixed(2)}²) × ${h.toFixed(2)} ft`;
+    } else if(currentShape==='hemisphere') {
+        const r=convertToFeet(gv('hemisphereRadius'),gs('hemisphereRadiusUnit'));
+        if(!r||r<=0){alert('Please enter a valid radius');return;}
+        cubicFeet=(2/3)*Math.PI*Math.pow(r,3); dimensionText=`(2/3) × π × ${r.toFixed(2)}³ ft`; shapeDescription='Hemisphere';
+    } else if(currentShape==='cone') {
+        const r=convertToFeet(gv('coneRadius'),gs('coneRadiusUnit')), h=convertToFeet(gv('coneHeight'),gs('coneHeightUnit'));
+        if(!r||r<=0||!h||h<=0){alert('Please enter valid dimensions');return;}
+        cubicFeet=(1/3)*Math.PI*Math.pow(r,2)*h; dimensionText=`(1/3) × π × ${r.toFixed(2)}² × ${h.toFixed(2)} ft`; shapeDescription='Cone';
+    } else if(currentShape==='pyramid') {
+        const b=convertToFeet(gv('pyramidBase'),gs('pyramidBaseUnit')), h=convertToFeet(gv('pyramidHeight'),gs('pyramidHeightUnit'));
+        if(!b||!h){alert('Please enter valid dimensions');return;}
+        cubicFeet=(1/3)*Math.pow(b,2)*h; dimensionText=`(1/3) × ${b.toFixed(2)}² × ${h.toFixed(2)} ft`; shapeDescription='Square Pyramid';
+    } else if(currentShape==='triangle') {
+        const b=convertToFeet(gv('triangleBase'),gs('triangleBaseUnit')), h=convertToFeet(gv('triangleHeight'),gs('triangleHeightUnit')), l=convertToFeet(gv('triangleLength'),gs('triangleLengthUnit'));
+        if(!b||!h||!l){alert('Please enter valid dimensions');return;}
+        cubicFeet=0.5*b*h*l; dimensionText=`(1/2) × ${b.toFixed(2)} × ${h.toFixed(2)} × ${l.toFixed(2)} ft`; shapeDescription='Triangular Prism';
+    } else if(currentShape==='trapezoid') {
+        const t=convertToFeet(gv('trapezoidTop'),gs('trapezoidTopUnit')), b=convertToFeet(gv('trapezoidBottom'),gs('trapezoidBottomUnit'));
+        const h=convertToFeet(gv('trapezoidHeight'),gs('trapezoidHeightUnit')), l=convertToFeet(gv('trapezoidLength'),gs('trapezoidLengthUnit'));
+        if(!t||!b||!h||!l){alert('Please enter valid dimensions');return;}
+        cubicFeet=0.5*(t+b)*h*l; dimensionText=`(1/2) × (${t.toFixed(2)}+${b.toFixed(2)}) × ${h.toFixed(2)} × ${l.toFixed(2)} ft`; shapeDescription='Trapezoidal Prism';
+    }
+
+    const materialType=gs('materialType'), pricePerYard=parseFloat(g('pricePerYard').value)||0;
+    const cubicYards=cubicFeet*CONVERSIONS.cubicFeetToYards, cubicMeters=cubicFeet*CONVERSIONS.cubicFeetToMeters;
+
+    g('totalCubicYards').textContent=cubicYards.toFixed(2);
+    g('cubicFeet').textContent=cubicFeet.toFixed(2);
+    g('cubicMeters').textContent=cubicMeters.toFixed(2);
+
+    const matResult=g('materialResult'), weightResult=g('weightResult'), truckResult=g('truckResult');
+    if(materialType && MATERIALS[materialType]) {
+        const mat=MATERIALS[materialType], totalWeight=cubicYards*mat.weightPerYard, truckLoads=Math.ceil(cubicYards/10);
+        g('materialInfo').innerHTML=`<strong>${mat.name}</strong><br><strong>Weight per Yard:</strong> ${mat.weightPerYard.toLocaleString()} lbs<br><strong>Total Weight:</strong> ${Math.round(totalWeight).toLocaleString()} lbs (${(totalWeight/2000).toFixed(2)} tons)<br><strong>Typical Cost:</strong> ${mat.typicalCost} per cubic yard<br><strong>Notes:</strong> ${mat.notes}`;
+        matResult.classList.add('active');
+        g('totalWeight').textContent=Math.round(totalWeight).toLocaleString();
+        g('truckLoads').textContent=truckLoads;
+        weightResult.style.display='block'; truckResult.style.display='block';
+    } else { matResult.classList.remove('active'); weightResult.style.display='none'; truckResult.style.display='none'; }
+
+    const costSection=g('costSection');
+    if(pricePerYard>0) {
+        const totalCost=cubicYards*pricePerYard, recommended=Math.ceil(cubicYards*1.1*2)/2;
+        g('totalCost').textContent=totalCost.toFixed(2);
+        g('costBreakdown').innerHTML=`<strong>Cost Breakdown:</strong><br>${cubicYards.toFixed(2)} yd³ × $${pricePerYard.toFixed(2)}/yd³ = $${totalCost.toFixed(2)}<br><em>Recommended order: ${recommended} yd³ (includes 10% waste allowance)</em>`;
+        costSection.classList.add('active');
+    } else { costSection.classList.remove('active'); }
+
+    let formulaExplanation=`<div class="formula-step"><strong>Shape:</strong> ${shapeDescription}</div><div class="formula-step"><strong>Dimensions:</strong> ${dimensionText}</div>`;
+    formulaExplanation+=`<div class="formula-step" style="margin-top:12px;"><strong>Volume in Cubic Feet:</strong></div><div class="formula-step">${cubicFeet.toFixed(2)} cu ft</div><div class="formula-step" style="margin-top:12px;"><strong>Convert to Cubic Yards:</strong></div><div class="formula-step">${cubicFeet.toFixed(2)} ÷ 27 = <strong>${cubicYards.toFixed(2)} cubic yards</strong></div><div class="formula-step" style="margin-top:12px;"><strong>Alternative Units:</strong></div><div class="formula-step">• Cubic Meters: ${cubicMeters.toFixed(2)} m³</div>`;
+    if(materialType && MATERIALS[materialType]) {
+        const totalWeight=cubicYards*MATERIALS[materialType].weightPerYard;
+        formulaExplanation+=`<div class="formula-step">• Weight: ${Math.round(totalWeight).toLocaleString()} lbs (${(totalWeight/2000).toFixed(2)} tons)</div>`;
+    }
+    if(pricePerYard>0) formulaExplanation+=`<div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong> ${cubicYards.toFixed(2)} yd³ × $${pricePerYard.toFixed(2)}/yd³ = $${(cubicYards*pricePerYard).toFixed(2)}</div>`;
+    g('formulaExplanation').innerHTML=formulaExplanation;
+
+    g('resultEmpty').style.display='none';
+    g('resultDisplay').classList.add('active');
+    g('ctaResult').classList.add('active');
+    if(window.innerWidth<=768) document.querySelector('.result-section').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function resetCalculator() {
+    selectShape('rectangle');
+    ['length','width'].forEach(id=>{ g(id).value='10'; g(id+'Unit').value='feet'; });
+    g('height').value='4'; g('heightUnit').value='inches';
+    g('diameter').value='10'; g('diameterUnit').value='feet';
+    g('cylinderHeight').value='4'; g('cylinderHeightUnit').value='inches';
+    g('cubeSide').value='3'; g('cubeSideUnit').value='feet';
+    g('hcOuterLength').value='10'; g('hcOuterWidth').value='8'; g('hcOuterHeight').value='6'; g('hcWallThickness').value='6';
+    g('hcyOuterDiameter').value='10'; g('hcyInnerDiameter').value='8'; g('hcyHeight').value='6';
+    g('hemisphereRadius').value='5'; g('coneRadius').value='5'; g('coneHeight').value='10';
+    g('pyramidBase').value='4'; g('pyramidHeight').value='6';
+    g('triangleBase').value='6'; g('triangleHeight').value='4'; g('triangleLength').value='10';
+    g('trapezoidTop').value='8'; g('trapezoidBottom').value='12'; g('trapezoidHeight').value='4'; g('trapezoidLength').value='20';
+    g('materialType').value=''; g('pricePerYard').value='';
+    g('resultDisplay').classList.remove('active'); g('ctaResult').classList.remove('active');
+    g('materialResult').classList.remove('active'); g('costSection').classList.remove('active');
+    g('resultEmpty').style.display='block';
+    g('weightResult').style.display='none'; g('truckResult').style.display='none';
+}
+
+const readMoreBtn=document.getElementById('readMoreBtn'), contentMore=document.getElementById('contentMore');
+if(readMoreBtn&&contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if(contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded'); readMoreBtn.textContent='Read More';
+            const cs=document.querySelector('.content-section');
+            if(cs) window.scrollTo({top:cs.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
+        } else { contentMore.classList.add('expanded'); readMoreBtn.textContent='Show Less'; }
+    });
+}
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) { if(e.key==='Enter') calculateCubicYards(); });
+});
+</script>
+</body>
+</html>

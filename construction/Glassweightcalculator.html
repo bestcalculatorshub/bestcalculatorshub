@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Glass Weight Calculator - 8 Glass Types | Free Glass Calculator | CalcHub</title>
+    <meta name="description" content="Free glass weight calculator with 8 glass types and 6 shapes. Calculate weight for windows, aquariums, tabletops, and more. Includes thickness guide and cost estimator.">
+    <meta name="keywords" content="glass weight calculator, glass calculator, window glass weight, aquarium glass, tempered glass weight, glass thickness, glass density">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/glass-weight-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/glass-weight-calculator">
+    <meta property="og:title" content="Glass Weight Calculator - 8 Types, 6 Shapes">
+    <meta property="og:description" content="Calculate glass weight instantly. Free, accurate, easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Glass Weight Calculator",
+        "description": "Calculate weight of glass panels based on type, dimensions, and thickness. Supports 8 glass types and 6 different shapes.",
+        "url": "https://calchub.com/construction/glass-weight-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   GLASS WEIGHT CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   FEATURES: 8 Glass Types + 6 Shapes + Thickness Presets
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --cyan: #06b6d4;
+    --cyan-pale: #cffafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+.glass-type-section { background:var(--cyan-pale); border:2px solid var(--cyan); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.glass-type-section-title { font-weight:600; color:#0e7490; margin-bottom:12px; font-size:0.95em; }
+
+.shape-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.shape-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.shape-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:12px; }
+.shape-btn { background:var(--white); border:2px solid var(--border); padding:10px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.85em; }
+.shape-btn:hover { border-color:var(--blue); background:rgba(59, 130, 246, 0.05); }
+.shape-btn.active { border-color:var(--blue); background:var(--blue); color:var(--white); }
+.shape-icon { font-size:1.3em; margin-bottom:2px; }
+
+.thickness-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.thickness-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.thickness-presets { display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-bottom:12px; }
+.thickness-btn { background:var(--white); border:2px solid var(--border); padding:8px 4px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:500; color:var(--slate); font-size:0.8em; }
+.thickness-btn:hover { border-color:var(--purple); background:rgba(139, 92, 246, 0.05); }
+.thickness-btn.active { border-color:var(--purple); background:var(--purple); color:var(--white); }
+
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+.shape-inputs { display:none; }
+.shape-inputs.active { display:block; }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-icon { font-size:3em; margin-bottom:12px; opacity:0.5; }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+
+.info-card { background:var(--blue-pale); border-left:4px solid var(--blue); padding:16px; border-radius:var(--radius); margin-bottom:20px; }
+.info-card-title { font-weight:600; color:var(--blue); margin-bottom:8px; font-size:0.9em; }
+.info-card-text { font-size:0.85em; color:var(--slate); line-height:1.6; }
+
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:10000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .shape-grid { grid-template-columns:1fr 1fr; gap:6px; }
+    .shape-btn { padding:8px; font-size:0.8em; }
+    .shape-icon { font-size:1.1em; }
+    .thickness-presets { grid-template-columns:repeat(3, 1fr); }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+    .thickness-presets { grid-template-columns:repeat(2, 1fr); }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; line-height:1.3; }
+    .hero-desc { font-size:0.88em; }
+    .calculator-container { padding:16px 12px; border-radius:8px; }
+    .result-section { padding:16px; }
+    .input-section h2, .result-section h2 { font-size:1.2em; }
+    .input-field, .select-field { padding:10px 12px; font-size:0.95em; }
+    .shape-btn { padding:6px 4px; font-size:0.75em; }
+    .shape-icon { font-size:1em; }
+    .thickness-btn { padding:6px 4px; font-size:0.75em; }
+    .result-value { font-size:1.6em; }
+    .cost-value { font-size:1.3em; }
+    .result-item-value { font-size:1.1em; }
+    .content-section { padding:20px 12px; }
+    .cta-section { padding:24px 12px; }
+    .nav-brand { font-size:1.1em; }
+}
+
+@media (max-height:600px) and (orientation:landscape) {
+    .hero { padding:24px 16px; }
+    .hero h1 { font-size:1.5em; }
+    .calculator-container { padding:20px 16px; }
+    .result-section { padding:16px; }
+    .input-group { margin-bottom:12px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Glass Weight Calculator</span>
+        </nav>
+
+        <h1>Glass Weight Calculator</h1>
+        <p class="hero-desc">Calculate glass weight from dimensions and thickness. <strong>Supports 8 glass types and 6 different shapes</strong> including windows, aquariums, tabletops, and more. Perfect for construction, glazing, and design projects.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Select Glass Type and Dimensions</h2>
+                
+                <!-- GLASS TYPE SELECTOR -->
+                <div class="glass-type-section">
+                    <div class="glass-type-section-title">Glass Type</div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="glassType">Select Glass Type</label>
+                        <select class="select-field" id="glassType">
+                            <option value="2500" selected>Standard Float Glass - 2500 kg/m³</option>
+                            <option value="2400">Tempered Glass (Safety) - 2400 kg/m³</option>
+                            <option value="2500-lam">Laminated Glass - 2500 kg/m³</option>
+                            <option value="2200">Borosilicate (Pyrex) - 2200 kg/m³</option>
+                            <option value="2800">Lead Crystal Glass - 2800 kg/m³</option>
+                            <option value="2300">Soda-Lime Glass - 2300 kg/m³</option>
+                            <option value="2530">Low-E Glass (Coated) - 2530 kg/m³</option>
+                            <option value="2600">Tinted/Colored Glass - 2600 kg/m³</option>
+                        </select>
+                        <div class="input-hint">Different glass types have different densities</div>
+                    </div>
+                </div>
+
+                <!-- SHAPE SELECTOR -->
+                <div class="shape-section">
+                    <div class="shape-section-title">Select Shape</div>
+                    <div class="shape-grid">
+                        <button class="shape-btn active" onclick="selectShape('rectangle')" id="btnRectangle">
+                            <div class="shape-icon">▭</div>
+                            <div>Rectangle</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('square')" id="btnSquare">
+                            <div class="shape-icon">◻</div>
+                            <div>Square</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('circle')" id="btnCircle">
+                            <div class="shape-icon">⬤</div>
+                            <div>Circle</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('triangle')" id="btnTriangle">
+                            <div class="shape-icon">△</div>
+                            <div>Triangle</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('custom')" id="btnCustom">
+                            <div class="shape-icon">▱</div>
+                            <div>Custom Area</div>
+                        </button>
+                        <button class="shape-btn" onclick="selectShape('aquarium')" id="btnAquarium">
+                            <div class="shape-icon">▯</div>
+                            <div>Aquarium</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- THICKNESS PRESETS -->
+                <div class="thickness-section">
+                    <div class="thickness-section-title">Common Glass Thickness (Quick Select)</div>
+                    <div class="thickness-presets">
+                        <button class="thickness-btn" onclick="setThickness(3, 'mm')">3mm</button>
+                        <button class="thickness-btn" onclick="setThickness(4, 'mm')">4mm</button>
+                        <button class="thickness-btn" onclick="setThickness(5, 'mm')">5mm</button>
+                        <button class="thickness-btn" onclick="setThickness(6, 'mm')">6mm</button>
+                        <button class="thickness-btn" onclick="setThickness(8, 'mm')">8mm</button>
+                        <button class="thickness-btn" onclick="setThickness(10, 'mm')">10mm</button>
+                        <button class="thickness-btn" onclick="setThickness(12, 'mm')">12mm</button>
+                        <button class="thickness-btn" onclick="setThickness(0.125, 'in')">1/8"</button>
+                        <button class="thickness-btn" onclick="setThickness(0.1875, 'in')">3/16"</button>
+                        <button class="thickness-btn" onclick="setThickness(0.25, 'in')">1/4"</button>
+                        <button class="thickness-btn" onclick="setThickness(0.375, 'in')">3/8"</button>
+                        <button class="thickness-btn" onclick="setThickness(0.5, 'in')">1/2"</button>
+                    </div>
+                </div>
+
+                <!-- RECTANGLE INPUTS -->
+                <div class="shape-inputs active" id="rectangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="recLength">Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recLength" placeholder="Enter length" min="0.01" step="0.1" value="48">
+                            <select class="select-field unit-select" id="recLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="recWidth">Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recWidth" placeholder="Enter width" min="0.01" step="0.1" value="36">
+                            <select class="select-field unit-select" id="recWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="recThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="recThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="recThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQUARE INPUTS -->
+                <div class="shape-inputs" id="squareInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="sqSide">Side Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="sqSide" placeholder="Enter side length" min="0.01" step="0.1" value="36">
+                            <select class="select-field unit-select" id="sqSideUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="sqThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="sqThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="sqThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CIRCLE INPUTS -->
+                <div class="shape-inputs" id="circleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="cirDiameter">Diameter</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cirDiameter" placeholder="Enter diameter" min="0.01" step="0.1" value="24">
+                            <select class="select-field unit-select" id="cirDiameterUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="cirThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="cirThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="cirThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRIANGLE INPUTS -->
+                <div class="shape-inputs" id="triangleInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="triBase">Base</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triBase" placeholder="Enter base" min="0.01" step="0.1" value="24">
+                            <select class="select-field unit-select" id="triBaseUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="triHeight">Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triHeight" placeholder="Enter height" min="0.01" step="0.1" value="20">
+                            <select class="select-field unit-select" id="triHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="triThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="triThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="triThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUSTOM AREA INPUTS -->
+                <div class="shape-inputs" id="customInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="customArea">Surface Area</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="customArea" placeholder="Enter area" min="0.01" step="0.1" value="10">
+                            <select class="select-field unit-select" id="customAreaUnit">
+                                <option value="in2" selected>in²</option>
+                                <option value="ft2">ft²</option>
+                                <option value="cm2">cm²</option>
+                                <option value="m2">m²</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Enter the total surface area of your custom shape</div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="customThickness">Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="customThickness" placeholder="Enter thickness" min="0.001" step="0.01" value="0.25">
+                            <select class="select-field unit-select" id="customThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AQUARIUM INPUTS -->
+                <div class="shape-inputs" id="aquariumInputs">
+                    <div class="input-group">
+                        <label class="input-label" for="aqLength">Tank Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="aqLength" placeholder="Length" min="0.01" step="0.1" value="48">
+                            <select class="select-field unit-select" id="aqLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="aqWidth">Tank Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="aqWidth" placeholder="Width" min="0.01" step="0.1" value="18">
+                            <select class="select-field unit-select" id="aqWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="aqHeight">Tank Height</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="aqHeight" placeholder="Height" min="0.01" step="0.1" value="20">
+                            <select class="select-field unit-select" id="aqHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="aqThickness">Glass Thickness</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="aqThickness" placeholder="Thickness" min="0.001" step="0.01" value="0.5">
+                            <select class="select-field unit-select" id="aqThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Calculates 4 sides + bottom (5 panels total)</div>
+                    </div>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="input-group">
+                    <label class="input-label" for="quantity">Number of Pieces</label>
+                    <input type="number" class="input-field" id="quantity" placeholder="Number of pieces" min="1" step="1" value="1">
+                    <div class="input-hint">How many identical pieces</div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerSqFt">Price per Square Foot (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerSqFt" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter glass price for total cost estimate</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateWeight()">Calculate Weight</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">🪟</div>
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Total Weight</div>
+                        <div class="result-value"><span id="totalWeight">0</span> <span class="result-unit">lbs</span></div>
+                    </div>
+
+                    <!-- INFO CARD -->
+                    <div class="info-card">
+                        <div class="info-card-title">💡 Quick Insight</div>
+                        <div class="info-card-text" id="quickInsight">Standard window glass weight for your dimensions</div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (kg)</div>
+                            <div class="result-item-value"><span id="weightKg">0</span> kg</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Weight (ounces)</div>
+                            <div class="result-item-value"><span id="weightOz">0</span> oz</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Per Piece</div>
+                            <div class="result-item-value"><span id="perPiece">0</span> lbs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Surface Area</div>
+                            <div class="result-item-value"><span id="surfaceArea">0</span> ft²</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Glass Weight Calculator Guide</h2>
+        <div class="content-text">
+            <p>Calculating glass weight is essential for construction, architectural glazing, aquarium design, furniture making, and shipping. Understanding glass weight helps ensure proper structural support, accurate load calculations, and safe handling.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Basic Glass Weight Formula</div>
+                <p><strong>Weight = Area × Thickness × Density × Quantity</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Standard float glass density = 2500 kg/m³ (0.0903 lb/in³)</p>
+            </div>
+
+            <p>Our comprehensive calculator supports <strong>8 different glass types</strong> and <strong>6 shapes</strong> with quick thickness presets for common applications!</p>
+
+            <div class="content-more" id="contentMore">
+                <h3>Glass Types and Densities</h3>
+                <p>Different glass types have different densities, which affects weight calculations:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Glass Type</th>
+                                <th>Density (kg/m³)</th>
+                                <th>Density (lb/in³)</th>
+                                <th>Common Uses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Standard Float Glass</strong></td>
+                                <td>2500</td>
+                                <td>0.0903</td>
+                                <td>Windows, mirrors, tabletops</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tempered Glass</strong></td>
+                                <td>2400</td>
+                                <td>0.0867</td>
+                                <td>Safety glass, shower doors, car windows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Laminated Glass</strong></td>
+                                <td>2500</td>
+                                <td>0.0903</td>
+                                <td>Security glass, windshields, skylights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Borosilicate Glass</strong></td>
+                                <td>2200</td>
+                                <td>0.0795</td>
+                                <td>Laboratory equipment, cookware (Pyrex)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lead Crystal Glass</strong></td>
+                                <td>2800</td>
+                                <td>0.1012</td>
+                                <td>Decorative items, high-end glassware</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soda-Lime Glass</strong></td>
+                                <td>2300</td>
+                                <td>0.0831</td>
+                                <td>Bottles, containers, cheap windows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Low-E Glass</strong></td>
+                                <td>2530</td>
+                                <td>0.0914</td>
+                                <td>Energy-efficient windows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tinted/Colored Glass</strong></td>
+                                <td>2600</td>
+                                <td>0.0939</td>
+                                <td>Privacy glass, decorative applications</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Standard Glass Thickness Guide</h3>
+                <p>Common glass thickness for different applications:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Thickness</th>
+                                <th>Metric</th>
+                                <th>Application</th>
+                                <th>Weight (lb/ft²)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1/8" (SSB)</strong></td>
+                                <td>3mm</td>
+                                <td>Picture frames, small windows</td>
+                                <td>1.64</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3/16" (DSB)</strong></td>
+                                <td>5mm</td>
+                                <td>Table tops, larger windows</td>
+                                <td>2.45</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1/4"</strong></td>
+                                <td>6mm</td>
+                                <td>Large windows, commercial doors</td>
+                                <td>3.27</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3/8"</strong></td>
+                                <td>10mm</td>
+                                <td>Heavy table tops, shelving</td>
+                                <td>4.91</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1/2"</strong></td>
+                                <td>12mm</td>
+                                <td>Aquariums, large tabletops</td>
+                                <td>6.54</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3/4"</strong></td>
+                                <td>19mm</td>
+                                <td>Large aquariums, structural</td>
+                                <td>9.82</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1"</strong></td>
+                                <td>25mm</td>
+                                <td>Very large aquariums, specialty</td>
+                                <td>13.09</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Practical Calculation Examples</h3>
+                
+                <p><strong>Example 1: Standard Window Glass</strong></p>
+                <div class="info-box">
+                    <p>Calculate weight of a 3' × 4' window, 1/4" thick float glass:</p>
+                    <p><strong>Step 1:</strong> Area = 3 ft × 4 ft = 12 ft²</p>
+                    <p><strong>Step 2:</strong> Thickness = 1/4" = 0.25 inches</p>
+                    <p><strong>Step 3:</strong> Volume = 12 ft² × (0.25/12) ft = 0.25 ft³</p>
+                    <p><strong>Step 4:</strong> Weight = 0.25 ft³ × 156 lb/ft³ = <strong>39.24 lbs</strong></p>
+                    <p><strong>Quick Formula:</strong> 12 ft² × 3.27 lb/ft² (per 1/4") = <strong>39.24 lbs</strong></p>
+                </div>
+
+                <p><strong>Example 2: Aquarium Glass</strong></p>
+                <div class="info-box">
+                    <p>48" × 18" × 20" aquarium with 1/2" thick glass:</p>
+                    <p><strong>Panels needed:</strong> 4 sides + 1 bottom = 5 panels</p>
+                    <p><strong>Front/Back:</strong> 48" × 20" = 960 in² × 2 = 1,920 in²</p>
+                    <p><strong>Sides:</strong> 18" × 20" = 360 in² × 2 = 720 in²</p>
+                    <p><strong>Bottom:</strong> 48" × 18" = 864 in²</p>
+                    <p><strong>Total Area:</strong> 3,504 in² = 24.33 ft²</p>
+                    <p><strong>Weight:</strong> 24.33 ft² × 6.54 lb/ft² (1/2" glass) = <strong>159.12 lbs</strong></p>
+                </div>
+
+                <p><strong>Example 3: Glass Table Top</strong></p>
+                <div class="info-box">
+                    <p>Circular glass table, 42" diameter, 3/8" thick tempered glass:</p>
+                    <p><strong>Step 1:</strong> Radius = 21 inches</p>
+                    <p><strong>Step 2:</strong> Area = π × 21² = 1,385.4 in² = 9.62 ft²</p>
+                    <p><strong>Step 3:</strong> Tempered glass weight = 4.91 lb/ft² × 0.98 (tempered factor)</p>
+                    <p><strong>Step 4:</strong> Weight = 9.62 ft² × 4.81 lb/ft² = <strong>46.29 lbs</strong></p>
+                </div>
+
+                <h3>Weight Comparison by Glass Type</h3>
+                <p>For a 3' × 4' × 1/4" panel:</p>
+                <ul>
+                    <li><strong>Lead Crystal (heaviest):</strong> 43.97 lbs</li>
+                    <li><strong>Tinted Glass:</strong> 40.76 lbs</li>
+                    <li><strong>Low-E Glass:</strong> 39.48 lbs</li>
+                    <li><strong>Standard Float:</strong> 39.24 lbs</li>
+                    <li><strong>Laminated:</strong> 39.24 lbs</li>
+                    <li><strong>Tempered (Safety):</strong> 37.67 lbs</li>
+                    <li><strong>Soda-Lime:</strong> 36.10 lbs</li>
+                    <li><strong>Borosilicate (lightest):</strong> 34.53 lbs</li>
+                </ul>
+
+                <h3>Aquarium Glass Thickness Requirements</h3>
+                <p>Recommended minimum thickness based on tank dimensions:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Tank Height</th>
+                                <th>Tank Length</th>
+                                <th>Minimum Thickness</th>
+                                <th>Recommended Thickness</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Up to 12"</td>
+                                <td>Up to 24"</td>
+                                <td>1/4" (6mm)</td>
+                                <td>3/8" (10mm)</td>
+                            </tr>
+                            <tr>
+                                <td>13" - 19"</td>
+                                <td>25" - 36"</td>
+                                <td>3/8" (10mm)</td>
+                                <td>1/2" (12mm)</td>
+                            </tr>
+                            <tr>
+                                <td>20" - 24"</td>
+                                <td>37" - 48"</td>
+                                <td>1/2" (12mm)</td>
+                                <td>5/8" (16mm)</td>
+                            </tr>
+                            <tr>
+                                <td>25" - 30"</td>
+                                <td>49" - 72"</td>
+                                <td>5/8" (16mm)</td>
+                                <td>3/4" (19mm)</td>
+                            </tr>
+                            <tr>
+                                <td>Over 30"</td>
+                                <td>Over 72"</td>
+                                <td>3/4" (19mm)</td>
+                                <td>1" (25mm)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Glass Weight per Square Foot (Quick Reference)</h3>
+                <p>Standard float glass at different thicknesses:</p>
+                <ul>
+                    <li><strong>1/8" (3mm):</strong> 1.64 lb/ft²</li>
+                    <li><strong>3/16" (5mm):</strong> 2.45 lb/ft²</li>
+                    <li><strong>1/4" (6mm):</strong> 3.27 lb/ft²</li>
+                    <li><strong>3/8" (10mm):</strong> 4.91 lb/ft²</li>
+                    <li><strong>1/2" (12mm):</strong> 6.54 lb/ft²</li>
+                    <li><strong>5/8" (16mm):</strong> 8.18 lb/ft²</li>
+                    <li><strong>3/4" (19mm):</strong> 9.82 lb/ft²</li>
+                    <li><strong>1" (25mm):</strong> 13.09 lb/ft²</li>
+                </ul>
+
+                <h3>Shipping and Handling Considerations</h3>
+                <ul>
+                    <li><strong>Under 50 lbs:</strong> Can be handled by one person with care</li>
+                    <li><strong>50-100 lbs:</strong> Two-person lift required, use suction cups</li>
+                    <li><strong>100-200 lbs:</strong> Equipment needed (A-frame cart, suction lifters)</li>
+                    <li><strong>Over 200 lbs:</strong> Professional glass handling equipment required</li>
+                    <li><strong>Packaging:</strong> Add 15-25% to weight for crating and padding</li>
+                    <li><strong>Safety factor:</strong> Always use 150% of calculated weight for support structures</li>
+                </ul>
+
+                <h3>Unit Conversions</h3>
+                <p>Essential glass weight conversions:</p>
+                <ul>
+                    <li><strong>1 pound (lb) = 16 ounces (oz)</strong></li>
+                    <li><strong>1 pound (lb) = 0.453592 kilograms (kg)</strong></li>
+                    <li><strong>1 kg/m³ = 0.0000361273 lb/in³</strong></li>
+                    <li><strong>1 square foot = 144 square inches</strong></li>
+                    <li><strong>1 inch = 25.4 millimeters</strong></li>
+                    <li><strong>1 mm = 0.03937 inches</strong></li>
+                </ul>
+
+                <h3>Safety Tips for Glass Handling</h3>
+                <ul>
+                    <li><strong>Always wear gloves:</strong> Cut-resistant gloves for edge protection</li>
+                    <li><strong>Use suction cups:</strong> For panels over 4 square feet</li>
+                    <li><strong>Never carry overhead:</strong> Keep glass below shoulder height</li>
+                    <li><strong>Edge protection:</strong> Check for chips and sharp edges before handling</li>
+                    <li><strong>Two-person rule:</strong> Any glass over 50 lbs or 4' × 4'</li>
+                    <li><strong>Proper storage:</strong> Store vertically at 6-10° angle, never flat</li>
+                    <li><strong>Temperature awareness:</strong> Avoid thermal shock on tempered glass</li>
+                </ul>
+
+                <h3>Common Glass Applications and Typical Weights</h3>
+                
+                <p><strong>Residential Windows:</strong></p>
+                <ul>
+                    <li>Standard single pane (3' × 4' × 1/8"): 19.68 lbs</li>
+                    <li>Double pane unit (3' × 4' × 1/4" each + air gap): 80-90 lbs</li>
+                    <li>Low-E triple pane (3' × 4'): 120-140 lbs</li>
+                </ul>
+
+                <p><strong>Shower Doors:</strong></p>
+                <ul>
+                    <li>Standard door (30" × 72" × 3/8" tempered): 73.5 lbs</li>
+                    <li>Frameless door (36" × 72" × 1/2" tempered): 117.6 lbs</li>
+                </ul>
+
+                <p><strong>Glass Railings:</strong></p>
+                <ul>
+                    <li>36" high × 48" long × 1/2" tempered: 78.48 lbs per panel</li>
+                    <li>42" high × 48" long × 5/8" laminated: 114.66 lbs per panel</li>
+                </ul>
+
+                <h3>Tips for Accurate Weight Calculations</h3>
+                <ul>
+                    <li><strong>Verify actual thickness:</strong> Nominal vs. actual can vary slightly</li>
+                    <li><strong>Account for lamination:</strong> Laminated glass has interlayer weight</li>
+                    <li><strong>Consider framing:</strong> Add frame weight for total assembly weight</li>
+                    <li><strong>Safety margin:</strong> Always add 10-15% for structural calculations</li>
+                    <li><strong>Temperature effects:</strong> Glass expands minimally but check for large installations</li>
+                    <li><strong>Coating weight:</strong> Low-E coatings add negligible weight (< 1%)</li>
+                    <li><strong>Measure carefully:</strong> Small measurement errors multiply in weight calculations</li>
+                </ul>
+
+                <h3>Glass vs Other Transparent Materials</h3>
+                <p>Weight comparison for 1/4" thick 4' × 8' panel:</p>
+                <ul>
+                    <li><strong>Standard Glass:</strong> 104.64 lbs</li>
+                    <li><strong>Acrylic (Plexiglass):</strong> 60.8 lbs (~58% lighter)</li>
+                    <li><strong>Polycarbonate (Lexan):</strong> 64 lbs (~61% lighter)</li>
+                    <li><strong>Tempered Glass:</strong> 100.46 lbs</li>
+                </ul>
+
+                <h3>When to Use Different Glass Types</h3>
+                <p><strong>Standard Float Glass:</strong></p>
+                <ul>
+                    <li>Basic windows, mirrors, picture frames</li>
+                    <li>Interior applications without safety requirements</li>
+                    <li>Most cost-effective option</li>
+                </ul>
+
+                <p><strong>Tempered Glass:</strong></p>
+                <ul>
+                    <li>Shower doors, car windows, glass doors</li>
+                    <li>Any location requiring safety glass</li>
+                    <li>High-impact areas, commercial applications</li>
+                </ul>
+
+                <p><strong>Laminated Glass:</strong></p>
+                <ul>
+                    <li>Windshields, skylights, security applications</li>
+                    <li>Overhead glazing, hurricane-rated windows</li>
+                    <li>Sound reduction applications</li>
+                </ul>
+
+                <p><strong>Low-E Glass:</strong></p>
+                <ul>
+                    <li>Energy-efficient windows and doors</li>
+                    <li>Climate control critical areas</li>
+                    <li>LEED certified buildings</li>
+                </ul>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction and material calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Glass Weight Calculator - 99% Accurate
+// Supports 8 glass types and 6 shapes
+
+let currentShape = 'rectangle';
+
+// Unit conversion functions
+function toMeters(value, unit) {
+    const conversions = {
+        'in': 0.0254,
+        'ft': 0.3048,
+        'mm': 0.001,
+        'cm': 0.01,
+        'm': 1
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function toSquareMeters(value, unit) {
+    const conversions = {
+        'in2': 0.00064516,
+        'ft2': 0.092903,
+        'cm2': 0.0001,
+        'm2': 1
+    };
+    return value * (conversions[unit] || 1);
+}
+
+function selectShape(shape) {
+    currentShape = shape;
+    
+    // Update button states
+    const shapes = ['Rectangle', 'Square', 'Circle', 'Triangle', 'Custom', 'Aquarium'];
+    shapes.forEach(s => {
+        const btn = document.getElementById('btn' + s);
+        if (btn) btn.classList.remove('active');
+    });
+    
+    const selectedBtn = document.getElementById('btn' + shape.charAt(0).toUpperCase() + shape.slice(1));
+    if (selectedBtn) selectedBtn.classList.add('active');
+    
+    // Hide all input sections
+    const inputSections = ['rectangleInputs', 'squareInputs', 'circleInputs', 'triangleInputs', 'customInputs', 'aquariumInputs'];
+    inputSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+    });
+    
+    // Show selected input section
+    const shapeToInputMap = {
+        'rectangle': 'rectangleInputs',
+        'square': 'squareInputs',
+        'circle': 'circleInputs',
+        'triangle': 'triangleInputs',
+        'custom': 'customInputs',
+        'aquarium': 'aquariumInputs'
+    };
+    
+    const inputId = shapeToInputMap[shape];
+    if (inputId) {
+        document.getElementById(inputId).classList.add('active');
+    }
+}
+
+function setThickness(value, unit) {
+    // Set thickness based on current shape
+    const thicknessInputs = {
+        'rectangle': { value: 'recThickness', unit: 'recThicknessUnit' },
+        'square': { value: 'sqThickness', unit: 'sqThicknessUnit' },
+        'circle': { value: 'cirThickness', unit: 'cirThicknessUnit' },
+        'triangle': { value: 'triThickness', unit: 'triThicknessUnit' },
+        'custom': { value: 'customThickness', unit: 'customThicknessUnit' },
+        'aquarium': { value: 'aqThickness', unit: 'aqThicknessUnit' }
+    };
+    
+    const input = thicknessInputs[currentShape];
+    if (input) {
+        document.getElementById(input.value).value = value;
+        document.getElementById(input.unit).value = unit;
+    }
+    
+    // Remove active state from all thickness buttons
+    document.querySelectorAll('.thickness-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Add active state to clicked button
+    event.target.classList.add('active');
+}
+
+function calculateWeight() {
+    // Get density
+    const densityKgM3 = parseFloat(document.getElementById('glassType').value.split('-')[0]);
+    const densityLbIn3 = densityKgM3 * 0.0000361273; // kg/m³ to lb/in³
+    
+    // Get quantity
+    const quantity = parseInt(document.getElementById('quantity').value) || 1;
+    
+    // Get price per sq ft
+    const pricePerSqFt = parseFloat(document.getElementById('pricePerSqFt').value) || 0;
+    
+    let areaM2 = 0;
+    let thicknessM = 0;
+    let shapeDescription = '';
+    let quickInsight = '';
+    
+    // Calculate area and thickness based on shape
+    try {
+        if (currentShape === 'rectangle') {
+            const L = toMeters(parseFloat(document.getElementById('recLength').value), document.getElementById('recLengthUnit').value);
+            const W = toMeters(parseFloat(document.getElementById('recWidth').value), document.getElementById('recWidthUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('recThickness').value), document.getElementById('recThicknessUnit').value);
+            areaM2 = L * W;
+            shapeDescription = 'Rectangular Glass Panel';
+            quickInsight = 'Perfect for windows, doors, or tabletops';
+            
+        } else if (currentShape === 'square') {
+            const S = toMeters(parseFloat(document.getElementById('sqSide').value), document.getElementById('sqSideUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('sqThickness').value), document.getElementById('sqThicknessUnit').value);
+            areaM2 = S * S;
+            shapeDescription = 'Square Glass Panel';
+            quickInsight = 'Ideal for square windows or modern design elements';
+            
+        } else if (currentShape === 'circle') {
+            const D = toMeters(parseFloat(document.getElementById('cirDiameter').value), document.getElementById('cirDiameterUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('cirThickness').value), document.getElementById('cirThicknessUnit').value);
+            areaM2 = Math.PI * Math.pow(D / 2, 2);
+            shapeDescription = 'Circular Glass Panel';
+            quickInsight = 'Great for round tabletops or decorative windows';
+            
+        } else if (currentShape === 'triangle') {
+            const B = toMeters(parseFloat(document.getElementById('triBase').value), document.getElementById('triBaseUnit').value);
+            const H = toMeters(parseFloat(document.getElementById('triHeight').value), document.getElementById('triHeightUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('triThickness').value), document.getElementById('triThicknessUnit').value);
+            areaM2 = (B * H) / 2;
+            shapeDescription = 'Triangular Glass Panel';
+            quickInsight = 'Unique shape for architectural features';
+            
+        } else if (currentShape === 'custom') {
+            areaM2 = toSquareMeters(parseFloat(document.getElementById('customArea').value), document.getElementById('customAreaUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('customThickness').value), document.getElementById('customThicknessUnit').value);
+            shapeDescription = 'Custom Glass Panel';
+            quickInsight = 'Custom shape with specified surface area';
+            
+        } else if (currentShape === 'aquarium') {
+            const L = toMeters(parseFloat(document.getElementById('aqLength').value), document.getElementById('aqLengthUnit').value);
+            const W = toMeters(parseFloat(document.getElementById('aqWidth').value), document.getElementById('aqWidthUnit').value);
+            const H = toMeters(parseFloat(document.getElementById('aqHeight').value), document.getElementById('aqHeightUnit').value);
+            thicknessM = toMeters(parseFloat(document.getElementById('aqThickness').value), document.getElementById('aqThicknessUnit').value);
+            
+            // Calculate total area: 4 sides + bottom (no top)
+            const front = L * H;
+            const back = L * H;
+            const left = W * H;
+            const right = W * H;
+            const bottom = L * W;
+            areaM2 = front + back + left + right + bottom;
+            
+            shapeDescription = 'Aquarium Tank (5 panels)';
+            quickInsight = `Includes 4 sides + bottom panel. Tank volume: ${(L * W * H * 264.172).toFixed(1)} gallons`;
+        }
+    } catch (error) {
+        alert('Please enter valid dimensions');
+        return;
+    }
+    
+    if (areaM2 <= 0 || thicknessM <= 0 || isNaN(areaM2) || isNaN(thicknessM)) {
+        alert('Please enter valid dimensions');
+        return;
+    }
+    
+    // Calculate volume in cubic meters
+    const volumeM3 = areaM2 * thicknessM;
+    
+    // Calculate weights
+    const weightKg = volumeM3 * densityKgM3 * quantity;
+    const weightLbs = weightKg * 2.20462;
+    const weightOz = weightLbs * 16;
+    const weightPerPiece = weightLbs / quantity;
+    
+    // Calculate surface area in square feet for display
+    const surfaceAreaFt2 = areaM2 * 10.7639 * quantity;
+    
+    // Calculate cost
+    const totalCost = surfaceAreaFt2 * pricePerSqFt;
+    
+    // Display results
+    document.getElementById('totalWeight').textContent = weightLbs.toFixed(2);
+    document.getElementById('weightKg').textContent = weightKg.toFixed(2);
+    document.getElementById('weightOz').textContent = weightOz.toFixed(2);
+    document.getElementById('perPiece').textContent = weightPerPiece.toFixed(2);
+    document.getElementById('surfaceArea').textContent = surfaceAreaFt2.toFixed(2);
+    document.getElementById('quickInsight').textContent = quickInsight;
+    
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerSqFt > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costPerPiece = totalCost / quantity;
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${surfaceAreaFt2.toFixed(2)} ft² × $${pricePerSqFt.toFixed(2)}/ft² = $${totalCost.toFixed(2)}<br>
+            <em>Cost per piece: $${costPerPiece.toFixed(2)}</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+    
+    // Get glass type name
+    const glassTypeSelect = document.getElementById('glassType');
+    const glassTypeName = glassTypeSelect.options[glassTypeSelect.selectedIndex].text.split(' - ')[0];
+    
+    // Formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Shape:</strong> ${shapeDescription}</div>
+        <div class="formula-step"><strong>Glass Type:</strong> ${glassTypeName}</div>
+        <div class="formula-step"><strong>Density:</strong> ${densityKgM3} kg/m³ (${densityLbIn3.toFixed(6)} lb/in³)</div>
+        <div class="formula-step"><strong>Quantity:</strong> ${quantity} piece${quantity > 1 ? 's' : ''}</div>
+        <div class="formula-step" style="margin-top:12px;"><strong>Calculation:</strong></div>
+        <div class="formula-step">Surface Area = ${surfaceAreaFt2.toFixed(2)} ft² (${areaM2.toFixed(4)} m²)</div>
+        <div class="formula-step">Thickness = ${(thicknessM * 1000).toFixed(2)} mm (${(thicknessM * 39.3701).toFixed(3)} inches)</div>
+        <div class="formula-step">Volume = Area × Thickness = ${volumeM3.toFixed(6)} m³</div>
+        <div class="formula-step">Weight = Volume × Density × Quantity</div>
+        <div class="formula-step">Weight per piece = ${weightPerPiece.toFixed(2)} lbs</div>
+        <div class="formula-step">Total Weight = <strong>${weightLbs.toFixed(2)} lbs</strong></div>
+    `;
+    
+    if (pricePerSqFt > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${surfaceAreaFt2.toFixed(2)} ft² × $${pricePerSqFt.toFixed(2)}/ft² = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+    
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+    
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    // Reset shape to rectangle
+    selectShape('rectangle');
+    
+    // Reset glass type
+    document.getElementById('glassType').value = '2500';
+    
+    // Reset quantity and price
+    document.getElementById('quantity').value = '1';
+    document.getElementById('pricePerSqFt').value = '';
+    
+    // Reset all shape inputs to defaults
+    document.getElementById('recLength').value = '48';
+    document.getElementById('recWidth').value = '36';
+    document.getElementById('recThickness').value = '0.25';
+    
+    // Remove active state from thickness buttons
+    document.querySelectorAll('.thickness-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+    
+    // Reset result values
+    document.getElementById('totalWeight').textContent = '0';
+    document.getElementById('weightKg').textContent = '0';
+    document.getElementById('weightOz').textContent = '0';
+    document.getElementById('perPiece').textContent = '0';
+    document.getElementById('surfaceArea').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateWeight();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Construction Calculators - Free Building & Material Tools | CalcHub</title>
+    <meta name="description" content="Access 153+ free construction calculators. Concrete, lumber, roofing, flooring, drywall, paint, and more. Instant project estimates, no sign-up required.">
+    <meta name="keywords" content="construction calculator, concrete calculator, lumber calculator, roofing calculator, building materials, construction estimator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   CALCHUB CONSTRUCTION CATEGORY PAGE - SINGLE FILE VERSION
+   FULLY OPTIMIZED FOR ALL DEVICES
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+
+.calc-link, .nav-link, .related-card { min-height:44px; display:flex; align-items:center; }
+.calc-link { justify-content:flex-start; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; margin-bottom:8px; }
+.hero-count { color:var(--teal-light); font-size:0.9em; font-weight:500; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ SEARCH ═══ */
+.search-box { margin-bottom:32px; }
+.search-input { width:100%; max-width:500px; padding:12px 20px; border:1px solid var(--border); border-radius:var(--radius); font-size:0.95em; font-family:var(--font-body); outline:none; transition:all 0.2s; }
+.search-input:focus { border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+
+/* ═══ CALCULATOR LINKS ═══ */
+.calc-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }
+.calc-link { display:block; background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:14px 18px; font-size:0.95em; color:var(--slate); font-weight:500; transition:all 0.2s; }
+.calc-link:hover { background:var(--teal-pale); border-color:var(--teal); color:var(--teal); transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin:48px 0; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:800px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:8px; transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-top:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; text-align:center; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:2000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:8px; font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ RELATED ═══ */
+.related { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); padding:40px; margin-top:48px; }
+.related h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:28px; text-align:center; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; }
+.related-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:24px 20px; text-align:center; transition:all 0.2s; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:120px; }
+.related-card:hover { background:var(--white); box-shadow:var(--shadow-sm); transform:translateY(-2px); }
+.related-icon { font-size:2.5em; margin-bottom:12px; display:block; line-height:1; }
+.related-name { font-size:1em; font-weight:600; color:var(--slate); margin-bottom:6px; white-space:nowrap; }
+.related-count { font-size:0.85em; color:var(--muted); white-space:nowrap; }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ BACK TO TOP ═══ */
+.back-to-top { display:none; position:fixed; bottom:32px; right:32px; width:48px; height:48px; background:var(--teal); color:var(--white); border-radius:50%; font-size:1.4em; box-shadow:var(--shadow-md); z-index:999; transition:all 0.2s; align-items:center; justify-content:center; }
+.back-to-top.visible { display:flex; }
+.back-to-top:hover { background:var(--navy); transform:translateY(-3px); }
+
+/* ═══ RESPONSIVE OPTIMIZATION ═══ */
+
+@media (max-width:1024px) {
+    .calc-grid { grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; }
+    .hero h1 { font-size:2.2em; }
+    .related-grid { grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; }
+}
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calc-grid { grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); }
+    .cta-section { padding:40px 24px; margin:40px 0; }
+    .cta-section h2 { font-size:1.7em; }
+    .content-section { padding:40px 32px; }
+    .related { padding:32px 20px; }
+    .related-grid { grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.8em; }
+    .main { padding:24px 16px; }
+    .search-input { padding:14px 16px; font-size:16px; }
+    
+    .calc-grid { grid-template-columns:1fr; gap:10px; }
+    .calc-link { padding:16px; }
+    
+    .cta-section { padding:32px 20px; margin:32px 0; }
+    .cta-section h2 { font-size:1.5em; }
+    .cta-btn { padding:12px 28px; }
+    
+    .content-section { padding:32px 20px; }
+    .content-section h2 { font-size:1.5em; }
+    
+    .related { padding:24px 16px; }
+    .related h2 { font-size:1.3em; }
+    .related-grid { grid-template-columns:repeat(2, 1fr); gap:12px; }
+    .related-card { padding:16px 12px; min-height:100px; }
+    .related-icon { font-size:2em; }
+    
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+    .back-to-top { bottom:16px; right:16px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.6em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.3em; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .related-grid { grid-template-columns:1fr; }
+}
+
+@media print {
+    .header, .footer, .back-to-top, .search-box, .cta-section { display:none; }
+    .content-more { max-height:none !important; }
+    .read-more-btn { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Construction</span>
+        </nav>
+        <h1>Construction Calculators</h1>
+        <p class="hero-desc">Explore our comprehensive collection of construction calculators. Perfect for contractors, builders, and DIY enthusiasts. Get instant, accurate estimates for all your construction projects.</p>
+        <p class="hero-count">15 calculators available</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search calculators..." id="searchInput">
+    </div>
+
+    <!-- Calculator Links -->
+    <div class="calc-grid">
+        <a href="construction\SquareFeettoCubicYardsCalculator.html" class="calc-link">Square Feet to Cubic Yards Calculator</a>
+        <a href="construction\Squareyardscalculator.html" class="calc-link">Square Yards Calculator</a>
+        <a href="construction\Aluminumweightcalculator.html" class="calc-link">Aluminum Weight Calculator</a>
+        <a href="construction\Balustercalculator.html" class="calc-link">Baluster Calculator</a>
+        <a href="construction\Boardandbattencalculator.html" class="calc-link">Board and Batten  Calculator</a>
+        <a href="construction\Frenchdraincalculator.html" class="calc-link">French Drain Calculator</a>
+        <a href="construction\Fireglasscalculator.html" class="calc-link">Fire Glass Calculator</a>
+        <a href="construction\Glassweightcalculator.html" class="calc-link">Glass Weight Calculator</a>
+        <a href="construction\Limestonecalculator.html" class="calc-link">Limestone Calculator</a>
+        <a href="construction/brickcalculator.html" class="calc-link">Brick Calculator</a>
+        <a href="construction/deckingcalculator.html" class="calc-link">Decking Calculator</a>
+        <a href="construction/drywallcalculator.html" class="calc-link">Drywall Calculator</a>
+        <a href="construction\Cubicyardcalculator.html" class="calc-link">Cubic Yard Calculator</a>
+        <a href="construction/boardfootcalculator.html" class="calc-link">Board Foot Calculator</a>
+        <a href="construction\Framingcalculator.html" class="calc-link">Framing Calculator</a>
+        <a href="construction\Logweightcalculator.html" class="calc-link">Log Weight Calculator</a>
+        <a href="construction\Lumbercalculator.html" class="calc-link">Lumber Calculator</a>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Can't Find What You Need?</h2>
+        <p>We're constantly adding new calculators. Request a custom calculator or suggest improvements.</p>
+        <a href="contact.html" class="cta-btn">Request Calculator</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <h2>Your Complete Construction Calculator Hub</h2>
+        <div class="content-text" id="contentText">
+            <p>Welcome to CalcHub's Construction section, your comprehensive resource for building and material calculations. Whether you're a professional contractor managing large projects, a builder working on residential homes, or a DIY enthusiast tackling weekend renovations, our 153+ specialized calculators provide instant, accurate estimates to keep your construction projects on track and within budget.</p>
+            
+            <div class="content-more" id="contentMore">
+                <p>Construction projects require precise material estimation and cost calculations to avoid waste and budget overruns. Our calculators are designed to help you determine exact quantities for concrete, lumber, roofing, flooring, and dozens of other materials. Each tool uses industry-standard formulas and accounts for typical waste factors, ensuring you order the right amount of materials every time.</p>
+                
+                <h3>Material Estimation Made Easy</h3>
+                <p>Calculate exact quantities for every phase of your project. From foundation concrete and framing lumber to roofing shingles and finishing trim, our calculators help you determine precisely how much material you need. Input your project dimensions and get instant results in multiple units – square feet, cubic yards, linear feet, or board feet – whatever works best for your project and supplier.</p>
+                
+                <h3>Cost Estimation and Project Planning</h3>
+                <p>Plan your construction budget with confidence using our comprehensive cost calculators. Estimate material costs, labor expenses, and total project budgets. Calculate profit margins, markup percentages, and overhead costs for contractor bids. Our tools help you create accurate quotes and maintain profitability on every job.</p>
+                
+                <h3>For Every Skill Level</h3>
+                <p>Our calculators serve everyone from seasoned contractors to first-time homeowners. Professional builders use our tools for job estimates and material orders, while DIY enthusiasts rely on them for home improvement projects. Each calculator includes helpful explanations and accounts for common scenarios, making construction math accessible to all skill levels.</p>
+                
+                <h3>Comprehensive Coverage</h3>
+                <p>From structural calculations like beam spans and joist sizing to finishing work like paint coverage and tile quantities, we cover every aspect of construction. Calculate foundation footings, roof pitch, stair dimensions, HVAC requirements, electrical loads, and much more. Our calculators encompass residential, commercial, and landscape construction needs.</p>
+                
+                <h3>Save Time and Money</h3>
+                <p>Accurate calculations prevent costly mistakes and material waste. Order the right amount the first time and avoid expensive return trips to suppliers or leftover materials. Our calculators help you maximize efficiency, reduce project costs, and complete jobs faster by eliminating calculation errors and guesswork.</p>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- Related Categories -->
+    <div class="related">
+        <h2>Related Categories</h2>
+        <div class="related-grid">
+            <a href="math.html" class="related-card">
+                <span class="related-icon">🔢</span>
+                <div class="related-name">Math</div>
+                <div class="related-count">671 calculators</div>
+            </a>
+            <a href="physics.html" class="related-card">
+                <span class="related-icon">⚛️</span>
+                <div class="related-name">Physics</div>
+                <div class="related-count">530 calculators</div>
+            </a>
+            <a href="conversion.html" class="related-card">
+                <span class="related-icon">🔄</span>
+                <div class="related-name">Conversion</div>
+                <div class="related-count">318 calculators</div>
+            </a>
+            <a href="everyday-life.html" class="related-card">
+                <span class="related-icon">🏠</span>
+                <div class="related-name">Everyday Life</div>
+                <div class="related-count">274 calculators</div>
+            </a>
+            <a href="finance.html" class="related-card">
+                <span class="related-icon">💰</span>
+                <div class="related-name">Finance</div>
+                <div class="related-count">596 calculators</div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="navigation.js"></script>
+
+<!-- Inline JavaScript -->
+<script>
+// Search functionality
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    const search = e.target.value.toLowerCase();
+    const links = document.querySelectorAll('.calc-link');
+    links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        link.style.display = text.includes(search) ? 'block' : 'none';
+    });
+});
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+</script>
+
+</body>
+</html>

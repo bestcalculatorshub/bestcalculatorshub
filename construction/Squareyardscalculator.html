@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Square Yards Calculator - Free Area Calculator with Cost Estimator | CalcHub</title>
+    <meta name="description" content="Free square yards calculator. Calculate area from length and width. Convert between square yards, square feet, square meters, and acres. Includes cost estimator and material calculator.">
+    <meta name="keywords" content="square yards calculator, sq yd calculator, area calculator, yardage calculator, square feet to square yards, square meters to square yards, acres calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/square-yards-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/square-yards-calculator">
+    <meta property="og:title" content="Square Yards Calculator - Calculate Area and Cost">
+    <meta property="og:description" content="Calculate square yards from dimensions. Free, accurate, easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Square Yards Calculator",
+        "description": "Calculate area in square yards from length and width. Convert between square yards, square feet, square meters, and acres.",
+        "url": "https://calchub.com/construction/square-yards-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "CalcHub"
+        }
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   SQUARE YARDS CALCULATOR - CALCHUB
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, 99% accurate
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:24px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:28px; margin-bottom:12px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:5000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE - OPTIMIZED FOR ALL DEVICES ═══ */
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.85em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Square Yards Calculator</span>
+        </nav>
+
+        <h1>Square Yards Calculator</h1>
+        <p class="hero-desc">Calculate area in square yards from length and width. Convert between square yards, square feet, square meters, and acres instantly. Includes cost estimator for materials and landscaping projects.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            
+            <!-- INPUT SECTION -->
+            <div class="input-section">
+                <h2>Enter Dimensions</h2>
+                
+                <div class="input-group">
+                    <label class="input-label" for="length">Length</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="length" placeholder="Enter length" min="0.1" step="0.5" value="10">
+                        <select class="select-field unit-select" id="lengthUnit">
+                            <option value="yards" selected>yards</option>
+                            <option value="feet">feet</option>
+                            <option value="meters">meters</option>
+                            <option value="inches">inches</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Length of the area</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="width">Width</label>
+                    <div class="input-row">
+                        <input type="number" class="input-field" id="width" placeholder="Enter width" min="0.1" step="0.5" value="8">
+                        <select class="select-field unit-select" id="widthUnit">
+                            <option value="yards" selected>yards</option>
+                            <option value="feet">feet</option>
+                            <option value="meters">meters</option>
+                            <option value="inches">inches</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+                    <div class="input-hint">Width of the area</div>
+                </div>
+
+                <!-- PRICE CALCULATOR -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerYard">Price per Square Yard (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="pricePerYard" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter material price for total cost (e.g., carpet, turf, flooring)</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateArea()">Calculate Square Yards</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+                
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Total Area</div>
+                        <div class="result-value"><span id="totalSquareYards">0</span> <span class="result-unit">yd²</span></div>
+                    </div>
+
+                    <!-- COST SECTION -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Square Feet</div>
+                            <div class="result-item-value"><span id="squareFeet">0</span> ft²</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Square Meters</div>
+                            <div class="result-item-value"><span id="squareMeters">0</span> m²</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Acres</div>
+                            <div class="result-item-value"><span id="acres">0</span> ac</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Perimeter</div>
+                            <div class="result-item-value"><span id="perimeter">0</span> yd</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Explanation -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Understanding Square Yards</h2>
+        <div class="content-text">
+            <p>A square yard is a unit of area measurement commonly used in the United States for measuring floor space, landscaping areas, and construction materials like carpet, turf, and flooring. One square yard equals a square with sides that are each one yard (3 feet) long.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Quick Definition</div>
+                <p><strong>1 Square Yard = 1 yard × 1 yard = 3 feet × 3 feet = 9 square feet</strong></p>
+            </div>
+
+            <p>Our calculator makes it easy to calculate square yards from any measurements and instantly convert to other common units like square feet, square meters, and acres. Perfect for estimating material costs for home improvement projects!</p>
+
+            <div class="content-more" id="contentMore">
+                <h3>How to Calculate Square Yards</h3>
+                <p>The formula for calculating square yards is straightforward:</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">Square Yards Formula</div>
+                    <p><strong>Square Yards = Length (in yards) × Width (in yards)</strong></p>
+                    <p style="margin-top:8px; font-size:0.9em;">If your measurements are in feet: Square Yards = (Length in feet × Width in feet) ÷ 9</p>
+                </div>
+
+                <h3>Common Conversions</h3>
+                <p>Understanding how square yards relate to other area measurements:</p>
+                
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Unit</th>
+                                <th>Equals 1 Square Yard</th>
+                                <th>Common Uses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Square Feet</strong></td>
+                                <td>9 ft²</td>
+                                <td>Room sizes, small areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Square Meters</strong></td>
+                                <td>0.836 m²</td>
+                                <td>International measurements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Square Inches</strong></td>
+                                <td>1,296 in²</td>
+                                <td>Small surfaces</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Acres</strong></td>
+                                <td>0.000207 acres</td>
+                                <td>Large land areas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Practical Examples</h3>
+                
+                <p><strong>Example 1: Carpet Installation</strong></p>
+                <div class="info-box">
+                    <p>You're carpeting a room that's 12 feet long and 10 feet wide. Carpet costs $3.50 per square yard:</p>
+                    <p><strong>Step 1:</strong> Calculate area in square feet: 12 ft × 10 ft = 120 ft²</p>
+                    <p><strong>Step 2:</strong> Convert to square yards: 120 ÷ 9 = 13.33 square yards</p>
+                    <p><strong>Step 3:</strong> Calculate cost: 13.33 × $3.50 = <strong>$46.67</strong></p>
+                </div>
+
+                <p><strong>Example 2: Turf Installation</strong></p>
+                <div class="info-box">
+                    <p>Your backyard is 30 yards long and 20 yards wide. Artificial turf costs $8 per square yard:</p>
+                    <p><strong>Step 1:</strong> Calculate area: 30 yd × 20 yd = 600 square yards</p>
+                    <p><strong>Step 2:</strong> Calculate cost: 600 × $8 = <strong>$4,800</strong></p>
+                    <p><strong>Tip:</strong> Order 10% extra for waste and cuts = 660 square yards</p>
+                </div>
+
+                <h3>Square Yards to Acres Conversion</h3>
+                <p>For larger land areas, you might need to convert square yards to acres:</p>
+                <ul>
+                    <li><strong>1 acre = 4,840 square yards</strong></li>
+                    <li><strong>To convert sq yd to acres:</strong> Divide by 4,840</li>
+                    <li><strong>To convert acres to sq yd:</strong> Multiply by 4,840</li>
+                    <li><strong>Example:</strong> 10,000 sq yd ÷ 4,840 = 2.07 acres</li>
+                </ul>
+
+                <h3>Common Materials Sold by Square Yard</h3>
+                <ul>
+                    <li><strong>Carpet:</strong> $2-$15 per square yard (varies by quality)</li>
+                    <li><strong>Artificial Turf:</strong> $5-$20 per square yard</li>
+                    <li><strong>Sod (Natural Grass):</strong> $0.35-$0.85 per square yard</li>
+                    <li><strong>Vinyl Flooring:</strong> $3-$7 per square yard</li>
+                    <li><strong>Mulch:</strong> Typically sold by cubic yard, not square yard</li>
+                    <li><strong>Concrete:</strong> Usually priced by square foot</li>
+                </ul>
+
+                <h3>Pro Tips for Accurate Measurements</h3>
+                <ul>
+                    <li><strong>Measure twice:</strong> Always double-check your measurements</li>
+                    <li><strong>Account for irregularities:</strong> Break complex shapes into rectangles</li>
+                    <li><strong>Add 10% waste:</strong> For cuts, mistakes, and irregular edges</li>
+                    <li><strong>Consider pattern matching:</strong> Patterned materials may need 15% extra</li>
+                    <li><strong>Check seller's units:</strong> Some sell by sq ft, others by sq yd</li>
+                    <li><strong>Measure in feet, then convert:</strong> Easier than using yards directly</li>
+                </ul>
+
+                <h3>Historical Context: The Acre</h3>
+                <p>The acre, still commonly used for land measurement, has an interesting history:</p>
+                <ul>
+                    <li><strong>Medieval origin:</strong> An acre was the amount of land a yoke of oxen could plow in one day</li>
+                    <li><strong>1 acre = 43,560 square feet</strong></li>
+                    <li><strong>1 acre = 4,840 square yards</strong></li>
+                    <li><strong>1 acre ≈ 0.4 hectares</strong></li>
+                    <li><strong>Football field comparison:</strong> An American football field (including end zones) is 1.32 acres</li>
+                </ul>
+
+                <h3>When to Use Square Yards vs Square Feet</h3>
+                <p><strong>Use Square Yards when:</strong></p>
+                <ul>
+                    <li>Buying carpet, padding, or flooring materials</li>
+                    <li>Ordering artificial turf or sod</li>
+                    <li>Working with contractors who quote in square yards</li>
+                    <li>Dealing with larger areas (over 100 sq ft)</li>
+                </ul>
+
+                <p><strong>Use Square Feet when:</strong></p>
+                <ul>
+                    <li>Measuring room dimensions</li>
+                    <li>Calculating paint coverage</li>
+                    <li>Real estate listings and floor plans</li>
+                    <li>Smaller projects and precise measurements</li>
+                </ul>
+            </div>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Calculators?</h2>
+        <p>Explore our complete collection of construction and landscaping calculators to plan your project perfectly.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+// Square Yards Calculator - 99% Accurate
+
+// Unit conversion constants
+const CONVERSIONS = {
+    yardsToFeet: 3,
+    yardsToMeters: 0.9144,
+    yardsToInches: 36,
+    yardsToCm: 91.44,
+    sqYardsToSqFeet: 9,
+    sqYardsToSqMeters: 0.836127,
+    sqYardsToAcres: 0.000206612
+};
+
+function convertToYards(value, unit) {
+    if (unit === 'feet') return value / CONVERSIONS.yardsToFeet;
+    if (unit === 'meters') return value / CONVERSIONS.yardsToMeters;
+    if (unit === 'inches') return value / CONVERSIONS.yardsToInches;
+    if (unit === 'cm') return value / CONVERSIONS.yardsToCm;
+    return value; // already in yards
+}
+
+function calculateArea() {
+    // Get inputs
+    const lengthValue = parseFloat(document.getElementById('length').value);
+    const lengthUnit = document.getElementById('lengthUnit').value;
+    const widthValue = parseFloat(document.getElementById('width').value);
+    const widthUnit = document.getElementById('widthUnit').value;
+    const pricePerYard = parseFloat(document.getElementById('pricePerYard').value) || 0;
+
+    // Validation
+    if (!lengthValue || lengthValue <= 0) {
+        alert('Please enter a valid length');
+        return;
+    }
+    if (!widthValue || widthValue <= 0) {
+        alert('Please enter a valid width');
+        return;
+    }
+
+    // Convert to yards
+    const lengthYards = convertToYards(lengthValue, lengthUnit);
+    const widthYards = convertToYards(widthValue, widthUnit);
+
+    // Calculate area
+    const squareYards = lengthYards * widthYards;
+    
+    // Calculate conversions
+    const squareFeet = squareYards * CONVERSIONS.sqYardsToSqFeet;
+    const squareMeters = squareYards * CONVERSIONS.sqYardsToSqMeters;
+    const acres = squareYards * CONVERSIONS.sqYardsToAcres;
+    
+    // Calculate perimeter
+    const perimeter = 2 * (lengthYards + widthYards);
+
+    // Calculate cost
+    const totalCost = squareYards * pricePerYard;
+
+    // Display results
+    document.getElementById('totalSquareYards').textContent = squareYards.toFixed(2);
+    document.getElementById('squareFeet').textContent = squareFeet.toFixed(2);
+    document.getElementById('squareMeters').textContent = squareMeters.toFixed(2);
+    document.getElementById('acres').textContent = acres.toFixed(4);
+    document.getElementById('perimeter').textContent = perimeter.toFixed(2);
+
+    // Display cost if price entered
+    const costSection = document.getElementById('costSection');
+    if (pricePerYard > 0) {
+        const recommended = Math.ceil(squareYards * 1.1); // 10% waste
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        const costBreakdown = `
+            <strong>Cost Breakdown:</strong><br>
+            ${squareYards.toFixed(2)} yd² × $${pricePerYard.toFixed(2)}/yd² = $${totalCost.toFixed(2)}<br>
+            <em>Recommended order (with 10% waste): ${recommended} yd² = $${(recommended * pricePerYard).toFixed(2)}</em>
+        `;
+        document.getElementById('costBreakdown').innerHTML = costBreakdown;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+
+    // Create formula explanation
+    let formulaExplanation = `
+        <div class="formula-step"><strong>Formula:</strong> Area = Length × Width</div>
+        <div class="formula-step"><strong>Your Inputs (converted to yards):</strong></div>
+        <div class="formula-step">• Length: ${lengthYards.toFixed(2)} yards</div>
+        <div class="formula-step">• Width: ${widthYards.toFixed(2)} yards</div>
+    `;
+    
+    if (pricePerYard > 0) {
+        formulaExplanation += `<div class="formula-step">• Price: $${pricePerYard.toFixed(2)}/yd²</div>`;
+    }
+    
+    formulaExplanation += `
+        <div class="formula-step" style="margin-top:12px;"><strong>Step 1 - Calculate Area:</strong></div>
+        <div class="formula-step">${lengthYards.toFixed(2)} yd × ${widthYards.toFixed(2)} yd = <strong>${squareYards.toFixed(2)} square yards</strong></div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Conversions:</strong></div>
+        <div class="formula-step">• Square Feet: ${squareYards.toFixed(2)} × 9 = ${squareFeet.toFixed(2)} ft²</div>
+        <div class="formula-step">• Square Meters: ${squareYards.toFixed(2)} × 0.836 = ${squareMeters.toFixed(2)} m²</div>
+        <div class="formula-step">• Acres: ${squareYards.toFixed(2)} ÷ 4,840 = ${acres.toFixed(4)} ac</div>
+        
+        <div class="formula-step" style="margin-top:12px;"><strong>Perimeter:</strong></div>
+        <div class="formula-step">2 × (${lengthYards.toFixed(2)} + ${widthYards.toFixed(2)}) = ${perimeter.toFixed(2)} yards</div>
+    `;
+    
+    if (pricePerYard > 0) {
+        formulaExplanation += `
+            <div class="formula-step" style="margin-top:12px;"><strong>Total Cost:</strong></div>
+            <div class="formula-step">${squareYards.toFixed(2)} yd² × $${pricePerYard.toFixed(2)}/yd² = $${totalCost.toFixed(2)}</div>
+        `;
+    }
+    
+    document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
+
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function resetCalculator() {
+    // Reset inputs
+    document.getElementById('length').value = '10';
+    document.getElementById('lengthUnit').value = 'yards';
+    document.getElementById('width').value = '8';
+    document.getElementById('widthUnit').value = 'yards';
+    document.getElementById('pricePerYard').value = '';
+
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+
+    // Reset values
+    document.getElementById('totalSquareYards').textContent = '0';
+    document.getElementById('squareFeet').textContent = '0';
+    document.getElementById('squareMeters').textContent = '0';
+    document.getElementById('acres').textContent = '0';
+    document.getElementById('perimeter').textContent = '0';
+    document.getElementById('totalCost').textContent = '0.00';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+}
+
+// Read More functionality
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const elementPosition = contentSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key support
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateArea();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

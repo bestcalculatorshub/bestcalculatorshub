@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>Decking Calculator — How Many Deck Boards Do I Need? | Free Tool | CalcHub</title>
+    <meta name="description" content="Free decking calculator. Find out how many deck boards you need, plus joists, screws, and total cost. Supports 10+ wood types, composite, and PVC. Includes stairs, railings, diagonal patterns, and waste factor. Instant accurate results.">
+    <meta name="keywords" content="decking calculator, how many deck boards do I need, deck board calculator, composite decking calculator, deck cost calculator, deck material calculator, deck estimator, pressure treated deck calculator, deck joist calculator, deck screw calculator">
+    <meta name="author" content="CalcHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calchub.com/construction/decking-calculator">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calchub.com/construction/decking-calculator">
+    <meta property="og:title" content="Decking Calculator — Boards, Joists, Cost Estimator">
+    <meta property="og:description" content="Calculate deck boards, joists, railings, and total cost. Free, accurate, comprehensive.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Decking Calculator",
+        "description": "Calculate deck boards, joists, railings, stairs, and costs for outdoor deck projects. Supports 10+ material types including composite, PVC, and hardwoods.",
+        "url": "https://calchub.com/construction/decking-calculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": { "@type": "Organization", "name": "CalcHub" }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many deck boards do I need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide the deck width by the effective board width (board width + gap). For a 12-foot wide deck using 2x6 boards (5.5\" actual) with a 3/16\" gap, you need 12 ft ÷ (5.6875\" ÷ 12) = about 25 boards per run. Multiply by the number of runs for your board length and add 10% for waste. Our calculator handles all of this automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does composite decking cost per square foot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Composite decking materials typically cost $3–$6 per linear foot for standard grades and $6–$10 per linear foot for premium brands. For a 12×16 foot deck (192 sq ft), materials alone typically run $1,800–$5,500 depending on the brand and grade. Add 50–100% for professional installation labor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many boards do I need for a 12x16 deck?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a 12×16 foot deck using 2x6 boards (5.5\" wide) with 3/16\" gap, running perpendicular: you need about 26 boards at 16 feet long, or about 23 boards at 16 feet with 10% waste added. Using composite 5.4\" boards you'd need approximately the same count. Diagonal installation requires 15–20% more boards."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many joists do I need for a deck?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At standard 16-inch on-center spacing, divide the deck width in inches by 16 and add 1 for each side. For a 12-foot wide deck: (144 ÷ 16) + 1 = 10 joists, plus 2 rim joists = 12 total. Each joist should span the full deck length (or be doubled at spans over 12 feet). Always use pressure-treated lumber for framing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much deck board gap should I leave?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The standard gap is 3/16 inch (0.1875 inches) for most lumber. Use 1/8 inch for wet pressure-treated boards that will shrink as they dry. For composite and PVC decking, follow manufacturer specifications—usually 1/4 inch. Proper gaps allow drainage, prevent mold growth, and accommodate seasonal wood movement."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+:root {
+    --navy: #0f172a; --slate: #1e293b; --slate-light: #334155; --muted: #64748b;
+    --muted-light: #94a3b8; --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
+    --teal: #0d9488; --teal-light: #14b8a6; --teal-pale: #ccfbf1;
+    --green: #10b981; --orange: #f97316; --orange-pale: #ffedd5;
+    --purple: #8b5cf6; --purple-pale: #ede9fe;
+    --blue: #3b82f6; --blue-pale: #dbeafe;
+    --brown: #92400e; --brown-pale: #fef3c7;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px; --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; min-height:44px; }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:120px; flex-shrink:0; min-height:44px; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; line-height:1.4; }
+.checkbox-group { display:flex; align-items:center; gap:8px; min-height:44px; }
+.checkbox-field { width:18px; height:18px; cursor:pointer; }
+.checkbox-label { font-size:0.95em; color:var(--slate); cursor:pointer; user-select:none; }
+
+.deck-section { background:var(--brown-pale); border:2px solid var(--brown); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.deck-section-title { font-weight:600; color:var(--brown); margin-bottom:12px; font-size:0.95em; }
+.material-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.material-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.joist-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.joist-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; min-height:48px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; min-height:44px; }
+.reset-btn:hover { background:var(--bg); }
+
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
+.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:16px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
+.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
+.formula-step { margin-bottom:8px; }
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; min-height:48px; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); }
+
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:8px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; -webkit-overflow-scrolling:touch; }
+.calc-table { width:100%; border-collapse:collapse; min-width:500px; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover { background:var(--bg); }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.content-more.expanded { max-height:10000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); }
+
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+@media (max-width:768px) {
+    .nav { padding:0 20px; } .hero { padding:40px 20px; } .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; } .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr; } .result-value { font-size:2em; }
+    .content-section { padding:32px 24px; } .cta-section { padding:32px 24px; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; } .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; } .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; } .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; } .result-section { padding:20px; }
+    .content-section { padding:24px 16px; } .cta-section { padding:28px 16px; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; } .footer-inner { padding:40px 16px 20px; }
+}
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; } .result-value { font-size:1.8em; } .cost-value { font-size:1.5em; }
+    .input-row { flex-direction:column; } .unit-select { width:100%; }
+    .bonus-badge { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+}
+@media (max-width:360px) { .hero h1 { font-size:1.3em; } .calculator-container { padding:16px 12px; } .result-section { padding:16px; } }
+@media print { .header, .footer, .cta-section, .read-more-btn { display:none; } .content-more { max-height:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Decking Calculator</span>
+        </nav>
+        <h1>Decking Calculator</h1>
+        <p class="hero-desc">Calculate deck boards, joists, fasteners, and total cost for your outdoor deck project. <strong>Supports 10+ wood types, composite, and PVC — with stairs, railing, and diagonal pattern options.</strong> Get professional-grade material estimates in seconds.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-section">
+                <h2>Enter Deck Details</h2>
+                
+                <div class="deck-section">
+                    <div class="deck-section-title">📐 Deck Dimensions</div>
+                    <div class="input-group">
+                        <label class="input-label" for="deckLength">Deck Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="deckLength" placeholder="Enter length" min="1" step="0.5" value="16">
+                            <select class="select-field unit-select" id="deckLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="deckWidth">Deck Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="deckWidth" placeholder="Enter width" min="1" step="0.5" value="12">
+                            <select class="select-field unit-select" id="deckWidthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="deckAngle">Deck Board Angle</label>
+                        <select class="select-field" id="deckAngle">
+                            <option value="perpendicular" selected>Perpendicular (90°)</option>
+                            <option value="diagonal">Diagonal (45°)</option>
+                            <option value="herringbone">Herringbone Pattern</option>
+                        </select>
+                        <div class="input-hint">Diagonal patterns require 15–20% more boards</div>
+                    </div>
+                </div>
+
+                <div class="material-section">
+                    <div class="material-section-title">🪵 Decking Material & Board Size</div>
+                    <div class="input-group">
+                        <label class="input-label" for="materialType">Material Type</label>
+                        <select class="select-field" id="materialType" onchange="updateBoardSizes()">
+                            <option value="pressure-treated">Pressure Treated Pine</option>
+                            <option value="cedar">Cedar</option>
+                            <option value="redwood">Redwood</option>
+                            <option value="ipe">Ipe (Brazilian Walnut)</option>
+                            <option value="tigerwood">Tigerwood</option>
+                            <option value="cumaru">Cumaru</option>
+                            <option value="mahogany">Mahogany</option>
+                            <option value="composite" selected>Composite Decking</option>
+                            <option value="pvc">PVC/Vinyl Decking</option>
+                            <option value="aluminum">Aluminum Decking</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="boardWidth">Board Width</label>
+                        <select class="select-field" id="boardWidth">
+                            <option value="5.5" selected>2x6 (5.5" actual)</option>
+                            <option value="3.5">2x4 (3.5" actual)</option>
+                            <option value="7.25">2x8 (7.25" actual)</option>
+                            <option value="5.4">5.4" (Composite Standard)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="boardLength">Board Length</label>
+                        <select class="select-field" id="boardLength">
+                            <option value="8">8 feet</option>
+                            <option value="10">10 feet</option>
+                            <option value="12" selected>12 feet</option>
+                            <option value="16">16 feet</option>
+                            <option value="20">20 feet</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="boardSpacing">Gap Between Boards</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="boardSpacing" placeholder="Gap size" min="0" max="0.5" step="0.03125" value="0.1875">
+                            <select class="select-field unit-select" id="boardSpacingUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Standard: 3/16" (0.1875") — Range: 1/8" to 1/4"</div>
+                    </div>
+                </div>
+
+                <div class="joist-section">
+                    <div class="joist-section-title">🔨 Joist Framing</div>
+                    <div class="input-group">
+                        <label class="input-label" for="joistSpacing">Joist Spacing</label>
+                        <select class="select-field" id="joistSpacing">
+                            <option value="12">12 inches O.C.</option>
+                            <option value="16" selected>16 inches O.C. (Standard)</option>
+                            <option value="24">24 inches O.C.</option>
+                        </select>
+                        <div class="input-hint">O.C. = On Center spacing</div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="checkbox-field" id="includeFascia" checked>
+                        <label class="checkbox-label" for="includeFascia">Include Fascia Boards</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="checkbox-field" id="hasStairs" onchange="toggleStairs()">
+                        <label class="checkbox-label" for="hasStairs">Add Stairs</label>
+                    </div>
+                </div>
+                <div id="stairsInputs" style="display:none; margin-top:12px;">
+                    <div class="input-group">
+                        <label class="input-label" for="stairRise">Total Rise (Height)</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="stairRise" placeholder="Height to ground" min="1" step="1" value="24">
+                            <select class="select-field unit-select" id="stairRiseUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="stairWidth">Stair Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="stairWidth" placeholder="Width" min="1" step="0.5" value="36">
+                            <select class="select-field unit-select" id="stairWidthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="checkbox-field" id="hasRailing" onchange="toggleRailing()">
+                        <label class="checkbox-label" for="hasRailing">Add Railing</label>
+                    </div>
+                </div>
+                <div id="railingInputs" style="display:none; margin-top:12px;">
+                    <div class="input-group">
+                        <label class="input-label" for="railingPerimeter">Total Railing Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="railingPerimeter" placeholder="Linear feet" min="1" step="1" value="56">
+                            <select class="select-field unit-select" id="railingPerimeterUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="m">meters</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Total length needing railing (usually 2 sides + front)</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="wasteFactor">Waste Factor (%)</label>
+                    <input type="number" class="input-field" id="wasteFactor" placeholder="Waste percentage" min="0" max="50" step="0.5" value="10">
+                    <div class="input-hint">Standard: 10% (5–15% typical range, 15–20% for diagonal)</div>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-section-title">💰 Cost Estimator <span class="bonus-badge">BONUS</span></div>
+                    <div class="input-group">
+                        <label class="input-label" for="boardPrice">Deck Board Price (per linear ft)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="boardPrice" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Typical: PT Wood $1–2, Composite $3–6, Hardwood $5–12</div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="joistPrice">Joist/Framing (per linear ft)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="joistPrice" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="railingPrice">Railing (per linear ft)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <input type="number" class="input-field" id="railingPrice" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Typical: Wood $15–25, Composite $25–50, Metal $35–80</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateDecking()">Calculate Materials & Cost</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- RESULT SECTION -->
+            <div class="result-section">
+                <h2>Material Estimate</h2>
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-text">Enter dimensions to see results</div>
+                </div>
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-main">
+                        <div class="result-label">Total Deck Boards</div>
+                        <div class="result-value"><span id="totalBoards">0</span> <span class="result-unit">boards</span></div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Deck Area</div>
+                            <div class="result-item-value"><span id="deckArea">0</span> ft²</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Linear Feet</div>
+                            <div class="result-item-value"><span id="linearFeet">0</span> ft</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Joists Needed</div>
+                            <div class="result-item-value"><span id="joistCount">0</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Screws/Fasteners</div>
+                            <div class="result-item-value"><span id="screwsNeeded">0</span> lbs</div>
+                        </div>
+                    </div>
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Total Material Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+                    <div class="formula-box">
+                        <div class="formula-title">📊 Calculation Details</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ More Construction Calculators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>How Many Deck Boards Do I Need?</h2>
+        <div class="content-text">
+
+            <p>The most common question when starting a deck project: "How many boards do I need?" The answer depends on your deck size, the board width you're using, the gap between boards, and your installation pattern. Our decking calculator handles all of these variables automatically — enter your dimensions and get a complete material list in seconds.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Basic Deck Board Formula</div>
+                <p><strong>Boards Needed = (Deck Width ÷ Effective Board Width) × (Deck Length ÷ Board Length) × (1 + Waste %)</strong></p>
+                <p style="margin-top:8px; font-size:0.9em;">Effective board width = actual board width + gap spacing. Add 10–20% for waste and cuts.</p>
+            </div>
+
+            <p>For a 12×16 foot deck using 2x6 boards (5.5" actual width) with a standard 3/16" gap: effective width = 5.6875". Boards across the 12-foot width = 12 ft ÷ (5.6875" ÷ 12) ≈ 25. At 16-foot boards, that's 25 boards. Add 10% waste = <strong>28 boards</strong>. Our calculator handles the full calculation including diagonal patterns, stairs, and railings.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>Deck Board Count by Deck Size — Quick Reference</h3>
+
+                <p>The table below uses 2x6 boards (5.5" actual width), 3/16" gap, perpendicular installation, and 10% waste. Board lengths are matched to deck dimension for minimal waste.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Deck Size</th><th>Area (ft²)</th><th>Boards Needed (2x6)</th><th>Board Length</th><th>Linear Feet</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>8' × 10'</strong></td><td>80</td><td>~20 boards</td><td>8 ft</td><td>160 ft</td></tr>
+                            <tr><td><strong>10' × 12'</strong></td><td>120</td><td>~27 boards</td><td>12 ft</td><td>324 ft</td></tr>
+                            <tr><td><strong>12' × 16'</strong></td><td>192</td><td>~28 boards</td><td>16 ft</td><td>448 ft</td></tr>
+                            <tr><td><strong>14' × 20'</strong></td><td>280</td><td>~34 boards</td><td>20 ft</td><td>680 ft</td></tr>
+                            <tr><td><strong>16' × 20'</strong></td><td>320</td><td>~39 boards</td><td>20 ft</td><td>780 ft</td></tr>
+                            <tr><td><strong>20' × 24'</strong></td><td>480</td><td>~48 boards</td><td>20 ft</td><td>960 ft</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Decking Material Comparison</h3>
+
+                <p>Choosing the right material is often a bigger decision than the measurements. Here's how the main options compare:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Material</th><th>Cost/Linear Ft</th><th>Lifespan</th><th>Maintenance</th><th>Best For</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Pressure Treated Pine</strong></td><td>$1.00–$2.00</td><td>15–20 yrs</td><td>Medium</td><td>Budget projects</td></tr>
+                            <tr><td><strong>Cedar</strong></td><td>$3.00–$5.00</td><td>15–20 yrs</td><td>Medium</td><td>Natural look, rot resistant</td></tr>
+                            <tr><td><strong>Redwood</strong></td><td>$4.00–$7.00</td><td>20–25 yrs</td><td>Medium</td><td>Premium appearance</td></tr>
+                            <tr><td><strong>Composite (Standard)</strong></td><td>$3.00–$6.00</td><td>25–30 yrs</td><td>Low</td><td>Low maintenance</td></tr>
+                            <tr><td><strong>Composite (Premium)</strong></td><td>$6.00–$10.00</td><td>30–50 yrs</td><td>Very Low</td><td>Best look & durability</td></tr>
+                            <tr><td><strong>PVC/Vinyl</strong></td><td>$5.00–$9.00</td><td>30–50 yrs</td><td>Very Low</td><td>Moisture resistance</td></tr>
+                            <tr><td><strong>Ipe (Brazilian Walnut)</strong></td><td>$8.00–$12.00</td><td>40–75 yrs</td><td>Low–Medium</td><td>Extreme durability</td></tr>
+                            <tr><td><strong>Tigerwood / Cumaru</strong></td><td>$5.00–$9.00</td><td>25–50 yrs</td><td>Low</td><td>Exotic appearance</td></tr>
+                            <tr><td><strong>Aluminum</strong></td><td>$8.00–$15.00</td><td>50+ yrs</td><td>Very Low</td><td>Fire-resistant, commercial</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Actual vs. Nominal Board Dimensions</h3>
+
+                <p>Lumber is sold in nominal sizes but arrives at smaller actual dimensions. This is one of the most common sources of calculation errors. A "2x6" is actually 1.5 inches thick and 5.5 inches wide. Always use actual dimensions for board count calculations.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Nominal Size</th><th>Actual Width</th><th>Boards per 100 SF (10% waste)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>2×4</strong></td><td>3.5"</td><td>~37 boards</td></tr>
+                            <tr><td><strong>2×6 (most common)</strong></td><td>5.5"</td><td>~23 boards</td></tr>
+                            <tr><td><strong>2×8</strong></td><td>7.25"</td><td>~18 boards</td></tr>
+                            <tr><td><strong>5/4×6 (decking profile)</strong></td><td>5.5"</td><td>~23 boards</td></tr>
+                            <tr><td><strong>Composite Standard</strong></td><td>5.4"</td><td>~24 boards</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Boards-per-100-SF assumes 12-foot boards, 3/16" gap, and perpendicular installation.</p>
+
+                <h3>The Waste Factor — How Much Extra to Buy</h3>
+
+                <p>The waste factor accounts for end cuts, defects in natural lumber, and mistakes during installation. How much you need depends on pattern and material:</p>
+
+                <ul>
+                    <li><strong>Perpendicular (standard):</strong> 5–10% — minimum cuts, straightforward layout</li>
+                    <li><strong>Diagonal 45°:</strong> 15–20% — every board cut at both ends at an angle</li>
+                    <li><strong>Herringbone or chevron:</strong> 20–30% — complex cuts throughout</li>
+                    <li><strong>Picture frame border:</strong> Add 5% on top of the field boards</li>
+                    <li><strong>Composite decking:</strong> 5–8% — consistent length and quality, fewer defects to cull</li>
+                    <li><strong>Budget pressure-treated:</strong> 15% — more knots and warping to reject</li>
+                </ul>
+
+                <p><strong>When in doubt, round up to the next bundle or pack.</strong> Running short mid-project and having to reorder is more expensive than having a few boards left over.</p>
+
+                <h3>Joist Spacing and Framing</h3>
+
+                <p>Joists are the structural framework beneath your deck boards. Spacing affects deck rigidity and the minimum board thickness you can use. The most common residential spacing is 16 inches on-center, which works for all standard 5/4" and 2x6 decking. Composite manufacturers often require checking specs — many require 16" O.C. for perpendicular installation and 12" O.C. for diagonal.</p>
+
+                <p>For a 12-foot wide deck at 16" O.C.: you need (12 ft × 12 in/ft) ÷ 16 + 1 = 10 joists, each the full deck length. Add 2 rim joists (the outer frame) for a total of 12 pieces of joist lumber.</p>
+
+                <h3>Diagonal Pattern Calculations</h3>
+
+                <p>Diagonal installation at 45° is a popular design choice but requires meaningfully more material. When boards run at 45°, they travel a longer diagonal path across the deck — mathematically, the length increases by a factor of √2 (1.414). This means you'll use about 41% more linear feet of decking than a perpendicular layout of the same area.</p>
+
+                <p>Diagonal installation also creates more end cuts (every board is cut at both ends), which increases the waste factor from the standard 10% up to 15–20%. Additionally, composite decking manufacturers often require 12" joist spacing for diagonal installation rather than the standard 16", which increases framing lumber costs.</p>
+
+                <h3>Fastener Requirements</h3>
+
+                <p>Deck fasteners are easy to underestimate. For face-screwed decking, the standard rate is 2 screws per board per joist. On a 12×16 deck with 10 joists and 28 boards, that's 28 × 10 × 2 = 560 screws — roughly 3–4 pounds of 3" deck screws. Always buy stainless steel or hot-dipped galvanized screws for exterior use; regular steel screws will rust and stain the deck within a season.</p>
+
+                <p>Hidden fasteners for composite decking provide a cleaner look but cost more — typically $60–$120 per 100 square feet in fastener cost alone. Each fastener sits in a groove on the board edge, so grooved-edge composite boards are required.</p>
+
+                <h3>Complete Cost Breakdown — 12×16 Deck Example</h3>
+
+                <p>Here's a realistic materials estimate for a standard 12×16 composite deck with railing. Labor is excluded.</p>
+
+                <div class="info-box">
+                    <p><strong>Composite Decking (192 ft², standard grade):</strong> ~$1,300–$2,500</p>
+                    <p><strong>Pressure-treated framing (joists, rim joists, posts):</strong> ~$400–$650</p>
+                    <p><strong>Hidden fasteners:</strong> ~$120–$230</p>
+                    <p><strong>Composite railing (3 sides, ~44 linear ft):</strong> ~$1,100–$2,200</p>
+                    <p><strong>Hardware, joist hangers, post bases:</strong> ~$100–$200</p>
+                    <p><strong>Concrete for footings (4–6 footings):</strong> ~$80–$160</p>
+                    <p><strong>Total materials estimate:</strong> $3,100–$5,940</p>
+                    <p style="margin-top:8px; font-size:0.9em;"><em>Professional installation labor typically adds $2,500–$6,000 for a deck this size.</em></p>
+                </div>
+
+                <h3>Building Code Basics</h3>
+
+                <p>Most jurisdictions require a permit for any deck attached to a house or over 200 square feet. Inspections typically cover footings (before pouring concrete), framing (before installing decking), and final completion. Railing is required by most codes when the deck surface is 30 inches or more above grade — minimum 36 inches tall for residential, 42 inches for commercial. Baluster spacing must be 4 inches or less to prevent children from falling through.</p>
+
+                <p>Footing depth requirements vary by climate. In cold-weather regions, footings must extend below the frost line — which can be 3–4 feet deep in northern states. Always check your local building department requirements before starting any permit-required work.</p>
+
+                <p style="margin-top:24px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>Material prices shown are approximate ranges and vary by region, supplier quantity, and market conditions. Always obtain current quotes before purchasing. Building code requirements vary by jurisdiction — consult your local building department before construction.</em></p>
+
+            </div><!-- end content-more -->
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Construction Tools?</h2>
+        <p>Explore our complete collection of construction calculators for accurate project planning and material estimation.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- Calculator JavaScript -->
+<script>
+function toFeet(value, unit) {
+    const c = { 'ft':1, 'in':1/12, 'm':3.28084 };
+    return value * (c[unit] || 1);
+}
+function toInches(value, unit) {
+    const c = { 'in':1, 'ft':12, 'mm':0.0393701 };
+    return value * (c[unit] || 1);
+}
+
+function updateBoardSizes() {
+    const mat = document.getElementById('materialType').value;
+    const bw = document.getElementById('boardWidth');
+    if (mat === 'composite' || mat === 'pvc') {
+        bw.innerHTML = `<option value="5.4" selected>5.4" (Composite Standard)</option><option value="5.5">5.5" (Composite Wide)</option><option value="3.5">2x4 Profile</option>`;
+    } else {
+        bw.innerHTML = `<option value="5.5" selected>2x6 (5.5" actual)</option><option value="3.5">2x4 (3.5" actual)</option><option value="7.25">2x8 (7.25" actual)</option>`;
+    }
+}
+
+function toggleStairs() {
+    document.getElementById('stairsInputs').style.display = document.getElementById('hasStairs').checked ? 'block' : 'none';
+}
+function toggleRailing() {
+    document.getElementById('railingInputs').style.display = document.getElementById('hasRailing').checked ? 'block' : 'none';
+}
+
+function calculateDecking() {
+    try {
+        const deckLength = toFeet(parseFloat(document.getElementById('deckLength').value), document.getElementById('deckLengthUnit').value);
+        const deckWidth = toFeet(parseFloat(document.getElementById('deckWidth').value), document.getElementById('deckWidthUnit').value);
+        if (!deckLength || !deckWidth || deckLength <= 0 || deckWidth <= 0) { alert('Please enter valid deck dimensions'); return; }
+
+        const deckArea = deckLength * deckWidth;
+        const boardWidth = parseFloat(document.getElementById('boardWidth').value);
+        const boardLength = parseFloat(document.getElementById('boardLength').value);
+        const boardSpacing = toInches(parseFloat(document.getElementById('boardSpacing').value), document.getElementById('boardSpacingUnit').value);
+        const effectiveBoardWidth = (boardWidth + boardSpacing) / 12;
+
+        const deckAngle = document.getElementById('deckAngle').value;
+        const angleMultiplier = deckAngle === 'diagonal' ? 1.41 : deckAngle === 'herringbone' ? 1.55 : 1.0;
+
+        const boardsPerRun = Math.ceil(deckWidth / effectiveBoardWidth);
+        const runsNeeded = Math.ceil((deckLength * angleMultiplier) / boardLength);
+        const totalBoardsBase = boardsPerRun * runsNeeded;
+        const wasteFactor = parseFloat(document.getElementById('wasteFactor').value) || 10;
+        const totalBoards = Math.ceil(totalBoardsBase * (1 + wasteFactor / 100));
+        const linearFeet = totalBoards * boardLength;
+
+        const joistSpacingFt = parseFloat(document.getElementById('joistSpacing').value) / 12;
+        const joistsNeeded = Math.ceil(deckWidth / joistSpacingFt) + 1;
+        const totalJoistFeet = (joistsNeeded * deckLength) + (deckLength * 2) + (deckWidth * 2);
+
+        const totalScrews = Math.ceil(totalBoards * joistsNeeded * 2.5);
+        const screwsPounds = Math.ceil(totalScrews / 150);
+
+        let stairBoards = 0;
+        if (document.getElementById('hasStairs').checked) {
+            const stairRise = toInches(parseFloat(document.getElementById('stairRise').value || 24), document.getElementById('stairRiseUnit').value);
+            const stairW = toInches(parseFloat(document.getElementById('stairWidth').value || 36), document.getElementById('stairWidthUnit').value);
+            stairBoards = Math.ceil(stairRise / 7.5) * 2 * Math.ceil((stairW / 12) / (boardWidth / 12));
+        }
+
+        let railingFeet = 0;
+        if (document.getElementById('hasRailing').checked) {
+            railingFeet = toFeet(parseFloat(document.getElementById('railingPerimeter').value || 0), document.getElementById('railingPerimeterUnit').value);
+        }
+
+        const boardPrice = parseFloat(document.getElementById('boardPrice').value) || 0;
+        const joistPrice = parseFloat(document.getElementById('joistPrice').value) || 0;
+        const railingPrice = parseFloat(document.getElementById('railingPrice').value) || 0;
+        const deckingCost = linearFeet * boardPrice;
+        const joistCost = totalJoistFeet * joistPrice;
+        const railCost = railingFeet * railingPrice;
+        const totalCost = deckingCost + joistCost + railCost;
+
+        document.getElementById('totalBoards').textContent = totalBoards;
+        document.getElementById('deckArea').textContent = deckArea.toFixed(1);
+        document.getElementById('linearFeet').textContent = linearFeet.toFixed(0);
+        document.getElementById('joistCount').textContent = joistsNeeded;
+        document.getElementById('screwsNeeded').textContent = screwsPounds;
+
+        const costSection = document.getElementById('costSection');
+        if (boardPrice > 0 || joistPrice > 0 || railingPrice > 0) {
+            document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+            let cb = '<strong>Cost Breakdown:</strong><br>';
+            if (boardPrice > 0) cb += `Decking: ${linearFeet.toFixed(0)} linear ft × $${boardPrice.toFixed(2)}/ft = $${deckingCost.toFixed(2)}<br>`;
+            if (joistPrice > 0) cb += `Framing: ${totalJoistFeet.toFixed(0)} linear ft × $${joistPrice.toFixed(2)}/ft = $${joistCost.toFixed(2)}<br>`;
+            if (railingPrice > 0 && railingFeet > 0) cb += `Railing: ${railingFeet.toFixed(0)} linear ft × $${railingPrice.toFixed(2)}/ft = $${railCost.toFixed(2)}<br>`;
+            cb += `<em>Materials only — excludes labor, permits, footings</em>`;
+            document.getElementById('costBreakdown').innerHTML = cb;
+            costSection.classList.add('active');
+        } else { costSection.classList.remove('active'); }
+
+        const matName = document.getElementById('materialType').options[document.getElementById('materialType').selectedIndex].text;
+        const angleName = document.getElementById('deckAngle').options[document.getElementById('deckAngle').selectedIndex].text;
+        let fe = `
+            <div class="formula-step"><strong>Material:</strong> ${matName}</div>
+            <div class="formula-step"><strong>Board:</strong> ${boardWidth}" wide × ${boardLength}' long</div>
+            <div class="formula-step"><strong>Pattern:</strong> ${angleName}</div>
+            <div class="formula-step"><strong>Deck Area:</strong> ${deckLength}' × ${deckWidth}' = ${deckArea.toFixed(1)} ft²</div>
+            <div class="formula-step" style="margin-top:12px;"><strong>Board Count:</strong></div>
+            <div class="formula-step">Effective width = ${boardWidth}" + ${boardSpacing.toFixed(3)}" gap = ${(effectiveBoardWidth * 12).toFixed(2)}"</div>
+            <div class="formula-step">Boards across ${deckWidth}' width = ${boardsPerRun}</div>
+            <div class="formula-step">Runs of ${boardLength}' boards = ${runsNeeded} (×${angleMultiplier} angle factor)</div>
+            <div class="formula-step">Base boards = ${totalBoardsBase}, with ${wasteFactor}% waste = <strong>${totalBoards} boards</strong></div>
+            <div class="formula-step" style="margin-top:12px;"><strong>Framing:</strong></div>
+            <div class="formula-step">${joistsNeeded} joists + rim joists = ${totalJoistFeet.toFixed(0)} linear feet total</div>
+            <div class="formula-step" style="margin-top:12px;"><strong>Fasteners:</strong></div>
+            <div class="formula-step">~${totalScrews} screws ≈ ${screwsPounds} lbs</div>
+        `;
+        if (stairBoards > 0) fe += `<div class="formula-step" style="margin-top:12px;"><strong>Stairs:</strong> ${stairBoards} additional boards for treads</div>`;
+        if (railingFeet > 0) fe += `<div class="formula-step" style="margin-top:12px;"><strong>Railing:</strong> ${railingFeet.toFixed(0)} linear feet</div>`;
+        document.getElementById('formulaExplanation').innerHTML = fe;
+
+        document.getElementById('resultEmpty').style.display = 'none';
+        document.getElementById('resultDisplay').classList.add('active');
+        document.getElementById('ctaResult').classList.add('active');
+        if (window.innerWidth <= 768) document.querySelector('.result-section').scrollIntoView({ behavior:'smooth', block:'nearest' });
+
+    } catch (err) { alert('Error calculating. Please check your inputs.'); console.error(err); }
+}
+
+function resetCalculator() {
+    document.getElementById('deckLength').value = '16';
+    document.getElementById('deckWidth').value = '12';
+    document.getElementById('materialType').value = 'composite';
+    document.getElementById('boardLength').value = '12';
+    document.getElementById('boardSpacing').value = '0.1875';
+    document.getElementById('deckAngle').value = 'perpendicular';
+    document.getElementById('joistSpacing').value = '16';
+    document.getElementById('includeFascia').checked = true;
+    document.getElementById('wasteFactor').value = '10';
+    document.getElementById('hasStairs').checked = false;
+    document.getElementById('hasRailing').checked = false;
+    document.getElementById('boardPrice').value = '';
+    document.getElementById('joistPrice').value = '';
+    document.getElementById('railingPrice').value = '';
+    toggleStairs(); toggleRailing(); updateBoardSizes();
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+}
+
+const readMoreBtn = document.getElementById('readMoreBtn'), contentMore = document.getElementById('contentMore');
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function() {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded'); readMoreBtn.textContent = 'Read More';
+            const cs = document.querySelector('.content-section');
+            if (cs) window.scrollTo({ top: cs.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth' });
+        } else { contentMore.classList.add('expanded'); readMoreBtn.textContent = 'Show Less'; }
+    });
+}
+document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('keypress', function(e) { if (e.key === 'Enter') calculateDecking(); });
+});
+</script>
+</body>
+</html>
