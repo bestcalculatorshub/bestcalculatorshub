@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer-col">
                         <h4 class="footer-title">Popular</h4>
                         <div class="footer-links">
-                            <a href="/finance.html">Finance</a>
-                            <a href="/math.html">Math</a>
-                            <a href="/health.html">Health</a>
-                            <a href="/physics.html">Physics</a>
-                            <a href="/conversion.html">Conversion</a>
+                            <a href="#">Finance</a>
+                            <a href="#">Math</a>
+                            <a href="#">Health</a>
+                            <a href="#">Physics</a>
+                            <a href="#">Conversion</a>
                         </div>
                     </div>
                     
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="/construction.html">Construction</a>
                             <a href="/chemistry.html">Chemistry</a>
                             <a href="/biology.html">Biology</a>
-                            <a href="/sports.html">Sports</a>
-                            <a href="/food.html">Food</a>
+                            <a href="#">Sports</a>
+                            <a href="#">Food</a>
                         </div>
                     </div>
                     
