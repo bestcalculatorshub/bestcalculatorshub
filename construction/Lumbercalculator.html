@@ -3,128 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Lumber Calculator - Board Feet & Framing Calculator | CalcHub</title>
-    <meta name="description" content="Free lumber calculator for board feet, framing, and construction. Calculate 2x4, 2x6, 2x8 quantities and costs instantly.">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Lumber Calculator — Board Feet & Framing Estimator | Best Calculators Hub</title>
+    <meta name="description" content="Free lumber calculator for board feet, framing studs, and construction. Calculate 2x4, 2x6, 2x8 quantities, linear feet, and costs instantly. Supports all standard lumber sizes.">
+    <meta name="keywords" content="lumber calculator, board feet calculator, framing calculator, how many 2x4 do I need, stud calculator, linear feet calculator, lumber estimator, construction lumber calculator">
+    <meta name="author" content="Best Calculators Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bestcalculatorshub.com/construction/Lumbercalculator.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bestcalculatorshub.com/construction/Lumbercalculator.html">
+    <meta property="og:title" content="Lumber Calculator — Board Feet & Framing Estimator">
+    <meta property="og:description" content="Calculate lumber quantities for framing, flooring, and construction. Supports all standard lumber sizes. Free and accurate.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Lumber Calculator","description":"Calculate lumber quantities for framing and board feet.","url":"https://bestcalculatorshub.com/construction/Lumbercalculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Organization","name":"Best Calculators Hub"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many studs do I need for a 10-foot wall?","acceptedAnswer":{"@type":"Answer","text":"For a 10-foot wall with 16-inch on-center spacing, you need approximately 9 studs. Always add 10% for waste and extras around windows and doors."}},{"@type":"Question","name":"How do you calculate board feet of lumber?","acceptedAnswer":{"@type":"Answer","text":"Board feet = (Thickness in inches x Width in inches x Length in feet) / 12. For example, a 2x4 that is 8 feet long contains (2 x 4 x 8) / 12 = 5.33 board feet."}},{"@type":"Question","name":"What is the difference between nominal and actual lumber size?","acceptedAnswer":{"@type":"Answer","text":"Nominal size is the name (e.g., 2x4), but actual size is smaller after milling. A 2x4 actually measures 1.5 inches x 3.5 inches. Always use actual dimensions in calculations."}}]}
+    </script>
+
 <style>
 :root {
-    --navy: #0f172a; --slate: #1e293b; --slate-light: #334155; --muted: #64748b;
-    --muted-light: #94a3b8; --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
-    --teal: #0d9488; --teal-light: #14b8a6; --teal-pale: #ccfbf1;
-    --green: #10b981; --orange: #f97316; --orange-pale: #ffedd5;
-    --purple: #8b5cf6; --purple-pale: #ede9fe; --blue: #3b82f6; --blue-pale: #dbeafe;
-    --brown: #92400e; --brown-pale: #fef3c7;
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'DM Sans', system-ui, sans-serif;
-    --max-width: 1200px; --radius: 8px;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --navy:#0f172a; --slate:#1e293b; --slate-light:#334155; --muted:#64748b;
+    --muted-light:#94a3b8; --border:#e2e8f0; --bg:#f8fafc; --white:#ffffff;
+    --teal:#0d9488; --teal-light:#14b8a6; --teal-pale:#ccfbf1;
+    --green:#10b981; --orange:#f97316; --orange-pale:#ffedd5;
+    --purple:#8b5cf6; --purple-pale:#ede9fe; --blue:#3b82f6; --blue-pale:#dbeafe;
+    --brown:#92400e; --brown-pale:#fef3c7;
+    --font-heading:'Playfair Display',Georgia,serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --max-width:1200px; --radius:8px;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:0 4px 12px rgba(0,0,0,0.08);
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
-body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-a { color:inherit; text-decoration:none; }
-button { font-family:var(--font-body); cursor:pointer; border:none; }
-input, select { font-family:var(--font-body); }
-.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
-.hero-content { max-width:var(--max-width); margin:0 auto; }
-.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
-.breadcrumb a { color:var(--muted-light); }
-.breadcrumb-sep { color:var(--muted); }
-.breadcrumb span:last-child { color:var(--white); font-weight:500; }
-.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
-.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
-.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
-.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
-.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
-.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
-.input-group { margin-bottom:20px; }
-.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
-.input-row { display:flex; gap:8px; align-items:center; }
-.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; min-height:44px; }
-.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
-.unit-select { width:120px; flex-shrink:0; min-height:44px; }
-.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; line-height:1.4; }
-.project-section { background:var(--brown-pale); border:2px solid var(--brown); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
-.project-section-title { font-weight:600; color:var(--brown); margin-bottom:12px; font-size:0.95em; }
-.lumber-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
-.lumber-section-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
-.spacing-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
-.spacing-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
-.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:20px; }
-.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
-.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
-.mode-selector { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:20px; }
-.mode-btn { background:var(--white); border:2px solid var(--border); padding:12px; border-radius:var(--radius); cursor:pointer; text-align:center; transition:all 0.2s; font-weight:600; color:var(--slate); font-size:0.9em; min-height:44px; display:flex; align-items:center; justify-content:center; }
-.mode-btn:hover { border-color:var(--purple); background:rgba(139, 92, 246, 0.05); }
-.mode-btn.active { border-color:var(--purple); background:var(--purple); color:var(--white); }
-.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:8px; min-height:48px; }
-.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
-.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; min-height:44px; }
-.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
-.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
-.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
-.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
-.result-display { display:none; }
-.result-display.active { display:block; }
-.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
-.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
-.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
-.result-unit { font-size:0.6em; font-weight:500; color:var(--slate); }
-.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
-.result-item { background:var(--white); padding:16px; border-radius:var(--radius); text-align:center; }
-.result-item-label { font-size:0.8em; color:var(--muted); margin-bottom:4px; }
-.result-item-value { font-size:1.3em; font-weight:700; color:var(--slate); }
-.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:20px; display:none; }
-.cost-section.active { display:block; }
-.cost-main { text-align:center; margin-bottom:16px; }
-.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
-.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
-.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.9em; color:var(--slate); }
-.formula-box { background:rgba(255,255,255,0.7); padding:20px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:20px; }
-.formula-title { font-weight:600; color:var(--slate); margin-bottom:12px; }
-.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.95em; line-height:1.8; }
-.formula-step { margin-bottom:8px; }
-.cta-result { display:none; }
-.cta-result.active { display:block; }
-.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; min-height:48px; }
-.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
-.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
-.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; }
-.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
-.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; min-height:48px; }
-@media (max-width:768px) {
-    .hero { padding:40px 20px; }
-    .hero h1 { font-size:2em; }
-    .main { padding:32px 20px; }
-    .calculator-container { padding:24px 20px; }
-    .calculator-grid { grid-template-columns:1fr; gap:24px; }
-    .result-grid { grid-template-columns:1fr; }
-    .mode-selector { grid-template-columns:1fr; gap:6px; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--slate);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+button{font-family:var(--font-body);cursor:pointer;border:none;-webkit-tap-highlight-color:transparent;}
+input,select{font-family:var(--font-body);}
+.nav-link{min-height:44px;display:flex;align-items:center;}
+*{-webkit-overflow-scrolling:touch;}
+
+/* HEADER */
+.header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
+.nav{max-width:var(--max-width);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3em;color:var(--navy);}
+.nav-brand-icon{font-size:1.2em;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-link{color:var(--muted);font-size:0.9em;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+.nav-link:hover{background:var(--bg);color:var(--teal);}
+.nav-link.active{color:var(--teal);background:var(--teal-pale);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px;}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--slate);border-radius:2px;transition:all 0.3s;}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3a5f 100%);padding:48px 24px;}
+.hero-content{max-width:var(--max-width);margin:0 auto;}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:0.85em;flex-wrap:wrap;}
+.breadcrumb a{color:var(--muted-light);transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--teal-light);}
+.breadcrumb-sep{color:var(--muted);}
+.breadcrumb span:last-child{color:var(--white);font-weight:500;}
+.hero h1{font-family:var(--font-heading);font-size:2.5em;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.2;}
+.hero-desc{color:var(--muted-light);font-size:0.95em;line-height:1.7;max-width:700px;}
+
+/* MAIN / CALCULATOR */
+.main{max-width:var(--max-width);margin:0 auto;padding:40px 24px;}
+.calculator-container{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:40px;margin-bottom:48px;box-shadow:var(--shadow-sm);}
+.calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.input-section h2{font-family:var(--font-heading);font-size:1.5em;font-weight:600;color:var(--navy);margin-bottom:24px;}
+.input-group{margin-bottom:20px;}
+.input-label{display:block;font-weight:600;color:var(--slate);margin-bottom:8px;font-size:0.95em;}
+.input-row{display:flex;gap:8px;align-items:center;}
+.input-field,.select-field{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:1em;color:var(--slate);transition:all 0.2s;min-height:44px;}
+.input-field:focus,.select-field:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-pale);}
+.unit-select{width:120px;flex-shrink:0;min-height:44px;}
+.input-hint{font-size:0.85em;color:var(--muted);margin-top:4px;line-height:1.4;}
+.project-section{background:var(--brown-pale);border:2px solid var(--brown);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.project-section-title{font-weight:600;color:var(--brown);margin-bottom:12px;font-size:0.95em;}
+.lumber-section{background:var(--purple-pale);border:2px solid var(--purple);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.lumber-section-title{font-weight:600;color:var(--purple);margin-bottom:12px;font-size:0.95em;}
+.spacing-section{background:var(--blue-pale);border:2px solid var(--blue);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.spacing-section-title{font-weight:600;color:var(--blue);margin-bottom:12px;font-size:0.95em;}
+.price-section{background:var(--orange-pale);border:2px solid var(--orange);border-radius:var(--radius);padding:16px;margin-top:20px;}
+.price-section-title{font-weight:600;color:var(--orange);margin-bottom:12px;font-size:0.95em;}
+.bonus-badge{background:var(--orange);color:var(--white);font-size:0.75em;padding:4px 8px;border-radius:4px;margin-left:8px;font-weight:700;}
+.mode-selector{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+.mode-btn{background:var(--white);border:2px solid var(--border);padding:12px;border-radius:var(--radius);cursor:pointer;text-align:center;transition:all 0.2s;font-weight:600;color:var(--slate);font-size:0.9em;min-height:44px;display:flex;align-items:center;justify-content:center;}
+.mode-btn:hover{border-color:var(--purple);background:rgba(139,92,246,0.05);}
+.mode-btn.active{border-color:var(--purple);background:var(--purple);color:var(--white);}
+.calculate-btn{width:100%;background:var(--teal);color:var(--white);padding:14px 24px;border-radius:var(--radius);font-weight:600;font-size:1.05em;transition:all 0.2s;margin-top:8px;min-height:48px;}
+.calculate-btn:hover{background:#0f766e;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.reset-btn{width:100%;background:var(--white);color:var(--slate);border:1px solid var(--border);padding:12px 24px;border-radius:var(--radius);font-weight:500;font-size:0.95em;transition:all 0.2s;margin-top:12px;min-height:44px;}
+.reset-btn:hover{background:var(--bg);border-color:var(--slate-light);}
+.result-section{background:linear-gradient(135deg,var(--teal-pale) 0%,#e0f2f1 100%);border-radius:12px;padding:32px;border:2px solid var(--teal-light);}
+.result-section h2{font-family:var(--font-heading);font-size:1.5em;font-weight:600;color:var(--navy);margin-bottom:20px;}
+.result-empty{text-align:center;padding:40px 20px;color:var(--muted);}
+.result-display{display:none;}
+.result-display.active{display:block;}
+.result-main{background:var(--white);border-radius:var(--radius);padding:24px;margin-bottom:20px;text-align:center;border:2px solid var(--teal);}
+.result-label{font-size:0.9em;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.result-value{font-size:2.5em;font-weight:700;color:var(--teal);font-family:var(--font-heading);line-height:1;}
+.result-unit{font-size:0.6em;font-weight:500;color:var(--slate);}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.result-item{background:var(--white);padding:16px;border-radius:var(--radius);text-align:center;}
+.result-item-label{font-size:0.8em;color:var(--muted);margin-bottom:4px;}
+.result-item-value{font-size:1.3em;font-weight:700;color:var(--slate);}
+.cost-section{background:linear-gradient(135deg,var(--orange-pale) 0%,#fef3c7 100%);border:2px solid var(--orange);border-radius:var(--radius);padding:20px;margin-bottom:20px;display:none;}
+.cost-section.active{display:block;}
+.cost-main{text-align:center;margin-bottom:16px;}
+.cost-label{font-size:0.9em;color:#c2410c;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.cost-value{font-size:2em;font-weight:700;color:var(--orange);font-family:var(--font-heading);}
+.cost-breakdown{background:rgba(255,255,255,0.7);padding:12px;border-radius:var(--radius);font-size:0.9em;color:var(--slate);}
+.formula-box{background:rgba(255,255,255,0.7);padding:20px;border-radius:var(--radius);border-left:4px solid var(--teal);margin-bottom:20px;}
+.formula-title{font-weight:600;color:var(--slate);margin-bottom:12px;}
+.formula-content{font-family:'Courier New',monospace;color:var(--navy);font-size:0.95em;line-height:1.8;}
+.formula-step{margin-bottom:8px;}
+.cta-result{display:none;}
+.cta-result.active{display:block;}
+.cta-result-btn{display:block;width:100%;background:var(--green);color:var(--white);padding:14px 24px;border-radius:var(--radius);font-weight:600;text-align:center;transition:all 0.2s;min-height:48px;}
+.cta-result-btn:hover{background:#059669;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+
+/* CONTENT SECTION */
+.content-section{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:48px 40px;margin-bottom:48px;box-shadow:var(--shadow-sm);}
+.content-section h2{font-family:var(--font-heading);font-size:1.8em;font-weight:600;color:var(--navy);margin-bottom:24px;}
+.content-text{color:var(--muted);font-size:0.95em;line-height:1.9;}
+.content-text p{margin-bottom:18px;}
+.content-text h3{font-size:1.2em;font-weight:600;color:var(--slate);margin-top:32px;margin-bottom:14px;}
+.content-text ul{margin:16px 0;padding-left:24px;}
+.content-text li{margin-bottom:8px;}
+.content-text strong{color:var(--slate);}
+.info-box{background:var(--teal-pale);border-left:4px solid var(--teal);padding:16px 20px;border-radius:var(--radius);margin:20px 0;}
+.info-box-title{font-weight:600;color:var(--teal);margin-bottom:8px;}
+.table-responsive{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;border-radius:var(--radius);}
+.calc-table{width:100%;border-collapse:collapse;min-width:400px;}
+.calc-table th,.calc-table td{padding:12px;text-align:left;border-bottom:1px solid var(--border);font-size:0.9em;white-space:nowrap;}
+.calc-table th{background:var(--bg);font-weight:600;color:var(--slate);}
+.calc-table tr:hover{background:var(--bg);}
+.content-more{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+.content-more.expanded{max-height:9000px;}
+.read-more-btn{display:block;margin:24px auto 0;background:var(--teal);color:var(--white);padding:12px 32px;border-radius:var(--radius);font-weight:600;font-size:0.95em;transition:all 0.2s;min-height:44px;}
+.read-more-btn:hover{background:#0f766e;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--teal),#0f766e);border-radius:12px;padding:48px 40px;text-align:center;margin-bottom:48px;}
+.cta-section h2{font-family:var(--font-heading);font-size:2em;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.3;}
+.cta-section p{color:rgba(255,255,255,0.95);font-size:1.05em;line-height:1.7;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;}
+.cta-btn{display:inline-block;background:var(--white);color:var(--teal);font-weight:600;font-size:1em;padding:14px 36px;border-radius:var(--radius);transition:all 0.2s;min-height:48px;}
+.cta-btn:hover{box-shadow:0 6px 20px rgba(255,255,255,0.3);transform:translateY(-2px);}
+
+/* FOOTER */
+.footer{background:var(--navy);color:var(--muted-light);margin-top:64px;}
+.footer-inner{max-width:var(--max-width);margin:0 auto;padding:56px 24px 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--slate-light);}
+.footer-brand{font-size:1.3em;font-weight:700;color:var(--white);margin-bottom:12px;}
+.footer-brand-desc{font-size:0.85em;color:var(--muted);line-height:1.7;margin-bottom:20px;max-width:280px;}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap;}
+.social-link{background:rgba(255,255,255,0.08);color:var(--muted-light);font-size:0.8em;padding:8px 16px;border-radius:var(--radius);transition:all 0.2s;}
+.social-link:hover{background:var(--teal);color:var(--white);}
+.footer-title{color:var(--white);font-size:0.85em;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{color:var(--muted);font-size:0.9em;transition:color 0.2s;}
+.footer-links a:hover{color:var(--teal-light);}
+.footer-bottom{padding-top:24px;text-align:center;}
+.footer-copy{font-size:0.85em;color:var(--muted);}
+.back-to-top{position:fixed;bottom:24px;right:24px;background:var(--teal);color:var(--white);width:44px;height:44px;border-radius:50%;font-size:1.2em;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-md);border:none;}
+.back-to-top.visible{display:flex;}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+    .nav{padding:0 20px;}.hero{padding:40px 20px;}.hero h1{font-size:2em;}
+    .main{padding:32px 20px;}.calculator-container{padding:24px 20px;}
+    .calculator-grid{grid-template-columns:1fr;gap:24px;}
+    .result-grid{grid-template-columns:1fr;}
+    .mode-selector{grid-template-columns:1fr;gap:6px;}
+    .content-section{padding:32px 24px;}.content-section h2{font-size:1.5em;}
+    .cta-section{padding:32px 24px;}.cta-section h2{font-size:1.6em;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
 }
-@media (max-width:640px) {
-    .hero { padding:32px 16px; }
-    .hero h1 { font-size:1.7em; }
-    .main { padding:24px 16px; }
-    .calculator-container { padding:20px 16px; }
+@media (max-width:640px){
+    .hamburger{display:flex;}
+    .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);flex-direction:column;padding:12px;gap:4px;box-shadow:var(--shadow-md);border-top:1px solid var(--border);z-index:999;}
+    .nav-links.active{display:flex;}.nav-link{padding:14px 16px;width:100%;text-align:center;}
+    .hero{padding:32px 16px;}.hero h1{font-size:1.7em;}
+    .main{padding:24px 16px;}.calculator-container{padding:20px 16px;}
+    .input-section h2,.result-section h2{font-size:1.3em;}.result-section{padding:20px;}
+    .content-section{padding:24px 16px;}.cta-section{padding:28px 16px;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}.footer-inner{padding:40px 16px 20px;}
 }
-@media (max-width:480px) {
-    .hero h1 { font-size:1.5em; }
-    .result-value { font-size:1.8em; }
-    .input-row { flex-direction:column; }
-    .unit-select { width:100%; }
+@media (max-width:480px){
+    .hero h1{font-size:1.5em;}.result-value{font-size:1.8em;}
+    .input-row{flex-direction:column;}.unit-select{width:100%;}
+    .bonus-badge{display:block;margin-left:0;margin-top:4px;width:fit-content;}
 }
-@media (max-width:360px) {
-    .hero h1 { font-size:1.3em; }
-    .calculator-container { padding:16px 12px; }
-    .result-value { font-size:1.6em; }
+@media (max-width:360px){.hero h1{font-size:1.3em;}.calculator-container{padding:16px 12px;}}
+@media (max-width:768px){
+    .table-responsive{position:relative;}
+    .table-responsive::after{content:'← Scroll →';position:absolute;bottom:8px;right:8px;background:rgba(15,23,42,0.8);color:#fff;padding:4px 8px;border-radius:4px;font-size:0.75em;pointer-events:none;}
+}
+@media print{
+    .header,.footer,.cta-section,.read-more-btn{display:none;}
+    .content-more{max-height:none !important;}.calculator-container{border:1px solid #000;}
 }
 </style>
 </head>
 <body>
+
 <div id="header-placeholder"></div>
+
 <section class="hero">
     <div class="hero-content">
         <nav class="breadcrumb">
@@ -138,6 +237,7 @@ input, select { font-family:var(--font-body); }
         <p class="hero-desc">Calculate lumber quantities for framing, flooring, and construction projects. <strong>Supports all standard lumber sizes from 1x2 to 4x12, board feet calculation, and complete cost estimation.</strong></p>
     </div>
 </section>
+
 <div class="main">
     <div class="calculator-container">
         <div class="calculator-grid">
@@ -214,24 +314,19 @@ input, select { font-family:var(--font-body); }
                     <div class="lumber-section">
                         <div class="lumber-section-title">📏 Dimensions</div>
                         <div class="input-group">
-                            <label class="input-label" for="bfThickness">Thickness</label>
+                            <label class="input-label" for="bfThickness">Thickness (inches)</label>
                             <input type="number" class="input-field" id="bfThickness" placeholder="inches" min="0.25" step="0.25" value="1.5">
                         </div>
                         <div class="input-group">
-                            <label class="input-label" for="bfWidth">Width</label>
+                            <label class="input-label" for="bfWidth">Width (inches)</label>
                             <input type="number" class="input-field" id="bfWidth" placeholder="inches" min="0.5" step="0.25" value="3.5">
                         </div>
                         <div class="input-group">
-                            <label class="input-label" for="bfLength">Length</label>
-                            <div class="input-row">
-                                <input type="number" class="input-field" id="bfLength" placeholder="length" min="1" step="0.5" value="8">
-                                <select class="select-field unit-select">
-                                    <option value="ft" selected>feet</option>
-                                </select>
-                            </div>
+                            <label class="input-label" for="bfLength">Length (feet)</label>
+                            <input type="number" class="input-field" id="bfLength" placeholder="feet" min="1" step="0.5" value="8">
                         </div>
                         <div class="input-group" style="margin-bottom:0;">
-                            <label class="input-label" for="bfQuantity">Pieces</label>
+                            <label class="input-label" for="bfQuantity">Number of Pieces</label>
                             <input type="number" class="input-field" id="bfQuantity" placeholder="quantity" min="1" value="10">
                         </div>
                     </div>
@@ -239,13 +334,14 @@ input, select { font-family:var(--font-body); }
                 <div class="input-group">
                     <label class="input-label" for="wasteFactor">Waste Factor (%)</label>
                     <input type="number" class="input-field" id="wasteFactor" placeholder="waste" min="0" max="50" value="10">
+                    <div class="input-hint">Standard: 10% (add more for complex cuts)</div>
                 </div>
                 <div class="price-section">
                     <div class="price-section-title">💰 Cost Calculator <span class="bonus-badge">BONUS</span></div>
                     <div class="input-group" style="margin-bottom:0;">
-                        <label class="input-label" for="lumberPrice">Price per Piece</label>
+                        <label class="input-label" for="lumberPrice">Price per Piece ($)</label>
                         <div class="input-row">
-                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px;">$</span>
+                            <span style="font-size:1.2em;color:var(--slate);padding:0 8px;">$</span>
                             <input type="number" class="input-field" id="lumberPrice" placeholder="0.00" min="0" step="0.01">
                         </div>
                     </div>
@@ -253,39 +349,23 @@ input, select { font-family:var(--font-body); }
                 <button class="calculate-btn" onclick="calculateLumber()">Calculate Lumber</button>
                 <button class="reset-btn" onclick="resetCalculator()">Reset</button>
             </div>
+
             <div class="result-section">
                 <h2>Material Estimate</h2>
-                <div class="result-empty" id="resultEmpty">
-                    <div>Enter dimensions to see results</div>
-                </div>
+                <div class="result-empty" id="resultEmpty"><div>Enter dimensions to see results</div></div>
                 <div class="result-display" id="resultDisplay">
                     <div class="result-main">
                         <div class="result-label">Pieces Needed</div>
                         <div class="result-value"><span id="totalPieces">0</span> <span class="result-unit">pieces</span></div>
                     </div>
                     <div class="result-grid">
-                        <div class="result-item">
-                            <div class="result-item-label">Without Waste</div>
-                            <div class="result-item-value"><span id="piecesNoWaste">0</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-item-label">Linear Feet</div>
-                            <div class="result-item-value"><span id="linearFeet">0</span> ft</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-item-label">Board Feet</div>
-                            <div class="result-item-value"><span id="boardFeet">0</span> BF</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-item-label">Weight</div>
-                            <div class="result-item-value"><span id="totalWeight">0</span> lbs</div>
-                        </div>
+                        <div class="result-item"><div class="result-item-label">Without Waste</div><div class="result-item-value"><span id="piecesNoWaste">0</span></div></div>
+                        <div class="result-item"><div class="result-item-label">Linear Feet</div><div class="result-item-value"><span id="linearFeet">0</span> ft</div></div>
+                        <div class="result-item"><div class="result-item-label">Board Feet</div><div class="result-item-value"><span id="boardFeet">0</span> BF</div></div>
+                        <div class="result-item"><div class="result-item-label">Est. Weight</div><div class="result-item-value"><span id="totalWeight">0</span> lbs</div></div>
                     </div>
                     <div class="cost-section" id="costSection">
-                        <div class="cost-main">
-                            <div class="cost-label">Total Cost</div>
-                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
-                        </div>
+                        <div class="cost-main"><div class="cost-label">Total Cost</div><div class="cost-value">$<span id="totalCost">0.00</span></div></div>
                         <div class="cost-breakdown" id="costBreakdown"></div>
                     </div>
                     <div class="formula-box">
@@ -293,122 +373,256 @@ input, select { font-family:var(--font-body); }
                         <div class="formula-content" id="formulaExplanation"></div>
                     </div>
                     <div class="cta-result" id="ctaResult">
-                        <a href="../construction.html" class="cta-result-btn">→ More Calculators</a>
+                        <a href="../construction.html" class="cta-result-btn">→ More Construction Calculators</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="content-section">
+        <h2>Lumber Calculator Guide</h2>
+        <div class="content-text">
+
+            <p>Whether you're framing a new wall, building a deck, laying flooring, or pricing a custom woodworking project, the fundamental question is always: <em>how much lumber do I need?</em> The answer depends on your project type — framing uses stud count and spacing, while custom woodworking uses board feet. Our calculator handles both methods, plus waste factor and cost estimation.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Quick Framing Formula</div>
+                <p><strong>Studs = (Wall Length in feet ÷ Spacing in feet) + 1</strong></p>
+                <p style="margin-top:8px;font-size:0.9em;">For 16" O.C. spacing: divide wall length by 1.333. For 24" O.C.: divide by 2. Always add 10% for waste, corners, and headers.</p>
+            </div>
+
+            <p>The most common mistake in lumber estimation is forgetting the extra studs needed at corners, doorways, and window rough openings. Each corner typically requires 3 extra studs, and each door or window opening needs a header and trimmer studs. Our framing calculator gives you the base count — add 3–5 studs per corner and 2–4 per opening on top of that.</p>
+
+            <h3>Framing vs. Board Feet — Which Mode Should You Use?</h3>
+
+            <p>Use <strong>Framing/Studs mode</strong> when building walls, floors, or roofs and you need to know how many individual pieces of lumber to buy at a specific on-center spacing. This is the standard method for residential construction. Use <strong>Board Feet mode</strong> when buying lumber priced by volume — most common with hardwoods, rough-sawn lumber, and custom millwork.</p>
+
+            <div class="content-more" id="contentMore">
+
+                <h3>Nominal vs. Actual Lumber Sizes</h3>
+
+                <p>The size you ask for is not the size you receive. Lumber is named by its <em>nominal</em> size (rough-cut before drying and planing), but sold at its <em>actual</em> size (after milling). Always use actual dimensions in calculations.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead><tr><th>Nominal Size</th><th>Actual Size</th><th>Common Use</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1×2</strong></td><td>0.75" × 1.5"</td><td>Furring strips, trim</td></tr>
+                            <tr><td><strong>1×4</strong></td><td>0.75" × 3.5"</td><td>Shelving, trim, siding</td></tr>
+                            <tr><td><strong>1×6</strong></td><td>0.75" × 5.5"</td><td>Fence boards, sheathing</td></tr>
+                            <tr><td><strong>2×4</strong></td><td>1.5" × 3.5"</td><td>Interior wall framing</td></tr>
+                            <tr><td><strong>2×6</strong></td><td>1.5" × 5.5"</td><td>Exterior walls, floor joists</td></tr>
+                            <tr><td><strong>2×8</strong></td><td>1.5" × 7.25"</td><td>Floor joists, rafters</td></tr>
+                            <tr><td><strong>2×10</strong></td><td>1.5" × 9.25"</td><td>Long-span floor joists</td></tr>
+                            <tr><td><strong>2×12</strong></td><td>1.5" × 11.25"</td><td>Stairs, headers, beams</td></tr>
+                            <tr><td><strong>4×4</strong></td><td>3.5" × 3.5"</td><td>Posts, deck support</td></tr>
+                            <tr><td><strong>4×6</strong></td><td>3.5" × 5.5"</td><td>Beams, pergola posts</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Stud Spacing — 12", 16", or 24" On Center?</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead><tr><th>Spacing</th><th>Studs per 10 ft Wall</th><th>Best For</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>12" O.C.</strong></td><td>11 studs</td><td>Heavy tile walls, load-bearing</td><td>Strongest but most expensive</td></tr>
+                            <tr><td><strong>16" O.C.</strong></td><td>9 studs</td><td>Standard residential framing</td><td>Most common — code minimum for most walls</td></tr>
+                            <tr><td><strong>24" O.C.</strong></td><td>7 studs</td><td>Non-load-bearing partitions</td><td>Saves ~25% lumber vs 16" O.C.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Worked Example — Framing a 20-Foot Wall</h3>
+
+                <div class="info-box">
+                    <p><strong>Wall:</strong> 20 ft long | 2×4 studs | 16" O.C. | 8 ft boards | 10% waste</p>
+                    <p><strong>Step 1 — Base studs:</strong> (20 ÷ 1.333) + 1 = 16 studs</p>
+                    <p><strong>Step 2 — Add 10% waste:</strong> 16 × 1.10 = <strong>18 studs</strong></p>
+                    <p><strong>Step 3 — Linear feet:</strong> 18 × 8 ft = 144 linear feet</p>
+                    <p><strong>Step 4 — Board feet:</strong> (1.5 × 3.5 × 144) ÷ 12 = <strong>63 board feet</strong></p>
+                    <p><strong>Step 5 — Cost at $5/piece:</strong> 18 × $5 = <strong>$90 in lumber</strong></p>
+                </div>
+
+                <h3>Lumber Size Selection by Project Type</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead><tr><th>Project Type</th><th>Recommended Size</th><th>Typical Spacing</th></tr></thead>
+                        <tbody>
+                            <tr><td>Interior partition walls</td><td>2×4</td><td>16" O.C.</td></tr>
+                            <tr><td>Exterior walls (standard)</td><td>2×4 or 2×6</td><td>16" O.C.</td></tr>
+                            <tr><td>Exterior walls (energy efficient)</td><td>2×6</td><td>24" O.C.</td></tr>
+                            <tr><td>Floor joists (short span)</td><td>2×8</td><td>16" O.C.</td></tr>
+                            <tr><td>Floor joists (long span)</td><td>2×10 or 2×12</td><td>16" O.C.</td></tr>
+                            <tr><td>Deck framing</td><td>2×8 or 2×10</td><td>16" O.C.</td></tr>
+                            <tr><td>Deck surface boards</td><td>5/4×6 or 2×6</td><td>Per design</td></tr>
+                            <tr><td>Fence posts</td><td>4×4</td><td>6–8 ft apart</td></tr>
+                            <tr><td>Fence rails</td><td>2×4</td><td>Per design</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Waste Factor Guide</h3>
+                <ul>
+                    <li><strong>Simple straight wall, no openings:</strong> 5–8%</li>
+                    <li><strong>Standard wall with 1–2 windows/doors:</strong> 10%</li>
+                    <li><strong>Complex framing with many corners:</strong> 12–15%</li>
+                    <li><strong>Diagonal cuts (roof, stairs):</strong> 15–20%</li>
+                    <li><strong>Hardwood with knots or defects:</strong> 20–30%</li>
+                    <li><strong>Reclaimed or irregular lumber:</strong> 25–35%</li>
+                </ul>
+
+                <h3>Approximate Lumber Prices by Size</h3>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead><tr><th>Size</th><th>8 ft Piece</th><th>Per Board Foot</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>2×4 × 8ft</strong></td><td>$4–$8</td><td>~$0.60–$1.20</td><td>Most affordable framing lumber</td></tr>
+                            <tr><td><strong>2×6 × 8ft</strong></td><td>$7–$13</td><td>~$0.70–$1.30</td><td>Exterior walls, floors</td></tr>
+                            <tr><td><strong>2×8 × 8ft</strong></td><td>$10–$18</td><td>~$0.80–$1.50</td><td>Joists, rafters</td></tr>
+                            <tr><td><strong>2×10 × 8ft</strong></td><td>$14–$24</td><td>~$0.85–$1.55</td><td>Long-span joists</td></tr>
+                            <tr><td><strong>2×12 × 8ft</strong></td><td>$17–$30</td><td>~$0.90–$1.60</td><td>Stairs, headers</td></tr>
+                            <tr><td><strong>4×4 × 8ft</strong></td><td>$10–$20</td><td>~$0.90–$1.75</td><td>Posts, pergolas</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Prices fluctuate based on region, season, and lumber market conditions. Hardwoods like oak, maple, and walnut cost $3–$15+ per board foot. Always check current prices at your local supplier before budgeting.</p>
+
+                <h3>Frequently Asked Questions</h3>
+
+                <p><strong>How many 2×4s do I need for a 10-foot wall?</strong><br>
+                At 16" O.C. spacing: (10 ÷ 1.333) + 1 = 8.5, round up to 9 studs. With 10% waste, order 10 studs. Add extra for corners (3 studs each) and door/window openings (2 trimmer studs each).</p>
+
+                <p><strong>What is the difference between linear feet and board feet?</strong><br>
+                Linear feet measures only the length of a board, ignoring width and thickness. Board feet measures volume: (thickness × width × length) ÷ 12. A 2×4 that is 8 feet long is 8 linear feet but only 5.33 board feet. Framing lumber is sold by the piece or linear foot; hardwoods are usually sold by the board foot.</p>
+
+                <p><strong>Should I use 2×4 or 2×6 for exterior walls?</strong><br>
+                2×4 is the traditional standard and costs less. 2×6 allows thicker insulation (R-19 vs R-13) and is required by some energy codes. In cold climates, 2×6 framing at 24" O.C. provides better energy efficiency while the wider spacing partially offsets the higher lumber cost.</p>
+
+                <p><strong>How many board feet are in a 2×4×8?</strong><br>
+                Using nominal dimensions: (2 × 4 × 8) ÷ 12 = 5.33 board feet. Using actual dimensions: (1.5 × 3.5 × 8) ÷ 12 = 3.5 board feet. Board feet calculations typically use nominal dimensions for pricing but actual dimensions for precise volume calculations.</p>
+
+                <p style="margin-top:24px;font-size:0.85em;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;"><em>Lumber quantities are estimates based on standard framing formulas. Actual requirements vary depending on wall height, openings, local building codes, and contractor methods. Always consult a structural engineer or licensed contractor for load-bearing applications. Prices are approximate and vary by region and market conditions.</em></p>
+
+            </div><!-- end content-more -->
+        </div>
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div>
+
     <div class="cta-section">
         <h2>Need More Construction Tools?</h2>
-        <p>Explore our complete collection of construction calculators for accurate project planning.</p>
+        <p>Explore our complete collection of construction calculators for accurate project planning and material estimation.</p>
         <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
     </div>
 </div>
+
 <div id="footer-placeholder"></div>
 <script src="../navigation.js"></script>
+
 <script>
-let currentMode = 'framing';
-const lumberDims = {
-    '1x2': [0.75, 1.5], '1x4': [0.75, 3.5], '1x6': [0.75, 5.5], '1x8': [0.75, 7.25], '1x12': [0.75, 11.25],
-    '2x4': [1.5, 3.5], '2x6': [1.5, 5.5], '2x8': [1.5, 7.25], '2x10': [1.5, 9.25], '2x12': [1.5, 11.25],
-    '4x4': [3.5, 3.5], '4x6': [3.5, 5.5]
-};
-function toFeet(v, u) {
-    const c = { 'ft': 1, 'in': 1/12, 'm': 3.28084 };
-    return v * (c[u] || 1);
-}
-function selectMode(m) {
-    currentMode = m;
+let currentMode='framing';
+const lumberDims={'1x2':[0.75,1.5],'1x4':[0.75,3.5],'1x6':[0.75,5.5],'1x8':[0.75,7.25],'1x12':[0.75,11.25],'2x4':[1.5,3.5],'2x6':[1.5,5.5],'2x8':[1.5,7.25],'2x10':[1.5,9.25],'2x12':[1.5,11.25],'4x4':[3.5,3.5],'4x6':[3.5,5.5]};
+function toFeet(v,u){const c={'ft':1,'in':1/12,'m':3.28084};return v*(c[u]||1);}
+function selectMode(m){
+    currentMode=m;
     document.getElementById('btnFraming').classList.remove('active');
     document.getElementById('btnBoardfeet').classList.remove('active');
-    document.getElementById('btn' + m.charAt(0).toUpperCase() + m.slice(1)).classList.add('active');
-    document.getElementById('framingInputs').style.display = m === 'framing' ? 'block' : 'none';
-    document.getElementById('boardfeetInputs').style.display = m === 'boardfeet' ? 'block' : 'none';
+    document.getElementById('btn'+m.charAt(0).toUpperCase()+m.slice(1)).classList.add('active');
+    document.getElementById('framingInputs').style.display=m==='framing'?'block':'none';
+    document.getElementById('boardfeetInputs').style.display=m==='boardfeet'?'block':'none';
 }
-function calculateLumber() {
-    try {
-        let totalPieces, piecesNoWaste, linearFeet, boardFeet, totalWeight, lumberSizeText = '';
-        if (currentMode === 'framing') {
-            const projectLength = toFeet(parseFloat(document.getElementById('projectLength').value), document.getElementById('projectLengthUnit').value);
-            if (!projectLength || projectLength <= 0) { alert('Please enter valid length'); return; }
-            const spacing = parseFloat(document.getElementById('studSpacing').value) / 12;
-            const lumberSize = document.getElementById('lumberSize').value;
-            lumberSizeText = document.getElementById('lumberSize').options[document.getElementById('lumberSize').selectedIndex].text;
-            const [thickness, width] = lumberDims[lumberSize];
-            piecesNoWaste = Math.ceil(projectLength / spacing) + 1;
-            const wasteFactor = parseFloat(document.getElementById('wasteFactor').value) || 10;
-            totalPieces = Math.ceil(piecesNoWaste * (1 + wasteFactor / 100));
-            const lengthPerPiece = parseFloat(document.getElementById('lumberLength').value);
-            linearFeet = totalPieces * lengthPerPiece;
-            boardFeet = (thickness * width * linearFeet) / 12;
-            totalWeight = Math.round(boardFeet * 2.4);
-        } else {
-            const thickness = parseFloat(document.getElementById('bfThickness').value);
-            const width = parseFloat(document.getElementById('bfWidth').value);
-            const length = parseFloat(document.getElementById('bfLength').value);
-            const quantity = parseInt(document.getElementById('bfQuantity').value) || 1;
-            if (!thickness || !width || !length || thickness <= 0 || width <= 0 || length <= 0) { alert('Please enter valid dimensions'); return; }
-            totalPieces = quantity;
-            piecesNoWaste = quantity;
-            linearFeet = quantity * length;
-            boardFeet = (thickness * width * length * quantity) / 12;
-            totalWeight = Math.round(boardFeet * 2.4);
-            lumberSizeText = thickness + '" × ' + width + '" × ' + length + "'";
+function calculateLumber(){
+    try{
+        let totalPieces,piecesNoWaste,linearFeet,boardFeet,totalWeight,lumberSizeText='';
+        if(currentMode==='framing'){
+            const projectLength=toFeet(parseFloat(document.getElementById('projectLength').value),document.getElementById('projectLengthUnit').value);
+            if(!projectLength||projectLength<=0){alert('Please enter valid length');return;}
+            const spacing=parseFloat(document.getElementById('studSpacing').value)/12;
+            const lumberSize=document.getElementById('lumberSize').value;
+            lumberSizeText=document.getElementById('lumberSize').options[document.getElementById('lumberSize').selectedIndex].text;
+            const[thickness,width]=lumberDims[lumberSize];
+            piecesNoWaste=Math.ceil(projectLength/spacing)+1;
+            const wasteFactor=parseFloat(document.getElementById('wasteFactor').value)||10;
+            totalPieces=Math.ceil(piecesNoWaste*(1+wasteFactor/100));
+            const lengthPerPiece=parseFloat(document.getElementById('lumberLength').value);
+            linearFeet=totalPieces*lengthPerPiece;
+            boardFeet=(thickness*width*linearFeet)/12;
+            totalWeight=Math.round(boardFeet*2.4);
+        }else{
+            const thickness=parseFloat(document.getElementById('bfThickness').value);
+            const width=parseFloat(document.getElementById('bfWidth').value);
+            const length=parseFloat(document.getElementById('bfLength').value);
+            const quantity=parseInt(document.getElementById('bfQuantity').value)||1;
+            if(!thickness||!width||!length||thickness<=0||width<=0||length<=0){alert('Please enter valid dimensions');return;}
+            totalPieces=quantity;piecesNoWaste=quantity;
+            linearFeet=quantity*length;
+            boardFeet=(thickness*width*length*quantity)/12;
+            totalWeight=Math.round(boardFeet*2.4);
+            lumberSizeText=thickness+'" × '+width+'" × '+length+"'";
         }
-        const pricePerPiece = parseFloat(document.getElementById('lumberPrice').value) || 0;
-        const totalCost = totalPieces * pricePerPiece;
-        document.getElementById('totalPieces').textContent = totalPieces;
-        document.getElementById('piecesNoWaste').textContent = piecesNoWaste;
-        document.getElementById('linearFeet').textContent = Math.round(linearFeet);
-        document.getElementById('boardFeet').textContent = Math.round(boardFeet);
-        document.getElementById('totalWeight').textContent = totalWeight;
-        const costSection = document.getElementById('costSection');
-        if (pricePerPiece > 0) {
-            document.getElementById('totalCost').textContent = totalCost.toFixed(2);
-            document.getElementById('costBreakdown').innerHTML = '<strong>Cost:</strong> ' + totalPieces + ' pieces × $' + pricePerPiece.toFixed(2) + ' = $' + totalCost.toFixed(2);
+        const pricePerPiece=parseFloat(document.getElementById('lumberPrice').value)||0;
+        const totalCost=totalPieces*pricePerPiece;
+        document.getElementById('totalPieces').textContent=totalPieces;
+        document.getElementById('piecesNoWaste').textContent=piecesNoWaste;
+        document.getElementById('linearFeet').textContent=Math.round(linearFeet);
+        document.getElementById('boardFeet').textContent=Math.round(boardFeet);
+        document.getElementById('totalWeight').textContent=totalWeight;
+        const costSection=document.getElementById('costSection');
+        if(pricePerPiece>0){
+            document.getElementById('totalCost').textContent=totalCost.toFixed(2);
+            document.getElementById('costBreakdown').innerHTML='<strong>Cost:</strong> '+totalPieces+' pieces × $'+pricePerPiece.toFixed(2)+' = $'+totalCost.toFixed(2);
             costSection.classList.add('active');
-        } else {
-            costSection.classList.remove('active');
-        }
-        let formulaExplanation = '<div class="formula-step"><strong>Mode:</strong> ' + (currentMode === 'framing' ? 'Framing/Studs' : 'Board Feet') + '</div>';
-        formulaExplanation += '<div class="formula-step"><strong>Size:</strong> ' + lumberSizeText + '</div>';
-        formulaExplanation += '<div class="formula-step"><strong>Total:</strong> ' + totalPieces + ' pieces</div>';
-        formulaExplanation += '<div class="formula-step"><strong>Linear Feet:</strong> ' + Math.round(linearFeet) + ' ft</div>';
-        formulaExplanation += '<div class="formula-step"><strong>Board Feet:</strong> ' + Math.round(boardFeet) + ' BF</div>';
-        document.getElementById('formulaExplanation').innerHTML = formulaExplanation;
-        document.getElementById('resultEmpty').style.display = 'none';
+        }else{costSection.classList.remove('active');}
+        document.getElementById('formulaExplanation').innerHTML=
+            '<div class="formula-step"><strong>Mode:</strong> '+(currentMode==='framing'?'Framing/Studs':'Board Feet')+'</div>'+
+            '<div class="formula-step"><strong>Size:</strong> '+lumberSizeText+'</div>'+
+            '<div class="formula-step"><strong>Total pieces:</strong> '+totalPieces+'</div>'+
+            '<div class="formula-step"><strong>Linear feet:</strong> '+Math.round(linearFeet)+' ft</div>'+
+            '<div class="formula-step"><strong>Board feet:</strong> '+Math.round(boardFeet)+' BF</div>'+
+            '<div class="formula-step"><strong>Est. weight:</strong> '+totalWeight+' lbs</div>';
+        document.getElementById('resultEmpty').style.display='none';
         document.getElementById('resultDisplay').classList.add('active');
         document.getElementById('ctaResult').classList.add('active');
-        if (window.innerWidth <= 768) {
-            document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    } catch (error) {
-        alert('Error calculating lumber');
-        console.error(error);
-    }
+        if(window.innerWidth<=768){document.querySelector('.result-section').scrollIntoView({behavior:'smooth',block:'nearest'});}
+    }catch(error){alert('Error calculating lumber');console.error(error);}
 }
-function resetCalculator() {
+function resetCalculator(){
     selectMode('framing');
-    document.getElementById('projectLength').value = '20';
-    document.getElementById('lumberSize').value = '2x4';
-    document.getElementById('lumberLength').value = '8';
-    document.getElementById('studSpacing').value = '16';
-    document.getElementById('wasteFactor').value = '10';
-    document.getElementById('lumberPrice').value = '';
-    document.getElementById('bfThickness').value = '1.5';
-    document.getElementById('bfWidth').value = '3.5';
-    document.getElementById('bfLength').value = '8';
-    document.getElementById('bfQuantity').value = '10';
+    document.getElementById('projectLength').value='20';
+    document.getElementById('lumberSize').value='2x4';
+    document.getElementById('lumberLength').value='8';
+    document.getElementById('studSpacing').value='16';
+    document.getElementById('wasteFactor').value='10';
+    document.getElementById('lumberPrice').value='';
+    document.getElementById('bfThickness').value='1.5';
+    document.getElementById('bfWidth').value='3.5';
+    document.getElementById('bfLength').value='8';
+    document.getElementById('bfQuantity').value='10';
     document.getElementById('resultDisplay').classList.remove('active');
     document.getElementById('ctaResult').classList.remove('active');
     document.getElementById('costSection').classList.remove('active');
-    document.getElementById('resultEmpty').style.display = 'block';
+    document.getElementById('resultEmpty').style.display='block';
 }
-document.querySelectorAll('.input-field').forEach(input => {
-    input.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') calculateLumber();
+const readMoreBtn=document.getElementById('readMoreBtn');
+const contentMore=document.getElementById('contentMore');
+if(readMoreBtn&&contentMore){
+    readMoreBtn.addEventListener('click',function(){
+        if(contentMore.classList.contains('expanded')){
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent='Read More';
+            const cs=document.querySelector('.content-section');
+            if(cs)window.scrollTo({top:cs.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
+        }else{contentMore.classList.add('expanded');readMoreBtn.textContent='Show Less';}
     });
+}
+document.querySelectorAll('.input-field').forEach(input=>{
+    input.addEventListener('keypress',function(e){if(e.key==='Enter')calculateLumber();});
 });
 </script>
 </body>
