@@ -1,0 +1,15 @@
+# robots.txt - Best Calculators Hub
+# https://bestcalculatorshub.com/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block non-calculator pages from being indexed
+Disallow: /aboutus.html
+Disallow: /contact.html
+Disallow: /privacypolicy.html
+Disallow: /termandcondition.html
+
+# Sitemap location
+Sitemap: https://bestcalculatorshub.com/sitemap.xml
