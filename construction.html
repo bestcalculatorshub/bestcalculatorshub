@@ -14,7 +14,7 @@
     <meta name="keywords" content="construction calculator, concrete calculator, lumber calculator, roofing calculator, building materials, construction estimator">
     <meta name="author" content="Best Calculators Hub">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://bestcalculatorshub.com/construction">
+    <link rel="canonical" href="https://bestcalculatorshub.com/construction.html">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
@@ -228,14 +228,15 @@ button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
+        <!-- FIX 1: Added / to home link in breadcrumb -->
         <nav class="breadcrumb">
-            <a href="index.html">Home</a>
+            <a href="/index.html">Home</a>
             <span class="breadcrumb-sep">›</span>
             <span>Construction</span>
         </nav>
         <h1>Construction Calculators</h1>
         <p class="hero-desc">Explore our comprehensive collection of construction calculators. Perfect for contractors, builders, and DIY enthusiasts. Get instant, accurate estimates for all your construction projects.</p>
-        <p class="hero-count">15 calculators available</p>
+        <p class="hero-count">17 calculators available</p>
     </div>
 </section>
 
@@ -247,32 +248,32 @@ button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-
         <input type="text" class="search-input" placeholder="Search calculators..." id="searchInput">
     </div>
 
-    <!-- Calculator Links -->
+    <!-- FIX 2: All backslashes \ changed to forward slashes / and added leading / -->
     <div class="calc-grid">
-        <a href="construction\SquareFeettoCubicYardsCalculator.html" class="calc-link">Square Feet to Cubic Yards Calculator</a>
-        <a href="construction\Squareyardscalculator.html" class="calc-link">Square Yards Calculator</a>
-        <a href="construction\Aluminumweightcalculator.html" class="calc-link">Aluminum Weight Calculator</a>
-        <a href="construction\Balustercalculator.html" class="calc-link">Baluster Calculator</a>
-        <a href="construction\Boardandbattencalculator.html" class="calc-link">Board and Batten  Calculator</a>
-        <a href="construction\Frenchdraincalculator.html" class="calc-link">French Drain Calculator</a>
-        <a href="construction\Fireglasscalculator.html" class="calc-link">Fire Glass Calculator</a>
-        <a href="construction\Glassweightcalculator.html" class="calc-link">Glass Weight Calculator</a>
-        <a href="construction\Limestonecalculator.html" class="calc-link">Limestone Calculator</a>
-        <a href="construction/brickcalculator.html" class="calc-link">Brick Calculator</a>
-        <a href="construction/deckingcalculator.html" class="calc-link">Decking Calculator</a>
-        <a href="construction/drywallcalculator.html" class="calc-link">Drywall Calculator</a>
-        <a href="construction\Cubicyardcalculator.html" class="calc-link">Cubic Yard Calculator</a>
-        <a href="construction/boardfootcalculator.html" class="calc-link">Board Foot Calculator</a>
-        <a href="construction\Framingcalculator.html" class="calc-link">Framing Calculator</a>
-        <a href="construction\Logweightcalculator.html" class="calc-link">Log Weight Calculator</a>
-        <a href="construction\Lumbercalculator.html" class="calc-link">Lumber Calculator</a>
+        <a href="/construction/SquareFeettoCubicYardsCalculator.html" class="calc-link">Square Feet to Cubic Yards Calculator</a>
+        <a href="/construction/Squareyardscalculator.html" class="calc-link">Square Yards Calculator</a>
+        <a href="/construction/Aluminumweightcalculator.html" class="calc-link">Aluminum Weight Calculator</a>
+        <a href="/construction/Balustercalculator.html" class="calc-link">Baluster Calculator</a>
+        <a href="/construction/Boardandbattencalculator.html" class="calc-link">Board and Batten Calculator</a>
+        <a href="/construction/Frenchdraincalculator.html" class="calc-link">French Drain Calculator</a>
+        <a href="/construction/Fireglasscalculator.html" class="calc-link">Fire Glass Calculator</a>
+        <a href="/construction/Glassweightcalculator.html" class="calc-link">Glass Weight Calculator</a>
+        <a href="/construction/Limestonecalculator.html" class="calc-link">Limestone Calculator</a>
+        <a href="/construction/brickcalculator.html" class="calc-link">Brick Calculator</a>
+        <a href="/construction/deckingcalculator.html" class="calc-link">Decking Calculator</a>
+        <a href="/construction/drywallcalculator.html" class="calc-link">Drywall Calculator</a>
+        <a href="/construction/Cubicyardcalculator.html" class="calc-link">Cubic Yard Calculator</a>
+        <a href="/construction/boardfootcalculator.html" class="calc-link">Board Foot Calculator</a>
+        <a href="/construction/Framingcalculator.html" class="calc-link">Framing Calculator</a>
+        <a href="/construction/Logweightcalculator.html" class="calc-link">Log Weight Calculator</a>
+        <a href="/construction/Lumbercalculator.html" class="calc-link">Lumber Calculator</a>
     </div>
 
-    <!-- CTA Section -->
+    <!-- FIX 3: Added / to contact link in CTA -->
     <div class="cta-section">
         <h2>Can't Find What You Need?</h2>
         <p>We're constantly adding new calculators. Request a custom calculator or suggest improvements.</p>
-        <a href="contact.html" class="cta-btn">Request Calculator</a>
+        <a href="/contact.html" class="cta-btn">Request Calculator</a>
     </div>
 
     <!-- Content Section -->
@@ -340,8 +341,8 @@ button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 
-<!-- Navigation JS -->
-<script src="navigation.js"></script>
+<!-- FIX 4: Added / to navigation.js src -->
+<script src="/navigation.js"></script>
 
 <!-- Inline JavaScript -->
 <script>
@@ -351,7 +352,7 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
     const links = document.querySelectorAll('.calc-link');
     links.forEach(link => {
         const text = link.textContent.toLowerCase();
-        link.style.display = text.includes(search) ? 'block' : 'none';
+        link.style.display = text.includes(search) ? 'flex' : 'none';
     });
 });
 
