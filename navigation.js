@@ -4,6 +4,19 @@
    Change links here and ALL pages update automatically!
    ═══════════════════════════════════════════════════════ */
 
+// ═══ GOOGLE ANALYTICS - Loads on every page automatically ═══
+(function() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VBEYYZFRS6';
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VBEYYZFRS6');
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // ═══ HEADER HTML ═══
