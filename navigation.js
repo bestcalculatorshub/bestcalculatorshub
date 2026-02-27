@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <header class="header">
             <nav class="nav">
                 <a href="/index.html" class="nav-brand">
-                    <img src="/logo.png" alt="Best Calculators Hub" style="height:36px; width:auto; display:block;">
+                    <img src="/logo.png" alt="Best Calculators Hub" style="height:65px; width:auto; display:block;">
                 </a>
                 <div class="nav-links" id="navLinks">
                     <a href="/index.html" class="nav-link">Home</a>
