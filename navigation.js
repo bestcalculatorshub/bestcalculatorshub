@@ -48,73 +48,66 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     
     // ═══ FOOTER HTML ═══
-   const footerHTML = `
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-grid">
-
-                <!-- Brand Column -->
-                <div class="footer-col">
-                    <div class="footer-brand">
-                        <img src="/logo.png" alt="Best Calculators Hub">
+  const footerHTML = `
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-grid">
+                    <!-- Brand Column -->
+                    <div class="footer-col">
+                        <div class="footer-brand">🧮 Best Calculators Hub</div>
+                        <p class="footer-brand-desc">Free online calculators for every need. Fast, accurate, and simple to use. Trusted by thousands worldwide.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">YouTube</a>
+                        </div>
                     </div>
-                    <p class="footer-brand-desc">
-                        Free online calculators for every need. Fast, accurate, and simple to use. Trusted by thousands worldwide.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">Facebook</a>
-                        <a href="#" class="social-link">YouTube</a>
+                    
+                    <!-- Popular Categories -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Popular</h4>
+                        <div class="footer-links">
+                            <a href="/finance.html">Finance</a>
+                            <a href="/math.html">Math</a>
+                            <a href="/health.html">Health</a>
+                            <a href="/physics.html">Physics</a>
+                            <a href="/conversion.html">Conversion</a>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Popular Categories -->
-                <div class="footer-col">
-                    <h4 class="footer-title">Popular</h4>
-                    <div class="footer-links">
-                        <a href="#">Finance</a>
-                        <a href="#">Math</a>
-                        <a href="#">Health</a>
-                        <a href="#">Physics</a>
-                        <a href="#">Conversion</a>
+                    
+                    <!-- More Categories -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Categories</h4>
+                        <div class="footer-links">
+                            <a href="/construction.html">Construction</a>
+                            <a href="/chemistry.html">Chemistry</a>
+                            <a href="/biology.html">Biology</a>
+                            <a href="/sports.html">Sports</a>
+                            <a href="/food.html">Food</a>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Categories -->
-                <div class="footer-col">
-                    <h4 class="footer-title">Categories</h4>
-                    <div class="footer-links">
-                        <a href="/construction.html">Construction</a>
-                        <a href="/chemistry.html">Chemistry</a>
-                        <a href="/biology.html">Biology</a>
-                        <a href="#">Sports</a>
-                        <a href="#">Food</a>
-                    </div>
-                </div>
-
-                <!-- Company -->
-                <div class="footer-col">
-                    <h4 class="footer-title">Company</h4>
-                    <div class="footer-links">
-                        <a href="/aboutus.html">About Us</a>
-                        <a href="/contact.html">Contact Us</a>
-                        <a href="/privacypolicy.html">Privacy Policy</a>
-                        <a href="/termandcondition.html">Terms of Service</a>
+                    
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Company</h4>
+                        <div class="footer-links">
+                            <a href="/aboutus.html">About Us</a>
+                            <a href="/contact.html">Contact Us</a>
+                            <a href="/privacypolicy.html">Privacy Policy</a>
+                            <a href="/termandcondition.html">Terms of Service</a>
+                        </div>
                     </div>
                 </div>
-
+                
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Best Calculators Hub. All Rights Reserved. Built with ❤️ for everyone.</p>
+                </div>
             </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copy">
-                    © 2026 Best Calculators Hub. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-`;
+        </footer>
+        
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    `;
     
     // ═══ INSERT HEADER ═══
     const headerPlaceholder = document.getElementById('header-placeholder');
