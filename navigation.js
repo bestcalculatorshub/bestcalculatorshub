@@ -1,3 +1,10 @@
+// ═══ FAVICON - Auto loads on every page ═══
+document.querySelectorAll("link[rel='icon']").forEach(el => el.remove());
+const fav = document.createElement('link');
+fav.rel = 'icon';
+fav.type = 'image/x-icon';
+fav.href = '/favicon.ico';
+document.head.appendChild(fav);
 /* ═══════════════════════════════════════════════════════
    Best Calculators Hub NAVIGATION — navigation.js
    Shared header and footer for ALL pages
@@ -24,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <header class="header">
             <nav class="nav">
                 <a href="/index.html" class="nav-brand">
-                    <span class="nav-brand-icon">🧮</span> Best Calculators Hub
+                    <img src="/logo.png" alt="Best Calculators Hub" style="height:36px; width:auto; display:block;">
                 </a>
                 <div class="nav-links" id="navLinks">
                     <a href="/index.html" class="nav-link">Home</a>
