@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-inner">
                 <div class="footer-grid">
                     <!-- Brand Column -->
-                    <div class="footer-col">
-                        <img src="/logo.png" alt="Best Calculators Hub" style="height:65px; width:auto; display:block;">
+                  <div class="footer-brand">
+                         <img src="/logo.png" alt="Best Calculators Hub" style="height:50px; width:auto;">
+                  </div>
                         <p class="footer-brand-desc">Free online calculators for every need. Fast, accurate, and simple to use. Trusted by thousands worldwide.</p>
                         <div class="footer-social">
                             <a href="#" class="social-link">Twitter</a>
