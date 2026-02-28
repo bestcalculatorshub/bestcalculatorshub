@@ -24,8 +24,9 @@ document.head.appendChild(fav);
     gtag('config', 'G-VBEYYZFRS6');
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+// ═══ HOMEPAGE FIX: run immediately if DOM already ready, otherwise wait ═══
+function initNav() {
+
     // ═══ HEADER HTML ═══
     const headerHTML = `
         <header class="header">
@@ -46,15 +47,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </nav>
         </header>
     `;
-    
+
     // ═══ FOOTER HTML ═══
-  const footerHTML = `
+    const footerHTML = `
         <footer class="footer">
             <div class="footer-inner">
                 <div class="footer-grid">
                     <!-- Brand Column -->
                     <div class="footer-col">
-                        <div class="footer-brand">🧮 Best Calculators Hub</div>
+                        <div class="footer-brand">
+                            <img src="/logo.png" alt="Best Calculators Hub" style="height:36px; width:auto; display:block; margin-bottom:10px;">
+                        </div>
                         <p class="footer-brand-desc">Free online calculators for every need. Fast, accurate, and simple to use. Trusted by thousands worldwide.</p>
                         <div class="footer-social">
                             <a href="#" class="social-link">Twitter</a>
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="#" class="social-link">YouTube</a>
                         </div>
                     </div>
-                    
+
                     <!-- Popular Categories -->
                     <div class="footer-col">
                         <h4 class="footer-title">Popular</h4>
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="/conversion.html">Conversion</a>
                         </div>
                     </div>
-                    
+
                     <!-- More Categories -->
                     <div class="footer-col">
                         <h4 class="footer-title">Categories</h4>
@@ -86,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="/food.html">Food</a>
                         </div>
                     </div>
-                    
+
                     <!-- Company -->
                     <div class="footer-col">
                         <h4 class="footer-title">Company</h4>
@@ -98,50 +101,54 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="footer-bottom">
                     <p class="footer-copy">© 2026 Best Calculators Hub. All Rights Reserved. Built with ❤️ for everyone.</p>
                 </div>
             </div>
         </footer>
-        
+
         <!-- Back to Top Button -->
         <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
     `;
-    
+
     // ═══ INSERT HEADER ═══
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         headerPlaceholder.outerHTML = headerHTML;
     }
-    
+
     // ═══ INSERT FOOTER ═══
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         footerPlaceholder.outerHTML = footerHTML;
     }
-    
+
     // Wait a moment for DOM to update, then initialize interactive elements
     setTimeout(function() {
         initializeNavigation();
     }, 50);
-    
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+} else {
+    initNav();
+}
 
 // ═══ INITIALIZE NAVIGATION FEATURES ═══
 function initializeNavigation() {
-    
+
     // ═══ HAMBURGER MENU ═══
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    
+
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-        
-        // Close menu when clicking outside
+
         document.addEventListener('click', function(event) {
             const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
             if (!isClickInside && navLinks.classList.contains('active')) {
@@ -149,8 +156,7 @@ function initializeNavigation() {
                 navLinks.classList.remove('active');
             }
         });
-        
-        // Close menu when clicking a link
+
         navLinks.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
@@ -158,21 +164,21 @@ function initializeNavigation() {
             });
         });
     }
-    
+
     // ═══ HIGHLIGHT ACTIVE PAGE ═══
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinksElements = document.querySelectorAll('.nav-link');
-    
+
     navLinksElements.forEach(function(link) {
         const linkPage = link.getAttribute('href');
         if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
             link.classList.add('active');
         }
     });
-    
+
     // ═══ BACK TO TOP BUTTON ═══
     const backToTopBtn = document.getElementById('backToTop');
-    
+
     if (backToTopBtn) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
@@ -181,25 +187,25 @@ function initializeNavigation() {
                 backToTopBtn.classList.remove('visible');
             }
         });
-        
+
         backToTopBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-    
+
     // ═══ SMOOTH SCROLL FOR ANCHOR LINKS ═══
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#' || href === '') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(href);
-            
+
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-    
+
 }
