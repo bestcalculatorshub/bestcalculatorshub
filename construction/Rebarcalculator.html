@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- SEO Meta Tags -->
+    <title>Rebar Calculator – Free, Accurate & Fast</title>
+    <meta name="description" content="Free rebar calculator for any concrete slab. Instantly get pieces, footage, weight & cost. All sizes #2–#18, spacing, lap splice. Calculate now →">
+    <meta name="keywords" content="rebar calculator, how much rebar do I need, rebar estimator, concrete rebar calculator, rebar spacing calculator, rebar weight calculator, rebar cost calculator, rebar for concrete slab, rebar size chart, reinforcing bar calculator">
+    <meta name="author" content="Best Calculators Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bestcalculatorshub.com/construction/Rebarcalculator">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bestcalculatorshub.com/construction/Rebarcalculator">
+    <meta property="og:title" content="Rebar Calculator – Fast, Free & Accurate | Pieces, Weight & Cost">
+    <meta property="og:description" content="Calculate exactly how much rebar you need — pieces, total footage, weight & cost. Supports all sizes #2–#18, any spacing, lap splice & waste. Free with built-in cost estimator.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rebar Calculator",
+        "description": "Calculate exactly how much rebar you need for any concrete slab, driveway, patio, or foundation. Supports all standard rebar sizes #2 through #18 with built-in weight and cost estimator.",
+        "url": "https://bestcalculatorshub.com/construction/Rebarcalculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Best Calculators Hub"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many rebars do I need for a 20x20 slab?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a 20×20 foot concrete slab using #4 rebar at 12-inch spacing with 3-inch edge clearance: Grid = 19.5×19.5 ft. Bars in each direction = floor(19.5/1)+1 = 21 bars. Total linear footage = (21×19.5)+(21×19.5) = 819 ft. Adding 10% for lap splices and waste = 901 ft. At 20-foot sticks, you need approximately 46 pieces of rebar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What size rebar should I use for a concrete slab?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "#3 rebar (3/8 inch diameter) is suitable for patios and sidewalks with light foot traffic. #4 rebar (1/2 inch diameter) is the most common choice for driveways, garage floors, and standard residential slabs. #5 rebar (5/8 inch diameter) is used for house foundations, footings, and heavier-load applications. Always verify with your local building code and engineer for structural projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How far apart should rebar be spaced for a concrete slab?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For residential concrete slabs such as driveways and patios, rebar is typically spaced 12 to 18 inches apart on center in both directions. For foundations and footings, a tighter spacing of 12 inches is commonly required by building codes. ACI 318 specifies maximum spacing for slabs as 2 times the slab thickness or 18 inches, whichever is less."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the lapping factor for rebar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The lapping factor specifies how far two pieces of rebar must overlap when one bar is not long enough to span the full distance. Per standard engineering practice (ACI 318), the lap length equals 40 to 60 times the bar diameter. For #4 rebar (1/2-inch diameter), this equals 20 to 30 inches of overlap. A 10% addition to total rebar length is a standard rule of thumb for most residential projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does rebar weigh per foot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "#3 rebar weighs 0.376 lb/ft, #4 weighs 0.668 lb/ft, #5 weighs 1.043 lb/ft, #6 weighs 1.502 lb/ft, #7 weighs 2.044 lb/ft, and #8 weighs 2.670 lb/ft. The rebar calculator above automatically calculates the total weight of your entire project in both pounds and kilograms based on your selected bar size and total linear footage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need rebar for a small concrete patio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a small patio under 100 square feet with light foot traffic only, wire mesh may be sufficient. However, for patios over 100 square feet, in freeze-thaw climates, on unstable soil, or where any vehicle access is possible, rebar is strongly recommended. Rebar significantly extends the life of any slab by preventing cracking and resisting ground movement."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is edge clearance for rebar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Edge clearance (also called concrete cover) is the minimum distance between the outer rebar bars and the edge of the concrete slab. ACI 318 requires a minimum of 1.5 inches for indoor slabs and 2 inches for slabs exposed to weather. The standard rule of thumb for residential slabs poured on grade is 2 to 3 inches of edge clearance on all sides."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use rebar or wire mesh for a driveway?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a concrete driveway that will carry vehicle loads, rebar is the better choice. Rebar provides significantly greater tensile strength than wire mesh and is more tolerant of soil movement and frost heave. The typical recommendation for a residential driveway is #4 rebar spaced 12 to 18 inches on center in a grid pattern. Wire mesh is better suited to thin decorative slabs or light pedestrian pathways."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between Grade 40 and Grade 60 rebar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Grade 40 rebar has a minimum yield strength of 40,000 psi and Grade 60 has a minimum yield strength of 60,000 psi. Grade 60 is the standard for most structural construction in the United States today and is required by many building codes for foundations and load-bearing applications. Grade 40 is softer and easier to bend, making it suitable for applications where bars need to be field-bent on site."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does rebar rust inside concrete?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Standard carbon steel rebar can rust inside concrete if moisture and oxygen reach it — typically through cracks or insufficient concrete cover. This is called corrosion-induced spalling and is one of the most common causes of concrete deterioration in bridges, parking structures, and coastal slabs. Maintaining the minimum ACI 318 concrete cover (1.5 to 3 inches depending on exposure) and using epoxy-coated or stainless steel rebar in wet or salty environments significantly reduces rust risk."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many pieces of rebar come in a bundle?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rebar bundles vary by bar size and supplier. Typical bundle sizes at steel yards are: #3 rebar — approximately 60 to 80 pieces per bundle, #4 rebar — approximately 40 to 60 pieces per bundle, and #5 rebar — approximately 25 to 40 pieces per bundle. Big-box stores like Home Depot and Lowe's typically sell individual sticks or smaller packs of 5 to 10 pieces. Buying by the bundle from a steel yard is significantly cheaper per foot than buying individually."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use rebar for a retaining wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, rebar is essential for concrete retaining walls. Retaining walls hold back soil weight and require both vertical and horizontal reinforcement. The standard practice is vertical #4 or #5 rebar placed 12 inches on center, tied to horizontal bars every 12 to 18 inches. For retaining walls over 3 feet tall, a structural engineer should review the design because the lateral soil pressure increases significantly with wall height."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does rebar last inside concrete?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Properly installed rebar inside well-mixed concrete with adequate cover can last 50 to 100 years or more without significant corrosion. The key factors are concrete quality, cover thickness, and exposure conditions. In dry indoor environments, rebar lasts virtually indefinitely. In marine or de-icing salt environments, service life without special coatings or stainless steel rebar can drop to 20 to 40 years before corrosion-related cracking becomes visible."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   REBAR CALCULATOR - Best Calculators Hub
+   Single file version with inline CSS
+   Fully responsive, SEO optimized, accurate
+   FEATURES: All #2–#18 Sizes + Weight + Cost + Lap Splice
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --green-pale: #d1fae5;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; background:var(--white); }
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+.unit-select { width:110px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+/* Rebar Size Section — Purple */
+.rebar-size-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.rebar-size-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.rebar-info-card { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; background:rgba(139,92,246,0.1); border:1px solid rgba(139,92,246,0.4); border-radius:6px; padding:8px 12px; margin-top:8px; font-size:0.85em; font-weight:500; color:var(--purple); }
+.rebar-info-sep { color:var(--muted-light); }
+
+/* Slab & Spacing Section — Blue */
+.slab-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.slab-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+
+/* Overlap/Splice Section — Green BONUS */
+.overlap-section { background:var(--green-pale); border:2px solid var(--green); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.overlap-section-title { font-weight:600; color:var(--green); margin-bottom:12px; font-size:0.95em; }
+
+/* Cost Section — Orange BONUS */
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:4px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.bonus-badge-green { background:var(--green); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:20px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-icon { font-size:2.5em; margin-bottom:12px; }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.5em; font-weight:500; color:var(--slate); }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.result-item { background:var(--white); padding:14px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.78em; color:var(--muted); margin-bottom:4px; font-weight:500; }
+.result-item-value { font-size:1.2em; font-weight:700; color:var(--slate); }
+.result-item-unit { font-size:0.75em; color:var(--muted); font-weight:400; margin-left:2px; }
+
+/* Cost Display */
+.cost-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:16px; display:none; }
+.cost-section.active { display:block; }
+.cost-main { text-align:center; margin-bottom:12px; }
+.cost-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.88em; color:var(--slate); line-height:1.7; }
+
+/* Formula Box */
+.formula-box { background:rgba(255,255,255,0.7); padding:18px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:16px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:10px; font-size:0.95em; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.88em; line-height:1.9; }
+.formula-step { margin-bottom:4px; }
+
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul, .content-text ol { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:10px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover td { background:#f0fdf9; }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.5s ease; }
+.content-more.expanded { max-height:12000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; cursor:pointer; border:none; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr 1fr; }
+    .result-value { font-size:2em; }
+    .cost-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+    .result-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-value { font-size:1.5em; }
+    .formula-content { font-size:0.82em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge, .bonus-badge-green { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+    .rebar-info-card { font-size:0.8em; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Rebar Calculator</span>
+        </nav>
+        <h1>Rebar Calculator</h1>
+        <p class="hero-desc">Calculate exactly how much rebar you need for any concrete slab, driveway, patio, or foundation. <strong>Supports all standard sizes #2–#18</strong> with grid dimensions, total footage, total weight in lbs & kg, lap splice allowance, and built-in cost estimator — all in one free tool.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+
+            <!-- ═══ INPUT SECTION ═══ -->
+            <div class="input-section">
+                <h2>Configure Your Rebar Calculation</h2>
+
+                <!-- REBAR SIZE — Purple -->
+                <div class="rebar-size-section">
+                    <div class="rebar-size-title">Rebar Bar Size</div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="rebarSize">Select Bar Size</label>
+                        <select class="select-field" id="rebarSize" onchange="updateRebarInfo()">
+                            <option value="#2">#2 — ¼" dia. — 0.167 lb/ft (Light slabs)</option>
+                            <option value="#3">#3 — ⅜" dia. — 0.376 lb/ft (Patios, Sidewalks)</option>
+                            <option value="#4" selected>#4 — ½" dia. — 0.668 lb/ft (Driveways, Standard Slabs)</option>
+                            <option value="#5">#5 — ⅝" dia. — 1.043 lb/ft (Foundations, Footings)</option>
+                            <option value="#6">#6 — ¾" dia. — 1.502 lb/ft (Heavy Foundations)</option>
+                            <option value="#7">#7 — ⅞" dia. — 2.044 lb/ft (Commercial Slabs)</option>
+                            <option value="#8">#8 — 1" dia. — 2.670 lb/ft (Heavy Structures)</option>
+                            <option value="#9">#9 — 1.128" dia. — 3.400 lb/ft (Structural)</option>
+                            <option value="#10">#10 — 1.27" dia. — 4.303 lb/ft (Structural)</option>
+                            <option value="#11">#11 — 1.41" dia. — 5.313 lb/ft (Heavy Structural)</option>
+                            <option value="#14">#14 — 1.693" dia. — 7.650 lb/ft (Civil Engineering)</option>
+                            <option value="#18">#18 — 2.257" dia. — 13.600 lb/ft (Civil Engineering)</option>
+                        </select>
+                        <div class="rebar-info-card" id="rebarInfoCard">
+                            <span id="rebarInfoSize">#4 Rebar</span>
+                            <span class="rebar-info-sep">•</span>
+                            <span id="rebarInfoDia">½" diameter (12.7 mm)</span>
+                            <span class="rebar-info-sep">•</span>
+                            <span id="rebarInfoWeight">0.668 lb/ft &nbsp;|&nbsp; 0.994 kg/m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLAB & SPACING — Blue -->
+                <div class="slab-section">
+                    <div class="slab-section-title">Slab Dimensions &amp; Spacing</div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="slabLength">Slab Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="slabLength" placeholder="Enter slab length" min="0.1" step="0.1" value="20">
+                            <select class="select-field unit-select" id="slabLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="slabWidth">Slab Width</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="slabWidth" placeholder="Enter slab width" min="0.1" step="0.1" value="20">
+                            <select class="select-field unit-select" id="slabWidthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="rebarSpacing">Rebar-to-Rebar Spacing <span style="color:var(--muted); font-weight:400;">(on center)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="rebarSpacing" placeholder="Spacing between bars" min="1" step="0.5" value="12">
+                            <select class="select-field unit-select" id="rebarSpacingUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Typical: 12–18" for slabs, 12" for foundations</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="edgeClearance">Edge Clearance <span style="color:var(--muted); font-weight:400;">(concrete cover)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="edgeClearance" placeholder="Distance from slab edge" min="0" step="0.25" value="3">
+                            <select class="select-field unit-select" id="edgeClearanceUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">ACI 318 minimum: 1.5" indoor, 2" exposed to weather</div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="singleRebarLength">Single Rebar Length <span style="color:var(--muted); font-weight:400;">(stick length at supplier)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="singleRebarLength" placeholder="Standard rebar length" min="1" step="1" value="20">
+                            <select class="select-field unit-select" id="singleRebarLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="m">meters</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">US standard: 20 ft, 40 ft, or 60 ft sticks</div>
+                    </div>
+                </div>
+
+                <!-- OVERLAP / SPLICE — Green BONUS -->
+                <div class="overlap-section">
+                    <div class="overlap-section-title">
+                        Overlap &amp; Waste Allowance <span class="bonus-badge-green">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="overlapPct">Extra Percentage for Lap Splices &amp; Waste</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="overlapPct" placeholder="10" min="0" max="50" step="1" value="10">
+                            <span style="padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--slate); font-weight:600; white-space:nowrap;">%</span>
+                        </div>
+                        <div class="input-hint" id="lapSpliceHint">10% covers lap splices + cutting waste — standard for most residential projects. Calculator shows base vs. final footage.</div>
+                    </div>
+                </div>
+
+                <!-- COST ESTIMATOR — Orange BONUS -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerPound">Price per Pound (optional)</label>
+                        <div class="input-row">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px; flex-shrink:0;">$</span>
+                            <input type="number" class="input-field" id="pricePerPound" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Enter rebar price per pound for total material cost estimate</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateRebar()">Calculate Rebar</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- ═══ RESULT SECTION ═══ -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">📐</div>
+                    <div class="result-empty-text">Enter your slab dimensions and click <strong>Calculate Rebar</strong> to see results</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+
+                    <!-- Main: Total Pieces -->
+                    <div class="result-main">
+                        <div class="result-label">Total Rebar Pieces Needed</div>
+                        <div class="result-value"><span id="totalPieces">0</span> <span class="result-unit">pieces</span></div>
+                    </div>
+
+                    <!-- Cost Section (conditional) -->
+                    <div class="cost-section" id="costSection">
+                        <div class="cost-main">
+                            <div class="cost-label">Estimated Material Cost</div>
+                            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <!-- Result Grid: 8 items, 4 rows -->
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Grid Length</div>
+                            <div class="result-item-value"><span id="gridLength">0</span><span class="result-item-unit">ft</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Grid Width</div>
+                            <div class="result-item-value"><span id="gridWidth">0</span><span class="result-item-unit">ft</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Bars (Length Dir.)</div>
+                            <div class="result-item-value"><span id="barsAlongLength">0</span><span class="result-item-unit">bars</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Bars (Width Dir.)</div>
+                            <div class="result-item-value"><span id="barsAlongWidth">0</span><span class="result-item-unit">bars</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Base Linear Footage</div>
+                            <div class="result-item-value"><span id="baseLinearFeet">0</span><span class="result-item-unit">ft</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Total w/ Overlap</div>
+                            <div class="result-item-value"><span id="totalLinearFeet">0</span><span class="result-item-unit">ft</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Total Weight (lbs)</div>
+                            <div class="result-item-value"><span id="totalWeightLbs">0</span><span class="result-item-unit">lbs</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Total Weight (kg)</div>
+                            <div class="result-item-value"><span id="totalWeightKg">0</span><span class="result-item-unit">kg</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Box -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══ CONTENT SECTION ═══ -->
+    <div class="content-section">
+        <h2>Rebar Calculator Guide: Everything You Need to Know</h2>
+        <div class="content-text">
+
+            <p>Planning a concrete slab and not sure how much rebar to buy? You're not alone. Most people over-order by 20–30% just to play it safe — and that's real money wasted at the lumber yard. This guide walks you through exactly how to calculate rebar, what size and spacing to use, and how to get the right amount the first time.</p>
+
+            <p>Whether you're pouring a backyard patio, a new driveway, or a house foundation — the steps are the same. Let's break it down.</p>
+
+            <h3>What is Rebar?</h3>
+
+            <p>Rebar — short for <strong>reinforcing bar</strong> or reinforcing steel — is a steel rod that sits inside concrete before it hardens. Think of it as the skeleton inside a concrete body. Without it, a concrete slab can crack easily under weight, frost heave, or shifting soil.</p>
+
+            <p>Those little ridges you see on every bar are called deformations. They grip the concrete from all sides and lock the two materials together. This bond is what turns plain concrete into <strong>reinforced concrete</strong> — one of the most durable building materials in the world.</p>
+
+            <h3>Why Does Concrete Need Rebar?</h3>
+
+            <p>Here's the thing about concrete: it handles pushing forces really well (that's called compression), but it's surprisingly weak when pulled or bent (that's called tension). Rebar handles the tension that concrete simply can't deal with on its own.</p>
+
+            <p>Skip the rebar and your slab could crack in just a few winters — especially in areas with freezing temperatures, heavy rain, or soft ground. A properly reinforced concrete slab, on the other hand, can easily last 50 years or more.</p>
+
+            <h3>How to Calculate Rebar — Step by Step</h3>
+
+            <p>Calculating rebar for a concrete slab follows the same three steps every time. Our free rebar calculator above does all of this automatically, but it helps to understand what's happening behind the scenes.</p>
+
+            <p><strong>Step 1 — Find your grid dimensions.</strong> Rebar doesn't go all the way to the slab edge. You need to leave a gap — called <em>edge clearance</em> or concrete cover — on all four sides. The ACI 318 standard requires a minimum of 1.5 inches indoors and 2 inches for slabs exposed to weather. Subtract twice the edge clearance from both your slab length and width to get your actual grid size.</p>
+
+            <p><strong>Step 2 — Count bars in both directions.</strong> Rebar is placed in a grid with bars running in two directions. Divide the grid dimension by your on-center spacing, then add 1. That "+1" accounts for the starting bar at the first edge. Multiply each bar count by the distance those bars span to get your linear footage in each direction.</p>
+
+            <p><strong>Step 3 — Get pieces and weight.</strong> Add your overlap and waste percentage (10% is the standard for most residential work), divide the total footage by your stick length, and always round up. Never round down — you'll run short mid-pour. Multiply total footage by your bar's weight per foot to get the total weight for freight or cost estimates.</p>
+
+            <h3>Rebar Spacing Guide for Common Projects</h3>
+
+            <p>Spacing depends on what you're building and how much load it needs to carry. The table below covers the most common residential and commercial applications. For anything structural, always check your local building code — ACI 318 sets the maximum slab bar spacing at 18 inches on center.</p>
+
+            <div class="table-responsive">
+                <table class="calc-table">
+                    <thead>
+                        <tr><th>Project</th><th>Spacing (on center)</th><th>Recommended Size</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Patio / Garden Slab</td><td>18–24"</td><td>#3</td></tr>
+                        <tr><td>Sidewalk / Pathway</td><td>18"</td><td>#3</td></tr>
+                        <tr><td>Residential Driveway</td><td>12–18"</td><td>#4</td></tr>
+                        <tr><td>Garage Floor</td><td>18"</td><td>#3 or #4</td></tr>
+                        <tr><td>House Foundation / Footing</td><td>12"</td><td>#4 or #5</td></tr>
+                        <tr><td>Retaining Wall</td><td>8–12"</td><td>#4 or #5</td></tr>
+                        <tr><td>Commercial Slab</td><td>6–12"</td><td>#5 or #6</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>What Size Rebar Do You Need?</h3>
+
+            <p>Choosing the wrong bar size is one of the most common rebar mistakes. Too small and your slab won't have enough strength. Too big and you're spending more than you need to.</p>
+
+            <p>Here's the simple rule most contractors follow: use <strong>#3 rebar</strong> for patios and sidewalks. Use <strong>#4 rebar</strong> for driveways, garage slabs, and standard home projects — it's the most popular size in residential construction. Use <strong>#5 rebar</strong> for house foundations, heavy footings, and retaining walls. When in doubt, go one size up. The cost difference is small but the strength gain is significant.</p>
+
+            <h3>Rebar Size Chart — #2 to #10</h3>
+
+            <p>In the US, rebar is numbered based on its diameter in eighths of an inch. So <strong>#4 = 4/8 = ½ inch</strong> diameter. Here are the standard ASTM A615 sizes you'll use most on residential and light commercial projects:</p>
+
+            <div class="table-responsive">
+                <table class="calc-table">
+                    <thead>
+                        <tr><th>Bar #</th><th>Diameter</th><th>Weight (lb/ft)</th><th>Weight (kg/m)</th><th>Best For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>#3</strong></td><td>⅜" (9.5 mm)</td><td>0.376</td><td>0.559</td><td>Patios, sidewalks, driveways</td></tr>
+                        <tr><td><strong>#4</strong></td><td>½" (12.7 mm)</td><td>0.668</td><td>0.994</td><td>Driveways, slabs, walls — most common</td></tr>
+                        <tr><td><strong>#5</strong></td><td>⅝" (15.9 mm)</td><td>1.043</td><td>1.552</td><td>Foundations, footings, heavy slabs</td></tr>
+                        <tr><td><strong>#6</strong></td><td>¾" (19.1 mm)</td><td>1.502</td><td>2.235</td><td>Heavy foundations, retaining walls</td></tr>
+                        <tr><td><strong>#7</strong></td><td>⅞" (22.2 mm)</td><td>2.044</td><td>3.042</td><td>Large beams, commercial columns</td></tr>
+                        <tr><td><strong>#8</strong></td><td>1" (25.4 mm)</td><td>2.670</td><td>3.973</td><td>Bridge structures, heavy commercial</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Need to find the total weight of rebar for your project? Enter your slab size and bar size in the calculator above — it calculates total weight in both <strong>pounds and kilograms</strong> automatically. If you're also estimating concrete volume, our <a href="../construction.html">construction calculators</a> page has everything you need in one place.</p>
+
+            <!-- READ MORE SECTION -->
+            <div class="content-more" id="contentMore">
+
+                <h3>Rebar vs. Wire Mesh — When to Use Which</h3>
+
+                <p>Both rebar and welded wire mesh reinforce concrete, but they work differently. Rebar is stronger, more flexible in how you lay it out, and better for anything that carries heavy loads. Wire mesh is cheaper, faster to install, and good enough for simple, light slabs.</p>
+
+                <p><strong>Use rebar when:</strong> you're pouring a driveway, garage floor, foundation, footing, or retaining wall — basically anything a vehicle drives on or anything structural. <strong>Use wire mesh when:</strong> you have a small garden path, thin decorative pour, or light-duty patio under 100 square feet with no vehicle access. If you're unsure, go with rebar. The extra cost is minimal but the extra strength is worth it every time.</p>
+
+                <h3>Lap Splice / Overlap Length Explained</h3>
+
+                <p>A standard rebar stick from your supplier is usually 20 feet long. If your slab is wider than 20 feet, you'll need to overlap two bars at the joint. This overlap is called a <strong>lap splice</strong>, and the length it needs to be is set by your bar size.</p>
+
+                <p>Per ACI 318, the minimum lap length equals <strong>40 times the bar diameter</strong>. For #4 bar (½" diameter): 40 × 0.5" = 20 inches minimum. Most contractors use 24–30 inches to stay comfortable. The Overlap &amp; Waste field in the calculator sets this automatically — the default 10% covers lap splices and cutting waste for most residential projects.</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">Quick Lap Splice Reference</div>
+                    <p>#3 bar: 15–22" minimum &nbsp;|&nbsp; #4 bar: 20–30" minimum &nbsp;|&nbsp; #5 bar: 25–38" minimum &nbsp;|&nbsp; #6 bar: 30–45" minimum</p>
+                </div>
+
+                <h3>How Much Extra Rebar Should You Order?</h3>
+
+                <p>The calculator gives you the theoretical minimum. But real job sites aren't theoretical. Always add extra to cover lap splices at joints, off-cuts that can't be reused, and any measuring surprises once your forms are set.</p>
+
+                <p>The <strong>10% rule</strong> is the industry standard for residential projects. For complex shapes or large slabs with many required splices, bump that up to 12–15%. Always round up to the nearest full stick — you can't send cut pieces back. Running short mid-pour is a much bigger problem than having two extra bars left over.</p>
+
+                <h3>Rebar Cost — What to Expect in 2026</h3>
+
+                <p>Rebar pricing tracks the steel market, so it shifts over time. As a general guide for 2026: <strong>#3 rebar</strong> runs roughly $0.40–$0.65 per foot. <strong>#4 rebar</strong> is around $0.55–$0.85 per foot. <strong>#5 rebar</strong> is approximately $0.85–$1.25 per foot. Prices are higher at big-box stores and lower per foot when buying in bundles from a steel yard or wholesale supplier.</p>
+
+                <p>Enter your local price per pound in the <strong>Cost Estimator</strong> section of the calculator above for an instant total. If you're also figuring out how much your other materials weigh for freight calculations, our <a href="./Aluminumweightcalculator">Aluminum Weight Calculator</a> works the same way for metal stock. And when you're ready to estimate your whole project, the full <a href="../construction.html">construction calculators library</a> has you covered.</p>
+
+                <h3>Frequently Asked Questions</h3>
+
+                <p><strong>What is the difference between Grade 40 and Grade 60 rebar?</strong><br>
+                Grade 40 rebar has a minimum yield strength of 40,000 psi. Grade 60 has a minimum yield strength of 60,000 psi — which is why it's the standard for most structural work in the US today. Grade 60 is stronger for the same bar size. Grade 40 is softer and easier to bend on site, so it's still used where field bending is needed.</p>
+
+                <p><strong>Does rebar rust inside concrete?</strong><br>
+                Standard carbon steel rebar can rust if moisture and oxygen reach it through cracks or thin concrete cover. This causes the concrete to crack and flake — called spalling. Keeping adequate cover thickness (1.5"–3" depending on exposure) and using epoxy-coated or stainless steel rebar in wet, salty, or outdoor environments significantly reduces this risk.</p>
+
+                <p><strong>Can I use rebar for a retaining wall?</strong><br>
+                Yes — rebar is essential for concrete retaining walls. You'll need both vertical bars (typically #4 or #5 at 12" on center) and horizontal bars tied across them. For any retaining wall taller than 3 feet, get an engineer to review the design. The soil pressure on taller walls increases dramatically and proper sizing matters a lot.</p>
+
+                <p><strong>How many pieces of rebar come in a bundle?</strong><br>
+                It depends on bar size and supplier. At a steel yard, typical bundles are: #3 — 60 to 80 pieces, #4 — 40 to 60 pieces, #5 — 25 to 40 pieces. Big-box stores usually sell individual sticks or small packs of 5–10 pieces. Buying by the bundle from a steel yard saves a significant amount per foot versus retail pricing.</p>
+
+                <p><strong>Do I need rebar for a 4-inch concrete slab?</strong><br>
+                It depends on use. A 4-inch decorative patio with foot traffic only — wire mesh may be fine. A 4-inch driveway or garage floor that cars will park on — use rebar. ACI 318 allows wire mesh as minimum reinforcement for non-structural slabs on grade, but rebar adds meaningful crack resistance, especially in freeze-thaw climates or on unstable soil.</p>
+
+                <p><strong>How long does rebar last inside concrete?</strong><br>
+                In dry indoor conditions with proper concrete cover, rebar can last 50 to 100+ years without any significant corrosion. In harsh environments — near the coast, in parking garages with de-icing salts, or in constantly wet conditions — service life without special coatings can drop to 20–40 years. That's exactly why epoxy-coated and stainless steel rebar exist for those applications.</p>
+
+                <p style="margin-top:32px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>All calculations are estimates based on standard grid layouts and nominal dimensions. Actual requirements may vary with slab shape, soil conditions, and local building codes. For foundations, retaining walls, or any structural application, always verify quantities with a licensed structural engineer. This calculator is for material estimation only, not structural design.</em></p>
+
+            </div><!-- end content-more -->
+
+        </div><!-- end content-text -->
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div><!-- end content-section -->
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Construction Calculators?</h2>
+        <p>Explore our full collection of free construction and material calculators to plan and estimate your next project with confidence.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div><!-- end main -->
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════
+     REBAR CALCULATOR — JavaScript
+     Supports all #2–#18 bar sizes, imperial + metric units
+     BONUS: Total weight (lbs & kg) + lap splice + cost
+     ═══════════════════════════════════════════════════════ -->
+<script>
+
+// ─── Rebar data table (ASTM A615) ──────────────────────────────────────────
+const REBAR_DATA = {
+    '#2':  { diameter_in: 0.250, diameter_mm: 6.35,  weight_lb_ft: 0.167,  weight_kg_m: 0.249,  dia_frac: '¼"' },
+    '#3':  { diameter_in: 0.375, diameter_mm: 9.53,  weight_lb_ft: 0.376,  weight_kg_m: 0.559,  dia_frac: '⅜"' },
+    '#4':  { diameter_in: 0.500, diameter_mm: 12.70, weight_lb_ft: 0.668,  weight_kg_m: 0.994,  dia_frac: '½"' },
+    '#5':  { diameter_in: 0.625, diameter_mm: 15.88, weight_lb_ft: 1.043,  weight_kg_m: 1.552,  dia_frac: '⅝"' },
+    '#6':  { diameter_in: 0.750, diameter_mm: 19.05, weight_lb_ft: 1.502,  weight_kg_m: 2.235,  dia_frac: '¾"' },
+    '#7':  { diameter_in: 0.875, diameter_mm: 22.23, weight_lb_ft: 2.044,  weight_kg_m: 3.042,  dia_frac: '⅞"' },
+    '#8':  { diameter_in: 1.000, diameter_mm: 25.40, weight_lb_ft: 2.670,  weight_kg_m: 3.973,  dia_frac: '1"' },
+    '#9':  { diameter_in: 1.128, diameter_mm: 28.65, weight_lb_ft: 3.400,  weight_kg_m: 5.060,  dia_frac: '1.128"' },
+    '#10': { diameter_in: 1.270, diameter_mm: 32.26, weight_lb_ft: 4.303,  weight_kg_m: 6.404,  dia_frac: '1.27"' },
+    '#11': { diameter_in: 1.410, diameter_mm: 35.81, weight_lb_ft: 5.313,  weight_kg_m: 7.907,  dia_frac: '1.41"' },
+    '#14': { diameter_in: 1.693, diameter_mm: 43.00, weight_lb_ft: 7.650,  weight_kg_m: 11.384, dia_frac: '1.693"' },
+    '#18': { diameter_in: 2.257, diameter_mm: 57.33, weight_lb_ft: 13.600, weight_kg_m: 20.240, dia_frac: '2.257"' }
+};
+
+// ─── Unit conversion to feet ────────────────────────────────────────────────
+function toFeet(value, unit) {
+    const conv = { 'ft': 1, 'in': 1/12, 'm': 3.28084, 'cm': 0.0328084, 'mm': 0.00328084 };
+    return value * (conv[unit] || 1);
+}
+
+// ─── Update rebar info card on size change ───────────────────────────────────
+function updateRebarInfo() {
+    const size = document.getElementById('rebarSize').value;
+    const r = REBAR_DATA[size];
+    if (!r) return;
+    document.getElementById('rebarInfoSize').textContent = size + ' Rebar';
+    document.getElementById('rebarInfoDia').textContent = r.dia_frac + ' diameter (' + r.diameter_mm + ' mm)';
+    document.getElementById('rebarInfoWeight').textContent = r.weight_lb_ft + ' lb/ft\u00a0|\u00a0' + r.weight_kg_m + ' kg/m';
+
+    // Update lap splice hint
+    const lapMin = (40 * r.diameter_in).toFixed(1);
+    const lapStd = (60 * r.diameter_in).toFixed(1);
+    document.getElementById('lapSpliceHint').textContent =
+        '10% covers lap splices + cutting waste. For ' + size + ' bar: min lap = ' + lapMin + '" (40× dia.), standard lap = ' + lapStd + '" (60× dia.) per ACI 318.';
+}
+
+// ─── Main calculation ────────────────────────────────────────────────────────
+function calculateRebar() {
+
+    // Rebar size
+    const size = document.getElementById('rebarSize').value;
+    const rebar = REBAR_DATA[size];
+
+    // Inputs
+    const slabLength    = toFeet(parseFloat(document.getElementById('slabLength').value),         document.getElementById('slabLengthUnit').value);
+    const slabWidth     = toFeet(parseFloat(document.getElementById('slabWidth').value),          document.getElementById('slabWidthUnit').value);
+    const spacing       = toFeet(parseFloat(document.getElementById('rebarSpacing').value),       document.getElementById('rebarSpacingUnit').value);
+    const edgeClear     = toFeet(parseFloat(document.getElementById('edgeClearance').value),      document.getElementById('edgeClearanceUnit').value);
+    const stickLength   = toFeet(parseFloat(document.getElementById('singleRebarLength').value),  document.getElementById('singleRebarLengthUnit').value);
+    const overlapPct    = parseFloat(document.getElementById('overlapPct').value) || 0;
+    const pricePerPound = parseFloat(document.getElementById('pricePerPound').value) || 0;
+
+    // Validation
+    if (isNaN(slabLength)  || slabLength  <= 0) { showError('Please enter a valid Slab Length.'); return; }
+    if (isNaN(slabWidth)   || slabWidth   <= 0) { showError('Please enter a valid Slab Width.'); return; }
+    if (isNaN(spacing)     || spacing     <= 0) { showError('Please enter a valid Rebar Spacing.'); return; }
+    if (isNaN(edgeClear)   || edgeClear   < 0)  { showError('Edge Clearance cannot be negative.'); return; }
+    if (isNaN(stickLength) || stickLength <= 0) { showError('Please enter a valid Single Rebar Length.'); return; }
+
+    // Grid dimensions
+    const gridLength = slabLength - (2 * edgeClear);
+    const gridWidth  = slabWidth  - (2 * edgeClear);
+
+    if (gridLength <= 0 || gridWidth <= 0) {
+        showError('Edge clearance is too large for the slab dimensions. Reduce edge clearance or increase slab size.');
+        return;
+    }
+
+    // Bar counts
+    // Bars running parallel to the slab LENGTH (spanning grid width), spaced along the length
+    const barsAlongLength = Math.floor(gridLength / spacing) + 1;
+    // Bars running parallel to the slab WIDTH (spanning grid length), spaced along the width
+    const barsAlongWidth  = Math.floor(gridWidth  / spacing) + 1;
+
+    // Linear footage
+    const lengthDirFootage = barsAlongLength * gridWidth;   // each bar spans grid width
+    const widthDirFootage  = barsAlongWidth  * gridLength;  // each bar spans grid length
+    const baseLinearFeet   = lengthDirFootage + widthDirFootage;
+
+    // Apply overlap/waste factor
+    const totalLinearFeet = baseLinearFeet * (1 + overlapPct / 100);
+
+    // Pieces (round up always)
+    const totalPieces = Math.ceil(totalLinearFeet / stickLength);
+
+    // Weight
+    const totalWeightLbs = totalLinearFeet * rebar.weight_lb_ft;
+    const totalWeightKg  = totalWeightLbs * 0.453592;
+
+    // Cost
+    const totalCost = totalWeightLbs * pricePerPound;
+
+    // ── Display results ──────────────────────────────────────────────────────
+    document.getElementById('totalPieces').textContent    = totalPieces.toLocaleString();
+    document.getElementById('gridLength').textContent     = gridLength.toFixed(2);
+    document.getElementById('gridWidth').textContent      = gridWidth.toFixed(2);
+    document.getElementById('barsAlongLength').textContent = barsAlongLength.toLocaleString();
+    document.getElementById('barsAlongWidth').textContent  = barsAlongWidth.toLocaleString();
+    document.getElementById('baseLinearFeet').textContent  = baseLinearFeet.toFixed(1);
+    document.getElementById('totalLinearFeet').textContent = totalLinearFeet.toFixed(1);
+    document.getElementById('totalWeightLbs').textContent  = totalWeightLbs.toFixed(1);
+    document.getElementById('totalWeightKg').textContent   = totalWeightKg.toFixed(1);
+
+    // Cost section
+    const costSection = document.getElementById('costSection');
+    if (pricePerPound > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        document.getElementById('costBreakdown').innerHTML =
+            '<strong>Cost Breakdown:</strong><br>' +
+            totalWeightLbs.toFixed(1) + ' lbs × $' + pricePerPound.toFixed(2) + '/lb = <strong>$' + totalCost.toFixed(2) + '</strong><br>' +
+            '<em>Per piece (avg): $' + (totalCost / totalPieces).toFixed(2) + '</em>';
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+
+    // Formula explanation
+    const formulaLines = [
+        '<div class="formula-step"><strong>Bar Size:</strong> ' + size + ' — ' + rebar.dia_frac + ' dia. — ' + rebar.weight_lb_ft + ' lb/ft</div>',
+        '<div class="formula-step"><strong>Slab:</strong> ' + slabLength.toFixed(2) + ' ft × ' + slabWidth.toFixed(2) + ' ft</div>',
+        '<div class="formula-step"><strong>Grid:</strong> ' + gridLength.toFixed(2) + ' ft × ' + gridWidth.toFixed(2) + ' ft (after ' + (edgeClear * 12).toFixed(2) + '" edge clearance each side)</div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Bar Counts:</strong></div>',
+        '<div class="formula-step">Bars along length = floor(' + gridLength.toFixed(2) + ' ÷ ' + spacing.toFixed(3) + ') + 1 = <strong>' + barsAlongLength + ' bars</strong></div>',
+        '<div class="formula-step">Bars along width  = floor(' + gridWidth.toFixed(2) + ' ÷ ' + spacing.toFixed(3) + ') + 1 = <strong>' + barsAlongWidth + ' bars</strong></div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Footage:</strong></div>',
+        '<div class="formula-step">Length dir. footage = ' + barsAlongLength + ' × ' + gridWidth.toFixed(2) + ' = ' + lengthDirFootage.toFixed(1) + ' ft</div>',
+        '<div class="formula-step">Width dir. footage  = ' + barsAlongWidth  + ' × ' + gridLength.toFixed(2) + ' = ' + widthDirFootage.toFixed(1) + ' ft</div>',
+        '<div class="formula-step">Base total: ' + baseLinearFeet.toFixed(1) + ' ft</div>',
+        '<div class="formula-step">With ' + overlapPct + '% overlap/waste: <strong>' + totalLinearFeet.toFixed(1) + ' ft</strong></div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Pieces:</strong> ⌈' + totalLinearFeet.toFixed(1) + ' ÷ ' + stickLength.toFixed(0) + 'ft⌉ = <strong>' + totalPieces + ' pieces</strong></div>',
+        '<div class="formula-step"><strong>Weight:</strong> ' + totalLinearFeet.toFixed(1) + ' ft × ' + rebar.weight_lb_ft + ' lb/ft = <strong>' + totalWeightLbs.toFixed(1) + ' lbs (' + totalWeightKg.toFixed(1) + ' kg)</strong></div>'
+    ];
+    if (pricePerPound > 0) {
+        formulaLines.push('<div class="formula-step"><strong>Cost:</strong> ' + totalWeightLbs.toFixed(1) + ' lbs × $' + pricePerPound.toFixed(2) + '/lb = <strong>$' + totalCost.toFixed(2) + '</strong></div>');
+    }
+    document.getElementById('formulaExplanation').innerHTML = formulaLines.join('');
+
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// ─── Error display ────────────────────────────────────────────────────────────
+function showError(msg) {
+    alert(msg);
+}
+
+// ─── Reset calculator ─────────────────────────────────────────────────────────
+function resetCalculator() {
+    document.getElementById('rebarSize').value          = '#4';
+    document.getElementById('slabLength').value         = '20';
+    document.getElementById('slabLengthUnit').value     = 'ft';
+    document.getElementById('slabWidth').value          = '20';
+    document.getElementById('slabWidthUnit').value      = 'ft';
+    document.getElementById('rebarSpacing').value       = '12';
+    document.getElementById('rebarSpacingUnit').value   = 'in';
+    document.getElementById('edgeClearance').value      = '3';
+    document.getElementById('edgeClearanceUnit').value  = 'in';
+    document.getElementById('singleRebarLength').value  = '20';
+    document.getElementById('singleRebarLengthUnit').value = 'ft';
+    document.getElementById('overlapPct').value         = '10';
+    document.getElementById('pricePerPound').value      = '';
+
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+
+    // Clear all result spans
+    const resultIds = ['totalPieces','gridLength','gridWidth','barsAlongLength','barsAlongWidth',
+                       'baseLinearFeet','totalLinearFeet','totalWeightLbs','totalWeightKg',
+                       'totalCost'];
+    resultIds.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '0'; });
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+
+    updateRebarInfo();
+}
+
+// ─── Read More toggle ─────────────────────────────────────────────────────────
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function () {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const offset = 100;
+                const top = contentSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// ─── Enter key support ────────────────────────────────────────────────────────
+document.querySelectorAll('.input-field').forEach(function (input) {
+    input.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') { calculateRebar(); }
+    });
+});
+
+// ─── Initialize rebar info card on page load ──────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    updateRebarInfo();
+});
+</script>
+
+</body>
+</html>
