@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- SEO Meta Tags -->
+    <title>Retaining Wall Calculator – Blocks, Gravel & Cost | Free Tool</title>
+    <meta name="description" content="Calculate how many retaining wall blocks you need — plus backfill gravel volume, weight, and total cost. Supports cap rows, any block size, waste allowance & drainage. Free.">
+    <meta name="keywords" content="retaining wall calculator, retaining wall block calculator, how many retaining wall blocks do I need, retaining wall estimator, retaining wall gravel calculator, retaining wall cost calculator, backfill gravel calculator, cap block calculator, concrete block retaining wall calculator">
+    <meta name="author" content="Best Calculators Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bestcalculatorshub.com/construction/RetainingWallCalculator">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bestcalculatorshub.com/construction/RetainingWallCalculator">
+    <meta property="og:title" content="Retaining Wall Calculator – Blocks, Gravel & Cost | Free Tool">
+    <meta property="og:description" content="Calculate how many retaining wall blocks you need — plus backfill gravel volume, weight, and total cost. Supports cap rows, any block size, waste allowance & drainage. Free.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Retaining Wall Calculator",
+        "description": "Calculate how many retaining wall blocks you need for any wall project — plus backfill gravel volume and weight, cap blocks, waste allowance, and full cost estimate. Supports concrete block, natural stone, timber, and gabion walls.",
+        "url": "https://bestcalculatorshub.com/construction/RetainingWallCalculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Best Calculators Hub"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many retaining wall blocks do I need for a 4-foot wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a 4-foot retaining wall that is 20 feet long, using standard 8-inch-tall by 16-inch-long concrete blocks: Rows = ceil(4 ft / 0.667 ft) = 6 rows. Columns = ceil(20 ft / 1.333 ft) = 15 columns. Total blocks = 6 × 15 = 90 blocks. Adding 10% waste gives 99 blocks. If adding a cap row, you need 5 rows of regular blocks (75 blocks) plus 15 cap blocks, plus 10% waste = 99 total. The exact count depends on your block dimensions, cap row choice, and embedded depth."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you calculate the number of retaining wall blocks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To calculate retaining wall blocks: Step 1 — Find rows by dividing total wall height (including any buried depth) by block height and rounding up. Step 2 — Find columns by dividing wall length by block length and rounding up. Step 3 — Multiply rows by columns to get the base block count. If using a cap row, subtract one row from the main count and add that number as cap blocks separately. Always add at least 10% to the total for waste, cuts, and breakage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How deep should I bury the first course of a retaining wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most engineers and manufacturers recommend burying the first course of a retaining wall approximately 10% of the total wall height below grade. For a 4-foot wall, that means burying the first course about 4 to 5 inches underground. This buried base course provides stability against forward movement (sliding) and is required by most manufacturer installation guides. The calculator's 'Embedded Depth' input accounts for this when calculating total block count."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much gravel do I need behind a retaining wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The standard recommendation is at least 12 inches (1 foot) of crushed drainage gravel immediately behind the retaining wall for the full height and length of the wall. The gravel backfill volume = backfill thickness × wall length × wall height. Gravel weighs approximately 84 pounds per cubic foot (1,346 kg/m³). Add 20% to your volume calculation to account for compaction — loose gravel compacts significantly once tamped. The retaining wall calculator above computes both volume and weight automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do retaining walls need a permit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In most US jurisdictions, retaining walls under 3 to 4 feet in height (measured from the bottom of the footing to the top of the wall) do not require a permit. Walls over 4 feet typically require a building permit and, in many areas, a structural engineer's review. Some municipalities set the threshold at 3 feet. Always check with your local building department before construction — regulations vary significantly by city and county."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the maximum height of a DIY retaining wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For dry-stack (no mortar) concrete block retaining walls, most manufacturers and engineers consider 3 to 4 feet the safe maximum height for DIY installation without engineering review. Walls taller than 4 feet face significantly greater lateral earth pressure and typically require geogrid reinforcement, engineered footings, and a building permit. For any wall holding back a slope with a structure above it, consult a structural engineer regardless of height."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a cap block on a retaining wall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A cap block is the finishing block placed on the very top row of a retaining wall. Cap blocks are typically flat, solid, and slightly larger than the standard wall blocks, giving the wall a clean, finished appearance and preventing water from entering the hollow cores of standard blocks. Cap blocks are often glued in place with construction adhesive rather than being mechanically interlocked. The number of cap blocks needed equals the number of columns in the wall (wall length ÷ cap block length)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need an engineer for a retaining wall over 4 feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, most building codes and manufacturer installation guides require a licensed structural engineer to review the design of any retaining wall taller than 4 feet. At this height, lateral earth pressure becomes significant enough that improper construction can cause wall failure. If the wall is also located near a structure, property line, or surcharge load (like a driveway or slope), engineering review may be required at even lower heights. Always verify with your local building department."
+                }
+            }
+        ]
+    }
+    </script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   RETAINING WALL CALCULATOR - Best Calculators Hub
+   Single file version with inline CSS + JS
+   Fully responsive, SEO optimized, accurate
+   FEATURES: 4 Wall Types + Cap Row + Gravel + Weight + Cost
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --slate-light: #334155;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --green: #10b981;
+    --green-light: #34d399;
+    --green-pale: #d1fae5;
+    --orange: #f97316;
+    --orange-pale: #ffedd5;
+    --purple: #8b5cf6;
+    --purple-pale: #ede9fe;
+    --blue: #3b82f6;
+    --blue-pale: #dbeafe;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+body { font-family:var(--font-body); background:var(--bg); color:var(--slate); line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+button { font-family:var(--font-body); cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; }
+input, select { font-family:var(--font-body); }
+
+.nav-link { min-height:44px; display:flex; align-items:center; }
+.nav-brand, .hamburger, .back-to-top { -webkit-user-select:none; user-select:none; }
+* { -webkit-overflow-scrolling:touch; }
+
+/* ═══ HEADER ═══ */
+.header { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; box-shadow:var(--shadow-sm); }
+.nav { max-width:var(--max-width); margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.3em; color:var(--navy); }
+.nav-brand-icon { font-size:1.2em; }
+.nav-links { display:flex; gap:8px; align-items:center; }
+.nav-link { color:var(--muted); font-size:0.9em; font-weight:500; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+.nav-link:hover { background:var(--bg); color:var(--teal); }
+.nav-link.active { color:var(--teal); background:var(--teal-pale); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; padding:8px; }
+.hamburger span { display:block; width:22px; height:2.5px; background:var(--slate); border-radius:2px; transition:all 0.3s; }
+.hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ═══ HERO ═══ */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%); padding:48px 24px; }
+.hero-content { max-width:var(--max-width); margin:0 auto; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:0.85em; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted-light); transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--teal-light); }
+.breadcrumb-sep { color:var(--muted); }
+.breadcrumb span:last-child { color:var(--white); font-weight:500; }
+.hero h1 { font-family:var(--font-heading); font-size:2.5em; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.2; }
+.hero-desc { color:var(--muted-light); font-size:0.95em; line-height:1.7; max-width:700px; }
+
+/* ═══ MAIN ═══ */
+.main { max-width:var(--max-width); margin:0 auto; padding:40px 24px; }
+
+/* ═══ CALCULATOR SECTION ═══ */
+.calculator-container { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.calculator-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Input Section */
+.input-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.input-group { margin-bottom:20px; }
+.input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
+.input-row { display:flex; gap:8px; align-items:center; }
+.input-field, .select-field {
+    width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius);
+    color:var(--slate); transition:all 0.2s; background:var(--white); min-width:0;
+    -webkit-appearance:none;
+}
+/* iOS auto-zoom fix — font-size must be ≥16px on all inputs */
+.input-field { font-size:16px; }
+.select-field {
+    font-size:16px; appearance:none; -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 12px center; padding-right:32px; cursor:pointer;
+}
+.input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+/* Remove number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+input[type=number] { -moz-appearance:textfield; }
+.unit-select { width:110px; flex-shrink:0; }
+.input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
+
+/* Wall Type Section — Purple */
+.wall-type-section { background:var(--purple-pale); border:2px solid var(--purple); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.wall-type-title { font-weight:600; color:var(--purple); margin-bottom:12px; font-size:0.95em; }
+.wall-info-card { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; background:rgba(139,92,246,0.1); border:1px solid rgba(139,92,246,0.4); border-radius:6px; padding:8px 12px; margin-top:8px; font-size:0.85em; font-weight:500; color:var(--purple); }
+.wall-info-sep { color:var(--muted-light); }
+.cap-row-toggle { display:flex; gap:10px; margin-top:4px; }
+.cap-row-btn { flex:1; padding:10px 12px; border-radius:var(--radius); border:2px solid var(--border); background:var(--white); color:var(--muted); font-weight:600; font-size:0.9em; transition:all 0.2s; cursor:pointer; font-family:var(--font-body); }
+.cap-row-btn.active { border-color:var(--purple); background:var(--purple-pale); color:var(--purple); }
+
+/* Wall Dimensions Section — Blue */
+.wall-section { background:var(--blue-pale); border:2px solid var(--blue); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.wall-section-title { font-weight:600; color:var(--blue); margin-bottom:12px; font-size:0.95em; }
+
+/* Backfill & Waste Section — Green BONUS */
+.backfill-section { background:var(--green-pale); border:2px solid var(--green); border-radius:var(--radius); padding:16px; margin-bottom:20px; }
+.backfill-section-title { font-weight:600; color:var(--green); margin-bottom:12px; font-size:0.95em; }
+
+/* Cost Section — Orange BONUS */
+.price-section { background:var(--orange-pale); border:2px solid var(--orange); border-radius:var(--radius); padding:16px; margin-top:4px; }
+.price-section-title { font-weight:600; color:var(--orange); margin-bottom:12px; font-size:0.95em; }
+.bonus-badge { background:var(--orange); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+.bonus-badge-green { background:var(--green); color:var(--white); font-size:0.75em; padding:4px 8px; border-radius:4px; margin-left:8px; font-weight:700; }
+
+.calculate-btn { width:100%; background:var(--teal); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:1.05em; transition:all 0.2s; margin-top:20px; }
+.calculate-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.reset-btn { width:100%; background:var(--white); color:var(--slate); border:1px solid var(--border); padding:12px 24px; border-radius:var(--radius); font-weight:500; font-size:0.95em; transition:all 0.2s; margin-top:12px; }
+.reset-btn:hover { background:var(--bg); border-color:var(--slate-light); }
+
+/* Result Section */
+.result-section { background:linear-gradient(135deg, var(--teal-pale) 0%, #e0f2f1 100%); border-radius:12px; padding:32px; border:2px solid var(--teal-light); }
+.result-section h2 { font-family:var(--font-heading); font-size:1.5em; font-weight:600; color:var(--navy); margin-bottom:20px; }
+.result-empty { text-align:center; padding:40px 20px; color:var(--muted); }
+.result-empty-icon { font-size:2.5em; margin-bottom:12px; }
+.result-empty-text { font-size:0.95em; }
+.result-display { display:none; }
+.result-display.active { display:block; }
+
+/* Primary result */
+.result-main { background:var(--white); border-radius:var(--radius); padding:24px; margin-bottom:20px; text-align:center; border:2px solid var(--teal); }
+.result-label { font-size:0.9em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.result-value { font-size:2.5em; font-weight:700; color:var(--teal); font-family:var(--font-heading); line-height:1; }
+.result-unit { font-size:0.5em; font-weight:500; color:var(--slate); }
+
+/* 8-item result grid */
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.result-item { background:var(--white); padding:14px; border-radius:var(--radius); text-align:center; }
+.result-item-label { font-size:0.78em; color:var(--muted); margin-bottom:4px; font-weight:500; }
+.result-item-value { font-size:1.2em; font-weight:700; color:var(--slate); overflow-wrap:break-word; word-break:break-word; }
+.result-item-unit { font-size:0.75em; color:var(--muted); font-weight:400; margin-left:2px; }
+
+/* Cost result panel */
+.cost-result-section { background:linear-gradient(135deg, var(--orange-pale) 0%, #fef3c7 100%); border:2px solid var(--orange); border-radius:var(--radius); padding:20px; margin-bottom:16px; display:none; }
+.cost-result-section.active { display:block; }
+.cost-result-main { text-align:center; margin-bottom:12px; }
+.cost-result-label { font-size:0.9em; color:#c2410c; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.cost-result-value { font-size:2em; font-weight:700; color:var(--orange); font-family:var(--font-heading); }
+.cost-result-breakdown { background:rgba(255,255,255,0.7); padding:12px; border-radius:var(--radius); font-size:0.88em; color:var(--slate); line-height:1.9; }
+
+/* Formula box */
+.formula-box { background:rgba(255,255,255,0.7); padding:18px; border-radius:var(--radius); border-left:4px solid var(--teal); margin-bottom:16px; }
+.formula-title { font-weight:600; color:var(--slate); margin-bottom:10px; font-size:0.95em; }
+.formula-content { font-family:'Courier New', monospace; color:var(--navy); font-size:0.88em; line-height:1.9; }
+.formula-step { margin-bottom:4px; }
+
+/* CTA in result */
+.cta-result { display:none; }
+.cta-result.active { display:block; }
+.cta-result-btn { display:block; width:100%; background:var(--green); color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; text-align:center; transition:all 0.2s; }
+.cta-result-btn:hover { background:#059669; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CONTENT SECTION ═══ */
+.content-section { background:var(--white); border-radius:12px; border:1px solid var(--border); padding:48px 40px; margin-bottom:48px; box-shadow:var(--shadow-sm); }
+.content-section h2 { font-family:var(--font-heading); font-size:1.8em; font-weight:600; color:var(--navy); margin-bottom:24px; }
+.content-text { color:var(--muted); font-size:0.95em; line-height:1.9; }
+.content-text p { margin-bottom:18px; }
+.content-text h3 { font-size:1.2em; font-weight:600; color:var(--slate); margin-top:32px; margin-bottom:14px; }
+.content-text ul, .content-text ol { margin:16px 0; padding-left:24px; }
+.content-text li { margin-bottom:10px; }
+.content-text strong { color:var(--slate); }
+.info-box { background:var(--teal-pale); border-left:4px solid var(--teal); padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
+.warning-box { background:#fef3c7; border-left:4px solid #f59e0b; padding:16px 20px; border-radius:var(--radius); margin:20px 0; }
+.warning-box-title { font-weight:600; color:#92400e; margin-bottom:8px; }
+.table-responsive { overflow-x:auto; margin:20px 0; }
+.calc-table { width:100%; border-collapse:collapse; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; overflow-wrap:break-word; word-break:break-word; max-width:200px; }
+.calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
+.calc-table tr:hover td { background:#f0fdf9; }
+.content-more { max-height:0; overflow:hidden; transition:max-height 0.5s ease; }
+.content-more.expanded { max-height:14000px; }
+.read-more-btn { display:block; margin:24px auto 0; background:var(--teal); color:var(--white); padding:12px 32px; border-radius:var(--radius); font-weight:600; font-size:0.95em; transition:all 0.2s; cursor:pointer; border:none; }
+.read-more-btn:hover { background:#0f766e; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { background:linear-gradient(135deg, var(--teal), #0f766e); border-radius:12px; padding:48px 40px; text-align:center; margin-bottom:48px; }
+.cta-section h2 { font-family:var(--font-heading); font-size:2em; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3; }
+.cta-section p { color:rgba(255,255,255,0.95); font-size:1.05em; line-height:1.7; margin-bottom:28px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-btn { display:inline-block; background:var(--white); color:var(--teal); font-weight:600; font-size:1em; padding:14px 36px; border-radius:var(--radius); transition:all 0.2s; }
+.cta-btn:hover { box-shadow:0 6px 20px rgba(255,255,255,0.3); transform:translateY(-2px); }
+
+/* ═══ FOOTER ═══ */
+.footer { background:var(--navy); color:var(--muted-light); margin-top:64px; }
+.footer-inner { max-width:var(--max-width); margin:0 auto; padding:56px 24px 24px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid var(--slate-light); }
+.footer-brand { font-size:1.3em; font-weight:700; color:var(--white); margin-bottom:12px; }
+.footer-brand-desc { font-size:0.85em; color:var(--muted); line-height:1.7; margin-bottom:20px; max-width:280px; }
+.footer-social { display:flex; gap:10px; flex-wrap:wrap; }
+.social-link { background:rgba(255,255,255,0.08); color:var(--muted-light); font-size:0.8em; padding:8px 16px; border-radius:var(--radius); transition:all 0.2s; }
+.social-link:hover { background:var(--teal); color:var(--white); }
+.footer-title { color:var(--white); font-size:0.85em; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { color:var(--muted); font-size:0.9em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal-light); }
+.footer-bottom { padding-top:24px; text-align:center; }
+.footer-copy { font-size:0.85em; color:var(--muted); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:768px) {
+    .nav { padding:0 20px; }
+    .hero { padding:40px 20px; }
+    .hero h1 { font-size:2em; }
+    .main { padding:32px 20px; }
+    .calculator-container { padding:24px 20px; }
+    .calculator-grid { grid-template-columns:1fr; gap:24px; }
+    .result-grid { grid-template-columns:1fr 1fr; }
+    .result-value { font-size:2em; }
+    .cost-result-value { font-size:1.8em; }
+    .content-section { padding:32px 24px; }
+    .content-section h2 { font-size:1.5em; }
+    .cta-section { padding:32px 24px; }
+    .cta-section h2 { font-size:1.6em; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+
+@media (max-width:640px) {
+    .hamburger { display:flex; }
+    .nav-links { display:none; position:absolute; top:64px; left:0; right:0; background:var(--white); flex-direction:column; padding:12px; gap:4px; box-shadow:var(--shadow-md); border-top:1px solid var(--border); z-index:999; }
+    .nav-links.active { display:flex; }
+    .nav-link { padding:14px 16px; width:100%; text-align:center; }
+    .hero { padding:32px 16px; }
+    .hero h1 { font-size:1.7em; }
+    .main { padding:24px 16px; }
+    .calculator-container { padding:20px 16px; }
+    .input-section h2, .result-section h2 { font-size:1.3em; }
+    .result-section { padding:20px; }
+    .content-section { padding:24px 16px; }
+    .content-section h2 { font-size:1.3em; }
+    .cta-section { padding:28px 16px; }
+    .cta-section h2 { font-size:1.4em; }
+    .footer-grid { grid-template-columns:1fr; gap:28px; }
+    .footer-inner { padding:40px 16px 20px; }
+    .result-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:480px) {
+    .hero h1 { font-size:1.5em; }
+    .result-value { font-size:1.8em; }
+    .cost-result-value { font-size:1.5em; }
+    .formula-content { font-size:0.82em; }
+    .input-row { flex-direction:column; }
+    .unit-select { width:100%; }
+    .bonus-badge, .bonus-badge-green { display:block; margin-left:0; margin-top:4px; width:fit-content; }
+    .wall-info-card { font-size:0.8em; }
+    /* Keep symbol rows ($ and %) horizontal — never stack */
+    .input-row--symbol { flex-direction:row !important; align-items:center; }
+    .input-row--symbol .input-field { width:100%; }
+    .cap-row-toggle { flex-direction:row; }
+}
+
+@media (max-width:360px) {
+    .hero h1 { font-size:1.3em; }
+    .calculator-container { padding:16px 12px; }
+    .result-section { padding:16px; }
+    .result-value { font-size:1.6em; }
+    .result-item-value { font-size:1.05em; }
+    .formula-content { font-size:0.78em; }
+    .result-grid { gap:8px; }
+    .result-item { padding:10px 8px; }
+}
+
+@media print {
+    .header, .footer, .cta-section, .read-more-btn { display:none; }
+    .content-more { max-height:none !important; }
+    .calculator-container { border:1px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Retaining Wall Calculator</span>
+        </nav>
+        <h1>Retaining Wall Calculator</h1>
+        <p class="hero-desc">Calculate exactly how many retaining wall blocks you need for any wall project — plus <strong>backfill gravel volume and weight</strong>, cap blocks, wall face area, total block weight, and built-in cost estimator. Supports concrete block, natural stone, timber, and gabion walls — all in one free tool.</p>
+    </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+        <div class="calculator-grid">
+
+            <!-- ═══ INPUT SECTION ═══ -->
+            <div class="input-section">
+                <h2>Configure Your Wall</h2>
+
+                <!-- WALL TYPE — Purple -->
+                <div class="wall-type-section">
+                    <div class="wall-type-title">Wall Type &amp; Cap Row</div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="wallType">Select Wall Type</label>
+                        <select class="select-field" id="wallType" onchange="updateWallTypeInfo()">
+                            <option value="concrete-block" selected>Concrete Block — Interlocking / CMU</option>
+                            <option value="natural-stone">Natural Stone — Fieldstone / Cut Stone</option>
+                            <option value="timber">Pressure-Treated Timber — 6"×6" or 8"×8"</option>
+                            <option value="gabion">Gabion Basket — Wire Mesh Filled with Stone</option>
+                        </select>
+                        <div class="wall-info-card" id="wallInfoCard">
+                            <span id="wallInfoType">Concrete Block</span>
+                            <span class="wall-info-sep">•</span>
+                            <span id="wallInfoSize">Standard: 8"H × 16"L × 12"D</span>
+                            <span class="wall-info-sep">•</span>
+                            <span id="wallInfoWeight">~35 lbs/block — Best for driveways &amp; garden walls</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label">Cap Row on Top?</label>
+                        <div class="cap-row-toggle">
+                            <button type="button" class="cap-row-btn active" id="capYes" onclick="setCapRow('yes')">✓ Yes — Add Cap Row</button>
+                            <button type="button" class="cap-row-btn" id="capNo" onclick="setCapRow('no')">✗ No Cap Row</button>
+                        </div>
+                        <input type="hidden" id="capRow" value="yes">
+                        <div class="input-hint">Cap blocks finish the top of the wall — typically 1 flat block per column</div>
+                    </div>
+                </div>
+
+                <!-- WALL & BLOCK DIMENSIONS — Blue -->
+                <div class="wall-section">
+                    <div class="wall-section-title">Wall &amp; Block Dimensions</div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="wallHeight">Wall Height <span style="color:var(--muted); font-weight:400;">(visible above grade)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="wallHeight" placeholder="Wall height" min="0.1" step="0.1" value="4">
+                            <select class="select-field unit-select" id="wallHeightUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="wallLength">Wall Length</label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="wallLength" placeholder="Wall length" min="0.1" step="0.1" value="20">
+                            <select class="select-field unit-select" id="wallLengthUnit">
+                                <option value="ft" selected>feet</option>
+                                <option value="in">inches</option>
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="blockHeight">Block Height <span style="color:var(--muted); font-weight:400;">(per course)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="blockHeight" placeholder="Block height" min="0.5" step="0.25" value="8">
+                            <select class="select-field unit-select" id="blockHeightUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Standard concrete block: 8". Timber: 6" or 8". Gabion: 12".</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="blockLength">Block Length <span style="color:var(--muted); font-weight:400;">(face width)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="blockLength" placeholder="Block length" min="1" step="0.5" value="16">
+                            <select class="select-field unit-select" id="blockLengthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Standard concrete block: 16". Timber: 96" (8 ft). Gabion: 36".</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="blockWeight">Weight per Block / Unit <span style="color:var(--muted); font-weight:400;">(for total weight)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="blockWeight" placeholder="Weight per block" min="1" step="0.5" value="35">
+                            <select class="select-field unit-select" id="blockWeightUnit">
+                                <option value="lbs" selected>lbs</option>
+                                <option value="kg">kg</option>
+                            </select>
+                        </div>
+                        <div class="input-hint" id="blockWeightHint">Standard 8"×16" concrete block: ~35 lbs. Natural stone varies.</div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="embeddedDepth">Embedded Depth <span style="color:var(--muted); font-weight:400;">(first course below grade)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="embeddedDepth" placeholder="Buried depth" min="0" step="0.5" value="4">
+                            <select class="select-field unit-select" id="embeddedDepthUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Recommended: 10% of wall height. 4-ft wall → bury ~5". Adds rows to block count.</div>
+                    </div>
+                </div>
+
+                <!-- BACKFILL & WASTE — Green BONUS -->
+                <div class="backfill-section">
+                    <div class="backfill-section-title">
+                        Backfill &amp; Waste Allowance <span class="bonus-badge-green">BONUS</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="backfillThickness">Backfill Gravel Thickness <span style="color:var(--muted); font-weight:400;">(behind wall)</span></label>
+                        <div class="input-row">
+                            <input type="number" class="input-field" id="backfillThickness" placeholder="Backfill thickness" min="1" step="1" value="12">
+                            <select class="select-field unit-select" id="backfillThicknessUnit">
+                                <option value="in" selected>inches</option>
+                                <option value="ft">feet</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Minimum 12" recommended by NCMA. Prevents hydrostatic pressure buildup.</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="wastePct">Block Waste Allowance</label>
+                        <div class="input-row input-row--symbol">
+                            <input type="number" class="input-field" id="wastePct" placeholder="10" min="0" max="50" step="1" value="10">
+                            <span style="padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--slate); font-weight:600; white-space:nowrap; flex-shrink:0;">%</span>
+                        </div>
+                        <div class="input-hint">10% covers cuts at corners/curves, chips, and on-site breakage. Add 5% more for complex shapes.</div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="compactionPct">Gravel Compaction Buffer</label>
+                        <div class="input-row input-row--symbol">
+                            <input type="number" class="input-field" id="compactionPct" placeholder="20" min="0" max="50" step="5" value="20">
+                            <span style="padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--slate); font-weight:600; white-space:nowrap; flex-shrink:0;">%</span>
+                        </div>
+                        <div class="input-hint">Gravel compacts 15–25% when tamped. 20% buffer prevents running short mid-project.</div>
+                    </div>
+                </div>
+
+                <!-- COST ESTIMATOR — Orange BONUS -->
+                <div class="price-section">
+                    <div class="price-section-title">
+                        Cost Estimator <span class="bonus-badge">BONUS</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="pricePerBlock">Price per Block (optional)</label>
+                        <div class="input-row input-row--symbol">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px; flex-shrink:0;">$</span>
+                            <input type="number" class="input-field" id="pricePerBlock" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-hint">Standard concrete blocks: $2–$5 each. Decorative: $3–$8. Natural stone: $5–$15+.</div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom:0;">
+                        <label class="input-label" for="pricePerLbGravel">Price per lb of Gravel (optional)</label>
+                        <div class="input-row input-row--symbol">
+                            <span style="font-size:1.2em; color:var(--slate); padding:0 8px; flex-shrink:0;">$</span>
+                            <input type="number" class="input-field" id="pricePerLbGravel" placeholder="0.000" min="0" step="0.001">
+                        </div>
+                        <div class="input-hint">Typical: ~$0.01–$0.02/lb ($20–$40/ton). Check your local quarry or supplier for current pricing.</div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateRetainingWall()">Calculate Retaining Wall</button>
+                <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+            </div>
+
+            <!-- ═══ RESULT SECTION ═══ -->
+            <div class="result-section">
+                <h2>Calculation Results</h2>
+
+                <!-- Empty State -->
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">🧱</div>
+                    <div class="result-empty-text">Enter your wall dimensions and click <strong>Calculate Retaining Wall</strong> to see your full material estimate</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="result-display" id="resultDisplay">
+
+                    <!-- Main: Total Blocks -->
+                    <div class="result-main">
+                        <div class="result-label">Total Blocks Needed</div>
+                        <div class="result-value"><span id="totalBlocks">0</span> <span class="result-unit">blocks</span></div>
+                    </div>
+
+                    <!-- Cost Section (conditional) -->
+                    <div class="cost-result-section" id="costResultSection">
+                        <div class="cost-result-main">
+                            <div class="cost-result-label">Estimated Project Cost</div>
+                            <div class="cost-result-value">$<span id="totalCost">0.00</span></div>
+                        </div>
+                        <div class="cost-result-breakdown" id="costBreakdown"></div>
+                    </div>
+
+                    <!-- 8-item Result Grid -->
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-item-label">Rows (Courses)</div>
+                            <div class="result-item-value"><span id="numRows">0</span><span class="result-item-unit"> rows</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Columns</div>
+                            <div class="result-item-value"><span id="numCols">0</span><span class="result-item-unit"> cols</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Cap Blocks</div>
+                            <div class="result-item-value"><span id="capBlocks">0</span><span class="result-item-unit"> blocks</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Wall Face Area</div>
+                            <div class="result-item-value"><span id="wallFaceArea">0</span><span class="result-item-unit"> sq ft</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Backfill Volume</div>
+                            <div class="result-item-value"><span id="backfillVolume">0</span><span class="result-item-unit"> ft³</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Backfill Volume</div>
+                            <div class="result-item-value"><span id="backfillVolumeCuYd">0</span><span class="result-item-unit"> cu yd</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Gravel Weight</div>
+                            <div class="result-item-value"><span id="backfillWeightLbs">0</span><span class="result-item-unit"> lbs</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-label">Total Block Weight</div>
+                            <div class="result-item-value"><span id="totalBlockWeight">0</span><span class="result-item-unit"> lbs</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Box -->
+                    <div class="formula-box">
+                        <div class="formula-title">How We Calculated</div>
+                        <div class="formula-content" id="formulaExplanation"></div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-result" id="ctaResult">
+                        <a href="../construction.html" class="cta-result-btn">→ Explore More Construction Calculators</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══ CONTENT SECTION ═══ -->
+    <div class="content-section">
+        <h2>Retaining Wall Calculator Guide: Everything You Need to Know</h2>
+        <div class="content-text">
+
+            <p>Not sure how many blocks to order for your retaining wall? You're in good company — most first-time builders either over-order by 20% or run short mid-project and have to make an emergency trip to the supplier. This guide walks you through exactly how to calculate retaining wall materials, what type of wall to build, how much gravel to put behind it, and when you need an engineer.</p>
+
+            <p>Whether you're building a simple garden border or a full-height property retaining wall, the math is the same. Let's break it down step by step.</p>
+
+            <h3>What is a Retaining Wall?</h3>
+
+            <p>A retaining wall is a structure built to hold back soil or rock from sliding down a slope — keeping earth in place where it would otherwise shift into a more natural, less useful shape. Retaining walls are used for <strong>slope stabilization</strong>, erosion control, creating level terraces for gardens, driveways, and outdoor spaces, and protecting structures from soil movement.</p>
+
+            <p>What makes a retaining wall different from a regular garden wall is that it has to resist <strong>lateral earth pressure</strong> — the constant horizontal force of the soil pushing against its back face. That pressure increases with wall height, which is why taller walls need more engineering, deeper footings, drainage systems, and sometimes geogrid reinforcement anchored back into the hillside.</p>
+
+            <h3>How to Calculate Retaining Wall Blocks — 3 Steps</h3>
+
+            <p>Our calculator does all of this automatically, but here's the full math so you understand what's happening behind the scenes.</p>
+
+            <p><strong>Step 1 — Count your rows.</strong> Divide the total wall height (visible height plus any buried depth) by the height of one block. Always round up — a partial row still requires a full row of blocks. If your visible wall is 4 ft and you're burying the first course 5 inches, your total height is 4 ft 5 in = 4.42 ft. With 8-inch (0.667 ft) blocks: rows = ⌈4.42 ÷ 0.667⌉ = 7 rows.</p>
+
+            <p><strong>Step 2 — Count your columns.</strong> Divide the wall length by the face length of one block and round up. For a 20-foot wall using 16-inch (1.333 ft) blocks: columns = ⌈20 ÷ 1.333⌉ = 15 columns.</p>
+
+            <p><strong>Step 3 — Multiply and add waste.</strong> If no cap row: total blocks = rows × columns = 7 × 15 = 105 blocks. If adding a cap row: main blocks = 6 rows × 15 = 90, cap blocks = 15, total = 105. Add 10% for waste: ⌈105 × 1.10⌉ = 116 blocks to order. The calculator handles the rounding, embedded depth, and waste factor automatically.</p>
+
+            <h3>Standard Retaining Wall Block Sizes</h3>
+
+            <p>Block dimensions vary significantly by type and manufacturer. The table below shows the standard sizes used in residential construction — the same defaults built into the calculator above.</p>
+
+            <div class="table-responsive">
+                <table class="calc-table">
+                    <thead>
+                        <tr><th>Block Type</th><th>Standard Dimensions (H × L × D)</th><th>Weight per Block</th><th>Best For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Concrete Block (Standard)</strong></td><td>8" × 16" × 12"</td><td>~35 lbs</td><td>Driveways, garden walls, residential</td></tr>
+                        <tr><td><strong>Concrete Block (Large)</strong></td><td>8" × 18" × 12"</td><td>~38 lbs</td><td>Heavier retaining applications</td></tr>
+                        <tr><td><strong>Allan Block / Versa-Lok</strong></td><td>6" × 18" × 12"</td><td>~80 lbs</td><td>High-strength segmental walls</td></tr>
+                        <tr><td><strong>Natural Fieldstone</strong></td><td>6"–12" × 12"–24" × varies</td><td>~50–120 lbs</td><td>Rustic garden and landscape walls</td></tr>
+                        <tr><td><strong>Pressure-Treated Timber (6×6)</strong></td><td>6" × 96" (8 ft)</td><td>~45 lbs</td><td>Garden terraces, raised beds</td></tr>
+                        <tr><td><strong>Gabion Basket (3×3×1 ft)</strong></td><td>12" × 36" × 36"</td><td>~200 lbs (filled)</td><td>Drainage walls, steep slopes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>How Much Backfill Gravel Do You Need?</h3>
+
+            <p>Backfill gravel is not optional — it's what keeps your wall standing. Without a gravel drainage layer behind the wall, rainwater saturates the soil, increasing hydrostatic pressure dramatically and pushing your wall forward. The standard installation calls for at least <strong>12 inches of crushed drainage gravel</strong> placed directly behind the wall for its full height and length.</p>
+
+            <p>The volume formula is straightforward: <strong>Backfill Volume = Backfill Thickness × Wall Length × Wall Height</strong>. For a 4-ft wall, 20 ft long, with 12" of backfill: Volume = 1 ft × 20 ft × 4 ft = 80 ft³ = 2.96 cubic yards. Gravel weighs approximately <strong>84 lbs per cubic foot</strong> (1,346 kg/m³), so that's roughly 6,720 lbs (3.36 tons) of gravel to order.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Important: Order 20% Extra Gravel</div>
+                <p>Loose gravel compacts 15–25% when properly tamped. A pile that looks like plenty at delivery will shrink significantly once you pack it down behind the wall. The calculator's Gravel Compaction Buffer (default 20%) accounts for this — always keep it enabled unless your supplier already accounts for compaction in their quote.</p>
+            </div>
+
+            <h3>Retaining Wall Layout Guide for Common Projects</h3>
+
+            <div class="table-responsive">
+                <table class="calc-table">
+                    <thead>
+                        <tr><th>Project Type</th><th>Typical Height</th><th>Recommended Block</th><th>Cap Row?</th><th>Engineer Required?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Garden border / flower bed</td><td>Under 2 ft</td><td>Standard concrete block or natural stone</td><td>Yes — decorative</td><td>No</td></tr>
+                        <tr><td>Raised patio or deck terrace</td><td>2–3 ft</td><td>Standard concrete block</td><td>Yes</td><td>No (check local code)</td></tr>
+                        <tr><td>Residential slope / driveway edge</td><td>3–4 ft</td><td>Standard or large concrete block</td><td>Yes</td><td>Varies by jurisdiction</td></tr>
+                        <tr><td>Property line retaining wall</td><td>3–6 ft</td><td>Large concrete block or Allan Block</td><td>Yes</td><td>Required over 4 ft in most areas</td></tr>
+                        <tr><td>Steep slope / hillside</td><td>4–8 ft</td><td>Segmental block with geogrid</td><td>Yes</td><td>Yes — geogrid design needed</td></tr>
+                        <tr><td>Erosion control / drainage</td><td>Varies</td><td>Gabion basket</td><td>No</td><td>Consult engineer for tall walls</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- READ MORE SECTION -->
+            <div class="content-more" id="contentMore">
+
+                <h3>Types of Retaining Walls — A Complete Comparison</h3>
+
+                <p>Choosing the right wall type depends on your budget, the height you need, the look you want, and how much soil weight you're holding back. Here's how the four main types compare:</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Type</th><th>Cost (per sq ft)</th><th>Lifespan</th><th>Max Safe DIY Height</th><th>Pros</th><th>Cons</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Concrete / CMU Block</strong></td><td>$20–$35</td><td>50–100 years</td><td>3–4 ft</td><td>Durable, widely available, many styles</td><td>Heavy, needs base prep</td></tr>
+                            <tr><td><strong>Natural Stone</strong></td><td>$25–$80</td><td>50–200 years</td><td>2–3 ft (dry stack)</td><td>Beautiful, timeless, drains naturally</td><td>Expensive, labor-intensive</td></tr>
+                            <tr><td><strong>Pressure-Treated Timber</strong></td><td>$15–$30</td><td>10–20 years</td><td>3–4 ft</td><td>Cost-effective, easy to work with</td><td>Rots over time, not for wet sites</td></tr>
+                            <tr><td><strong>Gabion Basket</strong></td><td>$15–$40</td><td>50–75 years</td><td>3–5 ft</td><td>Excellent drainage, flexible, eco-friendly</td><td>Industrial look, requires stone fill</td></tr>
+                            <tr><td><strong>Poured Concrete</strong></td><td>$30–$50</td><td>50–100 years</td><td>Not DIY</td><td>Strongest option, very clean look</td><td>Requires forms, rebar, professional pour</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Drainage Requirements for Retaining Walls</h3>
+
+                <p>Drainage is the single most important factor in retaining wall longevity. A wall with perfect blocks and a bad drainage system will fail within a few years. A wall with cheaper blocks and excellent drainage can last 50 years. Here's what a proper drainage system looks like, from the wall face back:</p>
+
+                <ul>
+                    <li><strong>Gravel backfill layer:</strong> Minimum 12 inches of crushed stone (¾" clean gravel or similar) placed directly against the back face of the wall for the full wall height and length. This is the primary drainage path.</li>
+                    <li><strong>Landscape fabric / geotextile:</strong> Placed between the gravel backfill and the native soil behind it. Prevents fine soil particles from migrating into the gravel and clogging the drainage layer over time.</li>
+                    <li><strong>Perforated drain pipe:</strong> For walls taller than 3 feet, a 4-inch perforated pipe at the base of the gravel layer (wrapped in fabric sock) carries collected water to a daylight outlet at the end of the wall. Without this, water pools at the base and undermines the footing.</li>
+                    <li><strong>Weep holes:</strong> For mortared or poured concrete walls, weep holes (minimum 1-inch diameter, spaced every 6–10 feet) allow water to escape through the wall face rather than building up pressure behind it.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="warning-box-title">⚠️ Never point downspouts toward a retaining wall</div>
+                    <p>Concentrated roof runoff directed at the wall soil is one of the most common causes of retaining wall failure. Redirect all downspouts away from the wall and slope any adjacent surfaces so water drains away from the wall base, not toward it.</p>
+                </div>
+
+                <h3>Do You Need a Permit for a Retaining Wall?</h3>
+
+                <p>The short answer: if your wall is under 3 feet in most jurisdictions, probably not. If it's over 4 feet, almost certainly yes. Here are the general rules — but <strong>always verify with your local building department</strong> before construction, as regulations vary significantly by city and county:</p>
+
+                <ul>
+                    <li><strong>Under 3 feet:</strong> Usually no permit required in most US jurisdictions for residential property. Still check local codes — some municipalities start requiring permits at 2 feet.</li>
+                    <li><strong>3–4 feet:</strong> Permit required in many jurisdictions. Some areas allow this height without a permit if the wall is not in a setback zone or near a structure.</li>
+                    <li><strong>Over 4 feet:</strong> Permit required almost everywhere. A structural engineer review is typically required for the permit application. The engineer must certify that the wall design is adequate for the soil loads.</li>
+                    <li><strong>Near a structure or property line:</strong> Additional setback rules may apply regardless of height. Most codes require retaining walls to be set back from property lines and from building foundations.</li>
+                </ul>
+
+                <h3>DIY vs. Professional Retaining Wall Installation</h3>
+
+                <p>The 4-foot rule is a good starting point for deciding between DIY and professional installation. Under 4 feet with a simple, straight design and good soil conditions — most handy homeowners can handle it. Over 4 feet, near a slope, near a structure, or on unstable soil — hire a professional.</p>
+
+                <p><strong>DIY is practical when:</strong> the wall is under 4 feet, the design is straight (not curved), soil is stable and not saturated clay, there's no structure above or below the wall, and you're comfortable with physical labor and basic tools.</p>
+
+                <p><strong>Hire a professional when:</strong> the wall exceeds 4 feet in height, the wall is on or near a slope, there's a structure (house, garage, deck) within one wall-height distance above the wall, soil conditions are poor (soft clay, organic fill, high water table), the wall needs geogrid reinforcement, or local code requires an engineered design.</p>
+
+                <h3>Retaining Wall Cost Guide 2026</h3>
+
+                <p>Retaining wall costs vary widely based on material, height, length, and local labor rates. The ranges below are for professionally installed walls including materials and labor. DIY material-only costs run roughly 50–60% of these figures.</p>
+
+                <div class="table-responsive">
+                    <table class="calc-table">
+                        <thead>
+                            <tr><th>Wall Type</th><th>Cost per Sq Ft</th><th>Cost per Linear Ft (4 ft wall)</th><th>Lifespan</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Concrete / CMU Block</td><td>$20–$40</td><td>$80–$160</td><td>50–100 yrs</td></tr>
+                            <tr><td>Natural Stone</td><td>$45–$80+</td><td>$180–$320</td><td>50–200 yrs</td></tr>
+                            <tr><td>Pressure-Treated Timber</td><td>$15–$30</td><td>$60–$120</td><td>10–20 yrs</td></tr>
+                            <tr><td>Gabion Basket</td><td>$20–$45</td><td>$80–$180</td><td>40–75 yrs</td></tr>
+                            <tr><td>Poured Concrete</td><td>$30–$60</td><td>$120–$240</td><td>50–100 yrs</td></tr>
+                            <tr><td>Segmental Block w/ Geogrid</td><td>$25–$55</td><td>$100–$220</td><td>50–75 yrs</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Use the <strong>Cost Estimator</strong> in the calculator above to estimate your own material-only cost by entering the price per block and price per pound of gravel from your local supplier. Labor typically adds 50–100% to material costs for standard walls.</p>
+
+                <h3>Geogrid Reinforcement — When Is It Required?</h3>
+
+                <p>Geogrid is a high-strength plastic mesh buried horizontally in the soil behind the wall and connected to the back of the blocks. It anchors the wall into the earth behind it, dramatically increasing the wall's resistance to overturning and sliding. Most manufacturer installation guides require geogrid for any wall over 4 feet tall.</p>
+
+                <p>Standard installation practice: geogrid layers are placed every 2–3 courses of blocks starting from the base, extending back into the hillside a minimum distance equal to the total wall height. The exact spacing and extension distance depends on wall height, soil type, and the specific block system being used — always follow your block manufacturer's engineered installation guide or consult a structural engineer.</p>
+
+                <h3>Frequently Asked Questions</h3>
+
+                <p><strong>How many blocks do I need for a 4-foot retaining wall?</strong><br>
+                For a 4-foot wall that is 20 feet long, using standard 8"×16" concrete blocks and a buried first course of 4 inches: Total height = 4 ft 4 in = 4.33 ft. Rows = ⌈4.33 ÷ 0.667⌉ = 7 rows. Columns = ⌈20 ÷ 1.333⌉ = 15 columns. Total = 7 × 15 = 105 blocks. With 10% waste = 116 blocks. Add a cap row (15 caps) and you're ordering ~115–120 blocks total.</p>
+
+                <p><strong>How deep should I bury the first course?</strong><br>
+                The standard recommendation is to bury the first course approximately 10% of the total visible wall height. For a 4-foot wall, that's about 4–5 inches below grade. This buried base course resists forward sliding. Our calculator's "Embedded Depth" input adds these hidden rows to your total block count automatically — don't skip this input or you'll underestimate blocks needed.</p>
+
+                <p><strong>What type of gravel is best for retaining wall backfill?</strong><br>
+                Use ¾-inch clean crushed stone (sometimes called "clean gravel" or "drainage aggregate"). Avoid pea gravel — it migrates too easily. Avoid native soil or sand — they hold water instead of draining it. The gravel should be placed and compacted in lifts (layers) no more than 8 inches thick for best compaction results.</p>
+
+                <p><strong>Can I build a retaining wall on a slope?</strong><br>
+                Yes, but it requires more careful planning. The standard approach is to step the footing down the slope — you maintain a level base while the top of the wall follows the natural grade. The individual sections are calculated the same way, but each section has a different height. Use this calculator for each step section separately and add the totals together.</p>
+
+                <p><strong>How do I calculate a curved retaining wall?</strong><br>
+                For gently curved walls, add 10–15% to your wall length measurement to account for the extra blocks needed on the curve. For tightly curved sections, blocks may need to be cut — add 15–20% waste instead of the standard 10%. Our calculator uses straight-wall math, so account for any curves by increasing the waste percentage in the Green BONUS section.</p>
+
+                <p><strong>What is the difference between base gravel and backfill gravel?</strong><br>
+                Base gravel (leveling pad) goes under the first course of blocks — typically 6 inches deep and twice the block depth wide, providing a level, compactable base. Backfill gravel goes behind the wall after it's built — this is the 12-inch drainage layer our calculator estimates. Both are needed; our calculator estimates the backfill drainage layer. You'll need a separate gravel estimate for the base/footing pad.</p>
+
+                <p><strong>How long does a retaining wall last?</strong><br>
+                A properly built concrete block retaining wall with good drainage lasts 50 to 100 years. Natural stone walls can last 100–200 years or more. Pressure-treated timber walls last 10–20 years depending on climate and drainage. The biggest factor in premature wall failure is always drainage — a wall with inadequate drainage will fail in 5–15 years regardless of block quality.</p>
+
+                <p><strong>What is the difference between a segmental retaining wall and a poured concrete wall?</strong><br>
+                A segmental retaining wall (SRW) is built by stacking interlocking dry-stack blocks — no mortar, no formwork. It's the type this calculator is designed for. A poured concrete wall is cast in forms, typically with steel rebar reinforcement, and requires concrete ready-mix delivery and forming expertise. Poured concrete walls are stronger for a given thickness but cost more and are not DIY-friendly. For residential applications under 6 feet, segmental block walls are the standard choice.</p>
+
+                <p style="margin-top:32px; font-size:0.85em; color:var(--muted); border-top:1px solid var(--border); padding-top:16px;"><em>All calculations are estimates based on standard block dimensions and uniform wall geometry. Actual material quantities may vary with wall shape, block pattern, site conditions, and local building codes. For walls over 4 feet tall, near structures, or on unstable soil, always consult a licensed structural engineer. This calculator is for material estimation only, not structural design or engineering.</em></p>
+
+            </div><!-- end content-more -->
+
+        </div><!-- end content-text -->
+        <button class="read-more-btn" id="readMoreBtn">Read More</button>
+    </div><!-- end content-section -->
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+        <h2>Need More Construction Calculators?</h2>
+        <p>Explore our full collection of free construction and material calculators to plan and estimate your next project with confidence.</p>
+        <a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+    </div>
+
+</div><!-- end main -->
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Navigation JS -->
+<script src="../navigation.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════
+     RETAINING WALL CALCULATOR — JavaScript
+     Supports 4 wall types, imperial + metric units
+     BONUS: Backfill volume + weight (compaction) + cost
+     ═══════════════════════════════════════════════════════ -->
+<script>
+
+// ─── Wall type data ─────────────────────────────────────────────────────────
+const WALL_TYPE_DATA = {
+    'concrete-block': {
+        name:        'Concrete Block',
+        sizeDesc:    'Standard: 8"H × 16"L × 12"D',
+        weightDesc:  '~35 lbs/block — Best for driveways & garden walls',
+        blockH:      '8',
+        blockHUnit:  'in',
+        blockL:      '16',
+        blockLUnit:  'in',
+        blockW:      '35',
+        blockWUnit:  'lbs',
+        hint:        'Standard 8"×16" concrete block ≈ 35 lbs. Heavier segmental blocks (Allan Block, Versa-Lok) can reach 80–110 lbs each — check manufacturer specs.'
+    },
+    'natural-stone': {
+        name:        'Natural Stone',
+        sizeDesc:    'Typical: 6"H × 18"L (varies by stone)',
+        weightDesc:  '~50 lbs/unit — Varies by stone type and size',
+        blockH:      '6',
+        blockHUnit:  'in',
+        blockL:      '18',
+        blockLUnit:  'in',
+        blockW:      '50',
+        blockWUnit:  'lbs',
+        hint:        'Stone weight varies considerably. Limestone ≈ 150 lb/ft³, granite ≈ 165 lb/ft³. Weigh a representative sample for accurate totals.'
+    },
+    'timber': {
+        name:        'Pressure-Treated Timber',
+        sizeDesc:    'Standard: 6"H × 96"L (6×6 timber, 8 ft)',
+        weightDesc:  '~45 lbs/timber — 6"×6" PT lumber, 8-ft length',
+        blockH:      '6',
+        blockHUnit:  'in',
+        blockL:      '96',
+        blockLUnit:  'in',
+        blockW:      '45',
+        blockWUnit:  'lbs',
+        hint:        '6"×6"×8 ft PT timber ≈ 45 lbs. Use 8"×8" timbers for walls over 3 ft. Timbers are typically deadman-anchored into the hillside every other row.'
+    },
+    'gabion': {
+        name:        'Gabion Basket',
+        sizeDesc:    'Standard: 12"H × 36"L × 36"D (filled)',
+        weightDesc:  '~200 lbs/basket (filled) — Wire mesh + stone fill',
+        blockH:      '12',
+        blockHUnit:  'in',
+        blockL:      '36',
+        blockLUnit:  'in',
+        blockW:      '200',
+        blockWUnit:  'lbs',
+        hint:        'Standard 3×3×1 ft gabion basket filled with stone ≈ 200 lbs. Weight varies with stone type and how tightly baskets are packed.'
+    }
+};
+
+// ─── Unit conversion to feet ────────────────────────────────────────────────
+function toFeet(value, unit) {
+    const conv = { 'ft': 1, 'in': 1/12, 'm': 3.28084, 'cm': 0.0328084, 'mm': 0.00328084 };
+    return value * (conv[unit] || 1);
+}
+
+// ─── Cap row toggle ──────────────────────────────────────────────────────────
+function setCapRow(val) {
+    document.getElementById('capRow').value = val;
+    document.getElementById('capYes').classList.toggle('active', val === 'yes');
+    document.getElementById('capNo').classList.toggle('active', val === 'no');
+}
+
+// ─── Update wall type info card ──────────────────────────────────────────────
+function updateWallTypeInfo() {
+    const type = document.getElementById('wallType').value;
+    const d = WALL_TYPE_DATA[type];
+    if (!d) return;
+
+    document.getElementById('wallInfoType').textContent  = d.name;
+    document.getElementById('wallInfoSize').textContent  = d.sizeDesc;
+    document.getElementById('wallInfoWeight').textContent = d.weightDesc;
+
+    // Auto-fill block dimensions and weight from type defaults
+    document.getElementById('blockHeight').value     = d.blockH;
+    document.getElementById('blockHeightUnit').value = d.blockHUnit;
+    document.getElementById('blockLength').value     = d.blockL;
+    document.getElementById('blockLengthUnit').value = d.blockLUnit;
+    document.getElementById('blockWeight').value     = d.blockW;
+    document.getElementById('blockWeightUnit').value = d.blockWUnit;
+    document.getElementById('blockWeightHint').textContent = d.hint;
+}
+
+// ─── Main calculation ─────────────────────────────────────────────────────────
+function calculateRetainingWall() {
+
+    // Read inputs
+    const wallType     = document.getElementById('wallType').value;
+    const capRow       = document.getElementById('capRow').value === 'yes';
+
+    const wallHeightFt = toFeet(parseFloat(document.getElementById('wallHeight').value),         document.getElementById('wallHeightUnit').value);
+    const wallLengthFt = toFeet(parseFloat(document.getElementById('wallLength').value),         document.getElementById('wallLengthUnit').value);
+    const blockHeightFt= toFeet(parseFloat(document.getElementById('blockHeight').value),        document.getElementById('blockHeightUnit').value);
+    const blockLengthFt= toFeet(parseFloat(document.getElementById('blockLength').value),        document.getElementById('blockLengthUnit').value);
+    const embeddedFt   = toFeet(parseFloat(document.getElementById('embeddedDepth').value) || 0, document.getElementById('embeddedDepthUnit').value);
+    const backfillFt   = toFeet(parseFloat(document.getElementById('backfillThickness').value),  document.getElementById('backfillThicknessUnit').value);
+
+    const blockWtRaw   = parseFloat(document.getElementById('blockWeight').value);
+    const blockWtUnit  = document.getElementById('blockWeightUnit').value;
+    const blockWeightLbs = blockWtUnit === 'kg' ? blockWtRaw * 2.20462 : blockWtRaw;
+
+    const wastePct        = parseFloat(document.getElementById('wastePct').value)     || 0;
+    const compactionPct   = parseFloat(document.getElementById('compactionPct').value)|| 0;
+    const pricePerBlock   = parseFloat(document.getElementById('pricePerBlock').value)  || 0;
+    const pricePerLbGravel= parseFloat(document.getElementById('pricePerLbGravel').value) || 0;
+
+    // ── Validation ──────────────────────────────────────────────────────────
+    if (isNaN(wallHeightFt)  || wallHeightFt  <= 0) { showError('Please enter a valid Wall Height.'); return; }
+    if (isNaN(wallLengthFt)  || wallLengthFt  <= 0) { showError('Please enter a valid Wall Length.'); return; }
+    if (isNaN(blockHeightFt) || blockHeightFt <= 0) { showError('Please enter a valid Block Height.'); return; }
+    if (isNaN(blockLengthFt) || blockLengthFt <= 0) { showError('Please enter a valid Block Length.'); return; }
+    if (isNaN(blockWeightLbs)|| blockWeightLbs<= 0) { showError('Please enter a valid Block Weight.'); return; }
+    if (isNaN(backfillFt)    || backfillFt    <= 0) { showError('Please enter a valid Backfill Thickness.'); return; }
+    if (embeddedFt < 0)                              { showError('Embedded depth cannot be negative.'); return; }
+
+    // ── Core calculations ───────────────────────────────────────────────────
+
+    // Total structural height (visible + buried)
+    const totalHeightFt = wallHeightFt + embeddedFt;
+
+    // Rows and columns
+    const numRows = Math.ceil(totalHeightFt / blockHeightFt);
+    const numCols = Math.ceil(wallLengthFt  / blockLengthFt);
+
+    // Block counts — split if cap row selected
+    let mainRows, capBlocks;
+    if (capRow && numRows > 1) {
+        mainRows  = numRows - 1;
+        capBlocks = numCols;
+    } else {
+        mainRows  = numRows;
+        capBlocks = 0;
+    }
+    const mainBlocks = mainRows * numCols;
+    const baseTotal  = mainBlocks + capBlocks;
+
+    // Apply waste factor — always round UP
+    const totalBlocks = Math.ceil(baseTotal * (1 + wastePct / 100));
+
+    // Wall face area (visible portion only, excluding buried)
+    const wallFaceArea = wallHeightFt * wallLengthFt; // sq ft
+
+    // Total block weight
+    const totalBlockWeightLbs = totalBlocks * blockWeightLbs;
+    const totalBlockWeightKg  = totalBlockWeightLbs * 0.453592;
+
+    // Backfill gravel
+    // Volume = thickness × length × wall height (visible height for backfill)
+    const backfillVolumeRaw     = backfillFt * wallLengthFt * wallHeightFt; // ft³
+    const backfillVolumeOrdered = backfillVolumeRaw * (1 + compactionPct / 100); // with compaction buffer
+    const backfillVolumeCuYd    = backfillVolumeOrdered / 27;
+    const GRAVEL_DENSITY_LB_FT3 = 84.03;
+    const backfillWeightLbs     = backfillVolumeOrdered * GRAVEL_DENSITY_LB_FT3;
+    const backfillWeightKg      = backfillWeightLbs * 0.453592;
+
+    // Costs
+    const blockCost   = totalBlocks * pricePerBlock;
+    const gravelCost  = backfillWeightLbs * pricePerLbGravel;
+    const totalCost   = blockCost + gravelCost;
+    const costPerSqFt = (totalCost > 0 && wallFaceArea > 0) ? totalCost / wallFaceArea : 0;
+
+    // ── Display results ──────────────────────────────────────────────────────
+    document.getElementById('totalBlocks').textContent       = totalBlocks.toLocaleString();
+    document.getElementById('numRows').textContent           = numRows.toLocaleString();
+    document.getElementById('numCols').textContent           = numCols.toLocaleString();
+    document.getElementById('capBlocks').textContent         = capBlocks.toLocaleString();
+    document.getElementById('wallFaceArea').textContent      = wallFaceArea.toFixed(1);
+    document.getElementById('backfillVolume').textContent    = backfillVolumeOrdered.toFixed(1);
+    document.getElementById('backfillVolumeCuYd').textContent= backfillVolumeCuYd.toFixed(2);
+    document.getElementById('backfillWeightLbs').textContent = Math.round(backfillWeightLbs).toLocaleString();
+    document.getElementById('totalBlockWeight').textContent  = Math.round(totalBlockWeightLbs).toLocaleString();
+
+    // Cost section — show only if any price was entered
+    const costSection = document.getElementById('costResultSection');
+    if (pricePerBlock > 0 || pricePerLbGravel > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        let breakdownHTML = '<strong>Cost Breakdown:</strong><br>';
+        if (pricePerBlock > 0) {
+            breakdownHTML += totalBlocks.toLocaleString() + ' blocks × $' + pricePerBlock.toFixed(2) + '/block = <strong>$' + blockCost.toFixed(2) + '</strong><br>';
+        }
+        if (pricePerLbGravel > 0) {
+            breakdownHTML += Math.round(backfillWeightLbs).toLocaleString() + ' lbs gravel × $' + pricePerLbGravel.toFixed(3) + '/lb = <strong>$' + gravelCost.toFixed(2) + '</strong><br>';
+        }
+        if (costPerSqFt > 0) {
+            breakdownHTML += '<em>Materials cost per sq ft of wall face: $' + costPerSqFt.toFixed(2) + '</em>';
+        }
+        document.getElementById('costBreakdown').innerHTML = breakdownHTML;
+        costSection.classList.add('active');
+    } else {
+        costSection.classList.remove('active');
+    }
+
+    // ── Formula explanation ──────────────────────────────────────────────────
+    const wallTypeName = WALL_TYPE_DATA[wallType] ? WALL_TYPE_DATA[wallType].name : wallType;
+    const embDepthIn   = (embeddedFt * 12).toFixed(1);
+    const bfThickIn    = (backfillFt * 12).toFixed(1);
+    const formulaLines = [
+        '<div class="formula-step"><strong>Wall Type:</strong> ' + wallTypeName + (capRow ? '  |  Cap Row: Yes' : '  |  Cap Row: No') + '</div>',
+        '<div class="formula-step"><strong>Wall:</strong> ' + wallHeightFt.toFixed(2) + ' ft (visible) + ' + embDepthIn + '" embedded = ' + totalHeightFt.toFixed(2) + ' ft total height</div>',
+        '<div class="formula-step"><strong>Wall Length:</strong> ' + wallLengthFt.toFixed(2) + ' ft</div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Block Counts:</strong></div>',
+        '<div class="formula-step">Rows = ⌈' + totalHeightFt.toFixed(2) + ' ÷ ' + blockHeightFt.toFixed(3) + '⌉ = <strong>' + numRows + ' rows</strong>' + (capRow && numRows > 1 ? ' (' + mainRows + ' main + 1 cap)' : '') + '</div>',
+        '<div class="formula-step">Columns = ⌈' + wallLengthFt.toFixed(2) + ' ÷ ' + blockLengthFt.toFixed(3) + '⌉ = <strong>' + numCols + ' columns</strong></div>',
+        '<div class="formula-step">Main blocks = ' + mainRows + ' × ' + numCols + ' = ' + mainBlocks + '</div>',
+        capBlocks > 0 ? '<div class="formula-step">Cap blocks = 1 × ' + numCols + ' = ' + capBlocks + '</div>' : '',
+        '<div class="formula-step">Base total = ' + baseTotal + '  →  With ' + wastePct + '% waste: ⌈' + baseTotal + ' × ' + (1 + wastePct/100).toFixed(2) + '⌉ = <strong>' + totalBlocks + ' blocks</strong></div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Wall Face Area:</strong> ' + wallHeightFt.toFixed(2) + ' × ' + wallLengthFt.toFixed(2) + ' = <strong>' + wallFaceArea.toFixed(1) + ' sq ft</strong></div>',
+        '<div class="formula-step"><strong>Block Weight:</strong> ' + totalBlocks + ' × ' + blockWeightLbs.toFixed(1) + ' lbs = <strong>' + Math.round(totalBlockWeightLbs).toLocaleString() + ' lbs (' + totalBlockWeightKg.toFixed(0) + ' kg)</strong></div>',
+        '<div class="formula-step" style="margin-top:10px;"><strong>Backfill Gravel:</strong></div>',
+        '<div class="formula-step">Volume = ' + bfThickIn + '" × ' + wallLengthFt.toFixed(2) + ' ft × ' + wallHeightFt.toFixed(2) + ' ft = ' + backfillVolumeRaw.toFixed(1) + ' ft³</div>',
+        '<div class="formula-step">With ' + compactionPct + '% compaction buffer: <strong>' + backfillVolumeOrdered.toFixed(1) + ' ft³ (' + backfillVolumeCuYd.toFixed(2) + ' cu yd)</strong></div>',
+        '<div class="formula-step">Weight = ' + backfillVolumeOrdered.toFixed(1) + ' ft³ × 84.03 lb/ft³ = <strong>' + Math.round(backfillWeightLbs).toLocaleString() + ' lbs (' + backfillWeightKg.toFixed(0) + ' kg)</strong></div>',
+    ].filter(Boolean);
+
+    if (pricePerBlock > 0 || pricePerLbGravel > 0) {
+        formulaLines.push('<div class="formula-step" style="margin-top:10px;"><strong>Total Cost: $' + totalCost.toFixed(2) + '</strong></div>');
+    }
+
+    document.getElementById('formulaExplanation').innerHTML = formulaLines.join('');
+
+    // ── Show results ─────────────────────────────────────────────────────────
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Scroll to results on mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+}
+
+// ─── Error display ────────────────────────────────────────────────────────────
+function showError(msg) {
+    alert(msg);
+}
+
+// ─── Reset calculator ─────────────────────────────────────────────────────────
+function resetCalculator() {
+    // Reset selects and inputs
+    document.getElementById('wallType').value            = 'concrete-block';
+    setCapRow('yes');
+    document.getElementById('wallHeight').value          = '4';
+    document.getElementById('wallHeightUnit').value      = 'ft';
+    document.getElementById('wallLength').value          = '20';
+    document.getElementById('wallLengthUnit').value      = 'ft';
+    document.getElementById('blockHeight').value         = '8';
+    document.getElementById('blockHeightUnit').value     = 'in';
+    document.getElementById('blockLength').value         = '16';
+    document.getElementById('blockLengthUnit').value     = 'in';
+    document.getElementById('blockWeight').value         = '35';
+    document.getElementById('blockWeightUnit').value     = 'lbs';
+    document.getElementById('embeddedDepth').value       = '4';
+    document.getElementById('embeddedDepthUnit').value   = 'in';
+    document.getElementById('backfillThickness').value   = '12';
+    document.getElementById('backfillThicknessUnit').value = 'in';
+    document.getElementById('wastePct').value            = '10';
+    document.getElementById('compactionPct').value       = '20';
+    document.getElementById('pricePerBlock').value       = '';
+    document.getElementById('pricePerLbGravel').value    = '';
+
+    // Hide results
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costResultSection').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+
+    // Clear result spans
+    const ids = ['totalBlocks','numRows','numCols','capBlocks','wallFaceArea',
+                 'backfillVolume','backfillVolumeCuYd','backfillWeightLbs',
+                 'totalBlockWeight','totalCost'];
+    ids.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '0'; });
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+
+    // Restore info card
+    updateWallTypeInfo();
+}
+
+// ─── Read More toggle ──────────────────────────────────────────────────────────
+const readMoreBtn = document.getElementById('readMoreBtn');
+const contentMore = document.getElementById('contentMore');
+
+if (readMoreBtn && contentMore) {
+    readMoreBtn.addEventListener('click', function () {
+        if (contentMore.classList.contains('expanded')) {
+            contentMore.classList.remove('expanded');
+            readMoreBtn.textContent = 'Read More';
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+                const top = contentSection.getBoundingClientRect().top + window.pageYOffset - 100;
+                window.scrollTo({ top, behavior:'smooth' });
+            }
+        } else {
+            contentMore.classList.add('expanded');
+            readMoreBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// ─── Enter key triggers calculate ─────────────────────────────────────────────
+document.querySelectorAll('.input-field').forEach(function (input) {
+    input.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') { calculateRetainingWall(); }
+    });
+});
+
+// ─── Initialize on load ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    updateWallTypeInfo();
+});
+</script>
+
+</body>
+</html>
