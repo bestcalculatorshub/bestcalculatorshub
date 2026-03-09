@@ -253,8 +253,14 @@ input, select { font-family:var(--font-body); }
 .input-group { margin-bottom:20px; }
 .input-label { display:block; font-weight:600; color:var(--slate); margin-bottom:8px; font-size:0.95em; }
 .input-row { display:flex; gap:8px; align-items:center; }
-.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; background:var(--white); }
+.input-field, .select-field { width:100%; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); font-size:1em; color:var(--slate); transition:all 0.2s; background:var(--white); min-width:0; -webkit-appearance:none; }
+.input-field { font-size:16px; } /* Prevent iOS auto-zoom on focus — must be ≥16px */
+.select-field { font-size:16px; appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:32px; cursor:pointer; }
 .input-field:focus, .select-field:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-pale); }
+/* Remove number input spinners (clutters mobile) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+input[type=number] { -moz-appearance:textfield; }
 .unit-select { width:110px; flex-shrink:0; }
 .input-hint { font-size:0.85em; color:var(--muted); margin-top:4px; }
 
@@ -298,7 +304,7 @@ input, select { font-family:var(--font-body); }
 .result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
 .result-item { background:var(--white); padding:14px; border-radius:var(--radius); text-align:center; }
 .result-item-label { font-size:0.78em; color:var(--muted); margin-bottom:4px; font-weight:500; }
-.result-item-value { font-size:1.2em; font-weight:700; color:var(--slate); }
+.result-item-value { font-size:1.2em; font-weight:700; color:var(--slate); overflow-wrap:break-word; word-break:break-word; }
 .result-item-unit { font-size:0.75em; color:var(--muted); font-weight:400; margin-left:2px; }
 
 /* Cost Display */
@@ -333,7 +339,7 @@ input, select { font-family:var(--font-body); }
 .info-box-title { font-weight:600; color:var(--teal); margin-bottom:8px; }
 .table-responsive { overflow-x:auto; margin:20px 0; }
 .calc-table { width:100%; border-collapse:collapse; }
-.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; }
+.calc-table th, .calc-table td { padding:12px; text-align:left; border-bottom:1px solid var(--border); font-size:0.9em; overflow-wrap:break-word; word-break:break-word; max-width:200px; }
 .calc-table th { background:var(--bg); font-weight:600; color:var(--slate); }
 .calc-table tr:hover td { background:#f0fdf9; }
 .content-more { max-height:0; overflow:hidden; transition:max-height 0.5s ease; }
@@ -411,12 +417,20 @@ input, select { font-family:var(--font-body); }
     .unit-select { width:100%; }
     .bonus-badge, .bonus-badge-green { display:block; margin-left:0; margin-top:4px; width:fit-content; }
     .rebar-info-card { font-size:0.8em; }
+    /* Keep symbol rows ($ and %) horizontal — never stack */
+    .input-row--symbol { flex-direction:row !important; align-items:center; }
+    .input-row--symbol .input-field { width:100%; }
 }
 
 @media (max-width:360px) {
     .hero h1 { font-size:1.3em; }
     .calculator-container { padding:16px 12px; }
     .result-section { padding:16px; }
+    .result-value { font-size:1.6em; }
+    .result-item-value { font-size:1.05em; }
+    .formula-content { font-size:0.78em; }
+    .result-grid { gap:8px; }
+    .result-item { padding:10px 8px; }
 }
 
 @media print {
@@ -565,9 +579,9 @@ input, select { font-family:var(--font-body); }
                     </div>
                     <div class="input-group" style="margin-bottom:0;">
                         <label class="input-label" for="overlapPct">Extra Percentage for Lap Splices &amp; Waste</label>
-                        <div class="input-row">
+                        <div class="input-row input-row--symbol">
                             <input type="number" class="input-field" id="overlapPct" placeholder="10" min="0" max="50" step="1" value="10">
-                            <span style="padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--slate); font-weight:600; white-space:nowrap;">%</span>
+                            <span style="padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--slate); font-weight:600; white-space:nowrap; flex-shrink:0;">%</span>
                         </div>
                         <div class="input-hint" id="lapSpliceHint">10% covers lap splices + cutting waste — standard for most residential projects. Calculator shows base vs. final footage.</div>
                     </div>
@@ -580,7 +594,7 @@ input, select { font-family:var(--font-body); }
                     </div>
                     <div class="input-group" style="margin-bottom:0;">
                         <label class="input-label" for="pricePerPound">Price per Pound (optional)</label>
-                        <div class="input-row">
+                        <div class="input-row input-row--symbol">
                             <span style="font-size:1.2em; color:var(--slate); padding:0 8px; flex-shrink:0;">$</span>
                             <input type="number" class="input-field" id="pricePerPound" placeholder="0.00" min="0" step="0.01">
                         </div>
