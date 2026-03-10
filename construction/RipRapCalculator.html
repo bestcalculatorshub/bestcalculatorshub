@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Rip Rap Calculator - Rock Size, Volume &amp; Cost | Free Tool</title>
+    <meta name="description" content="Calculate the right D50 rip rap rock size using the Isbash equation, then estimate volume, weight and total cost. Supports all rock types, turbulence levels, waste allowance and coverage area. Free.">
+    <meta name="keywords" content="rip rap calculator, riprap calculator, rip rap rock size calculator, rip rap volume calculator, rip rap cost calculator, D50 riprap, Isbash equation riprap, riprap estimator, riprap size chart">
+    <meta name="author" content="Best Calculators Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bestcalculatorshub.com/construction/RipRapCalculator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bestcalculatorshub.com/construction/RipRapCalculator">
+    <meta property="og:title" content="Rip Rap Calculator - Rock Size, Volume &amp; Cost | Free Tool">
+    <meta property="og:description" content="Calculate D50 rip rap rock size with the Isbash equation, plus volume, weight and cost. Free with void ratio correction and coverage-per-ton output.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rip Rap Calculator",
+        "description": "Calculate the correct D50 rip rap rock size using the Isbash equation for any streambed, channel lining, or slope protection project. Includes volume, weight, cost estimator, void ratio correction, riprap class classification, and coverage-per-ton output.",
+        "url": "https://bestcalculatorshub.com/construction/RipRapCalculator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": { "@type": "Organization", "name": "Best Calculators Hub" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What size rip rap do I need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the Isbash equation with your channel water velocity and rock specific gravity. For low-turbulence flow (C = 1.20) at 2 m/s with granite (SG = 2.65): D50 = 2.0² / (2 × 9.806 × 1.20² × (2.65 - 1)) = 0.086 m = 8.6 cm (3.4 inches). For high-turbulence flow (C = 0.86) the required D50 is roughly 2.5 times larger."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How deep should rip rap be installed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rip rap depth should be at least 2 times the D50 diameter. For rocks with D50 = 10 cm, install at least 20 cm (about 8 inches) deep. The US Army Corps of Engineers (USACE) also recommends checking against 1.5 times D100. Thicker installations better resist higher water velocities and storm surges."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is D50 in riprap?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "D50 is the median rock diameter — the particle size at which 50% of rocks in the riprap are smaller and 50% are larger. It is the standard sizing specification used in USACE riprap design, HEC-11 guidance, and most civil engineering riprap standards. A higher D50 means larger rocks that resist faster water velocity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much rip rap do I need per square foot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 1-foot-deep riprap with a typical rock density of 100 lb/ft³, one ton covers approximately 20 square feet. For 6-inch depth, one ton covers about 40 square feet. Coverage depends on rock density and installation depth. Use the Rip Rap Calculator above for your exact area, depth, and rock type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the Isbash constant?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Isbash constant (C) is an empirical value in the riprap sizing formula representing turbulence conditions. C = 0.86 for high-turbulence flow such as rough, aerated, or cascading water. C = 1.20 for low-turbulence flow such as a smooth, steady channel. Higher turbulence requires a smaller C value, which results in a larger required rock size."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between rip rap and gabion?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rip rap is loose rock placed directly on a slope, streambed, or channel. A gabion is rock contained inside wire mesh baskets. Gabions provide more structural rigidity and are better suited for near-vertical walls. Rip rap installs faster, costs less per square foot, and allows better natural drainage through the rock layer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does rip rap last?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Granite and basalt rip rap typically lasts 30 to 50 years or longer when properly installed with filter fabric underneath. Limestone lasts 20 to 40 years. Sandstone has the shortest lifespan at 10 to 20 years due to its lower hardness and susceptibility to weathering. Lifespan depends heavily on water velocity and proper filter layer installation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does rip rap need filter fabric underneath?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — a geotextile filter fabric layer under rip rap is strongly recommended for all installations. The fabric prevents fine soil particles from migrating up through the rock voids (piping), which causes settlement and eventual failure of the riprap. Without it, the riprap slowly sinks into the underlying soil, especially in wet or saturated conditions."
+                }
+            }
+        ]
+    }
+    </script>
+<style>
+/* RIP RAP CALCULATOR - Best Calculators Hub
+   Single file: inline CSS + JS
+   Isbash D50 | Volume | Weight | Cost | Riprap Class
+   All 14 device fixes applied from Step 5 */
+:root {
+    --navy:#0f172a; --slate:#1e293b; --slate-light:#334155; --muted:#64748b;
+    --muted-light:#94a3b8; --border:#e2e8f0; --bg:#f8fafc; --white:#ffffff;
+    --teal:#0d9488; --teal-light:#14b8a6; --teal-pale:#ccfbf1;
+    --green:#10b981; --green-light:#34d399; --green-pale:#d1fae5;
+    --orange:#f97316; --orange-pale:#ffedd5;
+    --purple:#8b5cf6; --purple-pale:#ede9fe;
+    --blue:#3b82f6; --blue-pale:#dbeafe;
+    --font-heading:'Playfair Display',Georgia,serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --max-width:1200px; --radius:8px;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg:0 8px 24px rgba(0,0,0,0.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;
+    -webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--slate);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+    padding-bottom:env(safe-area-inset-bottom);}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+button{font-family:var(--font-body);cursor:pointer;border:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+input,select{font-family:var(--font-body);}
+.nav-link{min-height:44px;display:flex;align-items:center;}
+.calculate-btn,.reset-btn,.read-more-btn,.cta-btn,.cta-result-btn{min-height:44px;touch-action:manipulation;}
+.select-field,.input-field{min-height:44px;}
+.nav-brand,.hamburger{-webkit-user-select:none;user-select:none;}
+*{-webkit-overflow-scrolling:touch;}
+/* HEADER */
+.header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);
+    padding-top:env(safe-area-inset-top);}
+.nav{max-width:var(--max-width);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3em;color:var(--navy);}
+.nav-brand-icon{font-size:1.2em;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-link{color:var(--muted);font-size:0.9em;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s;}
+.nav-link:hover{background:var(--bg);color:var(--teal);}
+.nav-link.active{color:var(--teal);background:var(--teal-pale);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px;}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--slate);border-radius:2px;transition:all 0.3s;}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3a4a 100%);padding:48px 24px;}
+.hero-content{max-width:var(--max-width);margin:0 auto;}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:0.85em;flex-wrap:wrap;}
+.breadcrumb a{color:var(--muted-light);transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--teal-light);}
+.breadcrumb-sep{color:var(--muted);}
+.breadcrumb span:last-child{color:var(--white);font-weight:500;}
+.hero h1{font-family:var(--font-heading);font-size:2.5em;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.2;}
+.hero-desc{color:var(--muted-light);font-size:0.95em;line-height:1.7;max-width:700px;}
+/* MAIN */
+.main{max-width:var(--max-width);margin:0 auto;padding:40px 24px;}
+/* CALCULATOR */
+.calculator-container{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:40px;margin-bottom:48px;box-shadow:var(--shadow-sm);}
+.calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.input-section h2{font-family:var(--font-heading);font-size:1.5em;font-weight:600;color:var(--navy);margin-bottom:24px;}
+.input-group{margin-bottom:20px;}
+.input-label{display:block;font-weight:600;color:var(--slate);margin-bottom:8px;font-size:0.95em;}
+.input-row{display:flex;gap:8px;align-items:center;}
+.input-field,.select-field{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);color:var(--slate);transition:all 0.2s;background:var(--white);min-width:0;-webkit-appearance:none;}
+.input-field{font-size:16px;}
+.select-field{font-size:16px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer;}
+.input-field:focus,.select-field:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-pale);}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
+input[type=number]{-moz-appearance:textfield;}
+.unit-select{width:110px;flex-shrink:0;}
+.input-hint{font-size:0.85em;color:var(--muted);margin-top:4px;}
+/* PURPLE - Rock Type Config */
+.rock-type-section{background:var(--purple-pale);border:2px solid var(--purple);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.rock-type-title{font-weight:600;color:var(--purple);margin-bottom:12px;font-size:0.95em;}
+.rock-info-card{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.4);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:0.85em;font-weight:500;color:var(--purple);}
+.rock-info-sep{color:var(--muted-light);}
+/* BLUE - Hydraulic Inputs */
+.hydraulic-section{background:var(--blue-pale);border:2px solid var(--blue);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.hydraulic-title{font-weight:600;color:var(--blue);margin-bottom:12px;font-size:0.95em;}
+/* GREEN - Coverage & Waste */
+.coverage-section{background:var(--green-pale);border:2px solid var(--green);border-radius:var(--radius);padding:16px;margin-bottom:20px;}
+.coverage-section-title{font-weight:600;color:var(--green);margin-bottom:12px;font-size:0.95em;}
+/* ORANGE - Cost */
+.price-section{background:var(--orange-pale);border:2px solid var(--orange);border-radius:var(--radius);padding:16px;margin-top:4px;}
+.price-section-title{font-weight:600;color:var(--orange);margin-bottom:12px;font-size:0.95em;}
+.bonus-badge{background:var(--orange);color:var(--white);font-size:0.75em;padding:4px 8px;border-radius:4px;margin-left:8px;font-weight:700;}
+.bonus-badge-green{background:var(--green);color:var(--white);font-size:0.75em;padding:4px 8px;border-radius:4px;margin-left:8px;font-weight:700;}
+.calculate-btn{width:100%;background:var(--teal);color:var(--white);padding:14px 24px;border-radius:var(--radius);font-weight:600;font-size:1.05em;transition:background 0.2s;margin-top:20px;}
+.calculate-btn:hover{background:#0f766e;}
+.reset-btn{width:100%;background:var(--white);color:var(--slate);border:1px solid var(--border);padding:12px 24px;border-radius:var(--radius);font-weight:500;font-size:0.95em;transition:background 0.2s,border-color 0.2s;margin-top:12px;}
+.reset-btn:hover{background:var(--bg);border-color:var(--slate-light);}
+/* RESULTS */
+.result-section{background:linear-gradient(135deg,var(--teal-pale) 0%,#e0f2f1 100%);border-radius:12px;padding:32px;border:2px solid var(--teal-light);}
+.result-section h2{font-family:var(--font-heading);font-size:1.5em;font-weight:600;color:var(--navy);margin-bottom:20px;}
+.result-empty{text-align:center;padding:40px 20px;color:var(--muted);}
+.result-empty-icon{font-size:2.5em;margin-bottom:12px;}
+.result-empty-text{font-size:0.95em;}
+.result-display{display:none;}
+.result-display.active{display:block;}
+.result-main{background:var(--white);border-radius:var(--radius);padding:24px;margin-bottom:20px;text-align:center;border:2px solid var(--teal);}
+.result-label{font-size:0.9em;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.result-value{font-size:2.5em;font-weight:700;color:var(--teal);font-family:var(--font-heading);line-height:1;}
+.result-unit{font-size:0.5em;font-weight:500;color:var(--slate);}
+.result-sub{font-size:0.85em;color:var(--muted);margin-top:6px;}
+/* Riprap class badge */
+.riprap-class-badge{display:inline-block;background:var(--teal);color:var(--white);font-size:0.8em;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:8px;letter-spacing:0.5px;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+.result-item{background:var(--white);padding:14px;border-radius:var(--radius);text-align:center;}
+.result-item-label{font-size:0.78em;color:var(--muted);margin-bottom:4px;font-weight:500;}
+.result-item-value{font-size:1.2em;font-weight:700;color:var(--slate);overflow-wrap:break-word;word-break:break-word;}
+.result-item-unit{font-size:0.75em;color:var(--muted);font-weight:400;margin-left:2px;}
+.cost-display{background:linear-gradient(135deg,var(--orange-pale) 0%,#fef3c7 100%);border:2px solid var(--orange);border-radius:var(--radius);padding:20px;margin-bottom:16px;display:none;}
+.cost-display.active{display:block;}
+.cost-main{text-align:center;margin-bottom:12px;}
+.cost-label{font-size:0.9em;color:#c2410c;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.cost-value{font-size:2em;font-weight:700;color:var(--orange);font-family:var(--font-heading);}
+.cost-breakdown{background:rgba(255,255,255,0.7);padding:12px;border-radius:var(--radius);font-size:0.88em;color:var(--slate);line-height:1.8;}
+.formula-box{background:rgba(255,255,255,0.7);padding:18px;border-radius:var(--radius);border-left:4px solid var(--teal);margin-bottom:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.formula-title{font-weight:600;color:var(--slate);margin-bottom:10px;font-size:0.95em;}
+.formula-content{font-family:'Courier New',monospace;color:var(--navy);font-size:0.88em;line-height:1.9;}
+.formula-step{margin-bottom:4px;word-break:break-word;overflow-wrap:anywhere;}
+.cta-result{display:none;}
+.cta-result.active{display:block;}
+.cta-result-btn{display:block;width:100%;background:var(--green);color:var(--white);padding:14px 24px;border-radius:var(--radius);font-weight:600;text-align:center;transition:background 0.2s;}
+.cta-result-btn:hover{background:#059669;}
+/* CONTENT */
+.content-section{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:48px 40px;margin-bottom:48px;box-shadow:var(--shadow-sm);}
+.content-section h2{font-family:var(--font-heading);font-size:1.8em;font-weight:600;color:var(--navy);margin-bottom:24px;}
+.content-text{color:var(--muted);font-size:0.95em;line-height:1.9;}
+.content-text p{margin-bottom:18px;}
+.content-text h3{font-size:1.2em;font-weight:600;color:var(--slate);margin-top:32px;margin-bottom:14px;}
+.content-text ul,.content-text ol{margin:16px 0;padding-left:24px;}
+.content-text li{margin-bottom:10px;}
+.content-text strong{color:var(--slate);}
+.info-box{background:var(--teal-pale);border-left:4px solid var(--teal);padding:16px 20px;border-radius:var(--radius);margin:20px 0;}
+.info-box-title{font-weight:600;color:var(--teal);margin-bottom:8px;}
+.warning-box{background:#fff7ed;border-left:4px solid var(--orange);padding:16px 20px;border-radius:var(--radius);margin:20px 0;}
+.warning-box-title{font-weight:600;color:var(--orange);margin-bottom:8px;}
+.table-responsive{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+.calc-table{width:100%;border-collapse:collapse;}
+.calc-table th,.calc-table td{padding:12px;text-align:left;border-bottom:1px solid var(--border);font-size:0.9em;overflow-wrap:break-word;word-break:break-word;}
+.calc-table th{background:var(--bg);font-weight:600;color:var(--slate);}
+.calc-table tr:hover td{background:#f0fdf9;}
+.content-more{max-height:0;overflow:hidden;transition:max-height 0.5s ease;}
+.content-more.expanded{max-height:16000px;}
+.read-more-btn{display:block;margin:24px auto 0;background:var(--teal);color:var(--white);padding:12px 32px;border-radius:var(--radius);font-weight:600;font-size:0.95em;transition:background 0.2s;cursor:pointer;border:none;}
+.read-more-btn:hover{background:#0f766e;}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--teal),#0f766e);border-radius:12px;padding:48px 40px;text-align:center;margin-bottom:48px;}
+.cta-section h2{font-family:var(--font-heading);font-size:2em;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.3;}
+.cta-section p{color:rgba(255,255,255,0.95);font-size:1.05em;line-height:1.7;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;}
+.cta-btn{display:inline-block;background:var(--white);color:var(--teal);font-weight:600;font-size:1em;padding:14px 36px;border-radius:var(--radius);transition:box-shadow 0.2s;}
+.cta-btn:hover{box-shadow:0 6px 20px rgba(255,255,255,0.3);}
+/* FOOTER */
+.footer{background:var(--navy);color:var(--muted-light);margin-top:64px;}
+.footer-inner{max-width:var(--max-width);margin:0 auto;padding:56px 24px 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--slate-light);}
+.footer-brand{font-size:1.3em;font-weight:700;color:var(--white);margin-bottom:12px;}
+.footer-brand-desc{font-size:0.85em;color:var(--muted);line-height:1.7;margin-bottom:20px;max-width:280px;}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap;}
+.social-link{background:rgba(255,255,255,0.08);color:var(--muted-light);font-size:0.8em;padding:8px 16px;border-radius:var(--radius);transition:all 0.2s;}
+.social-link:hover{background:var(--teal);color:var(--white);}
+.footer-title{color:var(--white);font-size:0.85em;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{color:var(--muted);font-size:0.9em;transition:color 0.2s;}
+.footer-links a:hover{color:var(--teal-light);}
+.footer-bottom{padding-top:24px;text-align:center;}
+.footer-copy{font-size:0.85em;color:var(--muted);}
+
+/* =============================================
+   RESPONSIVE — fully audited Step 5
+   Breakpoints: 768 · 640 · 480 · 360 · 320
+   + landscape phones + hover-safe + print
+   ============================================= */
+@media (hover:hover) and (pointer:fine){
+    .calculate-btn:hover{background:#0f766e;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .reset-btn:hover{background:var(--bg);border-color:var(--slate-light);}
+    .cta-result-btn:hover{background:#059669;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .read-more-btn:hover{background:#0f766e;transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .cta-btn:hover{box-shadow:0 6px 20px rgba(255,255,255,0.3);transform:translateY(-2px);}
+    .nav-link:hover{background:var(--bg);color:var(--teal);}
+    .social-link:hover{background:var(--teal);color:var(--white);}
+    .footer-links a:hover{color:var(--teal-light);}
+    .breadcrumb a:hover{color:var(--teal-light);}
+}
+@media (max-width:768px){
+    .nav{padding:0 20px;}
+    .hero{padding:40px 20px;}
+    .hero h1{font-size:2em;}
+    .main{padding:32px 20px;}
+    .calculator-container{padding:24px 20px;}
+    .calculator-grid{grid-template-columns:1fr;gap:24px;}
+    .result-grid{grid-template-columns:1fr 1fr;}
+    .result-value{font-size:2em;}
+    .cost-value{font-size:1.8em;}
+    .content-section{padding:32px 24px;}
+    .content-section h2{font-size:1.5em;}
+    .cta-section{padding:32px 24px;}
+    .cta-section h2{font-size:1.6em;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+}
+@media (max-height:500px) and (orientation:landscape){
+    .hero{padding:20px 16px;}
+    .hero h1{font-size:1.6em;margin-bottom:8px;}
+    .hero-desc{display:none;}
+    .breadcrumb{margin-bottom:10px;}
+}
+@media (max-width:640px){
+    .hamburger{display:flex;}
+    .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);
+        flex-direction:column;padding:12px;gap:4px;box-shadow:var(--shadow-md);
+        border-top:1px solid var(--border);z-index:999;}
+    .nav-links.active{display:flex;}
+    .nav-link{padding:14px 16px;width:100%;text-align:center;}
+    .hero{padding:32px 16px;}
+    .hero h1{font-size:1.7em;}
+    .main{padding:24px 16px;}
+    .calculator-container{padding:20px 16px;}
+    .input-section h2,.result-section h2{font-size:1.3em;}
+    .result-section{padding:20px;}
+    .content-section{padding:24px 16px;}
+    .content-section h2{font-size:1.3em;}
+    .cta-section{padding:28px 16px;}
+    .cta-section h2{font-size:1.4em;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+    .footer-inner{padding:40px 16px 20px;}
+    .result-grid{grid-template-columns:1fr 1fr;}
+    .calc-table th,.calc-table td{padding:9px 8px;font-size:0.85em;}
+}
+@media (max-width:480px){
+    .hero h1{font-size:1.5em;}
+    .result-value{font-size:1.8em;}
+    .cost-value{font-size:1.5em;}
+    .formula-content{font-size:0.82em;}
+    .input-row{flex-direction:column;}
+    .unit-select{width:100%;}
+    .bonus-badge,.bonus-badge-green{display:inline-block;margin-left:0;margin-top:4px;}
+    .rock-info-card{font-size:0.8em;}
+    .input-row--symbol{flex-direction:row !important;align-items:center;gap:8px;}
+    .input-row--symbol .input-field{width:100%;min-width:0;}
+    .rock-info-sep{display:none;}
+    .rock-info-card{flex-direction:column;align-items:flex-start;gap:2px;}
+}
+@media (max-width:360px){
+    .hero h1{font-size:1.3em;}
+    .calculator-container{padding:16px 12px;}
+    .result-section{padding:16px;}
+    .result-value{font-size:1.6em;}
+    .result-item-value{font-size:1.05em;}
+    .formula-content{font-size:0.78em;}
+    .result-grid{gap:8px;}
+    .result-item{padding:10px 8px;}
+    .cost-value{font-size:1.3em;}
+    .cost-breakdown{font-size:0.82em;}
+}
+@media (max-width:320px){
+    .hero{padding:24px 12px;}
+    .hero h1{font-size:1.15em;line-height:1.3;}
+    .main{padding:16px 12px;}
+    .calculator-container{padding:14px 10px;}
+    .result-section{padding:12px;}
+    .result-value{font-size:1.4em;}
+    .result-item{padding:8px 6px;}
+    .result-item-value{font-size:0.95em;}
+    .result-item-label{font-size:0.72em;}
+    .formula-content{font-size:0.74em;}
+    .input-label{font-size:0.88em;}
+    .input-hint{font-size:0.78em;}
+    .content-section{padding:20px 12px;}
+    .cta-section{padding:24px 12px;}
+    .cta-section h2{font-size:1.2em;}
+    .calculate-btn{font-size:0.95em;}
+    .rock-type-section,.hydraulic-section,.coverage-section,.price-section{padding:12px 10px;}
+}
+@media print{
+    .header,.footer,.cta-section,.read-more-btn,.reset-btn{display:none;}
+    .content-more{max-height:none !important;}
+    .calculator-container{border:1px solid #000;box-shadow:none;}
+    .result-section{border:1px solid #000;background:none !important;}
+    body{font-size:12pt;}
+}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <nav class="breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-sep">&rsaquo;</span>
+            <a href="../construction.html">Construction</a>
+            <span class="breadcrumb-sep">&rsaquo;</span>
+            <span>Rip Rap Calculator</span>
+        </nav>
+        <h1>Rip Rap Calculator</h1>
+        <p class="hero-desc">Calculate the correct D50 rip rap rock size using the <strong>Isbash equation</strong> &mdash; then estimate total volume, weight, and material cost for any streambed, channel lining, or slope protection project. <strong>Supports all rock types</strong> with auto-filled specific gravity, void ratio correction, riprap class classification, and coverage-per-ton output that most calculators skip.</p>
+    </div>
+</section>
+
+<div class="main">
+<div class="calculator-container">
+<div class="calculator-grid">
+
+<!-- INPUT SECTION -->
+<div class="input-section">
+<h2>Configure Your Rip Rap Calculation</h2>
+
+<!-- PURPLE: Rock Type & Application -->
+<div class="rock-type-section">
+    <div class="rock-type-title">Rock Type &amp; Application</div>
+    <div class="input-group">
+        <label class="input-label" for="rockType">Rock Type</label>
+        <select class="select-field" id="rockType" onchange="updateRockTypeInfo()">
+            <option value="granite" selected>Granite (SG 2.65)</option>
+            <option value="limestone">Limestone (SG 2.55)</option>
+            <option value="basalt">Basalt (SG 2.85)</option>
+            <option value="quartzite">Quartzite (SG 2.65)</option>
+            <option value="sandstone">Sandstone (SG 2.35)</option>
+            <option value="custom">Custom / Unknown Rock</option>
+        </select>
+    </div>
+    <div class="input-group" style="margin-bottom:0;">
+        <label class="input-label" for="applicationType">Application Type</label>
+        <select class="select-field" id="applicationType" onchange="updateAppHint()">
+            <option value="channel" selected>Channel Lining / Streambed</option>
+            <option value="slope">Slope &amp; Embankment Protection</option>
+            <option value="bank">Bank Stabilization</option>
+            <option value="decorative">Decorative / Landscape</option>
+        </select>
+        <div class="rock-info-card" id="rockInfoCard">
+            <span id="rockInfoType">Granite</span>
+            <span class="rock-info-sep">&bull;</span>
+            <span id="rockInfoSG">SG: 2.65</span>
+            <span class="rock-info-sep">&bull;</span>
+            <span id="rockInfoDensity">165 lb/ft&sup3;</span>
+            <span class="rock-info-sep">&bull;</span>
+            <span id="rockInfoLifespan">Lifespan: 50+ years</span>
+        </div>
+        <div class="input-hint" id="appHint">Channel lining: Isbash equation determines minimum D50 to resist scour at your design velocity.</div>
+    </div>
+</div>
+
+<!-- BLUE: Hydraulic & Dimension Inputs -->
+<div class="hydraulic-section">
+    <div class="hydraulic-title">Hydraulic &amp; Sizing Inputs</div>
+    <div class="input-group">
+        <label class="input-label" for="waterVelocity">Water Velocity <span style="color:var(--muted);font-weight:400;">(average channel velocity)</span></label>
+        <div class="input-row">
+            <input type="number" class="input-field" id="waterVelocity" placeholder="Enter velocity" min="0.1" step="0.1" value="2">
+            <select class="select-field unit-select" id="velocityUnit">
+                <option value="ms" selected>m/s</option>
+                <option value="fps">ft/s</option>
+                <option value="mph">mph</option>
+                <option value="kph">km/h</option>
+            </select>
+        </div>
+        <div class="input-hint">Typical stream: 0.5&ndash;3 m/s. Storm channel: 2&ndash;6 m/s. Flood spillway: 4&ndash;10 m/s.</div>
+    </div>
+    <div class="input-group">
+        <label class="input-label" for="turbulence">Flow Turbulence Level</label>
+        <select class="select-field" id="turbulence">
+            <option value="low" selected>Low turbulence &mdash; smooth, steady flow (C = 1.20)</option>
+            <option value="high">High turbulence &mdash; rough, aerated, cascading flow (C = 0.86)</option>
+        </select>
+        <div class="input-hint">Low turbulence: rivers, canals, gradual slopes. High turbulence: cascading channels, spillways, sharp bends.</div>
+    </div>
+    <div class="input-group">
+        <label class="input-label" for="specificGravity">Specific Gravity of Rock <span style="color:var(--muted);font-weight:400;">(from supplier or lab)</span></label>
+        <div class="input-row input-row--symbol">
+            <input type="number" class="input-field" id="specificGravity" placeholder="2.65" min="1.5" max="4.0" step="0.01" value="2.65">
+        </div>
+        <div class="input-hint" id="sgHint">Granite: 2.65 &nbsp;|&nbsp; Limestone: 2.50&ndash;2.65 &nbsp;|&nbsp; Basalt: 2.70&ndash;3.00 &nbsp;|&nbsp; Sandstone: 2.20&ndash;2.50</div>
+    </div>
+    <div class="input-group">
+        <label class="input-label" for="coverageArea">Area to Cover</label>
+        <div class="input-row">
+            <input type="number" class="input-field" id="coverageArea" placeholder="Enter area" min="0.1" step="1" value="100">
+            <select class="select-field unit-select" id="areaUnit">
+                <option value="sqft" selected>sq ft</option>
+                <option value="sqm">sq m</option>
+                <option value="sqyd">sq yd</option>
+                <option value="acre">acres</option>
+            </select>
+        </div>
+    </div>
+    <div class="input-group">
+        <label class="input-label" for="riprapDepth">Riprap Depth / Thickness</label>
+        <div class="input-row">
+            <input type="number" class="input-field" id="riprapDepth" placeholder="Enter depth" min="0.5" step="0.5" value="12">
+            <select class="select-field unit-select" id="depthUnit">
+                <option value="in" selected>inches</option>
+                <option value="ft">feet</option>
+                <option value="cm">cm</option>
+                <option value="m">meters</option>
+            </select>
+        </div>
+        <div class="input-hint" id="depthHint">Recommended: at least 2&times; D50 diameter. For D50 = 6", install at least 12" deep.</div>
+    </div>
+    <div class="input-group" style="margin-bottom:0;">
+        <label class="input-label" for="numLayers">Number of Rock Layers</label>
+        <div class="input-row input-row--symbol">
+            <input type="number" class="input-field" id="numLayers" placeholder="2" min="1" max="10" step="1" value="2">
+            <span style="padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);color:var(--slate);font-weight:600;white-space:nowrap;flex-shrink:0;">layers</span>
+        </div>
+        <div class="input-hint">Standard is 2 layers. High-velocity channels or storm spillways often use 3 layers for redundancy.</div>
+    </div>
+</div>
+
+<!-- GREEN BONUS: Void Ratio & Waste -->
+<div class="coverage-section">
+    <div class="coverage-section-title">Void Ratio &amp; Waste Allowance <span class="bonus-badge-green">BONUS</span></div>
+    <div class="input-group">
+        <label class="input-label" for="voidRatio">Void Ratio (air gaps between rocks)</label>
+        <div class="input-row input-row--symbol">
+            <input type="number" class="input-field" id="voidRatio" placeholder="30" min="0" max="60" step="1" value="30">
+            <span style="padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);color:var(--slate);font-weight:600;white-space:nowrap;flex-shrink:0;">%</span>
+        </div>
+        <div class="input-hint">Typical riprap void ratio: 25&ndash;40%. Our calculator accounts for void space so your order covers the full volume &mdash; no competitor does this.</div>
+    </div>
+    <div class="input-group" style="margin-bottom:0;">
+        <label class="input-label" for="wastePct">Waste Allowance</label>
+        <div class="input-row input-row--symbol">
+            <input type="number" class="input-field" id="wastePct" placeholder="15" min="0" max="50" step="1" value="15">
+            <span style="padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);color:var(--slate);font-weight:600;white-space:nowrap;flex-shrink:0;">%</span>
+        </div>
+        <div class="input-hint">15% standard for slopes and channels. Use 20% for irregular shorelines or curved areas.</div>
+    </div>
+</div>
+
+<!-- ORANGE BONUS: Cost Estimator -->
+<div class="price-section">
+    <div class="price-section-title">Cost Estimator <span class="bonus-badge">BONUS</span></div>
+    <div class="input-group" style="margin-bottom:0;">
+        <label class="input-label" for="pricePerTon">Price per Ton of Rip Rap (optional)</label>
+        <div class="input-row input-row--symbol">
+            <span style="font-size:1.2em;color:var(--slate);padding:0 8px;flex-shrink:0;">$</span>
+            <input type="number" class="input-field" id="pricePerTon" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="input-hint">Granite riprap: $35&ndash;$75/ton. Limestone: $25&ndash;$55/ton. Prices vary by region and haul distance (2026).</div>
+    </div>
+</div>
+
+<button class="calculate-btn" onclick="calculateRipRap()">Calculate Rip Rap</button>
+<button class="reset-btn" onclick="resetCalculator()">Reset</button>
+</div><!-- end input-section -->
+
+<!-- RESULT SECTION -->
+<div class="result-section">
+<h2>Calculation Results</h2>
+
+<div class="result-empty" id="resultEmpty">
+    <div class="result-empty-icon">&#x1FAA8;</div>
+    <div class="result-empty-text">Enter your channel velocity and dimensions, then click <strong>Calculate Rip Rap</strong> to see results</div>
+</div>
+
+<div class="result-display" id="resultDisplay">
+
+    <!-- Primary: D50 -->
+    <div class="result-main">
+        <div class="result-label">Required D50 Rock Diameter (Isbash)</div>
+        <div class="result-value"><span id="d50Inches">0</span> <span class="result-unit">inches</span></div>
+        <div class="result-sub" id="d50Cm">— cm</div>
+        <div id="riprapClassBadge" class="riprap-class-badge" style="display:none;"></div>
+    </div>
+
+    <!-- Cost (conditional) -->
+    <div class="cost-display" id="costDisplay">
+        <div class="cost-main">
+            <div class="cost-label">Estimated Material Cost</div>
+            <div class="cost-value">$<span id="totalCost">0.00</span></div>
+        </div>
+        <div class="cost-breakdown" id="costBreakdown"></div>
+    </div>
+
+    <!-- 8-item Result Grid -->
+    <div class="result-grid">
+        <div class="result-item">
+            <div class="result-item-label">D50 in Millimeters</div>
+            <div class="result-item-value"><span id="d50Mm">0</span><span class="result-item-unit"> mm</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Min Layer Depth (2&times;D50)</div>
+            <div class="result-item-value"><span id="minDepth">0</span><span class="result-item-unit"> in</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Riprap Volume</div>
+            <div class="result-item-value"><span id="volumeCuYd">0</span><span class="result-item-unit"> cu yd</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Riprap Weight</div>
+            <div class="result-item-value"><span id="weightTons">0</span><span class="result-item-unit"> tons</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Weight (metric)</div>
+            <div class="result-item-value"><span id="weightKg">0</span><span class="result-item-unit"> kg</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Coverage per Ton</div>
+            <div class="result-item-value"><span id="coveragePerTon">0</span><span class="result-item-unit"> sq ft/ton</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Rock Density</div>
+            <div class="result-item-value"><span id="rockDensity">0</span><span class="result-item-unit"> lb/ft&sup3;</span></div>
+        </div>
+        <div class="result-item">
+            <div class="result-item-label">Area Covered</div>
+            <div class="result-item-value"><span id="areaSqFt">0</span><span class="result-item-unit"> sq ft</span></div>
+        </div>
+    </div>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+        <div class="formula-title">How We Calculated (Isbash Equation)</div>
+        <div class="formula-content" id="formulaExplanation"></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-result" id="ctaResult">
+        <a href="../construction.html" class="cta-result-btn">&rarr; Explore More Construction Calculators</a>
+    </div>
+
+</div><!-- end result-display -->
+</div><!-- end result-section -->
+</div><!-- end calculator-grid -->
+</div><!-- end calculator-container -->
+
+<!-- CONTENT SECTION -->
+<div class="content-section">
+<h2>Rip Rap Calculator Guide &mdash; D50, Volume and Cost</h2>
+<div class="content-text">
+
+<p>Rip rap is one of the most reliable and widely used erosion control methods in civil engineering &mdash; but choosing the wrong rock size is a costly mistake. Rocks that are too small get swept away by current. Rocks that are too large waste budget on material and equipment. This guide explains exactly how to calculate rip rap rock size, how much material you need, and what to budget for your project.</p>
+
+<p>Whether you are lining a drainage channel, stabilizing a stream bank, protecting a slope from storm runoff, or installing decorative landscape riprap, the sizing process starts in the same place: the Isbash equation.</p>
+
+<h3>What is Rip Rap?</h3>
+
+<p>A <strong>rip rap</strong> (also written as riprap) is a layer of angular or irregularly shaped rocks placed directly on a slope, streambed, or channel bank to resist erosion caused by moving water. Unlike a retaining wall or gabion, rip rap does not require mortar or wire mesh &mdash; the rocks interlock by gravity and their own irregular shapes to form a stable, permeable armor layer.</p>
+
+<p>Rip rap is used in two main categories. <strong>Structural riprap</strong> is engineered to resist a specific water velocity &mdash; the rock size is calculated using the Isbash equation or USACE design guidance, and the installation depth must meet minimum standards. <strong>Decorative riprap</strong> is placed for visual effect with no hydraulic loading requirement. This calculator handles both, with the Isbash D50 calculation only relevant for structural installations with water flow.</p>
+
+<h3>How to Calculate Rip Rap Rock Size &mdash; The Isbash Equation</h3>
+
+<p>The industry-standard method for sizing riprap against water velocity is the <strong>Isbash equation</strong>:</p>
+
+<div class="info-box">
+<div class="info-box-title">Isbash Equation</div>
+<p><strong>D50 = V&sup2; &divide; (2 &times; g &times; C&sup2; &times; (S &minus; 1))</strong></p>
+<p>Where: <strong>D50</strong> = median rock diameter (m) &nbsp;|&nbsp; <strong>V</strong> = water velocity (m/s) &nbsp;|&nbsp; <strong>g</strong> = 9.806 m/s&sup2; &nbsp;|&nbsp; <strong>C</strong> = Isbash constant (0.86 high turbulence, 1.20 low turbulence) &nbsp;|&nbsp; <strong>S</strong> = specific gravity of rock</p>
+</div>
+
+<p>The Isbash constant C is the key variable that accounts for flow turbulence. For <strong>low turbulence flow</strong> (smooth, steady current in a straight channel), C = 1.20. For <strong>high turbulence flow</strong> (cascading water, sharp bends, aerated spillways), C = 0.86. High turbulence requires a smaller C value, which produces a larger required D50 &mdash; you need bigger rocks to resist chaotic flow than you do for smooth flow at the same velocity.</p>
+
+<h3>Riprap Size Classification Chart &mdash; Class I Through Class V</h3>
+
+<p>Once you calculate D50, you can match it to a standard riprap size class. Most quarries and suppliers stock material to these USACE-based classifications:</p>
+
+<div class="table-responsive">
+<table class="calc-table">
+<thead><tr><th>Riprap Class</th><th>D50 Range</th><th>Typical Weight per Stone</th><th>Typical Application</th></tr></thead>
+<tbody>
+<tr><td><strong>Class I</strong></td><td>3&ndash;6 inches (8&ndash;15 cm)</td><td>5&ndash;25 lbs</td><td>Low-velocity streams, garden drainage, decorative</td></tr>
+<tr><td><strong>Class II</strong></td><td>6&ndash;12 inches (15&ndash;30 cm)</td><td>25&ndash;150 lbs</td><td>Moderate streams, roadside ditches, culvert outlets</td></tr>
+<tr><td><strong>Class III</strong></td><td>12&ndash;18 inches (30&ndash;46 cm)</td><td>150&ndash;400 lbs</td><td>High-velocity channels, stream bank stabilization</td></tr>
+<tr><td><strong>Class IV</strong></td><td>18&ndash;24 inches (46&ndash;61 cm)</td><td>400&ndash;1,000 lbs</td><td>Flood channels, levee protection, bridge abutments</td></tr>
+<tr><td><strong>Class V</strong></td><td>24&ndash;36 inches (61&ndash;91 cm)</td><td>1,000&ndash;3,000 lbs</td><td>Dam spillways, tidal zones, high-energy coastal</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>How Much Rip Rap Do I Need? Volume and Weight</h3>
+
+<p>Once you know D50, volume is calculated from your coverage area and riprap depth. The <strong>minimum installation depth is 2 times D50</strong> &mdash; for D50 = 10 cm rocks, you need at least 20 cm (8 inches) of riprap depth. Our calculator also applies a <strong>void ratio correction</strong> (default 30%) that accounts for the air gaps between rocks. This is the factor most calculators miss: a cubic yard of riprap ordered is not a solid cubic yard of rock &mdash; roughly 25&ndash;40% of that volume is empty space.</p>
+
+<div class="info-box">
+<div class="info-box-title">Volume Formula (with Void Ratio)</div>
+<p>Raw volume = Area &times; Depth &times; Layers. Adjusted volume = Raw volume &divide; (1 &minus; void ratio). Weight = Adjusted volume &times; Rock density. Coverage per ton = Area &divide; Weight in tons. Our calculator applies this full chain automatically.</p>
+</div>
+
+<h3>Rip Rap Project Guide &mdash; Applications and Specifications</h3>
+
+<div class="table-responsive">
+<table class="calc-table">
+<thead><tr><th>Application</th><th>Typical Velocity</th><th>Recommended Turbulence</th><th>Min Depth</th><th>Filter Fabric?</th></tr></thead>
+<tbody>
+<tr><td>Garden drainage / decorative</td><td>&lt; 1 m/s</td><td>Low</td><td>4&ndash;6 inches</td><td>Recommended</td></tr>
+<tr><td>Roadside ditch lining</td><td>1&ndash;2 m/s</td><td>Low</td><td>8&ndash;12 inches</td><td>Yes</td></tr>
+<tr><td>Stream bank stabilization</td><td>1.5&ndash;3 m/s</td><td>Low&ndash;High</td><td>12&ndash;18 inches</td><td>Yes</td></tr>
+<tr><td>Culvert outlet protection</td><td>2&ndash;4 m/s</td><td>High</td><td>18&ndash;24 inches</td><td>Yes</td></tr>
+<tr><td>Flood channel lining</td><td>3&ndash;6 m/s</td><td>High</td><td>24&ndash;36 inches</td><td>Yes (with gravel filter)</td></tr>
+<tr><td>Dam spillway / levee</td><td>5&ndash;10 m/s</td><td>High</td><td>36+ inches</td><td>Yes (engineered design)</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- READ MORE -->
+<div class="content-more" id="contentMore">
+
+<h3>Types of Rip Rap</h3>
+
+<p>Rip rap comes in two structural forms and several material types. Understanding the difference helps you specify the right product to your supplier.</p>
+
+<p><strong>Loose riprap</strong> is the standard form &mdash; angular rock dumped or placed directly on a prepared slope with filter fabric underneath. It is flexible, self-draining, and the most common form for channel and bank protection. <strong>Grouted riprap</strong> has the voids between rocks filled with mortar or concrete grout. Grouting eliminates drainage through the riprap layer (which requires weep holes for pressure relief) but adds significant rigidity and resistance to displacement. Grouted riprap is used where loose riprap cannot be maintained or where wave action is severe.</p>
+
+<div class="table-responsive">
+<table class="calc-table">
+<thead><tr><th>Rock Type</th><th>Specific Gravity</th><th>Density (lb/ft&sup3;)</th><th>Lifespan</th><th>Best For</th></tr></thead>
+<tbody>
+<tr><td><strong>Granite</strong></td><td>2.63&ndash;2.75</td><td>162&ndash;171</td><td>50+ years</td><td>All applications, hardest and most durable</td></tr>
+<tr><td><strong>Basalt</strong></td><td>2.70&ndash;3.00</td><td>168&ndash;187</td><td>50+ years</td><td>High-velocity channels, coastal zones</td></tr>
+<tr><td><strong>Limestone</strong></td><td>2.50&ndash;2.65</td><td>156&ndash;165</td><td>20&ndash;40 years</td><td>Low&ndash;medium velocity, widely available</td></tr>
+<tr><td><strong>Quartzite</strong></td><td>2.60&ndash;2.70</td><td>162&ndash;168</td><td>40&ndash;60 years</td><td>Excellent durability, similar to granite</td></tr>
+<tr><td><strong>Sandstone</strong></td><td>2.20&ndash;2.50</td><td>137&ndash;156</td><td>10&ndash;20 years</td><td>Decorative, low-velocity only</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Void Ratio and Compaction &mdash; Why Our Calculator Is More Accurate</h3>
+
+<p>Every other riprap calculator calculates volume as simply Area &times; Depth, then converts directly to weight using rock density. This is wrong for one critical reason: riprap is not a solid block of rock. It is a pile of individual stones with significant air space between them.</p>
+
+<p>The <strong>void ratio</strong> (also called porosity) of riprap is typically 25&ndash;40% depending on rock angularity, gradation, and how tightly it is placed. A void ratio of 30% means 30% of the total riprap volume is air, not rock. If you order riprap based on gross volume without accounting for void ratio, you are calculating the weight of 100% solid rock &mdash; and you will significantly overestimate how much you need to order. Our calculator accounts for this by dividing the gross volume by (1 &minus; void ratio) to find the true rock volume before converting to weight and cost.</p>
+
+<div class="warning-box">
+<div class="warning-box-title">Why Most Estimates Come Up Short</div>
+<p>Contractors frequently run short on riprap because they calculate volume correctly but then convert directly to tons using the rock's solid density. The 30% void space is the difference between a good estimate and re-ordering mid-project. Always verify your void ratio with the supplier or a geotechnical engineer for large projects.</p>
+</div>
+
+<h3>Rip Rap Installation Guide</h3>
+
+<p>Proper riprap installation is as important as selecting the right rock size. A correctly sized riprap on improperly prepared ground can still fail within a few seasons.</p>
+
+<p>The installation sequence starts with <strong>subgrade preparation</strong> &mdash; the slope must be graded to a stable angle (typically 1V:2H or flatter for most rock types). Next, a <strong>geotextile filter fabric</strong> is placed over the entire prepared surface. This fabric is critical: it separates the native soil from the riprap and prevents fines from migrating upward through the rock voids over time. Skip the filter fabric and the riprap will gradually sink into the subgrade, losing its protective depth.</p>
+
+<p>The filter fabric is followed by a <strong>gravel filter layer</strong> (optional on low-velocity projects, required for high-velocity) before the riprap itself is placed. Riprap should be placed from the bottom of a slope upward, and from the downstream end upstream in channel applications. Rocks should be placed to achieve good interlock with no voids larger than the D50 size and no tendency for the face stones to rotate outward.</p>
+
+<h3>Rip Rap Cost Guide &mdash; 2026</h3>
+
+<div class="table-responsive">
+<table class="calc-table">
+<thead><tr><th>Cost Item</th><th>Typical Range (2026)</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Granite riprap (material)</td><td>$35&ndash;$75 per ton</td><td>Varies significantly by haul distance</td></tr>
+<tr><td>Limestone riprap (material)</td><td>$25&ndash;$55 per ton</td><td>More widely available in eastern US</td></tr>
+<tr><td>Basalt riprap (material)</td><td>$40&ndash;$80 per ton</td><td>More common in Pacific Northwest</td></tr>
+<tr><td>Geotextile filter fabric</td><td>$0.30&ndash;$0.80 per sq ft</td><td>Buy 15% extra for overlaps and edges</td></tr>
+<tr><td>Gravel filter layer (optional)</td><td>$30&ndash;$60 per ton</td><td>Required for high-velocity applications</td></tr>
+<tr><td>Equipment / delivery</td><td>$200&ndash;$800 per load</td><td>Depends on site access and load size</td></tr>
+<tr><td>Labor (contractor installed)</td><td>$8&ndash;$20 per sq ft installed</td><td>Includes grading, fabric and placement</td></tr>
+<tr><td>Grouting (optional)</td><td>$3&ndash;$8 per sq ft added</td><td>Grouted riprap for high-energy zones</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Rip Rap vs Other Erosion Control Methods</h3>
+
+<p>Riprap is not always the right solution. Here is how it compares to the main alternatives:</p>
+
+<p><strong>Rip rap vs gabion:</strong> Gabions are wire mesh baskets filled with rock. They provide more structural rigidity and are better for near-vertical walls and applications where rock would roll away. Rip rap is faster to install, less expensive per square foot, and allows better natural drainage. For most channel and slope applications with gradual grades, riprap is preferred.</p>
+
+<p><strong>Rip rap vs concrete:</strong> Poured concrete is impermeable and permanent but expensive, requires formwork, and cracks under freeze-thaw cycling. Riprap is permeable (excellent for drainage), flexible to ground movement, and requires no special equipment for small projects. Concrete is better for high-velocity spillways where riprap would be displaced.</p>
+
+<p><strong>Rip rap vs erosion control blankets:</strong> Erosion control blankets (ECBs) are temporary or semi-permanent biodegradable mats used on slopes while vegetation establishes. They are much cheaper than riprap and work well for mild slopes and low-velocity applications. For permanent protection against fast-moving water, riprap outperforms blankets significantly.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<p><strong>What is the 10% rule for burying the first course?</strong><br>
+For slope and embankment rip rap, extend the riprap installation at least 2 feet below the design low-water line or the toe of the slope. This toe burial prevents the base of the riprap from being undermined by scour at the channel bottom, which is the most common failure mechanism for bank riprap.</p>
+
+<p><strong>Can I install riprap myself (DIY)?</strong><br>
+For decorative landscape riprap and low-velocity drainage ditches under 2 feet wide, DIY installation is straightforward. For channel lining, stream bank protection, or any hydraulic application with flowing water, hire a licensed contractor. Improper placement of filter fabric or incorrect toe burial causes failures that are expensive to repair and can cause downstream damage.</p>
+
+<p><strong>What is the coverage rate for riprap per ton?</strong><br>
+Coverage depends on rock density and installation depth. For granite at 1-foot depth: 1 ton covers approximately 18&ndash;22 square feet. At 6-inch depth: 1 ton covers 36&ndash;44 square feet. The calculator above outputs exact coverage per ton for your specific rock type and depth.</p>
+
+<p><strong>Does rip rap affect water quality?</strong><br>
+Loose natural rock riprap has minimal impact on water quality. Limestone riprap can slightly raise pH in soft-water streams. Grouted riprap eliminates natural drainage and creates a hard, impermeable surface that reduces natural bank habitat. Most state environmental agencies require permits for riprap installation in or near waterways regardless of size.</p>
+
+<p><strong>How do I know if my channel has low or high turbulence?</strong><br>
+Low turbulence: straight channels, gentle slopes, smooth flow without visible breaking or aeration. High turbulence: visible white water, cascading flow, flow around obstructions, sharp channel bends, or water entering a channel from a culvert or spillway. When in doubt, use high turbulence (C = 0.86) for a conservative, larger rock size.</p>
+
+<p style="margin-top:32px;font-size:0.85em;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;"><em>All calculations are material estimates only. Actual quantities may vary based on site conditions, rock gradation, installation technique, and field measurements. The Isbash equation provides an estimate of D50 rock size &mdash; for hydraulic structures, levees, dams, or any regulated waterway, always verify design with a licensed civil or hydraulic engineer and obtain all required environmental and construction permits. This calculator is a planning tool only.</em></p>
+
+</div><!-- end content-more -->
+</div><!-- end content-text -->
+<button class="read-more-btn" id="readMoreBtn">Read More</button>
+</div><!-- end content-section -->
+
+<!-- CTA -->
+<div class="cta-section">
+<h2>Need More Construction Calculators?</h2>
+<p>Explore our full collection of free construction and material calculators &mdash; from rebar to retaining walls, concrete slab, wire mesh, and more &mdash; to plan any project with confidence.</p>
+<a href="../construction.html" class="cta-btn">Browse All Calculators</a>
+</div>
+
+</div><!-- end main -->
+<div id="footer-placeholder"></div>
+<script src="../navigation.js"></script>
+<script>
+// RIP RAP CALCULATOR - JavaScript
+// Isbash D50 | Volume with void ratio | Weight | Cost | Riprap Class
+// BONUS: Void ratio correction | Coverage per ton | Riprap class auto-classification
+
+var ROCK_DATA = {
+    granite:   { name:'Granite',   sg:2.65, density:165, lifespan:'50+ years'  },
+    limestone: { name:'Limestone', sg:2.55, density:159, lifespan:'20-40 years' },
+    basalt:    { name:'Basalt',    sg:2.85, density:178, lifespan:'50+ years'  },
+    quartzite: { name:'Quartzite', sg:2.65, density:165, lifespan:'40-60 years' },
+    sandstone: { name:'Sandstone', sg:2.35, density:147, lifespan:'10-20 years' },
+    custom:    { name:'Custom',    sg:2.65, density:165, lifespan:'Varies'      }
+};
+
+var APP_HINTS = {
+    channel:    'Channel lining: Isbash equation determines minimum D50 to resist scour at your design velocity.',
+    slope:      'Slope protection: D50 based on runoff velocity. Extend riprap at least 2 ft below toe of slope.',
+    bank:       'Bank stabilization: D50 based on channel velocity at the bank face. Use high turbulence for bend locations.',
+    decorative: 'Decorative riprap: No hydraulic requirement. D50 result shown for reference only — choose rock size for aesthetics.'
+};
+
+var G_MS2 = 9.806; // m/s²
+
+// Convert velocity to m/s
+function toMs(v, unit) {
+    var c = { ms:1, fps:0.3048, mph:0.44704, kph:0.27778 };
+    return v * (c[unit] || 1);
+}
+// Convert area to sq ft
+function toSqFt(v, unit) {
+    var c = { sqft:1, sqm:10.7639, sqyd:9, acre:43560 };
+    return v * (c[unit] || 1);
+}
+// Convert depth to feet
+function toFt(v, unit) {
+    var c = { in:1/12, ft:1, cm:0.0328084, m:3.28084 };
+    return v * (c[unit] || 1);
+}
+
+// Riprap class from D50 in inches
+function getRiprapClass(d50in) {
+    if (d50in < 3)        return { cls:'Sub-Class I', note:'Very small — decorative / low-flow only' };
+    if (d50in < 6)        return { cls:'Class I',     note:'Low-velocity streams, garden drainage' };
+    if (d50in < 12)       return { cls:'Class II',    note:'Moderate streams, roadside ditches' };
+    if (d50in < 18)       return { cls:'Class III',   note:'High-velocity channels, bank stabilization' };
+    if (d50in < 24)       return { cls:'Class IV',    note:'Flood channels, levee protection' };
+    return                       { cls:'Class V',     note:'Dam spillways, tidal zones, high-energy' };
+}
+
+function updateRockTypeInfo() {
+    var type = document.getElementById('rockType').value;
+    var d = ROCK_DATA[type] || ROCK_DATA.granite;
+    document.getElementById('rockInfoType').textContent    = d.name;
+    document.getElementById('rockInfoSG').textContent      = 'SG: ' + d.sg.toFixed(2);
+    document.getElementById('rockInfoDensity').textContent = d.density + ' lb/ft\u00B3';
+    document.getElementById('rockInfoLifespan').textContent= 'Lifespan: ' + d.lifespan;
+    // Auto-fill specific gravity
+    document.getElementById('specificGravity').value = d.sg.toFixed(2);
+    // Disable SG input for known types, allow edit for custom
+    document.getElementById('specificGravity').readOnly = (type !== 'custom');
+    document.getElementById('specificGravity').style.background = (type !== 'custom') ? 'var(--bg)' : 'var(--white)';
+}
+
+function updateAppHint() {
+    var app = document.getElementById('applicationType').value;
+    document.getElementById('appHint').textContent = APP_HINTS[app] || '';
+}
+
+function calculateRipRap() {
+    var rockType  = document.getElementById('rockType').value;
+    var sg        = parseFloat(document.getElementById('specificGravity').value);
+    var vel       = parseFloat(document.getElementById('waterVelocity').value);
+    var velUnit   = document.getElementById('velocityUnit').value;
+    var turbulence= document.getElementById('turbulence').value;
+    var area      = parseFloat(document.getElementById('coverageArea').value);
+    var areaUnit  = document.getElementById('areaUnit').value;
+    var depth     = parseFloat(document.getElementById('riprapDepth').value);
+    var depthUnit = document.getElementById('depthUnit').value;
+    var layers    = parseInt(document.getElementById('numLayers').value) || 2;
+    var voidPct   = parseFloat(document.getElementById('voidRatio').value) || 30;
+    var wastePct  = parseFloat(document.getElementById('wastePct').value) || 15;
+    var pPerTon   = parseFloat(document.getElementById('pricePerTon').value) || 0;
+
+    // Validation
+    if (!vel   || vel   <= 0) { alert('Please enter a valid Water Velocity.'); return; }
+    if (!sg    || sg    <= 1) { alert('Specific Gravity must be greater than 1.0.'); return; }
+    if (!area  || area  <= 0) { alert('Please enter a valid Coverage Area.'); return; }
+    if (!depth || depth <= 0) { alert('Please enter a valid Riprap Depth.'); return; }
+    if (sg >= 4)              { alert('Specific gravity above 4.0 is unusual. Please check your value.'); return; }
+
+    // Isbash equation
+    var V_ms  = toMs(vel, velUnit);
+    var C     = turbulence === 'high' ? 0.86 : 1.20;
+    var d50_m = (V_ms * V_ms) / (2 * G_MS2 * C * C * (sg - 1));
+    var d50_cm   = d50_m * 100;
+    var d50_mm   = d50_m * 1000;
+    var d50_in   = d50_m * 39.3701;
+    var minDepthIn = d50_in * 2;
+
+    // Rock density (use ROCK_DATA if standard type, else estimate from SG)
+    var rockDensityLbFt3 = (ROCK_DATA[rockType] && rockType !== 'custom')
+        ? ROCK_DATA[rockType].density
+        : Math.round(sg * 62.4); // water density * SG
+
+    // Volume calculation
+    var areaSqFt    = toSqFt(area, areaUnit);
+    var depthFt     = toFt(depth, depthUnit);
+    var rawVolFt3   = areaSqFt * depthFt * layers;
+    // Void ratio correction: we need more volume because rock is not solid
+    var voidFraction = voidPct / 100;
+    var adjustedVolFt3 = rawVolFt3 / (1 - voidFraction);
+    // Waste allowance
+    var finalVolFt3 = adjustedVolFt3 * (1 + wastePct / 100);
+    var finalVolCuYd = finalVolFt3 / 27;
+    // Weight
+    var solidVolFt3   = finalVolFt3 * (1 - voidFraction); // actual rock volume
+    var weightLbs     = solidVolFt3 * rockDensityLbFt3;
+    var weightTons    = weightLbs / 2000;
+    var weightKg      = weightLbs * 0.453592;
+    // Coverage per ton
+    var coveragePerTon = weightTons > 0 ? (areaSqFt / weightTons) : 0;
+
+    // Cost
+    var totalCost = weightTons * pPerTon;
+    var costPerSqFt = areaSqFt > 0 && totalCost > 0 ? totalCost / areaSqFt : 0;
+
+    // Riprap class
+    var rc = getRiprapClass(d50_in);
+
+    // --- Display ---
+    document.getElementById('d50Inches').textContent   = d50_in.toFixed(2);
+    document.getElementById('d50Cm').textContent       = d50_cm.toFixed(1) + ' cm  (' + d50_mm.toFixed(0) + ' mm)';
+    document.getElementById('d50Mm').textContent       = d50_mm.toFixed(0);
+    document.getElementById('minDepth').textContent    = minDepthIn.toFixed(1);
+    document.getElementById('volumeCuYd').textContent  = finalVolCuYd.toFixed(2);
+    document.getElementById('weightTons').textContent  = weightTons.toFixed(2);
+    document.getElementById('weightKg').textContent    = weightKg.toFixed(0);
+    document.getElementById('coveragePerTon').textContent = coveragePerTon.toFixed(1);
+    document.getElementById('rockDensity').textContent = rockDensityLbFt3;
+    document.getElementById('areaSqFt').textContent    = areaSqFt.toFixed(0);
+
+    // Riprap class badge
+    var badge = document.getElementById('riprapClassBadge');
+    badge.textContent = rc.cls + ' \u2014 ' + rc.note;
+    badge.style.display = 'inline-block';
+
+    // Cost
+    var costEl = document.getElementById('costDisplay');
+    if (pPerTon > 0) {
+        document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        var bd = '<strong>Cost Breakdown:</strong><br>';
+        bd += weightTons.toFixed(2) + ' tons &times; $' + pPerTon.toFixed(2) + '/ton = <strong>$' + totalCost.toFixed(2) + '</strong><br>';
+        if (areaSqFt > 0 && costPerSqFt > 0) {
+            bd += '<em>Materials cost per sq ft: $' + costPerSqFt.toFixed(2) + '</em>';
+        }
+        document.getElementById('costBreakdown').innerHTML = bd;
+        costEl.classList.add('active');
+    } else {
+        costEl.classList.remove('active');
+    }
+
+    // Formula box
+    var cLabel = turbulence === 'high' ? '0.86 (high turbulence)' : '1.20 (low turbulence)';
+    var rn = ROCK_DATA[rockType] ? ROCK_DATA[rockType].name : 'Custom Rock';
+    var fl = [];
+    fl.push('<div class="formula-step"><strong>Rock Type:</strong> ' + rn + ' &mdash; SG = ' + sg.toFixed(2) + ', density = ' + rockDensityLbFt3 + ' lb/ft&sup3;</div>');
+    fl.push('<div class="formula-step"><strong>Water Velocity:</strong> ' + vel + ' ' + velUnit + ' = ' + V_ms.toFixed(3) + ' m/s &nbsp;|&nbsp; Isbash C = ' + cLabel + '</div>');
+    fl.push('<div class="formula-step" style="margin-top:8px;"><strong>Isbash equation:</strong> D50 = V&sup2; &divide; (2 &times; g &times; C&sup2; &times; (S&minus;1))</div>');
+    fl.push('<div class="formula-step">D50 = ' + V_ms.toFixed(3) + '&sup2; &divide; (2 &times; 9.806 &times; ' + C + '&sup2; &times; (' + sg.toFixed(2) + '&minus;1))</div>');
+    fl.push('<div class="formula-step">D50 = ' + (V_ms*V_ms).toFixed(4) + ' &divide; ' + (2*G_MS2*C*C*(sg-1)).toFixed(4) + ' = <strong>' + d50_m.toFixed(4) + ' m = ' + d50_cm.toFixed(2) + ' cm = ' + d50_in.toFixed(2) + ' inches</strong></div>');
+    fl.push('<div class="formula-step"><strong>Riprap Class:</strong> ' + rc.cls + '</div>');
+    fl.push('<div class="formula-step" style="margin-top:8px;"><strong>Min install depth (2&times;D50):</strong> 2 &times; ' + d50_in.toFixed(2) + '" = <strong>' + minDepthIn.toFixed(1) + ' inches</strong></div>');
+    fl.push('<div class="formula-step" style="margin-top:8px;"><strong>Area:</strong> ' + areaSqFt.toFixed(0) + ' sq ft &nbsp;|&nbsp; <strong>Depth:</strong> ' + depthFt.toFixed(3) + ' ft &nbsp;|&nbsp; <strong>Layers:</strong> ' + layers + '</div>');
+    fl.push('<div class="formula-step"><strong>Raw volume:</strong> ' + areaSqFt.toFixed(0) + ' &times; ' + depthFt.toFixed(3) + ' &times; ' + layers + ' = ' + rawVolFt3.toFixed(1) + ' ft&sup3;</div>');
+    fl.push('<div class="formula-step"><strong>Void ratio adjustment (+' + voidPct + '% void):</strong> ' + rawVolFt3.toFixed(1) + ' &divide; (1&minus;' + (voidPct/100).toFixed(2) + ') = ' + adjustedVolFt3.toFixed(1) + ' ft&sup3;</div>');
+    fl.push('<div class="formula-step"><strong>+' + wastePct + '% waste &rarr; Final volume:</strong> <strong>' + finalVolFt3.toFixed(1) + ' ft&sup3; = ' + finalVolCuYd.toFixed(2) + ' cu yd</strong></div>');
+    fl.push('<div class="formula-step"><strong>Weight:</strong> ' + solidVolFt3.toFixed(1) + ' ft&sup3; rock &times; ' + rockDensityLbFt3 + ' lb/ft&sup3; = <strong>' + weightLbs.toFixed(0) + ' lbs = ' + weightTons.toFixed(2) + ' tons (' + weightKg.toFixed(0) + ' kg)</strong></div>');
+    fl.push('<div class="formula-step"><strong>Coverage:</strong> ' + areaSqFt.toFixed(0) + ' sq ft &divide; ' + weightTons.toFixed(2) + ' tons = <strong>' + coveragePerTon.toFixed(1) + ' sq ft/ton</strong></div>');
+    if (pPerTon > 0) {
+        fl.push('<div class="formula-step" style="margin-top:8px;"><strong>Total Cost:</strong> ' + weightTons.toFixed(2) + ' tons &times; $' + pPerTon.toFixed(2) + '/ton = <strong>$' + totalCost.toFixed(2) + '</strong> ($' + costPerSqFt.toFixed(2) + '/sq ft)</div>');
+    }
+    document.getElementById('formulaExplanation').innerHTML = fl.join('');
+
+    // Show results
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultDisplay').classList.add('active');
+    document.getElementById('ctaResult').classList.add('active');
+
+    // Mobile scroll
+    if (window.innerWidth <= 768) {
+        document.querySelector('.result-section').scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+}
+
+function resetCalculator() {
+    document.getElementById('rockType').value          = 'granite';
+    document.getElementById('applicationType').value  = 'channel';
+    document.getElementById('waterVelocity').value     = '2';
+    document.getElementById('velocityUnit').value      = 'ms';
+    document.getElementById('turbulence').value        = 'low';
+    document.getElementById('specificGravity').value   = '2.65';
+    document.getElementById('coverageArea').value      = '100';
+    document.getElementById('areaUnit').value          = 'sqft';
+    document.getElementById('riprapDepth').value       = '12';
+    document.getElementById('depthUnit').value         = 'in';
+    document.getElementById('numLayers').value         = '2';
+    document.getElementById('voidRatio').value         = '30';
+    document.getElementById('wastePct').value          = '15';
+    document.getElementById('pricePerTon').value       = '';
+
+    document.getElementById('resultDisplay').classList.remove('active');
+    document.getElementById('ctaResult').classList.remove('active');
+    document.getElementById('costDisplay').classList.remove('active');
+    document.getElementById('resultEmpty').style.display = 'block';
+    document.getElementById('riprapClassBadge').style.display = 'none';
+
+    ['d50Inches','d50Mm','minDepth','volumeCuYd','weightTons','weightKg',
+     'coveragePerTon','rockDensity','areaSqFt','totalCost'
+    ].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent='0'; });
+    document.getElementById('d50Cm').textContent = '— cm';
+    document.getElementById('formulaExplanation').innerHTML = '';
+    document.getElementById('costBreakdown').innerHTML = '';
+    updateRockTypeInfo();
+    updateAppHint();
+}
+
+// Read More toggle
+var rmBtn = document.getElementById('readMoreBtn');
+var cmEl  = document.getElementById('contentMore');
+if (rmBtn && cmEl) {
+    rmBtn.addEventListener('click', function() {
+        if (cmEl.classList.contains('expanded')) {
+            cmEl.classList.remove('expanded');
+            rmBtn.textContent = 'Read More';
+            var cs = document.querySelector('.content-section');
+            if (cs) window.scrollTo({ top: cs.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth' });
+        } else {
+            cmEl.classList.add('expanded');
+            rmBtn.textContent = 'Show Less';
+        }
+    });
+}
+
+// Enter key
+document.querySelectorAll('.input-field').forEach(function(inp){
+    inp.addEventListener('keypress', function(e){ if(e.key==='Enter') calculateRipRap(); });
+});
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+    updateRockTypeInfo();
+    updateAppHint();
+});
+</script>
+</body>
+</html>
