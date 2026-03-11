@@ -60,9 +60,9 @@ function initNav() {
                         </div>
                         <p class="footer-brand-desc">Free online calculators for every need. Fast, accurate, and simple to use. Trusted by thousands worldwide.</p>
                         <div class="footer-social">
-                            <a href="#" class="social-link">Twitter</a>
-                            <a href="#" class="social-link">Facebook</a>
-                            <a href="#" class="social-link">YouTube</a>
+                            <a href="https://www.instagram.com/bestcalculatorshub/" class="social-link">Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=61579545170768" class="social-link">Facebook</a>
+                            <a href="https://www.youtube.com/@BestCalculatorsHub" class="social-link">YouTube</a>
                         </div>
                     </div>
 
