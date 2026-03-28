@@ -117,22 +117,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ═══ SEARCH FUNCTION ═══
+// ═══ SEARCH FUNCTION (AUTO-DETECT - FINAL) ═══
 function performSearch() {
     const searchInput = document.getElementById('searchInput');
     if (!searchInput) return;
-    
-    const query = searchInput.value.trim();
-    
-    if (query) {
-        // For now, show alert
-        // Later you'll implement actual search functionality
-        alert('Searching for: "' + query + '"\n\nSearch functionality will be implemented when you add calculators to the database.');
-        
-        // Future implementation:
-        // window.location.href = 'search.html?q=' + encodeURIComponent(query);
-    } else {
+
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (!query) {
         alert('Please enter a search term');
+        return;
     }
+
+    // ✅ Only scans your calculator links (class="calc-link")
+    const allCalcLinks = document.querySelectorAll('a.calc-link');
+    const results = [];
+
+    allCalcLinks.forEach(function(link) {
+        const name = link.textContent.trim().toLowerCase();
+        const href = link.getAttribute('href');
+
+        if (name.includes(query)) {
+            results.push({ name: link.textContent.trim(), url: href });
+        }
+    });
+
+    if (results.length === 0) {
+        alert('No calculators found for "' + query + '". Try a different keyword.');
+        return;
+    }
+
+    // Go to first matching calculator
+    window.location.href = results[0].url;
 }
 
 // ═══ OPTIONAL: Category Card Click Analytics ═══
